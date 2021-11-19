@@ -51,6 +51,10 @@ export default {
     56: '0xa80240Eb5d7E05d3F250cF000eEc0891d00b51CC',
     97: '',
   },
+  cakeVaultV2: {
+    56: '0xa80240Eb5d7E05d3F250cF000eEc0891d00b51CC', // TODO: update address
+    97: '',
+  },
   predictions: {
     56: '0x18B2A687610328590Bc8F2e5fEdDe3b582A49cdA',
     97: '',

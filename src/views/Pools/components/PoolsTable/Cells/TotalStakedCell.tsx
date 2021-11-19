@@ -19,21 +19,22 @@ const StyledCell = styled(BaseCell)`
 
 const TotalStakedCell: React.FC<TotalStakedCellProps> = ({ pool }) => {
   const { t } = useTranslation()
-  const { sousId, stakingToken, totalStaked, isAutoVault } = pool
-  const { totalCakeInVault } = useCakeVault()
+  const { sousId, stakingToken, totalStaked, isAutoVault, isSuper } = pool
+  const { totalCakeInVault } = useCakeVault(pool.isSuper ? 2 : 1)
 
   const isManualCakePool = sousId === 0
 
   const totalStakedBalance = useMemo(() => {
-    if (isAutoVault) {
+    if (isAutoVault || isSuper) {
       return getBalanceNumber(totalCakeInVault, stakingToken.decimals)
     }
     if (isManualCakePool) {
       const manualCakeTotalMinusAutoVault = new BigNumber(totalStaked).minus(totalCakeInVault)
+      // .minus(totalCakeInVaultSuper) // TODO: Do we need to minus super vault cake here?
       return getBalanceNumber(manualCakeTotalMinusAutoVault, stakingToken.decimals)
     }
     return getBalanceNumber(totalStaked, stakingToken.decimals)
-  }, [isAutoVault, totalCakeInVault, isManualCakePool, totalStaked, stakingToken.decimals])
+  }, [isAutoVault, totalCakeInVault, isManualCakePool, totalStaked, stakingToken.decimals, isSuper])
 
   return (
     <StyledCell role="cell">

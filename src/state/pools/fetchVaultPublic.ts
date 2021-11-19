@@ -2,10 +2,10 @@ import BigNumber from 'bignumber.js'
 import { convertSharesToCake } from 'views/Pools/helpers'
 import { multicallv2 } from 'utils/multicall'
 import cakeVaultAbi from 'config/abi/cakeVault.json'
-import { getCakeVaultAddress } from 'utils/addressHelpers'
+import { getCakeVaultAddress, getCakeVaultV2Address } from 'utils/addressHelpers'
 import { BIG_ZERO } from 'utils/bigNumber'
 
-export const fetchPublicVaultData = async () => {
+export const fetchPublicVaultData = async (version = 1) => {
   try {
     const calls = [
       'getPricePerFullShare',
@@ -13,7 +13,7 @@ export const fetchPublicVaultData = async () => {
       'calculateHarvestCakeRewards',
       'calculateTotalPendingCakeRewards',
     ].map((method) => ({
-      address: getCakeVaultAddress(),
+      address: version === 2 ? getCakeVaultV2Address() : getCakeVaultAddress(),
       name: method,
     }))
 
@@ -43,10 +43,10 @@ export const fetchPublicVaultData = async () => {
   }
 }
 
-export const fetchVaultFees = async () => {
+export const fetchVaultFees = async (version = 1) => {
   try {
     const calls = ['performanceFee', 'callFee', 'withdrawFee', 'withdrawFeePeriod'].map((method) => ({
-      address: getCakeVaultAddress(),
+      address: version === 2 ? getCakeVaultV2Address() : getCakeVaultAddress(),
       name: method,
     }))
 

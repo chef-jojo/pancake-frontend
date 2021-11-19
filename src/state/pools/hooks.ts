@@ -67,7 +67,7 @@ export const useFetchCakeVault = () => {
   }, [dispatch])
 }
 
-export const useCakeVault = () => {
+export const useCakeVault = (version = 1) => {
   const {
     totalShares: totalSharesAsString,
     pricePerFullShare: pricePerFullShareAsString,
@@ -82,7 +82,7 @@ export const useCakeVault = () => {
       lastDepositedTime,
       lastUserActionTime,
     },
-  } = useSelector((state: State) => state.pools.cakeVault)
+  } = useSelector((state: State) => (version === 1 ? state.pools.cakeVault : state.pools.cakeVaultV2))
 
   const estimatedCakeBountyReward = useMemo(() => {
     return new BigNumber(estimatedCakeBountyRewardAsString)

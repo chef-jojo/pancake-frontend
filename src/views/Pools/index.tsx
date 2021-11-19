@@ -96,19 +96,19 @@ const Pools: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('')
   const [sortOption, setSortOption] = useState('hot')
   const chosenPoolsLength = useRef(0)
-  const {
-    userData: { cakeAtLastUserAction, userShares },
-    fees: { performanceFee },
-    pricePerFullShare,
-    totalCakeInVault,
-  } = useCakeVault()
-  const accountHasVaultShares = userShares && userShares.gt(0)
-  const performanceFeeAsDecimal = performanceFee && performanceFee / 100
+  const cakeVault = useCakeVault()
+  const cakeVaultV2 = useCakeVault(2)
+
+  const accountHasVaultShares = cakeVault.userData.userShares && cakeVault.userData.userShares.gt(0)
+  const performanceFeeAsDecimal = cakeVault.fees.performanceFee && cakeVault.fees.performanceFee / 100
+  const accountHasVaultSharesV2 = cakeVaultV2.userData.userShares && cakeVaultV2.userData.userShares.gt(0)
+  const performanceFeeAsDecimalV2 = cakeVaultV2.fees.performanceFee && cakeVaultV2.fees.performanceFee / 100
 
   const pools = useMemo(() => {
     const cakePool = poolsWithoutAutoVault.find((pool) => pool.sousId === 0)
     const cakeAutoVault = { ...cakePool, isAutoVault: true }
-    return [cakeAutoVault, ...poolsWithoutAutoVault]
+    const cakeSuper = { ...cakePool, isSuper: true }
+    return [cakeSuper, cakeAutoVault, ...poolsWithoutAutoVault]
   }, [poolsWithoutAutoVault])
 
   // TODO aren't arrays in dep array checked just by reference, i.e. it will rerender every time reference changes?
@@ -119,9 +119,12 @@ const Pools: React.FC = () => {
         if (pool.isAutoVault) {
           return accountHasVaultShares
         }
+        if (pool.isSuper) {
+          return accountHasVaultSharesV2
+        }
         return pool.userData && new BigNumber(pool.userData.stakedBalance).isGreaterThan(0)
       }),
-    [finishedPools, accountHasVaultShares],
+    [finishedPools, accountHasVaultShares, accountHasVaultSharesV2],
   )
   const stakedOnlyOpenPools = useMemo(
     () =>
@@ -167,7 +170,8 @@ const Pools: React.FC = () => {
         // Ternary is needed to prevent pools without APR (like MIX) getting top spot
         return orderBy(
           poolsToSort,
-          (pool: DeserializedPool) => (pool.apr ? getAprData(pool, performanceFeeAsDecimal).apr : 0),
+          (pool: DeserializedPool) =>
+            pool.apr ? getAprData(pool, pool.isSuper ? performanceFeeAsDecimalV2 : performanceFeeAsDecimal).apr : 0,
           'desc',
         )
       case 'earned':
@@ -177,12 +181,20 @@ const Pools: React.FC = () => {
             if (!pool.userData || !pool.earningTokenPrice) {
               return 0
             }
-            return pool.isAutoVault
+            return pool.isSuper
               ? getCakeVaultEarnings(
                   account,
-                  cakeAtLastUserAction,
-                  userShares,
-                  pricePerFullShare,
+                  cakeVaultV2.userData.cakeAtLastUserAction,
+                  cakeVaultV2.userData.userShares,
+                  cakeVaultV2.pricePerFullShare,
+                  pool.earningTokenPrice,
+                ).autoUsdToDisplay
+              : pool.isAutoVault
+              ? getCakeVaultEarnings(
+                  account,
+                  cakeVault.userData.cakeAtLastUserAction,
+                  cakeVault.userData.userShares,
+                  cakeVault.pricePerFullShare,
                   pool.earningTokenPrice,
                 ).autoUsdToDisplay
               : pool.userData.pendingReward.times(pool.earningTokenPrice).toNumber()
@@ -194,17 +206,32 @@ const Pools: React.FC = () => {
           poolsToSort,
           (pool: DeserializedPool) => {
             let totalStaked = Number.NaN
-            if (pool.isAutoVault) {
-              if (pool.stakingTokenPrice && totalCakeInVault.isFinite()) {
+            if (pool.isSuper) {
+              if (pool.stakingTokenPrice && cakeVaultV2.totalCakeInVault.isFinite()) {
                 totalStaked =
-                  +formatUnits(ethers.BigNumber.from(totalCakeInVault.toString()), pool.stakingToken.decimals) *
-                  pool.stakingTokenPrice
+                  +formatUnits(
+                    ethers.BigNumber.from(cakeVaultV2.totalCakeInVault.toString()),
+                    pool.stakingToken.decimals,
+                  ) * pool.stakingTokenPrice
+              }
+            } else if (pool.isAutoVault) {
+              if (pool.stakingTokenPrice && cakeVault.totalCakeInVault.isFinite()) {
+                totalStaked =
+                  +formatUnits(
+                    ethers.BigNumber.from(cakeVault.totalCakeInVault.toString()),
+                    pool.stakingToken.decimals,
+                  ) * pool.stakingTokenPrice
               }
             } else if (pool.sousId === 0) {
-              if (pool.totalStaked?.isFinite() && pool.stakingTokenPrice && totalCakeInVault.isFinite()) {
-                const manualCakeTotalMinusAutoVault = ethers.BigNumber.from(pool.totalStaked.toString()).sub(
-                  totalCakeInVault.toString(),
-                )
+              if (
+                pool.totalStaked?.isFinite() &&
+                pool.stakingTokenPrice &&
+                cakeVault.totalCakeInVault.isFinite() &&
+                cakeVaultV2.totalCakeInVault.isFinite()
+              ) {
+                const manualCakeTotalMinusAutoVault = ethers.BigNumber.from(pool.totalStaked.toString())
+                  .sub(cakeVault.totalCakeInVault.toString())
+                  .sub(cakeVaultV2.totalCakeInVault.toString())
                 totalStaked =
                   +formatUnits(manualCakeTotalMinusAutoVault, pool.stakingToken.decimals) * pool.stakingTokenPrice
               }

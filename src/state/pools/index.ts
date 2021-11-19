@@ -39,6 +39,26 @@ const initialState: PoolsState = {
       lastUserActionTime: null,
     },
   },
+  cakeVaultV2: {
+    totalShares: null,
+    pricePerFullShare: null,
+    totalCakeInVault: null,
+    estimatedCakeBountyReward: null,
+    totalPendingCakeHarvest: null,
+    fees: {
+      performanceFee: null,
+      callFee: null,
+      withdrawalFee: null,
+      withdrawalFeePeriod: null,
+    },
+    userData: {
+      isLoading: true,
+      userShares: null,
+      cakeAtLastUserAction: null,
+      lastDepositedTime: null,
+      lastUserActionTime: null,
+    },
+  },
 }
 
 // Thunks
@@ -149,21 +169,41 @@ export const updateUserPendingReward =
     dispatch(updatePoolsUserData({ sousId, field: 'pendingReward', value: pendingRewards[sousId] }))
   }
 
-export const fetchCakeVaultPublicData = createAsyncThunk<CakeVault>('cakeVault/fetchPublicData', async () => {
-  const publicVaultInfo = await fetchPublicVaultData()
-  return publicVaultInfo
-})
+interface MultipleVersionVault<T> {
+  v1: T
+  v2: T
+}
 
-export const fetchCakeVaultFees = createAsyncThunk<VaultFees>('cakeVault/fetchFees', async () => {
+export const fetchCakeVaultPublicData = createAsyncThunk<MultipleVersionVault<CakeVault>>(
+  'cakeVault/fetchPublicData',
+  async () => {
+    const publicVaultInfo = await fetchPublicVaultData()
+    const publicVaultInfoV2 = await fetchPublicVaultData(2)
+    return {
+      v1: publicVaultInfo,
+      v2: publicVaultInfoV2,
+    }
+  },
+)
+
+export const fetchCakeVaultFees = createAsyncThunk<MultipleVersionVault<VaultFees>>('cakeVault/fetchFees', async () => {
   const vaultFees = await fetchVaultFees()
-  return vaultFees
+  const vaultFeesV2 = await fetchVaultFees(2)
+  return {
+    v1: vaultFees,
+    v2: vaultFeesV2,
+  }
 })
 
-export const fetchCakeVaultUserData = createAsyncThunk<VaultUser, { account: string }>(
+export const fetchCakeVaultUserData = createAsyncThunk<MultipleVersionVault<VaultUser>, { account: string }>(
   'cakeVault/fetchUser',
   async ({ account }) => {
     const userData = await fetchVaultUser(account)
-    return userData
+    const userDataV2 = await fetchVaultUser(account, 2)
+    return {
+      v1: userData,
+      v2: userDataV2,
+    }
   },
 )
 
@@ -197,20 +237,29 @@ export const PoolsSlice = createSlice({
   },
   extraReducers: (builder) => {
     // Vault public data that updates frequently
-    builder.addCase(fetchCakeVaultPublicData.fulfilled, (state, action: PayloadAction<CakeVault>) => {
-      state.cakeVault = { ...state.cakeVault, ...action.payload }
-    })
+    builder.addCase(
+      fetchCakeVaultPublicData.fulfilled,
+      (state, action: PayloadAction<MultipleVersionVault<CakeVault>>) => {
+        state.cakeVault = { ...state.cakeVault, ...action.payload.v1 }
+        state.cakeVaultV2 = { ...state.cakeVaultV2, ...action.payload.v2 }
+      },
+    )
     // Vault fees
-    builder.addCase(fetchCakeVaultFees.fulfilled, (state, action: PayloadAction<VaultFees>) => {
-      const fees = action.payload
-      state.cakeVault = { ...state.cakeVault, fees }
+    builder.addCase(fetchCakeVaultFees.fulfilled, (state, action: PayloadAction<MultipleVersionVault<VaultFees>>) => {
+      state.cakeVault = { ...state.cakeVault, fees: action.payload.v1 }
+      state.cakeVaultV2 = { ...state.cakeVaultV2, fees: action.payload.v2 }
     })
     // Vault user data
-    builder.addCase(fetchCakeVaultUserData.fulfilled, (state, action: PayloadAction<VaultUser>) => {
-      const userData = action.payload
-      userData.isLoading = false
-      state.cakeVault = { ...state.cakeVault, userData }
-    })
+    builder.addCase(
+      fetchCakeVaultUserData.fulfilled,
+      (state, action: PayloadAction<MultipleVersionVault<VaultUser>>) => {
+        const userDatas = action.payload
+        userDatas.v1.isLoading = false
+        userDatas.v2.isLoading = false
+        state.cakeVault = { ...state.cakeVault, userData: userDatas.v1 }
+        state.cakeVaultV2 = { ...state.cakeVaultV2, userData: userDatas.v2 }
+      },
+    )
   },
 })
 

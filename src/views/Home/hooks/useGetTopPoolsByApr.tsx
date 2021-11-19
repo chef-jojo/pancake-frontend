@@ -21,6 +21,9 @@ const useGetTopPoolsByApr = (isIntersecting: boolean) => {
   const {
     fees: { performanceFee },
   } = useCakeVault()
+  const {
+    fees: { performanceFee: performanceFeeV2 },
+  } = useCakeVault(2)
   const performanceFeeAsDecimal = performanceFee && performanceFee / 100
   const [fetchStatus, setFetchStatus] = useState(FetchStatus.NOT_FETCHED)
   const [topPools, setTopPools] = useState<DeserializedPool[]>([null, null, null, null, null])
@@ -29,9 +32,11 @@ const useGetTopPoolsByApr = (isIntersecting: boolean) => {
     const activePools = poolsWithoutAutoVault.filter((pool) => !pool.isFinished)
     const cakePool = activePools.find((pool) => pool.sousId === 0)
     const cakeAutoVault = { ...cakePool, isAutoVault: true }
+    const cakeSuper = { ...cakePool, isSuper: true }
     const cakeAutoVaultWithApr = { ...cakeAutoVault, apr: getAprData(cakeAutoVault, performanceFeeAsDecimal).apr }
-    return [cakeAutoVaultWithApr, ...poolsWithoutAutoVault]
-  }, [poolsWithoutAutoVault, performanceFeeAsDecimal])
+    const cakeSuperWithApr = { ...cakeSuper, apr: getAprData(cakeAutoVault, performanceFeeV2).apr }
+    return [cakeSuperWithApr, cakeAutoVaultWithApr, ...poolsWithoutAutoVault]
+  }, [poolsWithoutAutoVault, performanceFeeAsDecimal, performanceFeeV2])
 
   const cakePriceBusd = usePriceCakeBusd()
 

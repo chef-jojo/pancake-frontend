@@ -27,7 +27,7 @@ const AutoAprCell: React.FC<AprCellProps> = ({ pool }) => {
     userData: { userShares },
     fees: { performanceFee },
     pricePerFullShare,
-  } = useCakeVault()
+  } = useCakeVault(pool.isSuper ? 2 : 1)
 
   const { cakeAsBigNumber } = convertSharesToCake(userShares, pricePerFullShare)
   const performanceFeeAsDecimal = performanceFee && performanceFee / 100

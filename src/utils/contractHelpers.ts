@@ -18,6 +18,7 @@ import {
   getTradingCompetitionAddress,
   getEasterNftAddress,
   getCakeVaultAddress,
+  getCakeVaultV2Address,
   getPredictionsAddress,
   getChainlinkOracleAddress,
   getMulticallAddress,
@@ -130,6 +131,9 @@ export const getEasterNftContract = (signer?: ethers.Signer | ethers.providers.P
 }
 export const getCakeVaultContract = (signer?: ethers.Signer | ethers.providers.Provider) => {
   return getContract(cakeVaultAbi, getCakeVaultAddress(), signer)
+}
+export const getCakeVaultV2Contract = (signer?: ethers.Signer | ethers.providers.Provider) => {
+  return getContract(cakeVaultAbi, getCakeVaultV2Address(), signer)
 }
 
 export const getPredictionsContract = (signer?: ethers.Signer | ethers.providers.Provider) => {

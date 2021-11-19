@@ -27,10 +27,10 @@ const StyledCell = styled(BaseCell)`
 const NameCell: React.FC<NameCellProps> = ({ pool }) => {
   const { t } = useTranslation()
   const { isMobile } = useMatchBreakpoints()
-  const { sousId, stakingToken, earningToken, userData, isFinished, isAutoVault } = pool
+  const { sousId, stakingToken, earningToken, userData, isFinished, isAutoVault, isSuper } = pool
   const {
     userData: { userShares },
-  } = useCakeVault()
+  } = useCakeVault(isSuper ? 2 : 1)
   const hasVaultShares = userShares && userShares.gt(0)
 
   const stakingTokenSymbol = stakingToken.symbol
@@ -40,13 +40,16 @@ const NameCell: React.FC<NameCellProps> = ({ pool }) => {
   const isStaked = stakedBalance.gt(0)
   const isManualCakePool = sousId === 0
 
-  const showStakedTag = isAutoVault ? hasVaultShares : isStaked
+  const showStakedTag = isAutoVault || isSuper ? hasVaultShares : isStaked
 
   let title = `${t('Earn')} ${earningTokenSymbol}`
   let subtitle = `${t('Stake')} ${stakingTokenSymbol}`
   const showSubtitle = sousId !== 0 || (sousId === 0 && !isMobile)
 
-  if (isAutoVault) {
+  if (isSuper) {
+    title = t('Super CAKE')
+    subtitle = t('Automatic restaking')
+  } else if (isAutoVault) {
     title = t('Auto CAKE')
     subtitle = t('Automatic restaking')
   } else if (isManualCakePool) {

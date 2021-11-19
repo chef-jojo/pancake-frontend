@@ -67,6 +67,7 @@ interface CorePoolProps {
   stakingTokenPrice?: number
   earningTokenPrice?: number
   isAutoVault?: boolean
+  isSuper?: boolean
 }
 
 export interface DeserializedPool extends DeserializedPoolConfig, CorePoolProps {
@@ -145,6 +146,7 @@ export interface CakeVault {
 export interface PoolsState {
   data: SerializedPool[]
   cakeVault: CakeVault
+  cakeVaultV2: CakeVault
   userDataLoaded: boolean
 }
 

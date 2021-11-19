@@ -32,15 +32,20 @@ export const convertCakeToShares = (
 }
 
 const AUTO_VAULT_COMPOUND_FREQUENCY = 5000
+const SUPER_VAULT_COMPOUND_FREQUENCY = 5000 // TODO: update frequency
 const MANUAL_POOL_AUTO_COMPOUND_FREQUENCY = 0
 
 export const getAprData = (pool: DeserializedPool, performanceFee: number) => {
-  const { isAutoVault, apr } = pool
+  const { isAutoVault, isSuper, apr } = pool
 
   //   Estimate & manual for now. 288 = once every 5 mins. We can change once we have a better sense of this
-  const autoCompoundFrequency = isAutoVault ? AUTO_VAULT_COMPOUND_FREQUENCY : MANUAL_POOL_AUTO_COMPOUND_FREQUENCY
+  const autoCompoundFrequency = isSuper
+    ? SUPER_VAULT_COMPOUND_FREQUENCY
+    : isAutoVault
+    ? AUTO_VAULT_COMPOUND_FREQUENCY
+    : MANUAL_POOL_AUTO_COMPOUND_FREQUENCY
 
-  if (isAutoVault) {
+  if (isAutoVault || isSuper) {
     const autoApr = getApy(apr, AUTO_VAULT_COMPOUND_FREQUENCY, 365, performanceFee) * 100
     return { apr: autoApr, autoCompoundFrequency }
   }

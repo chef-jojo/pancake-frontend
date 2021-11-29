@@ -36,9 +36,7 @@ async function fetchChunk(
   try {
     // prettier-ignore
     [resultsBlockNumber, returnData] = await multicallContract.aggregate(
-      chunk.map((obj) => [obj.address, obj.callData]), {
-        blockTag: minBlockNumber,
-      }
+      chunk.map((obj) => [obj.address, obj.callData])
     )
   } catch (error) {
     console.debug('Failed to fetch chunk inside retry', error)

@@ -15,7 +15,7 @@ const useGetLatestOraclePrice = () => {
     }
 
     fetchPrice()
-  }, [lastUpdated, setPrice])
+  }, [lastUpdated])
 
   return { price, lastUpdated, refresh }
 }

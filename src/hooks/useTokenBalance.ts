@@ -20,7 +20,7 @@ export enum FetchStatus {
   FAILED = 'failed',
 }
 
-const useTokenBalance = (tokenAddress: string) => {
+const useTokenBalance = (tokenAddress?: string) => {
   const { NOT_FETCHED, SUCCESS, FAILED } = FetchStatus
   const [balanceState, setBalanceState] = useState<UseTokenBalanceState>({
     balance: BIG_ZERO,
@@ -44,7 +44,7 @@ const useTokenBalance = (tokenAddress: string) => {
       }
     }
 
-    if (account) {
+    if (account && tokenAddress) {
       fetchBalance()
     }
   }, [account, tokenAddress, fastRefresh, SUCCESS, FAILED])
@@ -86,7 +86,7 @@ export const useBurnedBalance = (tokenAddress: string) => {
   return balance
 }
 
-export const useGetBnbBalance = () => {
+export const useGetBnbBalance = (enable = true) => {
   const [fetchStatus, setFetchStatus] = useState(FetchStatus.NOT_FETCHED)
   const [balance, setBalance] = useState(ethers.BigNumber.from(0))
   const { account } = useWeb3React()
@@ -103,10 +103,10 @@ export const useGetBnbBalance = () => {
       }
     }
 
-    if (account) {
+    if (account && enable) {
       fetchBalance()
     }
-  }, [account, lastUpdated, setBalance, setFetchStatus])
+  }, [account, lastUpdated, setBalance, setFetchStatus, enable])
 
   return { balance, fetchStatus, refresh: setLastUpdated }
 }

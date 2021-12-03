@@ -1,14 +1,14 @@
-import React from 'react'
-import { Currency, Pair } from '@pancakeswap/sdk'
-import { Button, ChevronDownIcon, Text, useModal, Flex, Box } from '@pancakeswap/uikit'
-import styled from 'styled-components'
+import { Currency, Pair, Token, TokenAmount, JSBI, ETHER, CurrencyAmount } from '@pancakeswap/sdk'
+import { Box, Button, ChevronDownIcon, Flex, Text, useModal } from '@pancakeswap/uikit'
 import { useTranslation } from 'contexts/Localization'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
+import useTokenBalance, { useGetBnbBalance } from 'hooks/useTokenBalance'
+import React from 'react'
+import styled from 'styled-components'
 import { useCurrencyBalance } from '../../state/wallet/hooks'
-import CurrencySearchModal from '../SearchModal/CurrencySearchModal'
-import { CurrencyLogo, DoubleCurrencyLogo } from '../Logo'
-
 import { RowBetween } from '../Layout/Row'
+import { CurrencyLogo, DoubleCurrencyLogo } from '../Logo'
+import CurrencySearchModal from '../SearchModal/CurrencySearchModal'
 import { Input as NumericalInput } from './NumericalInput'
 
 const InputRow = styled.div<{ selected: boolean }>`
@@ -58,6 +58,23 @@ interface CurrencyInputPanelProps {
   id: string
   showCommonBases?: boolean
 }
+
+const isCurrencyToken = (currency: Currency): currency is Token => currency instanceof Token
+
+function useTokenBalanceOrBNBalance(currency: Currency) {
+  const isBNB = currency === ETHER
+  const tokenBalance = useTokenBalance(isCurrencyToken(currency) && currency.address)
+  const bnbBalance = useGetBnbBalance(isBNB)
+  if (isBNB && bnbBalance.fetchStatus === 'success') {
+    return CurrencyAmount.ether(JSBI.BigInt(bnbBalance.balance.toString())).toSignificant(6)
+  }
+  if (isCurrencyToken(currency) && tokenBalance.fetchStatus === 'success') {
+    return new TokenAmount(currency, JSBI.BigInt(tokenBalance.balance.toString()))?.toSignificant(6)
+  }
+
+  return null
+}
+
 export default function CurrencyInputPanel({
   value,
   onUserInput,
@@ -76,6 +93,11 @@ export default function CurrencyInputPanel({
   const { account } = useActiveWeb3React()
   const selectedCurrencyBalance = useCurrencyBalance(account ?? undefined, currency ?? undefined)
   const { t } = useTranslation()
+
+  const directlyCallBalance = useTokenBalanceOrBNBalance(currency)
+  console.log({ a: selectedCurrencyBalance?.toSignificant(6), b: directlyCallBalance })
+
+  const balance = selectedCurrencyBalance?.toSignificant(6) ?? (directlyCallBalance || t('Loading'))
 
   const [onPresentCurrencyModal] = useModal(
     <CurrencySearchModal
@@ -121,9 +143,7 @@ export default function CurrencyInputPanel({
         </CurrencySelectButton>
         {account && (
           <Text onClick={onMax} color="textSubtle" fontSize="14px" style={{ display: 'inline', cursor: 'pointer' }}>
-            {!hideBalance && !!currency
-              ? t('Balance: %balance%', { balance: selectedCurrencyBalance?.toSignificant(6) ?? t('Loading') })
-              : ' -'}
+            {!hideBalance && !!currency ? t('Balance: %balance%', { balance }) : ' -'}
           </Text>
         )}
       </Flex>

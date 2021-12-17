@@ -13,6 +13,7 @@ const GlobalStyle = createGlobalStyle`
   }
   body {
     background-color: ${({ theme }) => theme.colors.background};
+    padding-bottom: env(safe-area-inset-bottom);
 
     img {
       height: auto;

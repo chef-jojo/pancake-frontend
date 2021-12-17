@@ -87,11 +87,14 @@ const IfoCardDetails: React.FC<IfoCardDetailsProps> = ({ poolId, ifo, publicIfoD
   const { t } = useTranslation()
   const { status, currencyPriceInUSD } = publicIfoData
   const poolCharacteristic = publicIfoData[poolId]
+  const userPoolCharacteristics = walletIfoData[poolId]
 
   let version3MaxTokens = walletIfoData.ifoCredit?.creditLeft
     ? // if creditLeft > limit show limit else show creditLeft
-      walletIfoData.ifoCredit.creditLeft.gt(poolCharacteristic.limitPerUserInLP)
-      ? poolCharacteristic.limitPerUserInLP
+      walletIfoData.ifoCredit.creditLeft.gt(
+        poolCharacteristic.limitPerUserInLP.minus(userPoolCharacteristics.amountTokenCommittedInLP),
+      )
+      ? poolCharacteristic.limitPerUserInLP.minus(userPoolCharacteristics.amountTokenCommittedInLP)
       : walletIfoData.ifoCredit.creditLeft
     : null
 

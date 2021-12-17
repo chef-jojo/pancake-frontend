@@ -8,7 +8,7 @@ export const cakeBnbLpToken = new Token(ChainId.MAINNET, farms[1].lpAddresses[Ch
 const ifos: Ifo[] = [
   {
     id: 'dpt',
-    address: '0x28e7Fd01cE593E2c0b5708C4fc42C13AaB0de91A',
+    address: '0xc636b321f72b43e6860e2a9237dbb716a58d5bb7',
     isActive: true,
     name: 'Diviner Protocol (DPT)',
     poolBasic: {

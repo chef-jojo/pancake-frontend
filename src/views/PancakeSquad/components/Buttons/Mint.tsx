@@ -58,7 +58,7 @@ const MintButton: React.FC<PreEventProps> = ({ t, theme, saleStatus, numberTicke
       }
     } catch (error) {
       logError(error)
-      onDismiss()
+      onDismiss?.()
       toastError(t('Error'), t('Please try again. Confirm the transaction and make sure you are paying enough gas!'))
     } finally {
       setIsLoading(false)

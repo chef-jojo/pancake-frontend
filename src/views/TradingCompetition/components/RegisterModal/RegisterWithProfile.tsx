@@ -33,7 +33,7 @@ const RegisterWithProfile: React.FC<CompetitionProps> = ({ profile, onDismiss, o
         t('You have registered for the competition!'),
         <ToastDescriptionWithTx txHash={receipt.transactionHash} />,
       )
-      onDismiss()
+      onDismiss?.()
       onRegisterSuccess()
     } else {
       toastError(t('Error'), t('Please try again. Confirm the transaction and make sure you are paying enough gas!'))

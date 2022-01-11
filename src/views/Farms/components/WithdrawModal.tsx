@@ -60,7 +60,7 @@ const WithdrawModal: React.FC<WithdrawModalProps> = ({ onConfirm, onDismiss, max
             try {
               await onConfirm(val)
               toastSuccess(t('Unstaked!'), t('Your earnings have also been harvested to your wallet'))
-              onDismiss()
+              onDismiss?.()
             } catch (e) {
               logError(e)
               toastError(

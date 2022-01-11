@@ -52,7 +52,7 @@ const CardUserInfo: React.FC<YourScoreProps> = ({
     <ShareImageModal profile={profile} userLeaderboardInformation={userLeaderboardInformation} />,
     false,
   )
-  const { global, team, volume, next_rank: nextRank } = userLeaderboardInformation
+  const { global, team, volume, next_rank: nextRank } = userLeaderboardInformation | {}
   const shouldShowUserRanks = account && hasRegistered
 
   const getMedal = (currentRank: ReactText) => {

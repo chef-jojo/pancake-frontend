@@ -22,7 +22,7 @@ const UserPrizeGrid: React.FC<{ userTradingInformation?: UserTradingInformationP
     userSantosRewards,
     userPointReward,
     canClaimNFT,
-  } = userTradingInformation
+  } = userTradingInformation || {}
   const { cakeReward, lazioReward, portoReward, santosReward, dollarValueOfTokensReward } = useCompetitionRewards({
     userCakeRewards,
     userLazioRewards,
@@ -60,7 +60,7 @@ const UserPrizeGrid: React.FC<{ userTradingInformation?: UserTradingInformationP
           </BoldTd>
           <Td>
             <Flex alignItems="center" flexWrap="wrap" justifyContent="center" width="100%">
-              <Image src={`/images/achievements/${achievement.image}`} width={25} height={25} />
+              {achievement && <Image src={`/images/achievements/${achievement.image}`} width={25} height={25} />}
               <Text fontSize="12px" color="textSubtle" textTransform="lowercase">
                 + {userPointReward} {t('Points')}
               </Text>

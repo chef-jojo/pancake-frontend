@@ -67,7 +67,7 @@ const CollectModal: React.FC<CollectModalProps> = ({
           t('Your %symbol% earnings have been re-invested into the pool!', { symbol: earningToken.symbol }),
         )
         setPendingTx(false)
-        onDismiss()
+        onDismiss?.()
       } catch (e) {
         toastError(t('Error'), t('Please try again. Confirm the transaction and make sure you are paying enough gas!'))
         logError(e)
@@ -82,7 +82,7 @@ const CollectModal: React.FC<CollectModalProps> = ({
           t('Your %symbol% earnings have been sent to your wallet!', { symbol: earningToken.symbol }),
         )
         setPendingTx(false)
-        onDismiss()
+        onDismiss?.()
       } catch (e) {
         toastError(t('Error'), t('Please try again. Confirm the transaction and make sure you are paying enough gas!'))
         logError(e)

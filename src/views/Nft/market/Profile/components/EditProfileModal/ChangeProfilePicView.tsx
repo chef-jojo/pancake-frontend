@@ -56,7 +56,7 @@ const ChangeProfilePicPage: React.FC<ChangeProfilePicPageProps> = ({ onDismiss }
         await dispatch(fetchProfile(account))
         toastSuccess(t('Profile Updated!'), <ToastDescriptionWithTx txHash={receipt.transactionHash} />)
 
-        onDismiss()
+        onDismiss?.()
       },
     })
 

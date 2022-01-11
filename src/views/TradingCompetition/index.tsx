@@ -28,7 +28,7 @@ import BattleCta from './components/BattleCta'
 import PrizesInfo from './components/PrizesInfo'
 import Rules from './components/Rules'
 import TeamRanks from './components/TeamRanks'
-import { UserTradingInformationProps } from './types'
+import { LeaderboardData, TeamLeaderboardProps, UserTradingInformationProps } from './types'
 
 const CompetitionPage = styled.div`
   min-height: calc(100vh - 64px);
@@ -93,7 +93,7 @@ const TradingCompetition = () => {
     userPointReward: '0',
     canClaimNFT: false,
   })
-  const [globalLeaderboardInformation, setGlobalLeaderboardInformation] = useState(null)
+  const [globalLeaderboardInformation, setGlobalLeaderboardInformation] = useState<LeaderboardData | undefined>()
   const [userLeaderboardInformation, setUserLeaderboardInformation] = useState({
     global: 0,
     team: 0,
@@ -101,11 +101,15 @@ const TradingCompetition = () => {
     next_rank: 0,
   })
   // 1. Storm
-  const [team1LeaderboardInformation, setTeam1LeaderboardInformation] = useState({ teamId: 1, leaderboardData: null })
+  const [team1LeaderboardInformation, setTeam1LeaderboardInformation] = useState<TeamLeaderboardProps>({ teamId: 1 })
   // 2. Flippers
-  const [team2LeaderboardInformation, setTeam2LeaderboardInformation] = useState({ teamId: 2, leaderboardData: null })
+  const [team2LeaderboardInformation, setTeam2LeaderboardInformation] = useState<TeamLeaderboardProps>({
+    teamId: 2,
+  })
   // 3. Cakers
-  const [team3LeaderboardInformation, setTeam3LeaderboardInformation] = useState({ teamId: 3, leaderboardData: null })
+  const [team3LeaderboardInformation, setTeam3LeaderboardInformation] = useState<TeamLeaderboardProps>({
+    teamId: 3,
+  })
 
   const isCompetitionLive = currentPhase.state === LIVE
   const hasCompetitionEnded =
@@ -130,8 +134,8 @@ const TradingCompetition = () => {
       userSantosRewards !== '0' ||
       userPointReward !== '0' ||
       canClaimNFT)
-  const finishedAndPrizesClaimed = hasCompetitionEnded && account && hasUserClaimed
-  const finishedAndNothingToClaim = hasCompetitionEnded && account && !userCanClaimPrizes
+  const finishedAndPrizesClaimed = Boolean(hasCompetitionEnded && account && hasUserClaimed)
+  const finishedAndNothingToClaim = Boolean(hasCompetitionEnded && account && !userCanClaimPrizes)
 
   const onRegisterSuccess = () => {
     setRegistrationSuccessful(true)
@@ -148,6 +152,7 @@ const TradingCompetition = () => {
     }
 
     const fetchUserContract = async () => {
+      if (!account) return
       try {
         const user = await tradingCompetitionContract.claimInformation(account)
         const userObject = {

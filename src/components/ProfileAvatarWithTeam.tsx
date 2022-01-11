@@ -24,7 +24,7 @@ const TeamAvatar = styled.img`
   }
 `
 
-const AvatarWrapper = styled.div<{ bg: string }>`
+const AvatarWrapper = styled.div<{ bg?: string }>`
   background: url('${({ bg }) => bg}');
   background-repeat: no-repeat;
   background-size: cover;

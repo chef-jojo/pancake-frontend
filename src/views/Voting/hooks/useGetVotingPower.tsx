@@ -6,7 +6,7 @@ import { simpleRpcProvider } from 'utils/providers'
 import { getVotingPower } from '../helpers'
 
 interface State {
-  verificationHash: string
+  verificationHash: string | null
   cakeBalance: number
   cakeVaultBalance: number
   cakePoolBalance: number
@@ -34,6 +34,7 @@ const useGetVotingPower = (block?: number, isActive = true): State & { isLoading
 
   useEffect(() => {
     const fetchVotingPower = async () => {
+      if (!account) return
       setIsLoading(true)
 
       try {

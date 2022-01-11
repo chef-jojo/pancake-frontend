@@ -165,7 +165,7 @@ const VaultStakeModal: React.FC<VaultStakeModalProps> = ({
             </ToastDescriptionWithTx>,
           )
           setPendingTx(false)
-          onDismiss()
+          onDismiss?.()
           dispatch(fetchCakeVaultUserData({ account }))
         }
       } catch (error) {
@@ -192,7 +192,7 @@ const VaultStakeModal: React.FC<VaultStakeModalProps> = ({
             </ToastDescriptionWithTx>,
           )
           setPendingTx(false)
-          onDismiss()
+          onDismiss?.()
           dispatch(fetchCakeVaultUserData({ account }))
         }
       } catch (error) {
@@ -218,7 +218,7 @@ const VaultStakeModal: React.FC<VaultStakeModalProps> = ({
           </ToastDescriptionWithTx>,
         )
         setPendingTx(false)
-        onDismiss()
+        onDismiss?.()
         dispatch(fetchCakeVaultUserData({ account }))
       }
     } catch (error) {

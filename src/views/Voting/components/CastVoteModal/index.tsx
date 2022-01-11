@@ -35,7 +35,7 @@ const CastVoteModal: React.FC<CastVoteModalProps> = ({ onSuccess, proposalId, vo
   } = useGetVotingPower(block, modalIsOpen)
 
   const isStartView = view === ConfirmVoteView.MAIN
-  const handleBack = isStartView ? null : () => setView(ConfirmVoteView.MAIN)
+  const handleBack = isStartView ? undefined : () => setView(ConfirmVoteView.MAIN)
   const handleViewDetails = () => setView(ConfirmVoteView.DETAILS)
 
   const title = {
@@ -45,10 +45,11 @@ const CastVoteModal: React.FC<CastVoteModalProps> = ({ onSuccess, proposalId, vo
 
   const handleDismiss = () => {
     setModalIsOpen(false)
-    onDismiss()
+    onDismiss?.()
   }
 
   const handleConfirmVote = async () => {
+    if (!connector || !account || !vote) return
     try {
       setIsPending(true)
       const voteMsg = JSON.stringify({

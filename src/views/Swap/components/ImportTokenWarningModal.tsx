@@ -16,7 +16,7 @@ const ImportTokenWarningModal: React.FC<Props> = ({ tokens, onDismiss, onCancel 
       title={t('Import Token')}
       onDismiss={() => {
         if (onDismiss) {
-          onDismiss()
+          onDismiss?.()
         }
         onCancel()
       }}

@@ -12,7 +12,7 @@ const ReactivateProfile: React.FC<CompetitionProps> = ({ onDismiss }) => {
 
   const handleClick = () => {
     history.push(`${nftsBaseUrl}/profile/${account.toLowerCase()}`)
-    onDismiss()
+    onDismiss?.()
   }
 
   return (

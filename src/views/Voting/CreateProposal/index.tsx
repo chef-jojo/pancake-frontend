@@ -67,6 +67,7 @@ const CreateProposal = () => {
   const formErrors = getFormErrors(state, t)
 
   const handleSubmit = async (evt: FormEvent<HTMLFormElement>) => {
+    if (!connector || !account) return
     evt.preventDefault()
 
     try {

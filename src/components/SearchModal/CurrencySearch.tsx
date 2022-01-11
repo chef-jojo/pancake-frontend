@@ -85,7 +85,7 @@ function CurrencySearch({
   const inputRef = useRef<HTMLInputElement>()
 
   useEffect(() => {
-    inputRef.current.focus()
+    inputRef.current?.focus()
   }, [])
 
   const handleInput = useCallback((event) => {

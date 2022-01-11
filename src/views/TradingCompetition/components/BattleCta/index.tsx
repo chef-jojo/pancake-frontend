@@ -78,12 +78,12 @@ const BattleCta: React.FC<CompetitionProps> = ({
     <ClaimModal userTradingInformation={userTradingInformation} onClaimSuccess={onClaimSuccess} />,
     false,
   )
-  const { hasRegistered, hasUserClaimed } = userTradingInformation
+  const { hasRegistered, hasUserClaimed } = userTradingInformation || {}
   const registeredAndNotStarted = hasRegistered && !isCompetitionLive && !hasCompetitionEnded
 
   const isButtonDisabled = Boolean(
     isLoading ||
-      currentPhase.state === OVER ||
+      currentPhase?.state === OVER ||
       registeredAndNotStarted ||
       finishedAndPrizesClaimed ||
       finishedAndNothingToClaim,
@@ -95,7 +95,7 @@ const BattleCta: React.FC<CompetitionProps> = ({
       return t('Now Live!')
     }
     // Competition finished. Rewards being calculated
-    if (currentPhase.state === FINISHED) {
+    if (currentPhase?.state === FINISHED) {
       return `${t('Calculating prizes')}...`
     }
     // All competition finished states
@@ -123,7 +123,7 @@ const BattleCta: React.FC<CompetitionProps> = ({
     // User registered and competition finished
     if (hasCompetitionEnded) {
       // Claim period has ended
-      if (currentPhase.state === OVER) {
+      if (currentPhase?.state === OVER) {
         return t('Claim period over')
       }
       // User has prizes to claim
@@ -182,7 +182,7 @@ const BattleCta: React.FC<CompetitionProps> = ({
         <Flex flexDirection="column" justifyContent="center" alignItems="center">
           <StyledHeadingText>{getHeadingText()}</StyledHeadingText>
           {/* Hide button if in the pre-claim, FINISHED phase */}
-          {currentPhase.state !== FINISHED && (
+          {currentPhase?.state !== FINISHED && (
             <Flex alignItems="flex-end">
               <LaurelLeftIcon />
               <StyledButton disabled={isButtonDisabled} onClick={() => handleCtaClick()}>

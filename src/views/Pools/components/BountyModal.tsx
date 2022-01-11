@@ -72,7 +72,7 @@ const BountyModal: React.FC<BountyModalProps> = ({ onDismiss, TooltipComponent }
           </ToastDescriptionWithTx>,
         )
         setPendingTx(false)
-        onDismiss()
+        onDismiss?.()
       }
     } catch (error) {
       logError(error)

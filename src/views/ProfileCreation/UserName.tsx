@@ -68,7 +68,7 @@ const UserName: React.FC = () => {
   const [isValid, setIsValid] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const [message, setMessage] = useState('')
-  const fetchAbortSignal = useRef<AbortController>(null)
+  const fetchAbortSignal = useRef<AbortController | null>(null)
   const { balance: cakeBalance, fetchStatus } = useGetCakeBalance()
   const hasMinimumCakeRequired = fetchStatus === FetchStatus.Fetched && cakeBalance.gte(REGISTER_COST)
   const [onPresentConfirmProfileCreation] = useModal(
@@ -84,7 +84,7 @@ const UserName: React.FC = () => {
   )
   const isUserCreated = existingUserState === ExistingUserState.CREATED
 
-  const [usernameToCheck, setUsernameToCheck] = useState<string>(undefined)
+  const [usernameToCheck, setUsernameToCheck] = useState<string | undefined>(undefined)
   const debouncedUsernameToCheck = useDebounce(usernameToCheck, 200)
 
   useEffect(() => {
@@ -140,6 +140,9 @@ const UserName: React.FC = () => {
   }
 
   const handleConfirm = async () => {
+    if (!connector || !account) {
+      return
+    }
     try {
       setIsLoading(true)
 
@@ -225,8 +228,8 @@ const UserName: React.FC = () => {
             <InputWrap>
               <Input
                 onChange={handleChange}
-                isWarning={userName && !isValid}
-                isSuccess={userName && isValid}
+                isWarning={!!userName && !isValid}
+                isSuccess={!!userName && isValid}
                 minLength={USERNAME_MIN_LENGTH}
                 maxLength={USERNAME_MAX_LENGTH}
                 disabled={isUserCreated}

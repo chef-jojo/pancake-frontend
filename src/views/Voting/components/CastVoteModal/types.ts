@@ -11,6 +11,6 @@ export interface CastVoteModalProps extends InjectedModalProps {
   vote: {
     label: string
     value: number
-  }
+  } | null
   block?: number
 }

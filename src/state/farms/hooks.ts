@@ -109,7 +109,7 @@ export const useFarmFromLpSymbol = (lpSymbol: string): DeserializedFarm => {
 
 export const useFarmUser = (pid): DeserializedFarmUserData => {
   const { userData } = useFarmFromPid(pid)
-  const { allowance, tokenBalance, stakedBalance, earnings } = userData
+  const { allowance, tokenBalance, stakedBalance, earnings } = userData || {}
   return {
     allowance,
     tokenBalance,
@@ -121,7 +121,7 @@ export const useFarmUser = (pid): DeserializedFarmUserData => {
 // Return the base token price for a farm, from a given pid
 export const useBusdPriceFromPid = (pid: number): BigNumber => {
   const farm = useFarmFromPid(pid)
-  return farm && new BigNumber(farm.tokenPriceBusd)
+  return farm && farm.tokenPriceBusd && new BigNumber(farm.tokenPriceBusd)
 }
 
 export const useLpTokenPrice = (symbol: string) => {
@@ -129,9 +129,9 @@ export const useLpTokenPrice = (symbol: string) => {
   const farmTokenPriceInUsd = useBusdPriceFromPid(farm.pid)
   let lpTokenPrice = BIG_ZERO
 
-  if (farm.lpTotalSupply.gt(0) && farm.lpTotalInQuoteToken.gt(0)) {
+  if (farm.lpTotalSupply?.gt(0) && farm.lpTotalInQuoteToken?.gt(0)) {
     // Total value of base token in LP
-    const valueOfBaseTokenInFarm = farmTokenPriceInUsd.times(farm.tokenAmountTotal)
+    const valueOfBaseTokenInFarm = farmTokenPriceInUsd.times(farm.tokenAmountTotal ?? 1)
     // Double it to get overall value in LP
     const overallValueOfAllTokensInFarm = valueOfBaseTokenInFarm.times(2)
     // Divide total value of all tokens, by the number of LP tokens

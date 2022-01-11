@@ -155,7 +155,7 @@ const DepositModal: React.FC<DepositModalProps> = ({
             try {
               await onConfirm(val)
               toastSuccess(t('Staked!'), t('Your funds have been staked in the farm'))
-              onDismiss()
+              onDismiss?.()
             } catch (e) {
               logError(e)
               toastError(

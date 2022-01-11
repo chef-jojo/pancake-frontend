@@ -16,10 +16,10 @@ export const useCompetitionRewards = ({
   userPortoRewards,
   userSantosRewards,
 }: {
-  userCakeRewards: ReactText
-  userLazioRewards: ReactText
-  userPortoRewards: ReactText
-  userSantosRewards: ReactText
+  userCakeRewards: string | undefined
+  userLazioRewards: string | undefined
+  userPortoRewards: string | undefined
+  userSantosRewards: string | undefined
 }) => {
   const lazioPriceBUSD = useBUSDPrice(tokens.lazio)
   const portoPriceBUSD = useBUSDPrice(tokens.porto)
@@ -52,7 +52,8 @@ export const useCompetitionRewards = ({
 }
 
 // given we have userPointReward and userRewardGroup, we can find the specific reward because no Rank has same two values.
-export const getRewardGroupAchievements = (userRewardGroup: string, userPointReward: string) => {
+export const getRewardGroupAchievements = (userRewardGroup?: string, userPointReward?: string) => {
+  if (!userRewardGroup || !userPointReward) return undefined
   const prize = Object.values(prizes)
     .flat()
     .find((rank) => rank.achievements.points === Number(userPointReward) && rank.group === userRewardGroup)

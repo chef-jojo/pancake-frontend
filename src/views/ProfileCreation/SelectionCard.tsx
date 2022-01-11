@@ -11,7 +11,7 @@ interface SelectionCardProps {
   disabled?: boolean
 }
 
-const Label = styled.label<{ isDisabled: boolean }>`
+const Label = styled.label<{ isDisabled?: boolean }>`
   cursor: ${({ isDisabled }) => (isDisabled ? 'not-allowed' : 'pointer')};
   display: flex;
   justify-content: space-between;

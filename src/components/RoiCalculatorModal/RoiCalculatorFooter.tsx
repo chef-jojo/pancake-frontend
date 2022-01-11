@@ -30,9 +30,9 @@ const BulletList = styled.ul`
 interface RoiCalculatorFooterProps {
   isFarm: boolean
   apr: number
-  displayApr: string
+  displayApr?: string
   autoCompoundFrequency: number
-  multiplier: string
+  multiplier?: string
   linkLabel: string
   linkHref: string
   performanceFee: number

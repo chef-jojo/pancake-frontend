@@ -10,7 +10,7 @@ interface MainViewProps {
   vote: {
     label: string
     value: number
-  }
+  } | null
   isLoading: boolean
   isPending: boolean
   total: number
@@ -29,6 +29,8 @@ const MainView: React.FC<MainViewProps> = ({
   onDismiss,
 }) => {
   const { t } = useTranslation()
+
+  if (!vote) return null
 
   return (
     <>

@@ -17,7 +17,7 @@ import { State } from './contexts/types'
 interface Props {
   userName: string
   selectedNft: State['selectedNft']
-  account: string
+  account?: string | null
   teamId: number
   minimumCakeRequired: ethers.BigNumber
   allowance: ethers.BigNumber
@@ -42,6 +42,7 @@ const ConfirmProfileCreationModal: React.FC<Props> = ({
   const { isApproving, isApproved, isConfirmed, isConfirming, handleApprove, handleConfirm } =
     useApproveConfirmTransaction({
       onRequiresApproval: async () => {
+        if (!account) return false
         try {
           const response = await cakeContract.allowance(account, profileContract.address)
           return response.gte(minimumCakeRequired)
@@ -60,9 +61,11 @@ const ConfirmProfileCreationModal: React.FC<Props> = ({
         ])
       },
       onSuccess: async ({ receipt }) => {
-        await dispatch(fetchProfile(account))
-        onDismiss()
-        toastSuccess(t('Profile created!'), <ToastDescriptionWithTx txHash={receipt.transactionHash} />)
+        if (account) {
+          await dispatch(fetchProfile(account))
+          onDismiss?.()
+          toastSuccess(t('Profile created!'), <ToastDescriptionWithTx txHash={receipt.transactionHash} />)
+        }
       },
     })
 

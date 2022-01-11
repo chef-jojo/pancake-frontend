@@ -34,7 +34,7 @@ import {
   normalizeDerivedPairDataByActiveToken,
   normalizePairDataByActiveToken,
 } from './normalizers'
-import { PairDataTimeWindowEnum } from './types'
+import { PairDataTimeWindowEnum, PairPricesNormalized } from './types'
 import { derivedPairByDataIdSelector, pairByDataIdSelector } from './selectors'
 import { DEFAULT_INPUT_CURRENCY, DEFAULT_OUTPUT_CURRENCY } from './constants'
 import fetchDerivedPriceData from './fetch/fetchDerivedPriceData'
@@ -128,7 +128,7 @@ function involvesAddress(trade: Trade, checksummedAddress: string): boolean {
 }
 
 // Get swap price for single token disregarding slippage and price impact
-export function useSingleTokenSwapInfo(): { [key: string]: number } {
+export function useSingleTokenSwapInfo(): { [key: string]: number } | null {
   const {
     [Field.INPUT]: { currencyId: inputCurrencyId },
     [Field.OUTPUT]: { currencyId: outputCurrencyId },
@@ -354,7 +354,7 @@ export const useFetchPairPrices = ({
   timeWindow,
   currentSwapPrice,
 }: useFetchPairPricesParams) => {
-  const [pairId, setPairId] = useState(null)
+  const [pairId, setPairId] = useState<string | null>(null)
   const [isLoading, setIsLoading] = useState(false)
   const pairData = useSelector(pairByDataIdSelector({ pairId, timeWindow }))
   const derivedPairData = useSelector(derivedPairByDataIdSelector({ pairId, timeWindow }))
@@ -362,6 +362,7 @@ export const useFetchPairPrices = ({
 
   useEffect(() => {
     const fetchDerivedData = async () => {
+      if (!pairId) return
       console.info(
         '[Price Chart]: Not possible to retrieve price data from single pool, trying to fetch derived prices',
       )
@@ -385,6 +386,7 @@ export const useFetchPairPrices = ({
     }
 
     const fetchAndUpdatePairPrice = async () => {
+      if (!pairId) return
       setIsLoading(true)
       const { data } = await fetchPairPriceData({ pairId, timeWindow })
       if (data) {
@@ -426,7 +428,7 @@ export const useFetchPairPrices = ({
     const updatePairId = () => {
       try {
         const pairAddress = getLpAddress(token0Address, token1Address)?.toLowerCase()
-        if (pairAddress !== pairId) {
+        if (pairAddress && pairAddress !== pairId) {
           setPairId(pairAddress)
         }
       } catch (error) {
@@ -464,7 +466,7 @@ export const useFetchPairPrices = ({
     normalizedDerivedPairDataWithCurrentSwapPrice && normalizedDerivedPairDataWithCurrentSwapPrice?.length === 0
 
   // undefined is used for loading
-  let pairPrices = hasNoDirectData && hasNoDerivedData ? [] : undefined
+  let pairPrices: PairPricesNormalized | undefined = hasNoDirectData && hasNoDerivedData ? [] : undefined
   if (normalizedPairDataWithCurrentSwapPrice && normalizedPairDataWithCurrentSwapPrice?.length > 0) {
     pairPrices = normalizedPairDataWithCurrentSwapPrice
   } else if (

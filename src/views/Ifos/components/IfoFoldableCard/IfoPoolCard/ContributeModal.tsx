@@ -96,7 +96,7 @@ const ContributeModal: React.FC<Props> = ({
       },
       onSuccess: async ({ receipt }) => {
         await onSuccess(valueWithTokenDecimals, receipt.transactionHash)
-        onDismiss()
+        onDismiss?.()
       },
     })
 

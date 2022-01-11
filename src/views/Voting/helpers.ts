@@ -104,7 +104,7 @@ export const calculateVoteResults = (votes: Vote[]): { [key: string]: Vote[] } =
 
 export const getTotalFromVotes = (votes: Vote[]) => {
   return votes.reduce((accum, vote) => {
-    let power = parseFloat(vote.metadata?.votingPower)
+    let power = parseFloat(vote.metadata?.votingPower ?? '')
 
     if (!power) {
       power = 0

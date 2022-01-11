@@ -55,7 +55,7 @@ export const normalizeDerivedChartData = (data: any) => {
 }
 
 type normalizePairDataByActiveTokenParams = {
-  pairData: PairDataNormalized
+  pairData: PairDataNormalized | null
   activeToken: string
 }
 
@@ -71,7 +71,7 @@ export const normalizePairDataByActiveToken = ({
           ? pairPrice.reserve1 / pairPrice.reserve0
           : pairPrice.reserve0 / pairPrice.reserve1,
     }))
-    .reverse()
+    .reverse() ?? []
 
 type normalizeDerivedPairDataByActiveTokenParams = {
   pairData: DerivedPairDataNormalized

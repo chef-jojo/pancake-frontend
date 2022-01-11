@@ -19,7 +19,7 @@ const MessageContainer = styled(Message)`
 `
 
 interface SwapWarningModalProps {
-  swapCurrency: WrappedTokenInfo
+  swapCurrency: WrappedTokenInfo | null
   onDismiss?: () => void
 }
 

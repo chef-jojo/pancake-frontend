@@ -39,7 +39,7 @@ const ChoiceText = styled.div`
 `
 
 const Vote: React.FC<VoteProps> = ({ proposal, ...props }) => {
-  const [vote, setVote] = useState<State>(null)
+  const [vote, setVote] = useState<State | null>(null)
   const { t } = useTranslation()
   const { toastSuccess } = useToast()
   const dispatch = useAppDispatch()

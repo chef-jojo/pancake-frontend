@@ -76,7 +76,7 @@ export const useIfoV2Contract = (address: string) => {
 export const useERC20 = (address: string, withSignerIfPossible = true) => {
   const { library, account } = useActiveWeb3React()
   return useMemo(
-    () => getBep20Contract(address, withSignerIfPossible ? getProviderOrSigner(library, account) : null),
+    () => getBep20Contract(address, withSignerIfPossible ? getProviderOrSigner(library, account) : undefined),
     [account, address, library, withSignerIfPossible],
   )
 }
@@ -152,7 +152,7 @@ export const useTradingCompetitionContract = () => {
 export const useTradingCompetitionContractV2 = (withSignerIfPossible = true) => {
   const { library, account } = useActiveWeb3React()
   return useMemo(
-    () => getTradingCompetitionContractV2(withSignerIfPossible ? getProviderOrSigner(library, account) : null),
+    () => getTradingCompetitionContractV2(withSignerIfPossible ? getProviderOrSigner(library, account) : undefined),
     [library, withSignerIfPossible, account],
   )
 }
@@ -251,7 +251,7 @@ export const useErc721CollectionContract = (collectionAddress: string, withSigne
   const { library, account } = useActiveWeb3React()
   return useMemo(() => {
     return getErc721CollectionContract(
-      withSignerIfPossible ? getProviderOrSigner(library, account) : null,
+      withSignerIfPossible ? getProviderOrSigner(library, account) : undefined,
       collectionAddress,
     )
   }, [account, library, collectionAddress, withSignerIfPossible])
@@ -270,7 +270,7 @@ function useContract<T extends Contract = Contract>(
   return useMemo(() => {
     if (!address || !ABI || !library) return null
     try {
-      return getContract(address, ABI, withSignerIfPossible ? getProviderOrSigner(library, account) : null)
+      return getContract(address, ABI, withSignerIfPossible ? getProviderOrSigner(library, account) : undefined)
     } catch (error) {
       console.error('Failed to get contract', error)
       return null

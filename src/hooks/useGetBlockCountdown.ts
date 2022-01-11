@@ -6,7 +6,7 @@ import { simpleRpcProvider } from 'utils/providers'
  * Returns a countdown in seconds of a given block
  */
 const useBlockCountdown = (blockNumber: number) => {
-  const timer = useRef<ReturnType<typeof setTimeout>>(null)
+  const timer = useRef<ReturnType<typeof setTimeout> | null>(null)
   const [secondsRemaining, setSecondsRemaining] = useState(0)
 
   useEffect(() => {

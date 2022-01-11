@@ -4,7 +4,8 @@ export const getActiveMenuItem = ({ pathname, menuConfig }: { pathname: string; 
   menuConfig.find((menuItem) => pathname.startsWith(menuItem.href) || getActiveSubMenuItem({ menuItem, pathname }))
 
 export const getActiveSubMenuItem = ({ pathname, menuItem }: { pathname: string; menuItem?: ConfigMenuItemsType }) => {
-  const activeSubMenuItems = menuItem?.items.filter((subMenuItem) => pathname.startsWith(subMenuItem.href)) ?? []
+  const activeSubMenuItems =
+    menuItem?.items?.filter((subMenuItem) => subMenuItem.href && pathname.startsWith(subMenuItem.href)) ?? []
 
   // Pathname doesn't include any submenu item href - return undefined
   if (!activeSubMenuItems || activeSubMenuItems.length === 0) {
@@ -18,7 +19,7 @@ export const getActiveSubMenuItem = ({ pathname, menuItem }: { pathname: string;
 
   // Pathname includes multiple sub menu item hrefs - find the most specific match
   const mostSpecificMatch = activeSubMenuItems.sort(
-    (subMenuItem1, subMenuItem2) => subMenuItem2.href.length - subMenuItem1.href.length,
+    (subMenuItem1, subMenuItem2) => (subMenuItem2.href?.length ?? 0) - (subMenuItem1.href?.length ?? 0),
   )[0]
 
   return mostSpecificMatch

@@ -4,7 +4,7 @@ import { Profile } from 'state/types'
 export interface CompetitionProps extends UserRewardsProps {
   userTradingInformation?: UserTradingInformationProps
   currentPhase?: CompetitionPhaseProps
-  account?: string
+  account?: string | null
   profile?: Profile
   isCompetitionLive?: boolean
   hasCompetitionEnded?: boolean
@@ -35,7 +35,7 @@ export interface CountdownProps {
   index?: number
 }
 
-interface LeaderboardData {
+export interface LeaderboardData {
   total?: number
   volume?: number
   data?: LeaderboardDataItem[]

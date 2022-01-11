@@ -54,10 +54,11 @@ export const useBurnedBalance = (tokenAddress: string) => {
 export const useGetBnbBalance = () => {
   const { account } = useWeb3React()
   const { status, data, mutate } = useSWR([account, 'bnbBalance'], async () => {
+    if (account) return undefined
     return simpleRpcProvider.getBalance(account)
   })
 
-  return { balance: data, fetchStatus: status, refresh: mutate }
+  return { balance: data || ethers.constants.Zero, fetchStatus: status, refresh: mutate }
 }
 
 export const useGetCakeBalance = () => {

@@ -22,8 +22,8 @@ export interface SwapState {
   }
   // the typed recipient address or ENS name, or null if swap should go to sender
   readonly recipient: string | null
-  readonly pairDataById: Record<number, Record<string, PairDataNormalized>> | null
-  readonly derivedPairDataById: Record<number, Record<string, DerivedPairDataNormalized>> | null
+  readonly pairDataById: Record<string, Record<string, PairDataNormalized>>
+  readonly derivedPairDataById: Record<string, Record<string, DerivedPairDataNormalized>>
 }
 
 const initialState: SwapState = {

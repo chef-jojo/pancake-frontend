@@ -68,7 +68,7 @@ const ScoreCard: React.FC<YourScoreProps> = ({
   )
 
   const isClaimButtonDisabled = Boolean(isLoading || finishedAndPrizesClaimed || finishedAndNothingToClaim)
-  const { hasUserClaimed } = userTradingInformation
+  const { hasUserClaimed } = userTradingInformation || {}
 
   const getClaimButtonText = () => {
     if (userCanClaimPrizes) {

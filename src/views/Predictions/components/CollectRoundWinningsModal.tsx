@@ -117,7 +117,7 @@ const CollectRoundWinningsModal: React.FC<CollectRoundWinningsModalProps> = ({ o
         await onSuccess()
       }
 
-      onDismiss()
+      onDismiss?.()
       setIsPendingTx(false)
       toastSuccess(
         t('Winnings collected!'),

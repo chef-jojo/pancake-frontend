@@ -37,7 +37,7 @@ const ColoredIconButton = styled(IconButton)`
 const CurrencyInputHeader: React.FC<Props> = ({ title, subtitle, setIsChartDisplayed, isChartDisplayed }) => {
   const [expertMode] = useExpertModeManager()
   const toggleChartDisplayed = () => {
-    setIsChartDisplayed((currentIsChartDisplayed) => !currentIsChartDisplayed)
+    setIsChartDisplayed?.((currentIsChartDisplayed) => !currentIsChartDisplayed)
   }
   const [onPresentTransactionsModal] = useModal(<TransactionsModal />)
 

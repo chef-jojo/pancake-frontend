@@ -61,7 +61,7 @@ function TransactionSubmittedContent({
   hash,
   currencyToAdd,
 }: {
-  onDismiss: () => void
+  onDismiss?: () => void
   hash: string | undefined
   chainId: ChainId
   currencyToAdd?: Currency | undefined
@@ -85,7 +85,7 @@ function TransactionSubmittedContent({
               {t('View on BscScan')}
             </Link>
           )}
-          {currencyToAdd && library?.provider?.isMetaMask && (
+          {currencyToAdd && library?.provider?.isMetaMask && token && token.symbol && (
             <Button
               variant="tertiary"
               mt="12px"
@@ -166,7 +166,7 @@ const TransactionConfirmationModal: React.FC<InjectedModalProps & ConfirmationMo
     if (customOnDismiss) {
       customOnDismiss()
     }
-    onDismiss()
+    onDismiss?.()
   }, [customOnDismiss, onDismiss])
 
   if (!chainId) return null

@@ -23,6 +23,7 @@ const ProfileUserMenuItem: React.FC<ProfileUserMenuItemProps> = ({ isLoading, ha
   const { t } = useTranslation()
 
   const handleClick = () => {
+    if (!account) return
     history.push(`${nftsBaseUrl}/profile/${account.toLowerCase()}/achievements`)
   }
 

@@ -47,7 +47,7 @@ export interface Ifo {
   releaseBlockNumber: number
   articleUrl: string
   campaignId: string
-  tokenOfferingPrice: number
+  tokenOfferingPrice: number | null
   description?: string
   twitterUrl?: string
   telegramUrl?: string
@@ -177,7 +177,7 @@ export interface FarmAuctionBidderConfig {
   quoteToken: Token
   tokenName: string
   projectSite?: string
-  lpAddress?: string
+  lpAddress: string | null
 }
 
 // Note: this status is slightly different compared to 'status' comfing

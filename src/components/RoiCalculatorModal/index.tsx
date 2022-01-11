@@ -141,7 +141,7 @@ const RoiCalculatorModal: React.FC<RoiCalculatorModalProps> = ({
     <StyledModal
       title={t('ROI Calculator')}
       onDismiss={onBack || onDismiss}
-      onBack={onBack ?? null}
+      onBack={onBack}
       headerBackground="gradients.cardHeader"
     >
       <ScrollableContainer>

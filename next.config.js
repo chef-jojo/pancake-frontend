@@ -3,6 +3,7 @@ const { withSentryConfig } = require('@sentry/nextjs')
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
+const withPWA = require('next-pwa')
 
 const sentryWebpackPluginOptions = {
   // Additional config options for the Sentry Webpack plugin. Keep in mind that
@@ -83,6 +84,11 @@ const config = {
       },
     ]
   },
+  pwa: {
+    dest: 'public',
+    disable: process.env.NODE_ENV === 'development',
+    maximumFileSizeToCacheInBytes: 3145728,
+  },
 }
 
-module.exports = withBundleAnalyzer(withSentryConfig(config, sentryWebpackPluginOptions))
+module.exports = withSentryConfig(withPWA(withBundleAnalyzer(config)), sentryWebpackPluginOptions)

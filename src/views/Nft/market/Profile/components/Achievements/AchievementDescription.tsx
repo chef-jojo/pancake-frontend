@@ -8,13 +8,17 @@ interface AchievementDescriptionProps extends TextProps {
   description?: AchievementDescriptionType
 }
 
-const Description = styled(Text).attrs({ as: 'p', fontSize: '14px' })`
+const Description = styled(Text).attrs({ as: 'p' })`
   display: none;
 
   ${({ theme }) => theme.mediaQueries.md} {
     display: block;
   }
 `
+
+Description.defaultProps = {
+  fontSize: '14px',
+}
 
 const AchievementDescription: React.FC<AchievementDescriptionProps> = ({ description, ...props }) => {
   const { t } = useTranslation()

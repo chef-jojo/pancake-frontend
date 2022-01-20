@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import BigNumber from 'bignumber.js'
-import { Text, useMatchBreakpoints, TokenPairImage as UITokenPairImage } from '@pancakeswap/uikit'
+import { Text, TokenPairImage as UITokenPairImage } from '@pancakeswap/uikit'
 import { useTranslation } from 'contexts/Localization'
 import { useVaultPoolByKey } from 'state/pools/hooks'
 import { DeserializedPool } from 'state/types'
@@ -26,7 +26,6 @@ const StyledCell = styled(BaseCell)`
 
 const NameCell: React.FC<NameCellProps> = ({ pool }) => {
   const { t } = useTranslation()
-  const { isMobile } = useMatchBreakpoints()
   const { sousId, stakingToken, earningToken, userData, isFinished, vaultKey } = pool
   const {
     userData: { userShares },
@@ -44,7 +43,6 @@ const NameCell: React.FC<NameCellProps> = ({ pool }) => {
 
   let title = `${t('Earn')} ${earningTokenSymbol}`
   let subtitle = `${t('Stake')} ${stakingTokenSymbol}`
-  const showSubtitle = sousId !== 0 || (sousId === 0 && !isMobile)
 
   if (vaultKey) {
     title = t(vaultPoolConfig[vaultKey].name)
@@ -67,14 +65,12 @@ const NameCell: React.FC<NameCellProps> = ({ pool }) => {
             {t('Staked')}
           </Text>
         )}
-        <Text bold={!isMobile} small={isMobile}>
+        <Text fontWeight={['normal', null, 'bold']} fontSize={['14px', null, '16px']}>
           {title}
         </Text>
-        {showSubtitle && (
-          <Text fontSize="12px" color="textSubtle">
-            {subtitle}
-          </Text>
-        )}
+        <Text fontSize="12px" color="textSubtle" display={sousId !== 0 ? 'block' : ['none', null, 'block']}>
+          {subtitle}
+        </Text>
       </CellContent>
     </StyledCell>
   )

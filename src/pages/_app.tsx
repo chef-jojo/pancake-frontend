@@ -76,9 +76,13 @@ function MyApp(props: AppProps) {
           <ResetCSS />
           <GlobalStyle />
           <GlobalCheckClaimStatus excludeLocations={[]} />
-          <PersistGate loading={null} persistor={persistor}>
+          {process.browser ? (
+            <PersistGate loading={null} persistor={persistor}>
+              <App {...props} />
+            </PersistGate>
+          ) : (
             <App {...props} />
-          </PersistGate>
+          )}
         </Blocklist>
       </Providers>
       <Script

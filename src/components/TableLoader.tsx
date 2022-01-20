@@ -1,14 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Flex, Skeleton, Td, useMatchBreakpoints } from '@pancakeswap/uikit'
+import { Flex, Skeleton, Td, Box } from '@pancakeswap/uikit'
 
 const GridItem = styled(Flex)`
   align-items: center;
 `
 
 const LoadingRow: React.FC = () => {
-  const { isXs, isSm } = useMatchBreakpoints()
-
   return (
     <tr>
       <Td>
@@ -21,20 +19,16 @@ const LoadingRow: React.FC = () => {
           <Skeleton height={[66, null, 24]} width={64} />
         </GridItem>
       </Td>
-      {isXs || isSm ? null : (
-        <>
-          <Td>
-            <GridItem justifyContent="flex-end">
-              <Skeleton height={42} width={64} />
-            </GridItem>
-          </Td>
-          <Td>
-            <GridItem justifyContent="flex-end">
-              <Skeleton height={48} width={124} />
-            </GridItem>
-          </Td>
-        </>
-      )}
+      <Box display={['none', 'none', 'table-cell']} as={Td}>
+        <GridItem justifyContent="flex-end">
+          <Skeleton height={42} width={64} />
+        </GridItem>
+      </Box>
+      <Box display={['none', 'none', 'table-cell']} as={Td}>
+        <GridItem justifyContent="flex-end">
+          <Skeleton height={48} width={124} />
+        </GridItem>
+      </Box>
       <Td>
         <GridItem justifyContent="center">
           <Skeleton height={[36, null, 24]} width={[80, null, 120]} />

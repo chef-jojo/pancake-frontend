@@ -1,0 +1,194 @@
+diff --git a/node_modules/@pancakeswap/uikit/dist/components/SubMenuItems/types.d.ts b/node_modules/@pancakeswap/uikit/dist/components/SubMenuItems/types.d.ts
+index 8415c81..639b68f 100644
+--- a/node_modules/@pancakeswap/uikit/dist/components/SubMenuItems/types.d.ts
++++ b/node_modules/@pancakeswap/uikit/dist/components/SubMenuItems/types.d.ts
+@@ -2,6 +2,7 @@ import { FlexProps } from "../Box";
+ export declare type SubMenuItemsType = {
+     label: string;
+     href: string;
++    itemProps?: any;
+     iconName?: string;
+     isMobileOnly?: boolean;
+ };
+diff --git a/node_modules/@pancakeswap/uikit/dist/components/Text/types.d.ts b/node_modules/@pancakeswap/uikit/dist/components/Text/types.d.ts
+index bbe3043..91e5a1d 100644
+--- a/node_modules/@pancakeswap/uikit/dist/components/Text/types.d.ts
++++ b/node_modules/@pancakeswap/uikit/dist/components/Text/types.d.ts
+@@ -1,7 +1,6 @@
+ import { LayoutProps, SpaceProps, TypographyProps } from "styled-system";
+ export interface TextProps extends SpaceProps, TypographyProps, LayoutProps {
+     color?: string;
+-    fontSize?: string;
+     bold?: boolean;
+     small?: boolean;
+     ellipsis?: boolean;
+diff --git a/node_modules/@pancakeswap/uikit/dist/index.cjs.js b/node_modules/@pancakeswap/uikit/dist/index.cjs.js
+index a015762..c4d0674 100644
+--- a/node_modules/@pancakeswap/uikit/dist/index.cjs.js
++++ b/node_modules/@pancakeswap/uikit/dist/index.cjs.js
+@@ -141,14 +141,13 @@ var getColor = function (_a) {
+     var color = _a.color, theme = _a.theme;
+     return getThemeValue("colors." + color, color)(theme);
+ };
+-var getFontSize = function (_a) {
+-    var fontSize = _a.fontSize, small = _a.small;
+-    return small ? "14px" : fontSize || "16px";
+-};
+-var Text = styled__default['default'].div(templateObject_1$19 || (templateObject_1$19 = __makeTemplateObject(["\n  color: ", ";\n  font-size: ", ";\n  font-weight: ", ";\n  line-height: 1.5;\n  ", "\n  ", "\n\n  ", "\n  ", "\n  ", "\n"], ["\n  color: ", ";\n  font-size: ", ";\n  font-weight: ", ";\n  line-height: 1.5;\n  ", "\n  ",
+-    "\n\n  ", "\n  ", "\n  ", "\n"])), getColor, getFontSize, function (_a) {
++var Text = styled__default['default'].div(templateObject_1$19 || (templateObject_1$19 = __makeTemplateObject(["\n  color: ", ";\n  font-weight: ", ";\n  line-height: 1.5;\n  font-size: ", ";\n  ", "\n  ", "\n\n  ", "\n  ", "\n  ", "\n"], ["\n  color: ", ";\n  font-weight: ", ";\n  line-height: 1.5;\n  font-size: ", ";\n  ", "\n  ",
++    "\n\n  ", "\n  ", "\n  ", "\n"])), getColor, function (_a) {
+     var bold = _a.bold;
+     return (bold ? 600 : 400);
++}, function (_a) {
++    var small = _a.small;
++    return (small ? "14px" : "16px");
+ }, function (_a) {
+     var textTransform = _a.textTransform;
+     return textTransform && "text-transform: " + textTransform + ";";
+@@ -1655,7 +1654,10 @@ ExpandableLabel.defaultProps = {
+ var Box = styled__default['default'].div(templateObject_1$15 || (templateObject_1$15 = __makeTemplateObject(["\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"], ["\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"])), styledSystem.background, styledSystem.border, styledSystem.layout, styledSystem.position, styledSystem.space);
+ var templateObject_1$15;
+ 
+-var Flex = styled__default['default'](Box)(templateObject_1$14 || (templateObject_1$14 = __makeTemplateObject(["\n  display: flex;\n  ", "\n"], ["\n  display: flex;\n  ", "\n"])), styledSystem.flexbox);
++var Flex = styled__default['default'](Box)(templateObject_1$14 || (templateObject_1$14 = __makeTemplateObject(["\n  ", "\n"], ["\n  ", "\n"])), styledSystem.flexbox);
++Flex.defaultProps = {
++    display: "flex",
++};
+ var templateObject_1$14;
+ 
+ var variants$5 = {
+@@ -3485,9 +3487,9 @@ var templateObject_1$o;
+ var SubMenuItems = function (_a) {
+     var _b = _a.items, items = _b === void 0 ? [] : _b, activeItem = _a.activeItem, _c = _a.isMobileOnly, isMobileOnly = _c === void 0 ? false : _c, props = __rest(_a, ["items", "activeItem", "isMobileOnly"]);
+     return (React__default['default'].createElement(StyledSubMenuItems, __assign({ justifyContent: [isMobileOnly ? "flex-end" : "start", null, "center"] }, props, { pl: ["12px", null, "0px"], "$isMobileOnly": isMobileOnly }), items.map(function (_a) {
+-        var label = _a.label, href = _a.href, iconName = _a.iconName;
++        var label = _a.label, href = _a.href, iconName = _a.iconName, itemProps = _a.itemProps;
+         return label && (React__default['default'].createElement(Box, { key: label, mr: "20px" },
+-            React__default['default'].createElement(MenuItem$1, { href: href, isActive: href === activeItem, variant: "subMenu" },
++            React__default['default'].createElement(MenuItem$1, __assign({ href: href, isActive: href === activeItem, variant: "subMenu" }, itemProps),
+                 iconName && (React__default['default'].createElement(IconComponent, { color: href === activeItem ? "secondary" : "textSubtle", iconName: iconName, mr: "4px" })),
+                 label)));
+     })));
+@@ -5151,16 +5153,7 @@ var FixedContainer = styled__default['default'].div(templateObject_3$1 || (templ
+     var height = _a.height;
+     return height + "px";
+ });
+-var TopBannerContainer = styled__default['default'].div(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n  height: ", ";\n  min-height: ", ";\n  max-height: ", ";\n  width: 100%;\n"], ["\n  height: ", ";\n  min-height: ", ";\n  max-height: ", ";\n  width: 100%;\n"])), function (_a) {
+-    var height = _a.height;
+-    return height + "px";
+-}, function (_a) {
+-    var height = _a.height;
+-    return height + "px";
+-}, function (_a) {
+-    var height = _a.height;
+-    return height + "px";
+-});
++var TopBannerContainer = styled__default['default'](Box)(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n  width: 100%;\n"], ["\n  width: 100%;\n"])));
+ var BodyWrapper = styled__default['default'](Box)(templateObject_5 || (templateObject_5 = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n"], ["\n  position: relative;\n  display: flex;\n"])));
+ var Inner = styled__default['default'].div(templateObject_6 || (templateObject_6 = __makeTemplateObject(["\n  flex-grow: 1;\n  transition: margin-top 0.2s, margin-left 0.2s cubic-bezier(0.4, 0, 0.2, 1);\n  transform: translate3d(0, 0, 0);\n  max-width: 100%;\n"], ["\n  flex-grow: 1;\n  transition: margin-top 0.2s, margin-left 0.2s cubic-bezier(0.4, 0, 0.2, 1);\n  transform: translate3d(0, 0, 0);\n  max-width: 100%;\n"])));
+ var Menu$1 = function (_a) {
+@@ -5206,14 +5199,14 @@ var Menu$1 = function (_a) {
+     return (React__default['default'].createElement(MenuContext.Provider, { value: { linkComponent: linkComponent } },
+         React__default['default'].createElement(Wrapper, null,
+             React__default['default'].createElement(FixedContainer, { showMenu: showMenu, height: totalTopMenuHeight },
+-                banner && React__default['default'].createElement(TopBannerContainer, { height: topBannerHeight }, banner),
++                banner && (React__default['default'].createElement(TopBannerContainer, { height: [TOP_BANNER_HEIGHT_MOBILE, null, TOP_BANNER_HEIGHT] }, banner)),
+                 React__default['default'].createElement(StyledNav, null,
+                     React__default['default'].createElement(Flex, null,
+                         React__default['default'].createElement(Logo$1, { isDark: isDark, href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/" }),
+-                        !isMobile && React__default['default'].createElement(MenuItems, { items: links, activeItem: activeItem, activeSubItem: activeSubItem, ml: "24px" })),
++                        React__default['default'].createElement(MenuItems, { items: links, activeItem: activeItem, activeSubItem: activeSubItem, ml: "24px", display: ["none", null, "flex"] })),
+                     React__default['default'].createElement(Flex, { alignItems: "center", height: "100%" },
+-                        !isMobile && (React__default['default'].createElement(Box, { mr: "12px" },
+-                            React__default['default'].createElement(CakePrice$1, { cakePriceUsd: cakePriceUsd }))),
++                        React__default['default'].createElement(Box, { mr: "12px", display: ["none", null, "block"] },
++                            React__default['default'].createElement(CakePrice$1, { cakePriceUsd: cakePriceUsd })),
+                         React__default['default'].createElement(Box, { mt: "4px" },
+                             React__default['default'].createElement(LangSelector$1, { currentLang: currentLang, langs: langs, setLang: setLang, buttonScale: "xs", color: "textSubtle", hideLanguage: true })),
+                         globalMenu,
+diff --git a/node_modules/@pancakeswap/uikit/dist/index.esm.js b/node_modules/@pancakeswap/uikit/dist/index.esm.js
+index 4d7ec69..7b56b45 100644
+--- a/node_modules/@pancakeswap/uikit/dist/index.esm.js
++++ b/node_modules/@pancakeswap/uikit/dist/index.esm.js
+@@ -107,14 +107,13 @@ var getColor = function (_a) {
+     var color = _a.color, theme = _a.theme;
+     return getThemeValue("colors." + color, color)(theme);
+ };
+-var getFontSize = function (_a) {
+-    var fontSize = _a.fontSize, small = _a.small;
+-    return small ? "14px" : fontSize || "16px";
+-};
+-var Text = styled.div(templateObject_1$19 || (templateObject_1$19 = __makeTemplateObject(["\n  color: ", ";\n  font-size: ", ";\n  font-weight: ", ";\n  line-height: 1.5;\n  ", "\n  ", "\n\n  ", "\n  ", "\n  ", "\n"], ["\n  color: ", ";\n  font-size: ", ";\n  font-weight: ", ";\n  line-height: 1.5;\n  ", "\n  ",
+-    "\n\n  ", "\n  ", "\n  ", "\n"])), getColor, getFontSize, function (_a) {
++var Text = styled.div(templateObject_1$19 || (templateObject_1$19 = __makeTemplateObject(["\n  color: ", ";\n  font-weight: ", ";\n  line-height: 1.5;\n  font-size: ", ";\n  ", "\n  ", "\n\n  ", "\n  ", "\n  ", "\n"], ["\n  color: ", ";\n  font-weight: ", ";\n  line-height: 1.5;\n  font-size: ", ";\n  ", "\n  ",
++    "\n\n  ", "\n  ", "\n  ", "\n"])), getColor, function (_a) {
+     var bold = _a.bold;
+     return (bold ? 600 : 400);
++}, function (_a) {
++    var small = _a.small;
++    return (small ? "14px" : "16px");
+ }, function (_a) {
+     var textTransform = _a.textTransform;
+     return textTransform && "text-transform: " + textTransform + ";";
+@@ -1621,7 +1620,10 @@ ExpandableLabel.defaultProps = {
+ var Box = styled.div(templateObject_1$15 || (templateObject_1$15 = __makeTemplateObject(["\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"], ["\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"])), background, border, layout, position, space);
+ var templateObject_1$15;
+ 
+-var Flex = styled(Box)(templateObject_1$14 || (templateObject_1$14 = __makeTemplateObject(["\n  display: flex;\n  ", "\n"], ["\n  display: flex;\n  ", "\n"])), flexbox);
++var Flex = styled(Box)(templateObject_1$14 || (templateObject_1$14 = __makeTemplateObject(["\n  ", "\n"], ["\n  ", "\n"])), flexbox);
++Flex.defaultProps = {
++    display: "flex",
++};
+ var templateObject_1$14;
+ 
+ var variants$5 = {
+@@ -3451,9 +3453,9 @@ var templateObject_1$o;
+ var SubMenuItems = function (_a) {
+     var _b = _a.items, items = _b === void 0 ? [] : _b, activeItem = _a.activeItem, _c = _a.isMobileOnly, isMobileOnly = _c === void 0 ? false : _c, props = __rest(_a, ["items", "activeItem", "isMobileOnly"]);
+     return (React__default.createElement(StyledSubMenuItems, __assign({ justifyContent: [isMobileOnly ? "flex-end" : "start", null, "center"] }, props, { pl: ["12px", null, "0px"], "$isMobileOnly": isMobileOnly }), items.map(function (_a) {
+-        var label = _a.label, href = _a.href, iconName = _a.iconName;
++        var label = _a.label, href = _a.href, iconName = _a.iconName, itemProps = _a.itemProps;
+         return label && (React__default.createElement(Box, { key: label, mr: "20px" },
+-            React__default.createElement(MenuItem$1, { href: href, isActive: href === activeItem, variant: "subMenu" },
++            React__default.createElement(MenuItem$1, __assign({ href: href, isActive: href === activeItem, variant: "subMenu" }, itemProps),
+                 iconName && (React__default.createElement(IconComponent, { color: href === activeItem ? "secondary" : "textSubtle", iconName: iconName, mr: "4px" })),
+                 label)));
+     })));
+@@ -5117,16 +5119,7 @@ var FixedContainer = styled.div(templateObject_3$1 || (templateObject_3$1 = __ma
+     var height = _a.height;
+     return height + "px";
+ });
+-var TopBannerContainer = styled.div(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n  height: ", ";\n  min-height: ", ";\n  max-height: ", ";\n  width: 100%;\n"], ["\n  height: ", ";\n  min-height: ", ";\n  max-height: ", ";\n  width: 100%;\n"])), function (_a) {
+-    var height = _a.height;
+-    return height + "px";
+-}, function (_a) {
+-    var height = _a.height;
+-    return height + "px";
+-}, function (_a) {
+-    var height = _a.height;
+-    return height + "px";
+-});
++var TopBannerContainer = styled(Box)(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n  width: 100%;\n"], ["\n  width: 100%;\n"])));
+ var BodyWrapper = styled(Box)(templateObject_5 || (templateObject_5 = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n"], ["\n  position: relative;\n  display: flex;\n"])));
+ var Inner = styled.div(templateObject_6 || (templateObject_6 = __makeTemplateObject(["\n  flex-grow: 1;\n  transition: margin-top 0.2s, margin-left 0.2s cubic-bezier(0.4, 0, 0.2, 1);\n  transform: translate3d(0, 0, 0);\n  max-width: 100%;\n"], ["\n  flex-grow: 1;\n  transition: margin-top 0.2s, margin-left 0.2s cubic-bezier(0.4, 0, 0.2, 1);\n  transform: translate3d(0, 0, 0);\n  max-width: 100%;\n"])));
+ var Menu$1 = function (_a) {
+@@ -5172,14 +5165,14 @@ var Menu$1 = function (_a) {
+     return (React__default.createElement(MenuContext.Provider, { value: { linkComponent: linkComponent } },
+         React__default.createElement(Wrapper, null,
+             React__default.createElement(FixedContainer, { showMenu: showMenu, height: totalTopMenuHeight },
+-                banner && React__default.createElement(TopBannerContainer, { height: topBannerHeight }, banner),
++                banner && (React__default.createElement(TopBannerContainer, { height: [TOP_BANNER_HEIGHT_MOBILE, null, TOP_BANNER_HEIGHT] }, banner)),
+                 React__default.createElement(StyledNav, null,
+                     React__default.createElement(Flex, null,
+                         React__default.createElement(Logo$1, { isDark: isDark, href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/" }),
+-                        !isMobile && React__default.createElement(MenuItems, { items: links, activeItem: activeItem, activeSubItem: activeSubItem, ml: "24px" })),
++                        React__default.createElement(MenuItems, { items: links, activeItem: activeItem, activeSubItem: activeSubItem, ml: "24px", display: ["none", null, "flex"] })),
+                     React__default.createElement(Flex, { alignItems: "center", height: "100%" },
+-                        !isMobile && (React__default.createElement(Box, { mr: "12px" },
+-                            React__default.createElement(CakePrice$1, { cakePriceUsd: cakePriceUsd }))),
++                        React__default.createElement(Box, { mr: "12px", display: ["none", null, "block"] },
++                            React__default.createElement(CakePrice$1, { cakePriceUsd: cakePriceUsd })),
+                         React__default.createElement(Box, { mt: "4px" },
+                             React__default.createElement(LangSelector$1, { currentLang: currentLang, langs: langs, setLang: setLang, buttonScale: "xs", color: "textSubtle", hideLanguage: true })),
+                         globalMenu,

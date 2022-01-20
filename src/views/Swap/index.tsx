@@ -357,20 +357,8 @@ export default function Swap() {
   return (
     <Page removePadding={isChartExpanded} hideFooterOnDesktop={isChartExpanded}>
       <Flex width="100%" justifyContent="center" position="relative">
-        {!isMobile && (
-          <PriceChartContainer
-            inputCurrencyId={inputCurrencyId}
-            inputCurrency={currencies[Field.INPUT]}
-            outputCurrencyId={outputCurrencyId}
-            outputCurrency={currencies[Field.OUTPUT]}
-            isChartExpanded={isChartExpanded}
-            setIsChartExpanded={setIsChartExpanded}
-            isChartDisplayed={isChartDisplayed}
-            currentSwapPrice={singleTokenPrice}
-          />
-        )}
-        <BottomDrawer
-          content={
+        <Box>
+          <Box display={['none', 'none', 'block']}>
             <PriceChartContainer
               inputCurrencyId={inputCurrencyId}
               inputCurrency={currencies[Field.INPUT]}
@@ -380,12 +368,28 @@ export default function Swap() {
               setIsChartExpanded={setIsChartExpanded}
               isChartDisplayed={isChartDisplayed}
               currentSwapPrice={singleTokenPrice}
-              isMobile
             />
-          }
-          isOpen={isChartDisplayed}
-          setIsOpen={setIsChartDisplayed}
-        />
+          </Box>
+          <Box display={['block', 'block', 'none']}>
+            <BottomDrawer
+              content={
+                <PriceChartContainer
+                  inputCurrencyId={inputCurrencyId}
+                  inputCurrency={currencies[Field.INPUT]}
+                  outputCurrencyId={outputCurrencyId}
+                  outputCurrency={currencies[Field.OUTPUT]}
+                  isChartExpanded={isChartExpanded}
+                  setIsChartExpanded={setIsChartExpanded}
+                  isChartDisplayed={isChartDisplayed}
+                  currentSwapPrice={singleTokenPrice}
+                  isMobile
+                />
+              }
+              isOpen={isChartDisplayed}
+              setIsOpen={setIsChartDisplayed}
+            />
+          </Box>
+        </Box>
         <Flex flexDirection="column">
           <StyledSwapContainer $isChartExpanded={isChartExpanded}>
             <StyledInputCurrencyWrapper mt={isChartExpanded ? '24px' : '0'}>

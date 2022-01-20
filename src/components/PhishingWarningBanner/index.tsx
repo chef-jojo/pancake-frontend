@@ -43,7 +43,6 @@ const SpeechBubble = styled.div`
 const PhishingWarningBanner: React.FC = () => {
   const { t } = useTranslation()
   const [, hideBanner] = usePhishingBannerManager()
-  const { isMobile, isMd } = useMatchBreakpoints()
   const warningText = t("please make sure you're visiting https://pancakeswap.finance - check the URL carefully.")
   const warningTextAsParts = warningText.split(/(https:\/\/pancakeswap.finance)/g)
   const warningTextComponent = (
@@ -66,30 +65,27 @@ const PhishingWarningBanner: React.FC = () => {
     </>
   )
   return (
-    <Container>
-      {isMobile || isMd ? (
-        <>
-          <Box>{warningTextComponent}</Box>
-          <IconButton onClick={hideBanner} variant="text">
-            <CloseIcon color="#FFFFFF" />
-          </IconButton>
-        </>
-      ) : (
-        <>
-          <InnerContainer>
-            <picture>
-              <source type="image/webp" srcSet="/images/decorations/phishing-warning-bunny.webp" />
-              <source type="image/png" srcSet="/images/decorations/phishing-warning-bunny.png" />
-              <img src="/images/decorations/phishing-warning-bunny.png" alt="phishing-warning" width="92px" />
-            </picture>
-            <SpeechBubble>{warningTextComponent}</SpeechBubble>
-          </InnerContainer>
-          <IconButton onClick={hideBanner} variant="text">
-            <CloseIcon color="#FFFFFF" />
-          </IconButton>
-        </>
-      )}
-    </Container>
+    <>
+      <Container display={['flex', 'flex', 'flex', 'none']}>
+        <Box>{warningTextComponent}</Box>
+        <IconButton onClick={hideBanner} variant="text">
+          <CloseIcon color="#FFFFFF" />
+        </IconButton>
+      </Container>
+      <Container display={['none', 'none', 'none', 'flex']}>
+        <InnerContainer>
+          <picture>
+            <source type="image/webp" srcSet="/images/decorations/phishing-warning-bunny.webp" />
+            <source type="image/png" srcSet="/images/decorations/phishing-warning-bunny.png" />
+            <img src="/images/decorations/phishing-warning-bunny.png" alt="phishing-warning" width="92px" />
+          </picture>
+          <SpeechBubble>{warningTextComponent}</SpeechBubble>
+        </InnerContainer>
+        <IconButton onClick={hideBanner} variant="text">
+          <CloseIcon color="#FFFFFF" />
+        </IconButton>
+      </Container>
+    </>
   )
 }
 

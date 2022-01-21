@@ -41,9 +41,10 @@ function GlobalHooks() {
   return null
 }
 
-function MyApp(props: AppProps) {
+function MyApp(props: AppPropsWithLayout) {
   const { pageProps } = props
   const store = useStore(pageProps.initialReduxState)
+  const shouldWaitForPersist = props.Component.ssr === false
 
   return (
     <>
@@ -76,7 +77,7 @@ function MyApp(props: AppProps) {
           <ResetCSS />
           <GlobalStyle />
           <GlobalCheckClaimStatus excludeLocations={[]} />
-          {process.browser ? (
+          {process.browser || shouldWaitForPersist ? (
             <PersistGate loading={null} persistor={persistor}>
               <App {...props} />
             </PersistGate>
@@ -104,6 +105,7 @@ function MyApp(props: AppProps) {
 
 type NextPageWithLayout = NextPage & {
   Layout?: React.FC
+  ssr?: boolean
 }
 
 type AppPropsWithLayout = AppProps & {

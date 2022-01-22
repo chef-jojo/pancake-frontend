@@ -22,7 +22,7 @@ import { Blocklist, Updaters } from '..'
 import ErrorBoundary from '../components/ErrorBoundary'
 import Menu from '../components/Menu'
 import Providers from '../Providers'
-import GlobalStyle from '../style/Global'
+import GlobalStyle, { NextThemeHead } from '../style/Global'
 
 // This config is required for number formatting
 BigNumber.config({
@@ -69,6 +69,7 @@ function MyApp(props: AppPropsWithLayout) {
           content="🥞 PancakeSwap - A next evolution DeFi exchange on Binance Smart Chain (BSC)"
         />
         <title>PancakeSwap</title>
+        <NextThemeHead />
       </Head>
       <Providers store={store}>
         <Blocklist>
@@ -82,7 +83,13 @@ function MyApp(props: AppPropsWithLayout) {
               <App {...props} />
             </PersistGate>
           ) : (
-            <App {...props} />
+            <PersistGate loading={null} persistor={persistor}>
+              {(bootstrapped) => (
+                <div style={{ visibility: bootstrapped ? 'visible' : 'hidden' }}>
+                  <App {...props} />
+                </div>
+              )}
+            </PersistGate>
           )}
         </Blocklist>
       </Providers>

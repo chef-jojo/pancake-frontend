@@ -143,8 +143,12 @@ export function useThemeManager(): [boolean, () => void] {
   const isDark = useSelector<AppState, AppState['user']['isDark']>((state) => state.user.isDark)
 
   const toggleTheme = useCallback(() => {
+    const d = document.documentElement
+    if (d) {
+      d.setAttribute('data-theme', isDark ? 'light' : 'dark')
+    }
     dispatch(toggleThemeAction())
-  }, [dispatch])
+  }, [dispatch, isDark])
 
   return [isDark, toggleTheme]
 }

@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
-import React from 'react'
+import React, { memo } from 'react'
 import { KEY_PREFIX } from 'redux-persist'
 import { PancakeTheme, darkColors, lightColors } from '@pancakeswap/uikit'
 
@@ -31,7 +31,7 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-export const NextThemeHead = () => (
+export const NextThemeHead = memo(() => (
   <script
     key="theme-script"
     // minify by terser
@@ -40,6 +40,6 @@ export const NextThemeHead = () => (
       __html: `t=document.documentElement;try{var e=localStorage.getItem("${KEY_PREFIX}primary"),a=JSON.parse(e).user;JSON.parse(a).isDark&&t.setAttribute("data-theme","dark")}catch(t){}`,
     }}
   />
-)
+))
 
 export default GlobalStyle

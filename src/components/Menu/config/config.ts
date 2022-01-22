@@ -1,16 +1,4 @@
-import {
-  MenuItemsType,
-  DropdownMenuItemType,
-  SwapIcon,
-  SwapFillIcon,
-  EarnIcon,
-  EarnFilledIcon,
-  TrophyIcon,
-  TrophyFillIcon,
-  MoreIcon,
-  NftIcon,
-  NftFilledIcon,
-} from '@pancakeswap/uikit'
+import { MenuItemsType, DropdownMenuItemType } from '@pancakeswap/uikit'
 import { ContextApi } from 'contexts/Localization/types'
 import { nftsBaseUrl } from 'views/Nft/market/constants'
 
@@ -19,8 +7,7 @@ export type ConfigMenuItemsType = MenuItemsType & { hideSubNav?: boolean }
 const config: (t: ContextApi['t']) => ConfigMenuItemsType[] = (t) => [
   {
     label: t('Trade'),
-    icon: SwapIcon,
-    fillIcon: SwapFillIcon,
+    icon: 'Swap',
     href: '/swap',
     showItemsOnMobile: false,
     items: [
@@ -37,8 +24,7 @@ const config: (t: ContextApi['t']) => ConfigMenuItemsType[] = (t) => [
   {
     label: t('Earn'),
     href: '/farms',
-    icon: EarnIcon,
-    fillIcon: EarnFilledIcon,
+    icon: 'Earn',
     items: [
       {
         label: t('Farms'),
@@ -53,8 +39,7 @@ const config: (t: ContextApi['t']) => ConfigMenuItemsType[] = (t) => [
   {
     label: t('Win'),
     href: '/prediction',
-    icon: TrophyIcon,
-    fillIcon: TrophyFillIcon,
+    icon: 'Trophy',
     items: [
       {
         label: t('Trading Competition'),
@@ -73,8 +58,7 @@ const config: (t: ContextApi['t']) => ConfigMenuItemsType[] = (t) => [
   {
     label: t('NFT'),
     href: `${nftsBaseUrl}`,
-    icon: NftIcon,
-    fillIcon: NftFilledIcon,
+    icon: 'Nft',
     items: [
       {
         label: t('Overview'),
@@ -93,7 +77,7 @@ const config: (t: ContextApi['t']) => ConfigMenuItemsType[] = (t) => [
   {
     label: '',
     href: '/info',
-    icon: MoreIcon,
+    icon: 'More',
     hideSubNav: true,
     items: [
       {

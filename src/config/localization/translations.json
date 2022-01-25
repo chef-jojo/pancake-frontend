@@ -1828,5 +1828,10 @@
   "Please proceed to ITAM bridge to conduct a one-way swap of your ITAM tokens.": "Please proceed to ITAM bridge to conduct a one-way swap of your ITAM tokens.",
   "All transfers of the old ITAM token will be disabled after the swap.": "All transfers of the old ITAM token will be disabled after the swap.",
   "Crypto Cars (CCAR) has been migrated to": "Crypto Cars (CCAR) has been migrated to",
-  "the announcement.": "the announcement."
+  "the announcement.": "the announcement.",
+  "This pool requires active Pancake Profile and %amount% profile points.": "This pool requires active Pancake Profile and %amount% profile points.",
+  "This pool requires %amount% profile points.": "This pool requires %amount% profile points.",
+  "Requirement": "Requirement",
+  "Create Profile": "Create Profile",
+  "Go to Profile": "Go to Profile"
 }

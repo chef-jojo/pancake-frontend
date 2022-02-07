@@ -269,6 +269,8 @@ export default function RemoveLiquidity() {
         routerContract.estimateGas[methodName](...args)
           .then(calculateGasMargin)
           .catch((err) => {
+            // eslint-disable-next-line no-alert
+            alert(`Error estimating gas for ${methodName}: ${err.message}`)
             console.error(`estimateGas failed`, methodName, args, err)
             return undefined
           }),
@@ -281,6 +283,8 @@ export default function RemoveLiquidity() {
 
     // all estimations failed...
     if (indexOfSuccessfulEstimation === -1) {
+      // eslint-disable-next-line no-alert
+      alert(`Failed to estimate gas. Please try again., ${JSON.stringify(safeGasEstimates)}`)
       console.error('This transaction would fail. Please contact support.')
     } else {
       const methodName = methodNames[indexOfSuccessfulEstimation]

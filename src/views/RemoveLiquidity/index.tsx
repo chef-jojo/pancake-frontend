@@ -174,7 +174,7 @@ export default function RemoveLiquidity() {
   const onCurrencyAInput = useCallback((value: string): void => onUserInput(Field.CURRENCY_A, value), [onUserInput])
   const onCurrencyBInput = useCallback((value: string): void => onUserInput(Field.CURRENCY_B, value), [onUserInput])
 
-  const routerContractRead = useRouterContract(false)
+  const routerContractRead = useRouterContract()
   const routerContractWrite = useRouterContract()
 
   // tx sending
@@ -269,7 +269,10 @@ export default function RemoveLiquidity() {
       throw new Error('Attempting to confirm without approval or a signature. Please contact support.')
     }
 
-    console.log(args, 'args')
+    console.log(routerContractRead.signer.provider)
+    // @ts-ignore
+    alert(`${JSON.stringify(routerContractRead.signer.provider.connection, null, 2)}`)
+    alert(`${JSON.stringify(routerContractRead.signer.provider, null, 2)}`)
 
     const safeGasEstimates: (BigNumber | undefined)[] = await Promise.all(
       methodNames.map((methodName) =>
@@ -277,7 +280,7 @@ export default function RemoveLiquidity() {
           .then(calculateGasMargin)
           .catch((err) => {
             // eslint-disable-next-line no-alert
-            alert(`Error estimating gas for ${methodName}: ${JSON.stringify(args, null, 2)}`)
+            alert(`Error estimating gas for ${methodName}: ${JSON.stringify(routerContractRead.signer, null, 2)}`)
             console.error(`estimateGas failed`, methodName, args, err)
             return undefined
           }),

@@ -174,13 +174,12 @@ export default function RemoveLiquidity() {
   const onCurrencyAInput = useCallback((value: string): void => onUserInput(Field.CURRENCY_A, value), [onUserInput])
   const onCurrencyBInput = useCallback((value: string): void => onUserInput(Field.CURRENCY_B, value), [onUserInput])
 
-  const routerContractRead = useRouterContract()
-  const routerContractWrite = useRouterContract()
+  const routerContract = useRouterContract()
 
   // tx sending
   const addTransaction = useTransactionAdder()
   async function onRemove() {
-    if (!chainId || !library || !account || !deadline) throw new Error('missing dependencies')
+    if (!chainId || !library || !account || !deadline || !routerContract) throw new Error('missing dependencies')
     const { [Field.CURRENCY_A]: currencyAmountA, [Field.CURRENCY_B]: currencyAmountB } = parsedAmounts
     if (!currencyAmountA || !currencyAmountB) {
       throw new Error('missing currency amounts')
@@ -269,18 +268,14 @@ export default function RemoveLiquidity() {
       throw new Error('Attempting to confirm without approval or a signature. Please contact support.')
     }
 
-    console.log(routerContractRead.signer.provider)
-    // @ts-ignore
-    alert(`${JSON.stringify(routerContractRead.signer.provider.connection, null, 2)}`)
-    alert(`${JSON.stringify(routerContractRead.signer.provider, null, 2)}`)
+    alert(`${JSON.stringify(args)}`)
+    console.log(args)
 
     const safeGasEstimates: (BigNumber | undefined)[] = await Promise.all(
       methodNames.map((methodName) =>
-        routerContractRead.estimateGas[methodName](...args)
-          .then(calculateGasMargin)
+        routerContract.estimateGas[methodName](...args)
+          .then((estimateGas) => calculateGasMargin(estimateGas))
           .catch((err) => {
-            // eslint-disable-next-line no-alert
-            alert(`Error estimating gas for ${methodName}: ${JSON.stringify(routerContractRead.signer, null, 2)}`)
             console.error(`estimateGas failed`, methodName, args, err)
             return undefined
           }),
@@ -293,15 +288,13 @@ export default function RemoveLiquidity() {
 
     // all estimations failed...
     if (indexOfSuccessfulEstimation === -1) {
-      // eslint-disable-next-line no-alert
-      alert(`Failed to estimate gas. Please try again., ${JSON.stringify(safeGasEstimates)}`)
       console.error('This transaction would fail. Please contact support.')
     } else {
       const methodName = methodNames[indexOfSuccessfulEstimation]
       const safeGasEstimate = safeGasEstimates[indexOfSuccessfulEstimation]
 
       setAttemptingTxn(true)
-      await routerContractWrite[methodName](...args, {
+      await routerContract[methodName](...args, {
         gasLimit: safeGasEstimate,
         gasPrice,
       })

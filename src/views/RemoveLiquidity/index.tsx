@@ -143,7 +143,6 @@ export default function RemoveLiquidity() {
       .send('eth_signTypedData_v4', [account, data])
       .then(splitSignature)
       .then((signature) => {
-        console.log(signature, 'signature')
         setSignatureData({
           v: signature.v,
           r: signature.r,
@@ -153,7 +152,7 @@ export default function RemoveLiquidity() {
       })
       .catch((err) => {
         // eslint-disable-next-line no-alert
-        alert(JSON.stringify(err))
+        alert(JSON.stringify(err), err.code, err.message)
         // for all errors other than 4001 (EIP-1193 user rejected request), fall back to manual approve
         if (err?.code !== 4001) {
           approveCallback()
@@ -268,14 +267,12 @@ export default function RemoveLiquidity() {
       throw new Error('Attempting to confirm without approval or a signature. Please contact support.')
     }
 
-    alert(`${JSON.stringify(args)}`)
-    console.log(args)
-
     const safeGasEstimates: (BigNumber | undefined)[] = await Promise.all(
       methodNames.map((methodName) =>
         routerContract.estimateGas[methodName](...args)
           .then((estimateGas) => calculateGasMargin(estimateGas))
           .catch((err) => {
+            alert(err)
             console.error(`estimateGas failed`, methodName, args, err)
             return undefined
           }),

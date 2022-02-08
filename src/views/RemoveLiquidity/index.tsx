@@ -174,7 +174,8 @@ export default function RemoveLiquidity() {
   const onCurrencyAInput = useCallback((value: string): void => onUserInput(Field.CURRENCY_A, value), [onUserInput])
   const onCurrencyBInput = useCallback((value: string): void => onUserInput(Field.CURRENCY_B, value), [onUserInput])
 
-  const routerContract = useRouterContract()
+  const routerContractRead = useRouterContract()
+  const routerContractWrite = useRouterContract()
 
   // tx sending
   const addTransaction = useTransactionAdder()
@@ -272,7 +273,7 @@ export default function RemoveLiquidity() {
 
     const safeGasEstimates: (BigNumber | undefined)[] = await Promise.all(
       methodNames.map((methodName) =>
-        routerContract.estimateGas[methodName](...args)
+        routerContractRead.estimateGas[methodName](...args)
           .then(calculateGasMargin)
           .catch((err) => {
             // eslint-disable-next-line no-alert
@@ -297,7 +298,7 @@ export default function RemoveLiquidity() {
       const safeGasEstimate = safeGasEstimates[indexOfSuccessfulEstimation]
 
       setAttemptingTxn(true)
-      await routerContract[methodName](...args, {
+      await routerContractWrite[methodName](...args, {
         gasLimit: safeGasEstimate,
         gasPrice,
       })

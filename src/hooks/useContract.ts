@@ -317,6 +317,6 @@ export function useMulticallContract() {
   return useContract<Multicall>(getMulticallAddress(), multiCallAbi, false)
 }
 
-export function useRouterContract(): IPancakeRouter02 | null {
-  return useContract(ROUTER_ADDRESS, IPancakeRouter02ABI, true)
+export function useRouterContract(withSignerIfPossible?: boolean): IPancakeRouter02 | null {
+  return useContract(ROUTER_ADDRESS, IPancakeRouter02ABI, withSignerIfPossible)
 }

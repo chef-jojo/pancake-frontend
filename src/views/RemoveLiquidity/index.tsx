@@ -174,7 +174,7 @@ export default function RemoveLiquidity() {
   const onCurrencyAInput = useCallback((value: string): void => onUserInput(Field.CURRENCY_A, value), [onUserInput])
   const onCurrencyBInput = useCallback((value: string): void => onUserInput(Field.CURRENCY_B, value), [onUserInput])
 
-  const routerContractRead = useRouterContract()
+  const routerContractRead = useRouterContract(false)
   const routerContractWrite = useRouterContract()
 
   // tx sending

@@ -46,6 +46,9 @@ import {
   Multicall,
   Weth,
 } from 'config/abi/types'
+import { ROUTER_ADDRESS } from 'config/constants'
+import IPancakeRouter02ABI from 'config/abi/IPancakeRouter02.json'
+import { IPancakeRouter02 } from 'config/abi/types/IPancakeRouter02'
 
 // Imports below migrated from Exchange useContract.ts
 import { Contract } from '@ethersproject/contracts'
@@ -57,10 +60,9 @@ import { ERC20_BYTES32_ABI } from '../config/abi/erc20'
 import ERC20_ABI from '../config/abi/erc20.json'
 import WETH_ABI from '../config/abi/weth.json'
 import multiCallAbi from '../config/abi/Multicall.json'
-import { getContract, getProviderOrSigner } from '../utils'
+import { getContract, getProviderOrSigner, getRouterContract } from '../utils'
 
 import { IPancakePair } from '../config/abi/types/IPancakePair'
-
 /**
  * Helper hooks to get specific contracts (by ABI)
  */
@@ -313,4 +315,8 @@ export function usePairContract(pairAddress?: string, withSignerIfPossible?: boo
 
 export function useMulticallContract() {
   return useContract<Multicall>(getMulticallAddress(), multiCallAbi, false)
+}
+
+export function useRouterContract(): IPancakeRouter02 | null {
+  return useContract(ROUTER_ADDRESS, IPancakeRouter02ABI, true)
 }

@@ -21,12 +21,12 @@ import { CurrencyLogo, DoubleCurrencyLogo } from '../../components/Logo'
 import { ROUTER_ADDRESS } from '../../config/constants'
 import useActiveWeb3React from '../../hooks/useActiveWeb3React'
 import { useCurrency } from '../../hooks/Tokens'
-import { usePairContract } from '../../hooks/useContract'
+import { usePairContract, useRouterContract } from '../../hooks/useContract'
 import useTransactionDeadline from '../../hooks/useTransactionDeadline'
 
 import { useTransactionAdder } from '../../state/transactions/hooks'
 import StyledInternalLink from '../../components/Links'
-import { calculateGasMargin, calculateSlippageAmount, getRouterContract } from '../../utils'
+import { calculateGasMargin, calculateSlippageAmount } from '../../utils'
 import { currencyId } from '../../utils/currencyId'
 import useDebouncedChangeHandler from '../../hooks/useDebouncedChangeHandler'
 import { wrappedCurrency } from '../../utils/wrappedCurrency'
@@ -174,6 +174,8 @@ export default function RemoveLiquidity() {
   const onCurrencyAInput = useCallback((value: string): void => onUserInput(Field.CURRENCY_A, value), [onUserInput])
   const onCurrencyBInput = useCallback((value: string): void => onUserInput(Field.CURRENCY_B, value), [onUserInput])
 
+  const routerContract = useRouterContract()
+
   // tx sending
   const addTransaction = useTransactionAdder()
   async function onRemove() {
@@ -182,7 +184,6 @@ export default function RemoveLiquidity() {
     if (!currencyAmountA || !currencyAmountB) {
       throw new Error('missing currency amounts')
     }
-    const routerContract = getRouterContract(chainId, library, account)
 
     const amountsMin = {
       [Field.CURRENCY_A]: calculateSlippageAmount(currencyAmountA, allowedSlippage)[0],

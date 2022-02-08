@@ -152,7 +152,7 @@ export default function RemoveLiquidity() {
       })
       .catch((err) => {
         // eslint-disable-next-line no-alert
-        alert(JSON.stringify(err), err.code, err.message)
+        alert(`${err.code} ${err.message}`)
         // for all errors other than 4001 (EIP-1193 user rejected request), fall back to manual approve
         if (err?.code !== 4001) {
           approveCallback()

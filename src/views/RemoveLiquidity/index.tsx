@@ -143,6 +143,7 @@ export default function RemoveLiquidity() {
       .send('eth_signTypedData_v4', [account, data])
       .then(splitSignature)
       .then((signature) => {
+        console.log(signature, 'signature')
         setSignatureData({
           v: signature.v,
           r: signature.r,
@@ -266,13 +267,15 @@ export default function RemoveLiquidity() {
       throw new Error('Attempting to confirm without approval or a signature. Please contact support.')
     }
 
+    console.log(args, 'args')
+
     const safeGasEstimates: (BigNumber | undefined)[] = await Promise.all(
       methodNames.map((methodName) =>
         routerContract.estimateGas[methodName](...args)
           .then(calculateGasMargin)
           .catch((err) => {
             // eslint-disable-next-line no-alert
-            alert(`Error estimating gas for ${methodName}: ${err.message}`)
+            alert(`Error estimating gas for ${methodName}: ${JSON.stringify(args, null, 2)}`)
             console.error(`estimateGas failed`, methodName, args, err)
             return undefined
           }),

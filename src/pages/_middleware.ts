@@ -5,7 +5,7 @@ import { BLOCK_COUNTRIES_COOKIE_NAME } from 'config/constants/cookie-names'
 const BLOCK_COUNTRIES = ['BY', 'CU', 'CD', 'IR', 'IQ', 'KP', 'SD', 'SY', 'ZW', 'TW']
 
 // Sanctioned Regions: Crimea
-const BLOCK_REGRIONS = ['UA-43']
+const BLOCK_REGRIONS = ['UA-43', 'FI-18']
 
 export async function middleware(req: NextRequest) {
   const res = NextResponse.next()

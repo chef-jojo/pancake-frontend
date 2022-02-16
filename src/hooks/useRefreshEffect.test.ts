@@ -10,8 +10,20 @@ import { useFastRefreshEffect, useSlowRefreshEffect } from './useRefreshEffect'
 test('should refresh when deps changes', () => {
   const callback = jest.fn()
   let deps = [1, 2, () => 1]
-  const { rerender } = renderHook(() => {
+  const { rerender, result } = renderHook(() => {
+    const { mutate } = useSWR([FAST_INTERVAL, 'blockNumber'])
     useFastRefreshEffect(callback, deps)
+    return { mutate }
+  })
+
+  // no effect callback called yet
+  expect(callback).toHaveBeenCalledTimes(0)
+  rerender()
+  // no changes
+  expect(callback).toHaveBeenCalledTimes(0)
+
+  act(() => {
+    result.current.mutate(1)
   })
 
   expect(callback).toHaveBeenCalledTimes(1)
@@ -25,6 +37,11 @@ test('should refresh when deps changes', () => {
   rerender()
   // no changes
   expect(callback).toHaveBeenCalledTimes(2)
+
+  // reset
+  act(() => {
+    result.current.mutate(undefined)
+  })
 })
 
 test('should refresh when block changes', async () => {
@@ -36,16 +53,16 @@ test('should refresh when block changes', async () => {
   })
 
   expect(result.current.data).toBeUndefined()
-  expect(callback).toHaveBeenCalledTimes(1)
+  expect(callback).toHaveBeenCalledTimes(0)
 
   act(() => {
     result.current.mutate(1)
   })
 
-  expect(callback).toHaveBeenCalledTimes(2)
+  expect(callback).toHaveBeenCalledTimes(1)
   rerender()
   // no changes
-  expect(callback).toHaveBeenCalledTimes(2)
+  expect(callback).toHaveBeenCalledTimes(1)
 })
 
 test('should get latest block number when block changes', async () => {
@@ -59,7 +76,7 @@ test('should get latest block number when block changes', async () => {
   })
 
   expect(result.current.data).toBeUndefined()
-  expect(result.current.callbackResult).toBe(0)
+  expect(result.current.callbackResult).toBeUndefined()
 
   act(() => {
     result.current.mutate(1)

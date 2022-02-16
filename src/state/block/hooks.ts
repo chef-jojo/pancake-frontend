@@ -24,7 +24,7 @@ export const usePollBlockNumber = () => {
   )
 
   useSWR(
-    [FAST_INTERVAL, 'blockNumber'],
+    data ? [FAST_INTERVAL, 'blockNumber'] : null,
     async () => {
       return data
     },
@@ -34,7 +34,7 @@ export const usePollBlockNumber = () => {
   )
 
   useSWR(
-    [SLOW_INTERVAL, 'blockNumber'],
+    data ? [SLOW_INTERVAL, 'blockNumber'] : null,
     async () => {
       return data
     },

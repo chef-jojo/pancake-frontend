@@ -28,15 +28,16 @@ describe('Swap', () => {
   it('can swap BNB for BUSD', () => {
     cy.intercept('https://nodes.pancakeswap.com', (req) => {
       req.url = 'http://127.0.0.1:8545'
+    }).then(() => {
+      cy.get('#swap-currency-output .open-currency-select-button').click()
+      cy.get('.token-item-0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56').should('be.visible')
+      cy.get('.token-item-0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56').click({ force: true })
+      cy.get('#swap-currency-input').should('be.visible')
+      cy.get('#swap-currency-input .token-amount-input').type('0.001', { force: true, delay: 200 })
+      cy.get('#swap-currency-output .token-amount-input').should('not.equal', '')
+      cy.get('#swap-button').click()
+      cy.get('#confirm-swap-or-send').should('contain', 'Confirm Swap')
     })
-    cy.get('#swap-currency-output .open-currency-select-button').click()
-    cy.get('.token-item-0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56').should('be.visible')
-    cy.get('.token-item-0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56').click({ force: true })
-    cy.get('#swap-currency-input').should('be.visible')
-    cy.get('#swap-currency-input .token-amount-input').type('0.001', { force: true, delay: 200 })
-    cy.get('#swap-currency-output .token-amount-input').should('not.equal', '')
-    cy.get('#swap-button').click()
-    cy.get('#confirm-swap-or-send').should('contain', 'Confirm Swap')
   })
 
   it('add a recipient does not exist unless in expert mode', () => {

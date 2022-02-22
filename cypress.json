@@ -6,10 +6,7 @@
   "video": false,
   "defaultCommandTimeout": 10000,
   "chromeWebSecurity": false,
-  "pageLoadTimeout": 10000,
+  "pageLoadTimeout": 40000,
   "blockHosts": ["vitals.vercel-insights.com", "*sentry.io", "*googletagmanager.com"],
-  "ignoreTestFiles": ["info.test.ts"],
-  "retries": {
-    "runMode": 3
-  }
+  "ignoreTestFiles": ["info.test.ts"]
 }

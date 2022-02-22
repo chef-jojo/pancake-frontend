@@ -81,11 +81,14 @@ Cypress.Commands.overwrite('visit', (original, url, options) => {
         options.onBeforeLoad(win)
       }
       win.localStorage.clear()
-      const provider = new JsonRpcProvider('https://bsc-dataseed.binance.org/', 56)
+      const provider = new JsonRpcProvider('http://127.0.0.1:8545', 56)
       const signer = new Wallet(TEST_PRIVATE_KEY, provider)
       // eslint-disable-next-line no-param-reassign
       win.ethereum = new CustomizedBridge(signer, provider)
       win.localStorage.setItem('connectorIdv2', 'injected')
+
+      // eslint-disable-next-line no-param-reassign
+      win.sfHeader = Cypress.env('SF_HEADER')
     },
   })
 })
@@ -101,8 +104,3 @@ Cypress.Commands.add('getBySel', (selector, ...args) => {
 })
 
 Cypress.Commands.overwrite('log', (subject, message) => cy.task('log', message))
-
-/* eslint-disable */
-Cypress.on('window:before:load', (win) => {
-  win.sfHeader = Cypress.env('SF_HEADER')
-})

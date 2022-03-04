@@ -1,4 +1,4 @@
-import { Svg, SvgProps } from '@pancakeswap/uikit'
+import { Svg, SvgProps, stitches } from '@pancakeswap/uikit'
 
 export const SlideSvgLight: React.FC<SvgProps> = (props) => {
   return (
@@ -9,9 +9,9 @@ export const SlideSvgLight: React.FC<SvgProps> = (props) => {
       />
       <defs>
         <linearGradient id="paint0_linear_light" x1="830" y1="84" x2="830" y2="339" gradientUnits="userSpaceOnUse">
-          <stop stopColor="white" stopOpacity="0.48" />
-          <stop offset="0.566389" stopColor="white" stopOpacity="0.35" />
-          <stop offset="1" stopColor="white" />
+          <stop stopColor={stitches.theme.colors.background.computedValue} stopOpacity="0.48" />
+          <stop offset="0.566389" stopColor={stitches.theme.colors.background.computedValue} stopOpacity="0.35" />
+          <stop offset="1" stopColor={stitches.theme.colors.background.computedValue} />
         </linearGradient>
       </defs>
     </Svg>
@@ -27,9 +27,9 @@ export const SlideSvgDark: React.FC<SvgProps> = (props) => {
       />
       <defs>
         <linearGradient id="paint0_linear_dark" x1="830" y1="83.5" x2="830" y2="338.5" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#08060B" stopOpacity="0.2" />
-          <stop offset="0.545554" stopColor="#08060B" stopOpacity="0.5" />
-          <stop offset="1" stopColor="#08060B" />
+          <stop stopColor={stitches.theme.colors.background.computedValue} stopOpacity="0.2" />
+          <stop offset="0.545554" stopColor={stitches.theme.colors.background.computedValue} stopOpacity="0.5" />
+          <stop offset="1" stopColor={stitches.theme.colors.background.computedValue} />
         </linearGradient>
       </defs>
     </Svg>

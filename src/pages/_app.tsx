@@ -74,17 +74,8 @@ function MyApp(props: AppProps) {
           <ResetCSS />
           <GlobalStyle />
           <GlobalCheckClaimStatus excludeLocations={[]} />
-          {typeof window !== 'undefined' ? (
-            <PersistGate loading={null} persistor={persistor}>
-              <BlockCountry />
-              <App {...props} />
-            </PersistGate>
-          ) : (
-            <>
-              <BlockCountry />
-              <App {...props} />
-            </>
-          )}
+          <BlockCountry />
+          <App {...props} />
         </Blocklist>
       </Providers>
       <Script

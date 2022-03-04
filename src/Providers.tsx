@@ -17,16 +17,16 @@ const StyledThemeProvider = (props) => {
 
 const Providers: React.FC<{ store: Store }> = ({ children, store }) => {
   return (
-    <Web3ReactProvider getLibrary={getLibrary}>
-      <Provider store={store}>
-        <ToastsProvider>
-          <NextThemeProvider
-            attribute="class"
-            value={{
-              dark: darkThemeColors.className,
-              light: 'light',
-            }}
-          >
+    <NextThemeProvider
+      attribute="class"
+      value={{
+        dark: darkThemeColors.className,
+        light: 'light',
+      }}
+    >
+      <Web3ReactProvider getLibrary={getLibrary}>
+        <Provider store={store}>
+          <ToastsProvider>
             <StyledThemeProvider>
               <LanguageProvider>
                 <SWRConfig
@@ -38,10 +38,10 @@ const Providers: React.FC<{ store: Store }> = ({ children, store }) => {
                 </SWRConfig>
               </LanguageProvider>
             </StyledThemeProvider>
-          </NextThemeProvider>
-        </ToastsProvider>
-      </Provider>
-    </Web3ReactProvider>
+          </ToastsProvider>
+        </Provider>
+      </Web3ReactProvider>
+    </NextThemeProvider>
   )
 }
 

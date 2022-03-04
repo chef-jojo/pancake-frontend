@@ -49,7 +49,7 @@ const useEagerConnect = () => {
             if (isMobile && window.ethereum) {
               setTimeout(() => {
                 login(connectorId)
-              }, 500)
+              })
             }
           }
         })

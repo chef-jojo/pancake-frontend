@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { connectorLocalStorageKey, ConnectorNames } from '@pancakeswap/uikit'
 import useAuth from 'hooks/useAuth'
+import { isMobile } from 'react-device-detect'
 import { injected } from 'utils/web3React'
 
 const _binanceChainListener = async () =>
@@ -38,6 +39,8 @@ const useEagerConnect = () => {
       if (isConnectorInjected) {
         injected.isAuthorized().then((isAuthorized) => {
           if (isAuthorized) {
+            login(connectorId)
+          } else if (isMobile && window.ethereum) {
             login(connectorId)
           }
         })

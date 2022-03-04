@@ -11,14 +11,10 @@ const getColor = ({ color, theme }: ThemedProps) => {
   return getThemeValue(`colors.${color}`, color)(theme);
 };
 
-const getFontSize = ({ fontSize, small }: TextProps) => {
-  return small ? "14px" : fontSize || "16px";
-};
-
 const Text = styled.div<TextProps>`
   color: ${getColor};
-  font-size: ${getFontSize};
   font-weight: ${({ bold }) => (bold ? 600 : 400)};
+  ${({ small }) => small && `font-size: 14px;`}
   line-height: 1.5;
   ${({ textTransform }) => textTransform && `text-transform: ${textTransform};`}
   ${({ ellipsis }) =>

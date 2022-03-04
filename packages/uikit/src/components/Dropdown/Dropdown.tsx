@@ -24,7 +24,7 @@ const DropdownContent = styled.div<{ position: Position }>`
   transform: translate(-50%, 0);
   left: ${getLeft};
   bottom: ${getBottom};
-  background-color: ${({ theme }) => theme.nav.background};
+  background-color: ${({ theme }) => theme.colors.backgroundAlt};
   box-shadow: ${({ theme }) => theme.shadows.level1};
   padding: 16px;
   max-height: 400px;
@@ -49,6 +49,7 @@ const Dropdown: React.FC<DropdownProps> = ({ target, position = "bottom", childr
   );
 };
 Dropdown.defaultProps = {
+  // eslint-disable-next-line react/default-props-match-prop-types
   position: "bottom",
 };
 

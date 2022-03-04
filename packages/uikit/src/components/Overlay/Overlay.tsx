@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import React, { FC, useEffect } from "react";
+import { FC, useEffect } from "react";
 import { Box, BoxProps } from "../Box";
 
 const StyledOverlay = styled(Box)`
@@ -8,7 +8,8 @@ const StyledOverlay = styled(Box)`
   left: 0px;
   width: 100%;
   height: 100%;
-  background-color: ${({ theme }) => `${theme.colors.text}99`};
+  background-color: ${({ theme }) => theme.colors.text};
+  opacity: 0.6;
   z-index: 20;
 `;
 

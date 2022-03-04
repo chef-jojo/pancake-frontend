@@ -62,6 +62,7 @@ export type Colors = {
   text: string;
   textDisabled: string;
   textSubtle: string;
+  textInverted: string;
   disabled: string;
 
   // Additional colors

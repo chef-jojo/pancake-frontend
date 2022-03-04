@@ -1,10 +1,10 @@
-import { darkColors, lightColors } from "../../theme/colors";
+import { stitches } from "../../theme/colors";
 import { RadioTheme } from "./types";
 
 export const light: RadioTheme = {
-  handleBackground: lightColors.backgroundAlt,
+  handleBackground: stitches.theme.colors.backgroundAlt.computedValue,
 };
 
 export const dark: RadioTheme = {
-  handleBackground: darkColors.backgroundAlt,
+  handleBackground: stitches.theme.colors.backgroundAlt.computedValue,
 };

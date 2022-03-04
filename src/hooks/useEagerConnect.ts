@@ -48,8 +48,12 @@ const useEagerConnect = () => {
           console.log({ isMobile, e: window.ethereum })
           if (isAuthorized) {
             login(connectorId)
-          } else if (isMobile && window.ethereum) {
-            login(connectorId)
+          } else {
+            // eslint-disable-next-line no-lonely-if
+            if (isMobile && window.ethereum) {
+              console.log('whyyyyyyy', connectorId)
+              login(connectorId)
+            }
           }
         })
       } else {

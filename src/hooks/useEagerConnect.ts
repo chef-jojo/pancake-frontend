@@ -28,7 +28,6 @@ const useEagerConnect = () => {
     const connectorId = window.localStorage.getItem(connectorLocalStorageKey) as ConnectorNames
 
     if (connectorId) {
-      console.log(connectorId, 'connectorId')
       const isConnectorBinanceChain = connectorId === ConnectorNames.BSC
       const isBinanceChainDefined = Reflect.has(window, 'BinanceChain')
 
@@ -41,18 +40,16 @@ const useEagerConnect = () => {
       }
 
       const isConnectorInjected = connectorId === ConnectorNames.Injected
-      console.log(isConnectorInjected, 'isConnectorInjected')
       if (isConnectorInjected) {
         injected.isAuthorized().then((isAuthorized) => {
-          console.log(isAuthorized, 'isAuthorized')
-          console.log({ isMobile, e: window.ethereum })
           if (isAuthorized) {
             login(connectorId)
           } else {
             // eslint-disable-next-line no-lonely-if
             if (isMobile && window.ethereum) {
-              console.log('whyyyyyyy', connectorId)
-              login(connectorId)
+              setTimeout(() => {
+                login(connectorId)
+              }, 500)
             }
           }
         })

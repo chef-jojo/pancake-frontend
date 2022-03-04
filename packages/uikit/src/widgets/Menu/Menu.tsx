@@ -136,7 +136,7 @@ const Menu: React.FC<NavProps> = ({
           )}
           <StyledNav>
             <Flex>
-              <Logo isDark={isDark} href={homeLink?.href ?? "/"} />
+              <Logo href={homeLink?.href ?? "/"} />
               <MenuItems
                 items={links}
                 activeItem={activeItem}

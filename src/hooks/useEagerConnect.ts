@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useEffect } from 'react'
 import { connectorLocalStorageKey, ConnectorNames } from '@pancakeswap/uikit'
 import useAuth from 'hooks/useAuth'
@@ -22,9 +23,12 @@ const useEagerConnect = () => {
   const { login } = useAuth()
 
   useEffect(() => {
+    // @ts-ignore
+    const vConsole = new window.VConsole()
     const connectorId = window.localStorage.getItem(connectorLocalStorageKey) as ConnectorNames
 
     if (connectorId) {
+      console.log(connectorId, 'connectorId')
       const isConnectorBinanceChain = connectorId === ConnectorNames.BSC
       const isBinanceChainDefined = Reflect.has(window, 'BinanceChain')
 
@@ -35,9 +39,13 @@ const useEagerConnect = () => {
 
         return
       }
+
       const isConnectorInjected = connectorId === ConnectorNames.Injected
+      console.log(isConnectorInjected, 'isConnectorInjected')
       if (isConnectorInjected) {
         injected.isAuthorized().then((isAuthorized) => {
+          console.log(isAuthorized, 'isAuthorized')
+          console.log({ isMobile, e: window.ethereum })
           if (isAuthorized) {
             login(connectorId)
           } else if (isMobile && window.ethereum) {

@@ -80,6 +80,7 @@ function MyApp(props: AppProps) {
           </PersistGate>
         </Blocklist>
       </Providers>
+      <Script src="https://unpkg.com/vconsole@latest/dist/vconsole.min.js" strategy="lazyOnload" id="v" />
       <Script
         strategy="afterInteractive"
         id="google-tag"

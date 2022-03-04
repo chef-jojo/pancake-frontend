@@ -214,7 +214,7 @@ const SellModal: React.FC<SellModalProps> = ({
       stage={stage}
       onDismiss={onDismiss}
       onBack={showBackButton ? goBack : null}
-      headerBackground={theme.colors.gradients.cardHeader}
+      headerBackground={theme.colors.gradientsCardHeader}
     >
       {stage === SellingStage.SELL && (
         <SellStage

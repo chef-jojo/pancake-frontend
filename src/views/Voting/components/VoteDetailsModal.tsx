@@ -30,7 +30,7 @@ const VoteDetailsModal: React.FC<VoteDetailsModalProps> = ({ block, onDismiss })
   }
 
   return (
-    <Modal title={t('Voting Power')} onDismiss={handleDismiss} headerBackground={theme.colors.gradients.cardHeader}>
+    <Modal title={t('Voting Power')} onDismiss={handleDismiss} headerBackground={theme.colors.gradientsCardHeader}>
       <Box mb="24px" width="320px">
         {isLoading ? (
           <Flex height="450px" alignItems="center" justifyContent="center">

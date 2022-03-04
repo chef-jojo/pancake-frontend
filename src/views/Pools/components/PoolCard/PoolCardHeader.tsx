@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 const Wrapper = styled(CardHeader)<{ isFinished?: boolean; background?: string }>`
   background: ${({ isFinished, background, theme }) =>
-    isFinished ? theme.colors.backgroundDisabled : theme.colors.gradients[background]};
+    isFinished ? theme.colors.backgroundDisabled : theme.colors[background]};
   border-radius: ${({ theme }) => `${theme.radii.card} ${theme.radii.card} 0 0`};
 `
 
@@ -12,7 +12,7 @@ const PoolCardHeader: React.FC<{
   isFinished?: boolean
   isStaking?: boolean
 }> = ({ isFinished = false, isStaking = false, children }) => {
-  const background = isStaking ? 'bubblegum' : 'cardHeader'
+  const background = isStaking ? 'gradientsBubblegum' : 'gradientsCardHeader'
 
   return (
     <Wrapper isFinished={isFinished} background={background}>

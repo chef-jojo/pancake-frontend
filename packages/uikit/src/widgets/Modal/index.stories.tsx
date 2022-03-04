@@ -22,7 +22,7 @@ export const Default: React.FC = () => {
   const theme = useTheme();
   const [onPresent1] = useModal(<CustomModal title="Modal 1" />);
   const [onPresent2] = useModal(<CustomModal title="Modal 2" />);
-  const [onPresent3] = useModal(<CustomModal title="Modal 3" headerBackground={theme.colors.gradients.cardHeader} />);
+  const [onPresent3] = useModal(<CustomModal title="Modal 3" headerBackground={theme.colors.gradientsCardHeader} />);
   return (
     <div>
       <Button onClick={onPresent1}>Open modal 1</Button>

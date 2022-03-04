@@ -31,7 +31,7 @@ export const ConfirmLimitOrderModal: React.FC<ConfirmLimitOrderModalProps> = ({ 
     <StyledModal
       title={isLoading ? t('Back') : t('Confirm Limit Order')}
       onBack={isLoading ? () => setIsLoading(false) : undefined}
-      headerBackground={theme.colors.gradients.cardHeader}
+      headerBackground={theme.colors.gradientsCardHeader}
       onDismiss={onDismiss}
       style={{ width: isLoading ? '375px' : '436px' }}
     >

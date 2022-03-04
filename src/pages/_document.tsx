@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/iframe-has-title */
 import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document'
+import { stitches } from '@pancakeswap/uikit'
 import { ServerStyleSheet } from 'styled-components'
 import { nodes } from 'utils/getRpcUrl'
 
@@ -34,6 +35,11 @@ class MyDocument extends Document {
     return (
       <Html translate="no">
         <Head>
+          <style
+            id="stitches"
+            // eslint-disable-next-line react/no-danger
+            dangerouslySetInnerHTML={{ __html: stitches.getCssText() }}
+          />
           {nodes.map((node) => (
             <link key={node} rel="preconnect" href={node} />
           ))}

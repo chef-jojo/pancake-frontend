@@ -15,7 +15,7 @@ import styled from 'styled-components'
 import { useTranslation } from 'contexts/Localization'
 
 const GradientModalHeader = styled(ModalHeader)`
-  background: ${({ theme }) => theme.colors.gradients.bubblegum};
+  background: ${({ theme }) => theme.colors.gradientsBubblegum};
   padding-bottom: 24px;
   padding-top: 24px;
 `

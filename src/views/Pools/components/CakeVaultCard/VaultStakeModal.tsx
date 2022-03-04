@@ -230,7 +230,7 @@ const VaultStakeModal: React.FC<VaultStakeModalProps> = ({
     <Modal
       title={isRemovingStake ? t('Unstake') : t('Stake in Pool')}
       onDismiss={onDismiss}
-      headerBackground={theme.colors.gradients.cardHeader}
+      headerBackground={theme.colors.gradientsCardHeader}
     >
       {pool.vaultKey === VaultKey.IfoPool && <CreditEndNotice />}
       <Flex alignItems="center" justifyContent="space-between" mb="8px">

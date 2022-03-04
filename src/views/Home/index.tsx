@@ -97,7 +97,7 @@ const Home: React.FC = () => {
       </PageSection>
       <PageSection
         innerProps={{ style: HomeSectionContainerStyles }}
-        background={theme.colors.gradients.cardHeader}
+        background={theme.colors.gradientsCardHeader}
         index={2}
         hasCurvedDivider={false}
       >

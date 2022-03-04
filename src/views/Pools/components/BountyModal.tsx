@@ -87,7 +87,7 @@ const BountyModal: React.FC<BountyModalProps> = ({
   }
 
   return (
-    <Modal title={t('Claim Bounty')} onDismiss={onDismiss} headerBackground={theme.colors.gradients.cardHeader}>
+    <Modal title={t('Claim Bounty')} onDismiss={onDismiss} headerBackground={theme.colors.gradientsCardHeader}>
       {tooltipVisible && tooltip}
       <Message variant="warning" mb="16px">
         <MessageText>{t('Remember that you will pay the gas fee.')}</MessageText>

@@ -8,13 +8,13 @@ import { dark as darkNav } from "../widgets/Menu/theme";
 import { dark as darkModal } from "../widgets/Modal/theme";
 import { dark as darkTooltip } from "../components/Tooltip/theme";
 import base from "./base";
-import { darkColors } from "./colors";
+import { darkThemeColors } from "./colors";
 
 const darkTheme: DefaultTheme = {
   ...base,
   isDark: true,
   alert: darkAlert,
-  colors: darkColors,
+  colors: darkThemeColors.colors as any,
   card: darkCard,
   toggle: darkToggle,
   nav: darkNav,

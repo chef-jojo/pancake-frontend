@@ -1,4 +1,4 @@
-import { ModalProvider, light, dark } from '@pancakeswap/uikit'
+import { ModalProvider, light, dark, darkThemeColors } from '@pancakeswap/uikit'
 import { Web3ReactProvider } from '@web3-react/core'
 import { Provider } from 'react-redux'
 import { SWRConfig } from 'swr'
@@ -20,7 +20,13 @@ const Providers: React.FC<{ store: Store }> = ({ children, store }) => {
     <Web3ReactProvider getLibrary={getLibrary}>
       <Provider store={store}>
         <ToastsProvider>
-          <NextThemeProvider>
+          <NextThemeProvider
+            attribute="class"
+            value={{
+              dark: darkThemeColors.className,
+              light: 'light',
+            }}
+          >
             <StyledThemeProvider>
               <LanguageProvider>
                 <SWRConfig

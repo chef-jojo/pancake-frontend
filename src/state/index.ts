@@ -15,9 +15,9 @@ import {
 import storage from 'redux-persist/lib/storage'
 import burn from './burn/reducer'
 import farmsReducer from './farms'
-import { updateVersion } from './global/actions'
+// import { updateVersion } from './global/actions'
 import infoReducer from './info'
-import lists from './lists/reducer'
+// import lists from './lists/reducer'
 import lotteryReducer from './lottery'
 import mint from './mint/reducer'
 import multicall from './multicall/reducer'
@@ -28,7 +28,7 @@ import swap from './swap/reducer'
 import transactions from './transactions/reducer'
 import user from './user/reducer'
 
-const PERSISTED_KEYS: string[] = ['user', 'transactions', 'lists']
+const PERSISTED_KEYS: string[] = ['user', 'transactions']
 
 const migrations = {
   0: (state) => {
@@ -69,7 +69,7 @@ const persistedReducer = persistReducer(
     mint,
     burn,
     multicall,
-    lists,
+    // lists,
   }),
 )
 
@@ -111,7 +111,7 @@ export const initializeStore = (preloadedState = undefined) => {
   // Create the store once in the client
   if (!store) {
     store = _store
-    store.dispatch(updateVersion())
+    // store.dispatch(updateVersion())
   }
 
   return _store

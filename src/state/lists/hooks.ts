@@ -140,9 +140,7 @@ export function useActiveListUrls(includeDefaultLists = false): string[] | undef
   const defaultList = includeDefaultLists
     ? DEFAULT_LIST_OF_LISTS.filter((url) => !UNSUPPORTED_LIST_URLS.includes(url))
     : []
-  const stateList = useSelector<AppState, AppState['lists']['activeListUrls']>(
-    (state) => state.lists.activeListUrls,
-  )?.filter((url) => !UNSUPPORTED_LIST_URLS.includes(url))
+  const stateList = [].filter((url) => !UNSUPPORTED_LIST_URLS.includes(url))
   return [...new Set(defaultList.concat(stateList ?? []))]
 }
 

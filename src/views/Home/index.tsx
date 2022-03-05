@@ -52,13 +52,29 @@ const Home: React.FC = () => {
   return (
     <>
       <PageMeta />
+      <style jsx>{`
+        .home-hero-section-1 {
+          background: linear-gradient(139.73deg, #e6fdff 0%, #f3efff 100%);
+        }
+        .dark .home-hero-section-1 {
+          background: radial-gradient(103.12% 50% at 50% 50%, #21193a 0%, #191326 100%);
+        }
+        .home-hero-section-2 {
+          background: linear-gradient(180deg, #09070c 22%, #201335 100%);
+        }
+        .dark .home-hero-section-2 {
+          background: linear-gradient(180deg, #09070c 22%, #201335 100%);
+        }
+        .home-hero-section-3 {
+          background: linear-gradient(180deg, #6fb6f1 0%, #eaf2f6 100%);
+        }
+        .dark .home-hero-section-3 {
+          background: linear-gradient(180deg, #0b4576 0%, #091115 100%);
+        }
+      `}</style>
       <StyledHeroSection
+        className="home-hero-section-1"
         innerProps={{ style: { margin: '0', width: '100%' } }}
-        // background={
-        //   theme.isDark
-        //     ? 'radial-gradient(103.12% 50% at 50% 50%, #21193A 0%, #191326 100%)'
-        //     : 'linear-gradient(139.73deg, #E6FDFF 0%, #F3EFFF 100%)'
-        // }
         index={2}
         hasCurvedDivider={false}
       >
@@ -71,13 +87,8 @@ const Home: React.FC = () => {
         <Hero />
       </StyledHeroSection>
       <PageSection
-        style={{}}
+        className="home-hero-section-2"
         innerProps={{ style: { margin: '0', width: '100%' } }}
-        // background={
-        //   theme.isDark
-        //     ? 'linear-gradient(180deg, #09070C 22%, #201335 100%)'
-        //     : 'linear-gradient(180deg, #FFFFFF 22%, #D7CAEC 100%)'
-        // }
         index={2}
         hasCurvedDivider={false}
       >
@@ -112,11 +123,7 @@ const Home: React.FC = () => {
       </PageSection>
       <PageSection
         innerProps={{ style: HomeSectionContainerStyles }}
-        background={
-          theme.isDark
-            ? 'linear-gradient(180deg, #0B4576 0%, #091115 100%)'
-            : 'linear-gradient(180deg, #6FB6F1 0%, #EAF2F6 100%)'
-        }
+        className="home-hero-section-3"
         index={2}
         hasCurvedDivider={false}
       >

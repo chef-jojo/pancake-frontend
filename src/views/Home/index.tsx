@@ -52,7 +52,7 @@ const Home: React.FC = () => {
   return (
     <>
       <PageMeta />
-      <style jsx>{`
+      <style jsx global>{`
         .home-hero-section-1 {
           background: linear-gradient(139.73deg, #e6fdff 0%, #f3efff 100%);
         }

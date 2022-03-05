@@ -76,7 +76,7 @@ function MyApp(props: AppPropsWithLayout) {
           <ResetCSS />
           <GlobalStyle />
           <GlobalCheckClaimStatus excludeLocations={[]} />
-          {typeof window !== 'undefined' && shouldWaitForPersist ? (
+          {typeof window !== 'undefined' || shouldWaitForPersist ? (
             <PersistGate loading={null} persistor={persistor}>
               <BlockCountry />
               <App {...props} />

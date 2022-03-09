@@ -20,9 +20,9 @@ const ProfileCreation = () => {
   //   }
   // }, [account, hasProfile, router])
 
-  if (!isInitialized || isLoading) {
-    return <PageLoader />
-  }
+  // if (!isInitialized || isLoading) {
+  //   return <PageLoader />
+  // }
 
   return (
     <>

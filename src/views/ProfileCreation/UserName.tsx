@@ -223,26 +223,23 @@ const UserName: React.FC = () => {
               'Your name must be at least 3 and at most 15 standard letters and numbers long. You can’t change this once you click Confirm.',
             )}
           </Text>
-          {existingUserState === ExistingUserState.IDLE ? (
-            <Skeleton height="40px" width="240px" />
-          ) : (
-            <InputWrap>
-              <Input
-                onChange={handleChange}
-                isWarning={userName && !isValid}
-                isSuccess={userName && isValid}
-                minLength={USERNAME_MIN_LENGTH}
-                maxLength={USERNAME_MAX_LENGTH}
-                placeholder={t('Enter your name...')}
-                value={userName}
-              />
-              <Indicator>
-                {isLoading && <AutoRenewIcon spin />}
-                {!isLoading && isValid && userName && <CheckmarkIcon color="success" />}
-                {!isLoading && !isValid && userName && <WarningIcon color="failure" />}
-              </Indicator>
-            </InputWrap>
-          )}
+
+          <InputWrap>
+            <Input
+              onChange={handleChange}
+              isWarning={userName && !isValid}
+              isSuccess={userName && isValid}
+              minLength={USERNAME_MIN_LENGTH}
+              maxLength={USERNAME_MAX_LENGTH}
+              placeholder={t('Enter your name...')}
+              value={userName}
+            />
+            <Indicator>
+              {isLoading && <AutoRenewIcon spin />}
+              {!isLoading && isValid && userName && <CheckmarkIcon color="success" />}
+              {!isLoading && !isValid && userName && <WarningIcon color="failure" />}
+            </Indicator>
+          </InputWrap>
           <Text color="textSubtle" fontSize="14px" py="4px" mb="16px" style={{ minHeight: '30px' }}>
             {message}
           </Text>

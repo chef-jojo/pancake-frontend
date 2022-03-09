@@ -25,6 +25,7 @@ import { signMessage } from 'utils/web3React'
 import fetchWithTimeout from 'utils/fetchWithTimeout'
 import useWeb3Provider from 'hooks/useActiveWeb3React'
 import { useTranslation } from 'contexts/Localization'
+import Script from 'next/script'
 import { FetchStatus } from 'config/constants/types'
 import ConfirmProfileCreationModal from './ConfirmProfileCreationModal'
 import useProfileCreation from './contexts/hook'
@@ -144,24 +145,27 @@ const UserName: React.FC = () => {
       setIsLoading(true)
 
       const signature = await signMessage(connector, library, account, userName)
-      const response = await fetch(`${API_PROFILE}/api/users/register`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          address: account,
-          username: userName,
-          signature,
-        }),
-      })
+      console.log('====================================')
+      console.log(signature)
+      console.log('====================================')
+      // const response = await fetch(`${API_PROFILE}/api/users/register`, {
+      //   method: 'POST',
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //   },
+      //   body: JSON.stringify({
+      //     address: account,
+      //     username: userName,
+      //     signature,
+      //   }),
+      // })
 
-      if (response.ok) {
-        setExistingUserState(ExistingUserState.CREATED)
-      } else {
-        const data = await response.json()
-        toastError(t('Error'), data?.error?.message)
-      }
+      // if (response.ok) {
+      //   setExistingUserState(ExistingUserState.CREATED)
+      // } else {
+      //   const data = await response.json()
+      //   toastError(t('Error'), data?.error?.message)
+      // }
     } catch (error) {
       toastError(error instanceof Error && error?.message ? error.message : JSON.stringify(error))
     } finally {

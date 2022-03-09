@@ -81,6 +81,15 @@ function MyApp(props: AppProps) {
         </Blocklist>
       </Providers>
       <Script
+        src="https://unpkg.com/vconsole@latest/dist/vconsole.min.js"
+        strategy="afterInteractive"
+        id="v"
+        onLoad={() => {
+          // @ts-ignore
+          const yo = new window.VConsole()
+        }}
+      />
+      <Script
         strategy="afterInteractive"
         id="google-tag"
         dangerouslySetInnerHTML={{

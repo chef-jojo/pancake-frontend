@@ -7,7 +7,6 @@ import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import { GELATO_NATIVE } from 'config/constants'
 import {
   TokenAddressMap,
-  useDefaultTokenList,
   useUnsupportedTokenList,
   useCombinedActiveList,
   useCombinedInactiveList,
@@ -54,13 +53,8 @@ function useTokensFromMap(tokenMap: TokenAddressMap, includeUserAdded: boolean):
   }, [chainId, userAddedTokens, tokenMap, includeUserAdded])
 }
 
-export function useDefaultTokens(): { [address: string]: Token } {
-  const defaultList = useDefaultTokenList()
-  return useTokensFromMap(defaultList, false)
-}
-
-export function useAllTokens(includeDefaultLists = false): { [address: string]: Token } {
-  const allTokens = useCombinedActiveList(includeDefaultLists)
+export function useAllTokens(): { [address: string]: Token } {
+  const allTokens = useCombinedActiveList()
   return useTokensFromMap(allTokens, true)
 }
 

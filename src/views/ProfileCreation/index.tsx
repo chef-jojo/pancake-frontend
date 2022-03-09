@@ -14,11 +14,11 @@ const ProfileCreation = () => {
   const { isInitialized, isLoading, hasProfile } = useProfile()
   const router = useRouter()
 
-  useEffect(() => {
-    if (account && hasProfile) {
-      router.push(`${nftsBaseUrl}/profile/${account.toLowerCase()}`)
-    }
-  }, [account, hasProfile, router])
+  // useEffect(() => {
+  //   if (account && hasProfile) {
+  //     router.push(`${nftsBaseUrl}/profile/${account.toLowerCase()}`)
+  //   }
+  // }, [account, hasProfile, router])
 
   if (!isInitialized || isLoading) {
     return <PageLoader />

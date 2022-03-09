@@ -70,6 +70,9 @@ export const signMessage = async (
    */
   if (provider.provider?.wc) {
     const wcMessage = hexlify(toUtf8Bytes(message))
+    console.log('====================================')
+    console.log(wcMessage, 'wcMessage')
+    console.log('====================================')
     const signature = await provider.provider?.wc.signPersonalMessage([wcMessage, account])
     return signature
   }

@@ -30,6 +30,7 @@ const config = {
     scrollRestoration: true,
   },
   reactStrictMode: true,
+  swcMinify: true,
   images: {
     domains: ['static-nft.pancakeswap.com'],
   },

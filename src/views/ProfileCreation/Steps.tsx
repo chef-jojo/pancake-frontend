@@ -13,31 +13,31 @@ const Steps = () => {
   const { isInitialized, currentStep } = useContext(ProfileCreationContext)
   const { account } = useWeb3React()
 
-  if (!account) {
-    return <NoWalletConnected />
-  }
+  // if (!account) {
+  //   return <NoWalletConnected />
+  // }
 
-  if (!isInitialized) {
-    return <div>{t('Loading...')}</div>
-  }
+  // if (!isInitialized) {
+  //   return <div>{t('Loading...')}</div>
+  // }
 
-  if (currentStep === 0) {
-    return <Mint />
-  }
+  // if (currentStep === 0) {
+  //   return <Mint />
+  // }
 
-  if (currentStep === 1) {
-    return <ProfilePicture />
-  }
+  // if (currentStep === 1) {
+  //   return <ProfilePicture />
+  // }
 
-  if (currentStep === 2) {
-    return <TeamSelection />
-  }
+  // if (currentStep === 2) {
+  //   return <TeamSelection />
+  // }
 
-  if (currentStep === 3) {
-    return <UserName />
-  }
+  // if (currentStep === 3) {
+  return <UserName />
+  // }
 
-  return null
+  // return null
 }
 
 export default Steps

@@ -233,7 +233,6 @@ const UserName: React.FC = () => {
                 isSuccess={userName && isValid}
                 minLength={USERNAME_MIN_LENGTH}
                 maxLength={USERNAME_MAX_LENGTH}
-                disabled={isUserCreated}
                 placeholder={t('Enter your name...')}
                 value={userName}
               />

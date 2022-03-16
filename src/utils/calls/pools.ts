@@ -1,31 +1,51 @@
 /* eslint-disable import/prefer-default-export */
 import BigNumber from 'bignumber.js'
-import poolsDeployedBlockNumber from 'config/constants/poolsDeployedBlockNumber'
+import { request, gql } from 'graphql-request'
 import poolsConfig from 'config/constants/pools'
 import sousChefV2 from 'config/abi/sousChefV2.json'
+import { SerializedPoolConfig } from 'config/constants/types'
 import multicall from '../multicall'
 import { simpleRpcProvider } from '../providers'
 import { getAddress } from '../addressHelpers'
+
+const API = 'https://api.thegraph.com/subgraphs/name/chef-jojo/smartchef'
+
+const getSmartChefPoolDataSubgraph = async (pools: SerializedPoolConfig[], blockNumber?: number) => {
+  const data = await request(
+    API,
+    gql`
+      query SmartChefQuery($pools: [String!], $blockNumber: Int!) {
+        smartChefs(where: { id_in: $pools }, block: { number: $blockNumber }, first: 1000) {
+          id
+        }
+      }
+    `,
+    {
+      pools: pools.map((pool) => getAddress(pool.contractAddress)).map((p) => p.toLowerCase()),
+      blockNumber,
+    },
+  )
+
+  return data?.smartChefs
+}
 
 /**
  * Returns the total number of pools that were active at a given block
  */
 export const getActivePools = async (block?: number) => {
-  const eligiblePools = poolsConfig
+  const filterKnownFinishedPools = poolsConfig
     .filter((pool) => pool.sousId !== 0)
     .filter((pool) => pool.isFinished === false || pool.isFinished === undefined)
-    .filter((pool) => {
-      const { contractAddress, deployedBlockNumber } = pool
-      const address = getAddress(contractAddress)
-      return (deployedBlockNumber && deployedBlockNumber < block) || poolsDeployedBlockNumber[address] < block
-    })
+
   const blockNumber = block || (await simpleRpcProvider.getBlockNumber())
-  const startBlockCalls = eligiblePools.map(({ contractAddress }) => ({
-    address: getAddress(contractAddress),
+  const eligiblePools = await getSmartChefPoolDataSubgraph(filterKnownFinishedPools, blockNumber)
+
+  const startBlockCalls = eligiblePools.map(({ id }) => ({
+    address: id,
     name: 'startBlock',
   }))
-  const endBlockCalls = eligiblePools.map(({ contractAddress }) => ({
-    address: getAddress(contractAddress),
+  const endBlockCalls = eligiblePools.map(({ id }) => ({
+    address: id,
     name: 'bonusEndBlock',
   }))
   const startBlocks = await multicall(sousChefV2, startBlockCalls)

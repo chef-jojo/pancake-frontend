@@ -98,7 +98,8 @@ const NUMBER_OF_VOTERS_PER_SNAPSHOT_REQUEST = 250
 
 export const getAllVotes = async (proposalId: string, block?: number, votesPerChunk = 1000): Promise<Vote[]> => {
   const eligiblePools = await getActivePools(block)
-  const poolAddresses = eligiblePools.map(({ contractAddress }) => getAddress(contractAddress))
+  const poolAddresses = eligiblePools.map(({ id }) => id)
+
   return new Promise((resolve, reject) => {
     let votes: Vote[] = []
 

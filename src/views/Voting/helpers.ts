@@ -81,6 +81,9 @@ export const sendSnapshotData = async (message: Message) => {
 
 export const getVotingPower = async (account: string, poolAddresses: string[], blockNumber?: number) => {
   const votingPowerList = await getVotingPowerList([account], poolAddresses, blockNumber)
+  console.log('====================================')
+  console.log(votingPowerList, 'votingPowerList')
+  console.log('====================================')
   return votingPowerList[0]
 }
 

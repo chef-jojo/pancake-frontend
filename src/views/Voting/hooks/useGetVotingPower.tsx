@@ -21,7 +21,7 @@ const useGetVotingPower = (block?: number, isActive = true): State & { isLoading
   const { data, status, error } = useSWR(account && isActive ? [account, block, 'votingPower'] : null, async () => {
     const blockNumber = block || (await simpleRpcProvider.getBlockNumber())
     const eligiblePools = await getActivePools(blockNumber)
-    const poolAddresses = eligiblePools.map(({ contractAddress }) => getAddress(contractAddress))
+    const poolAddresses = eligiblePools.map(({ id }) => id)
     const { cakeBalance, cakeBnbLpBalance, cakePoolBalance, total, poolsBalance, cakeVaultBalance, IFOPoolBalance } =
       await getVotingPower(account, poolAddresses, blockNumber)
     return {

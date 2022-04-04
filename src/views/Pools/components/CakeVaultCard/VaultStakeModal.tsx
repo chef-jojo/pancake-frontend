@@ -36,8 +36,10 @@ import { ToastDescriptionWithTx } from 'components/Toast'
 import { vaultPoolConfig } from 'config/constants/pools'
 import { useCallWithGasPrice } from 'hooks/useCallWithGasPrice'
 import { VaultRoiCalculatorModal } from '../Vault/VaultRoiCalculatorModal'
-import { convertCakeToShares } from '../../helpers'
 import FeeSummary from './FeeSummary'
+
+// min deposit and withdraw amount
+const MIN_AMOUNT = new BigNumber(10000000000000)
 
 interface VaultStakeModalProps {
   pool: DeserializedPool
@@ -82,7 +84,6 @@ const VaultStakeModal: React.FC<VaultStakeModalProps> = ({
       userShares,
       balance: { cakeAsBigNumber },
     },
-    pricePerFullShare,
   } = useVaultPoolByKey(pool.vaultKey)
   const { t } = useTranslation()
   const { theme } = useTheme()
@@ -137,24 +138,15 @@ const VaultStakeModal: React.FC<VaultStakeModalProps> = ({
   }
 
   const handleWithdrawal = async (convertedStakeAmount: BigNumber) => {
-    // TODO: withdraw with amount
-    const shareStakeToWithdraw = convertCakeToShares(convertedStakeAmount, pricePerFullShare)
-    // trigger withdrawAll function if the withdrawal will leave 0.000001 CAKE or less
-    const triggerWithdrawAllThreshold = new BigNumber(1000000000000)
-    const sharesRemaining = userShares.minus(shareStakeToWithdraw.sharesAsBigNumber)
-    const isWithdrawingAll = sharesRemaining.lte(triggerWithdrawAllThreshold)
+    // trigger withdrawAll function if the withdrawal will leave 0.00001 CAKE or less
+    const isWithdrawingAll = stakingMax.minus(convertedStakeAmount).lte(MIN_AMOUNT)
 
     const receipt = await fetchWithCatchTxError(() => {
       // .toString() being called to fix a BigNumber error in prod
       // as suggested here https://github.com/ChainSafe/web3.js/issues/2077
       return isWithdrawingAll
         ? callWithGasPrice(vaultPoolContract, 'withdrawAll', undefined, callOptions)
-        : callWithGasPrice(
-            vaultPoolContract,
-            'withdraw',
-            [shareStakeToWithdraw.sharesAsBigNumber.decimalPlaces(0, 1).toString()],
-            callOptions,
-          )
+        : callWithGasPrice(vaultPoolContract, 'withdrawByAmount', [convertedStakeAmount.toString()], callOptions)
     })
 
     if (receipt?.status) {

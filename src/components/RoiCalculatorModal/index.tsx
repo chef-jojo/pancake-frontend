@@ -25,7 +25,7 @@ import useRoiCalculatorReducer, {
 } from './useRoiCalculatorReducer'
 import AnimatedArrow from './AnimatedArrow'
 
-interface RoiCalculatorModalProps {
+export interface RoiCalculatorModalProps {
   onDismiss?: () => void
   onBack?: () => void
   earningTokenPrice: number

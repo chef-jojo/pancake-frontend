@@ -1,5 +1,5 @@
 import { Box, ButtonMenu, ButtonMenuItem } from '@pancakeswap/uikit'
-import RoiCalculatorModal from 'components/RoiCalculatorModal'
+import RoiCalculatorModal, { RoiCalculatorModalProps } from 'components/RoiCalculatorModal'
 import { CalculatorMode } from 'components/RoiCalculatorModal/useRoiCalculatorReducer'
 import { useTranslation } from 'contexts/Localization'
 import { useVaultApy } from 'hooks/useVaultApy'
@@ -9,7 +9,11 @@ import { getRoi } from 'utils/compoundApyHelpers'
 import LockDurationField from '../Common/LockDurationField'
 import { weeksToSeconds } from '../utils/formatSecondsToWeeks'
 
-export const VaultRoiCalculatorModal = ({ pool, initialView }: { pool: DeserializedPool; initialView?: number }) => {
+export const VaultRoiCalculatorModal = ({
+  pool,
+  initialView,
+  ...rest
+}: { pool: DeserializedPool; initialView?: number } & Partial<RoiCalculatorModalProps>) => {
   const { flexibleApy } = useVaultApy()
   const { t } = useTranslation()
 
@@ -58,6 +62,7 @@ export const VaultRoiCalculatorModal = ({ pool, initialView }: { pool: Deseriali
           <ButtonMenuItem>{t('Locked')}</ButtonMenuItem>
         </ButtonMenu>
       }
+      {...rest}
     >
       {cakeVaultView && (
         <Box mt="16px">

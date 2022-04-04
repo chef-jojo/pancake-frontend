@@ -20,6 +20,7 @@ import { useAppDispatch } from 'state'
 import { BIG_TEN } from 'utils/bigNumber'
 import { usePriceCakeBusd } from 'state/farms/hooks'
 import { useVaultPoolByKey } from 'state/pools/hooks'
+import { useVaultApy } from 'hooks/useVaultApy'
 
 import { useVaultPoolContract } from 'hooks/useContract'
 import useTheme from 'hooks/useTheme'
@@ -31,10 +32,10 @@ import useCatchTxError from 'hooks/useCatchTxError'
 import { fetchCakeVaultUserData } from 'state/pools'
 import { DeserializedPool } from 'state/types'
 import { getInterestBreakdown } from 'utils/compoundApyHelpers'
-import RoiCalculatorModal from 'components/RoiCalculatorModal'
 import { ToastDescriptionWithTx } from 'components/Toast'
 import { vaultPoolConfig } from 'config/constants/pools'
 import { useCallWithGasPrice } from 'hooks/useCallWithGasPrice'
+import { VaultRoiCalculatorModal } from '../Vault/VaultRoiCalculatorModal'
 import { convertCakeToShares } from '../../helpers'
 import FeeSummary from './FeeSummary'
 
@@ -70,7 +71,7 @@ const VaultStakeModal: React.FC<VaultStakeModalProps> = ({
   onDismiss,
 }) => {
   const dispatch = useAppDispatch()
-  const { stakingToken, earningToken, apr, rawApr, stakingTokenPrice, earningTokenPrice, vaultKey } = pool
+  const { stakingToken, earningTokenPrice, vaultKey } = pool
   const { account } = useWeb3React()
   const { fetchWithCatchTxError, loading: pendingTx } = useCatchTxError()
   const vaultPoolContract = useVaultPoolContract()
@@ -94,16 +95,20 @@ const VaultStakeModal: React.FC<VaultStakeModalProps> = ({
   const usdValueStaked = new BigNumber(stakeAmount).times(cakePriceBusd)
   const formattedUsdValueStaked = cakePriceBusd.gt(0) && stakeAmount ? formatNumber(usdValueStaked.toNumber()) : ''
 
+  const { flexibleApy } = useVaultApy()
+
   const callOptions = {
     gasLimit: vaultPoolConfig[pool.vaultKey].gasLimit,
   }
 
   const interestBreakdown = getInterestBreakdown({
     principalInUSD: !usdValueStaked.isNaN() ? usdValueStaked.toNumber() : 0,
-    apr: vaultKey ? rawApr : apr,
+    apr: +flexibleApy,
     earningTokenPrice,
     performanceFee,
+    compoundFrequency: 0,
   })
+
   const annualRoi = interestBreakdown[3] * pool.earningTokenPrice
   const formattedAnnualRoi = formatNumber(annualRoi, annualRoi > 10000 ? 0 : 2, annualRoi > 10000 ? 0 : 2)
 
@@ -197,15 +202,11 @@ const VaultStakeModal: React.FC<VaultStakeModalProps> = ({
 
   if (showRoiCalculator) {
     return (
-      <RoiCalculatorModal
-        earningTokenPrice={earningTokenPrice}
-        stakingTokenPrice={stakingTokenPrice}
-        apr={vaultKey ? rawApr : apr}
+      <VaultRoiCalculatorModal
+        pool={pool}
         linkLabel={t('Get %symbol%', { symbol: stakingToken.symbol })}
         linkHref={getTokenLink}
         stakingTokenBalance={cakeAsBigNumber.plus(stakingMax)}
-        stakingTokenSymbol={stakingToken.symbol}
-        earningTokenSymbol={earningToken.symbol}
         onBack={() => setShowRoiCalculator(false)}
         initialValue={stakeAmount}
         performanceFee={performanceFee}

@@ -48,7 +48,28 @@ const AutoAprCell: React.FC<AprCellProps> = ({ pool }) => {
               {t('Flexible APY')}
             </Text>
             {flexibleApy ? (
-              <Balance fontSize="16px" value={parseFloat(flexibleApy)} decimals={2} unit="%" fontWeight={[600, 400]} />
+              <AprLabelContainer alignItems="center" justifyContent="flex-start">
+                <Balance
+                  fontSize="16px"
+                  value={parseFloat(flexibleApy)}
+                  decimals={2}
+                  unit="%"
+                  fontWeight={[600, 400]}
+                />
+                <Button
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    onPresentFlexibleApyModal()
+                  }}
+                  variant="text"
+                  width="20px"
+                  height="20px"
+                  padding="0px"
+                  marginLeft="4px"
+                >
+                  <CalculateIcon color="textSubtle" width="20px" />
+                </Button>
+              </AprLabelContainer>
             ) : (
               <Skeleton width="80px" height="16px" />
             )}
@@ -60,12 +81,33 @@ const AutoAprCell: React.FC<AprCellProps> = ({ pool }) => {
               {t('Locked APY')}
             </Text>
             {lockedApy ? (
-              <FlexGap gap="4px" flexWrap="wrap">
-                <Text style={{ whiteSpace: 'nowrap' }} fontWeight={[500, 400]}>
-                  {t('Up to')}
-                </Text>
-                <Balance fontSize="16px" value={parseFloat(lockedApy)} decimals={2} unit="%" fontWeight={[600, 400]} />
-              </FlexGap>
+              <AprLabelContainer alignItems="center" justifyContent="flex-start">
+                <FlexGap gap="4px" flexWrap="wrap">
+                  <Text style={{ whiteSpace: 'nowrap' }} fontWeight={[500, 400]}>
+                    {t('Up to')}
+                  </Text>
+                  <Balance
+                    fontSize="16px"
+                    value={parseFloat(lockedApy)}
+                    decimals={2}
+                    unit="%"
+                    fontWeight={[600, 400]}
+                  />
+                  <Button
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      onPresentLockedApyModal()
+                    }}
+                    variant="text"
+                    width="20px"
+                    height="20px"
+                    padding="0px"
+                    marginLeft="4px"
+                  >
+                    <CalculateIcon color="textSubtle" width="20px" />
+                  </Button>
+                </FlexGap>
+              </AprLabelContainer>
             ) : (
               <Skeleton width="80px" height="16px" />
             )}

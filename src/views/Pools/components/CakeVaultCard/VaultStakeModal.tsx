@@ -114,6 +114,7 @@ const VaultStakeModal: React.FC<VaultStakeModalProps> = ({
   const formattedAnnualRoi = formatNumber(annualRoi, annualRoi > 10000 ? 0 : 2, annualRoi > 10000 ? 0 : 2)
 
   const getTokenLink = stakingToken.address ? `/swap?outputCurrency=${stakingToken.address}` : '/swap'
+  const convertedStakeAmount = getDecimalAmount(new BigNumber(stakeAmount), stakingToken.decimals)
 
   const handleStakeInputChange = (input: string) => {
     if (input) {
@@ -137,7 +138,7 @@ const VaultStakeModal: React.FC<VaultStakeModalProps> = ({
     setPercent(sliderPercent)
   }
 
-  const handleWithdrawal = async (convertedStakeAmount: BigNumber) => {
+  const handleWithdrawal = async () => {
     // trigger withdrawAll function if the withdrawal will leave 0.00001 CAKE or less
     const isWithdrawingAll = stakingMax.minus(convertedStakeAmount).lte(MIN_AMOUNT)
 
@@ -161,7 +162,7 @@ const VaultStakeModal: React.FC<VaultStakeModalProps> = ({
     }
   }
 
-  const handleDeposit = async (convertedStakeAmount: BigNumber, lockDuration = 0) => {
+  const handleDeposit = async (lockDuration = 0) => {
     const receipt = await fetchWithCatchTxError(() => {
       // .toString() being called to fix a BigNumber error in prod
       // as suggested here https://github.com/ChainSafe/web3.js/issues/2077
@@ -182,13 +183,12 @@ const VaultStakeModal: React.FC<VaultStakeModalProps> = ({
   }
 
   const handleConfirmClick = async () => {
-    const convertedStakeAmount = getDecimalAmount(new BigNumber(stakeAmount), stakingToken.decimals)
     if (isRemovingStake) {
       // unstaking
-      handleWithdrawal(convertedStakeAmount)
+      handleWithdrawal()
     } else {
       // staking
-      handleDeposit(convertedStakeAmount)
+      handleDeposit()
     }
   }
 
@@ -282,7 +282,7 @@ const VaultStakeModal: React.FC<VaultStakeModalProps> = ({
         isLoading={pendingTx}
         endIcon={pendingTx ? <AutoRenewIcon spin color="currentColor" /> : null}
         onClick={handleConfirmClick}
-        disabled={!stakeAmount || parseFloat(stakeAmount) === 0}
+        disabled={!stakeAmount || parseFloat(stakeAmount) === 0 || stakingMax.lt(convertedStakeAmount)}
         mt="24px"
       >
         {pendingTx ? t('Confirming') : t('Confirm')}

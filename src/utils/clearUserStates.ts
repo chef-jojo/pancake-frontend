@@ -2,7 +2,6 @@ import * as Sentry from '@sentry/react'
 import { Dispatch } from '@reduxjs/toolkit'
 import { resetUserState } from 'state/global/actions'
 import { connectorLocalStorageKey } from '@pancakeswap/uikit'
-import { connectorsByName } from './web3React'
 import { LS_ORDERS } from './localStorageOrders'
 import getLocalStorageItemKeys from './getLocalStorageItemKeys'
 

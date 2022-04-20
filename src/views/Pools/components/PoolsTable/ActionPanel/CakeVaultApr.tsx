@@ -61,12 +61,12 @@ const CakeVaultApr: React.FC<CakeVaultAprProps> = ({ pool, userData, vaultPositi
           <Text fontSize="16px" color="textSubtle" textAlign="left">
             {t('Locked APY')}
           </Text>
-          {lockedApy ? (
+          {lockedApy && maxLockDuration ? (
             <Flex alignItems="center" justifyContent="flex-start">
               <Text fontSize="16px" style={{ whiteSpace: 'nowrap' }} fontWeight="600">
-                {maxLockDuration?.gt(0) ? t('Up to') : '-'}
+                {maxLockDuration.gt(0) ? t('Up to') : '-'}
               </Text>
-              {maxLockDuration?.gt(0) && (
+              {maxLockDuration.gt(0) && (
                 <>
                   <Balance
                     ml="7px"

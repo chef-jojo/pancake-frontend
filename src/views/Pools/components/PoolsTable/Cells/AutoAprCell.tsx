@@ -83,13 +83,13 @@ const AutoAprCell: React.FC<AprCellProps> = ({ pool }) => {
             <Text fontSize="12px" color="textSubtle" textAlign="left">
               {t('Locked APY')}
             </Text>
-            {lockedApy ? (
+            {lockedApy && maxLockDuration ? (
               <AprLabelContainer alignItems="center" justifyContent="flex-start">
                 <FlexGap gap="4px" flexWrap="wrap">
                   <Text fontSize={['14px', '14px', '16px']} style={{ whiteSpace: 'nowrap' }} fontWeight={[500, 400]}>
-                    {maxLockDuration?.gt(0) ? t('Up to') : '-'}
+                    {maxLockDuration.gt(0) ? t('Up to') : '-'}
                   </Text>
-                  {maxLockDuration?.gt(0) && (
+                  {maxLockDuration.gt(0) && (
                     <>
                       <Balance
                         fontSize={['14px', '14px', '16px']}

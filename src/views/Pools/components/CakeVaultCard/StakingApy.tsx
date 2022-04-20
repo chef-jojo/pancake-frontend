@@ -57,12 +57,12 @@ export const StakingApy = memo(({ pool }: { pool: DeserializedPool }) => {
         <Text color="textSubtle" textTransform="uppercase" bold fontSize="12px">
           {t('Locked')} APY:
         </Text>
-        {lockedApy ? (
+        {lockedApy && maxLockDuration ? (
           <FlexGap gap="4px" flexWrap="wrap" justifyContent="flex-end">
             <Text style={{ whiteSpace: 'nowrap' }} bold>
-              {maxLockDuration?.gt(0) ? t('Up to') : '-'}
+              {maxLockDuration.gt(0) ? t('Up to') : '-'}
             </Text>
-            {maxLockDuration?.gt(0) && (
+            {maxLockDuration.gt(0) && (
               <AprLabelContainer alignItems="center">
                 <Balance fontSize="16px" value={parseFloat(lockedApy)} decimals={2} unit="%" bold />
                 <Button

@@ -1,7 +1,6 @@
 import { InjectedConnector } from '@web3-react/injected-connector'
 import { WalletConnectConnector } from '@web3-react/walletconnect-connector'
 import { AbstractConnector } from '@web3-react/abstract-connector'
-import { ChainId } from '@pancakeswap/sdk'
 import { BscConnector } from '@binance-chain/bsc-connector'
 import { ConnectorNames } from '@pancakeswap/uikit'
 import { hexlify } from '@ethersproject/bytes'
@@ -14,15 +13,19 @@ const POLLING_INTERVAL = 12000
 const rpcUrl = getNodeUrl()
 const chainId = parseInt(CHAIN_ID, 10)
 
-export const injected = new InjectedConnector({ supportedChainIds: [chainId] })
+const POLYGON_CHAIN_ID = 137
+export const POLYGON_RPC = 'https://polygon-rpc.com/'
+const SUPPORT_CHAIN_IDS = [chainId, POLYGON_CHAIN_ID]
+
+export const injected = new InjectedConnector({ supportedChainIds: SUPPORT_CHAIN_IDS })
 
 const walletconnect = new WalletConnectConnector({
-  rpc: { [chainId]: rpcUrl },
+  rpc: { [chainId]: rpcUrl, [POLYGON_CHAIN_ID]: POLYGON_RPC },
   qrcode: true,
   pollingInterval: POLLING_INTERVAL,
 })
 
-const bscConnector = new BscConnector({ supportedChainIds: [chainId] })
+const bscConnector = new BscConnector({ supportedChainIds: SUPPORT_CHAIN_IDS })
 
 export const connectorsByName = {
   [ConnectorNames.Injected]: injected,
@@ -38,7 +41,7 @@ export const connectorsByName = {
       url: rpcUrl,
       appName: 'PancakeSwap',
       appLogoUrl: 'https://pancakeswap.com/logo.png',
-      supportedChainIds: [ChainId.MAINNET, ChainId.TESTNET],
+      supportedChainIds: SUPPORT_CHAIN_IDS,
     })
   },
 } as const

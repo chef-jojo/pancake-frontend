@@ -75,6 +75,10 @@ const config: (t: ContextApi['t'], languageCode?: string) => ConfigMenuItemsType
         href: '/prediction',
       },
       {
+        label: t('Prediction (Matic)'),
+        href: '/prediction/matic',
+      },
+      {
         label: t('Lottery'),
         href: '/lottery',
       },

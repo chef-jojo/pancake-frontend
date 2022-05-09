@@ -32,12 +32,8 @@ const useAuth = () => {
       if (typeof connector !== 'function' && connector) {
         activate(connector, async (error: Error) => {
           if (error instanceof UnsupportedChainIdError) {
-            setError(error)
-            const provider = await connector.getProvider()
-            const hasSetup = await setupNetwork(provider)
-            if (hasSetup) {
-              activate(connector)
-            }
+            // let network guard handle the error
+            console.info(error)
           } else {
             window?.localStorage?.removeItem(connectorLocalStorageKey)
             if (error instanceof NoEthereumProviderError || error instanceof NoBscProviderError) {

@@ -12,7 +12,6 @@ import { useTransactionAdder } from '../state/transactions/hooks'
 import { calculateGasMargin, getRouterContract, isAddress } from '../utils'
 import isZero from '../utils/isZero'
 import useTransactionDeadline from './useTransactionDeadline'
-import useENS from './ENS/useENS'
 import { captureException } from '@binance/sentry-miniapp'
 import { HitBuilders } from 'utils/ga'
 import { useBUSDCurrencyAmount } from './useBUSDPrice'
@@ -49,12 +48,11 @@ type EstimatedSwapCall = SuccessfulCall | FailedCall
 function useSwapCallArguments(
   trade: Trade | undefined, // trade to execute, required
   allowedSlippage: number = INITIAL_ALLOWED_SLIPPAGE, // in bips
-  recipientAddressOrName: string | null, // the ENS name or address of the recipient of the trade, or null if swap should be returned to sender
+  recipientAddress: string | null, // the address of the recipient of the trade, or null if swap should be returned to sender
 ): SwapCall[] {
   const { account, chainId, library } = useActiveWeb3React()
 
-  const { address: recipientAddress } = useENS(recipientAddressOrName)
-  const recipient = recipientAddressOrName === null ? account : recipientAddress
+  const recipient = recipientAddress === null ? account : recipientAddress
   const deadline = useTransactionDeadline()
 
   return useMemo(() => {
@@ -121,21 +119,20 @@ function useGetBestBUSDPrice(trade?: Trade) {
 export function useSwapCallback(
   trade: Trade | undefined, // trade to execute, required
   allowedSlippage: number = INITIAL_ALLOWED_SLIPPAGE, // in bips
-  recipientAddressOrName: string | null, // the ENS name or address of the recipient of the trade, or null if swap should be returned to sender
+  recipientAddress: string | null, // the address of the recipient of the trade, or null if swap should be returned to sender
 ): { state: SwapCallbackState; callback: null | (() => Promise<string>); error: string | null } {
   const { account, chainId, library } = useActiveWeb3React()
   const tradeVolume = useGetBestBUSDPrice(trade) // use to track
 
   const gasPrice = useGasPrice()
 
-  const swapCalls = useSwapCallArguments(trade, allowedSlippage, recipientAddressOrName)
+  const swapCalls = useSwapCallArguments(trade, allowedSlippage, recipientAddress)
 
   const { t } = useTranslation()
 
   const addTransaction = useTransactionAdder()
 
-  const { address: recipientAddress } = useENS(recipientAddressOrName)
-  const recipient = recipientAddressOrName === null ? account : recipientAddress
+  const recipient = recipientAddress === null ? account : recipientAddress
 
   const tracker = useTracker()
   return useMemo(() => {
@@ -143,7 +140,7 @@ export function useSwapCallback(
       return { state: SwapCallbackState.INVALID, callback: null, error: 'Missing dependencies' }
     }
     if (!recipient) {
-      if (recipientAddressOrName !== null) {
+      if (recipientAddress !== null) {
         return { state: SwapCallbackState.INVALID, callback: null, error: 'Invalid recipient' }
       }
       return { state: SwapCallbackState.LOADING, callback: null, error: null }
@@ -226,9 +223,7 @@ export function useSwapCallback(
               recipient === account
                 ? base
                 : `${base} to ${
-                    recipientAddressOrName && isAddress(recipientAddressOrName)
-                      ? truncateHash(recipientAddressOrName)
-                      : recipientAddressOrName
+                    recipientAddress && isAddress(recipientAddress) ? truncateHash(recipientAddress) : recipientAddress
                   }`
 
             addTransaction(response, {
@@ -268,7 +263,7 @@ export function useSwapCallback(
       },
       error: null,
     }
-  }, [trade, library, account, chainId, recipient, recipientAddressOrName, swapCalls, addTransaction, gasPrice, t])
+  }, [trade, library, account, chainId, recipient, recipientAddress, swapCalls, addTransaction, gasPrice, t])
 }
 
 function swapErrorToUserReadableMessage(error: any, t: TranslateFunction) {

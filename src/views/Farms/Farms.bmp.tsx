@@ -14,7 +14,6 @@ import { useTranslation } from 'contexts/Localization'
 import { getBalanceNumber } from 'utils/formatBalance'
 import { getFarmApr } from 'utils/apr'
 import orderBy from 'lodash/orderBy'
-import { isArchivedPid } from 'utils/farmHelpers'
 import { latinise } from 'utils/latinise'
 import { useUserFarmStakedOnly, useUserFarmsViewMode } from 'state/user/hooks'
 import { ViewMode } from 'state/user/actions'
@@ -27,7 +26,7 @@ import { FarmWithStakedValue } from './components/FarmCard/FarmCard'
 import Table from './components/FarmTable/FarmTable'
 import FarmTabButtons from './components/FarmTabButtons'
 import { RowProps } from './components/FarmTable/Row'
-import ToggleView from './components/ToggleView/ToggleView'
+import ToggleView from 'components/ToggleView/ToggleView'
 import { DesktopColumnSchema } from './components/types'
 import { getSystemInfo, useDidHide, useDidShow } from '@binance/mp-service'
 import { getSystemInfoSync } from 'utils/getBmpSystemInfo'
@@ -140,9 +139,12 @@ const Farms: React.FC<{ farmsData: any; cakePrice: any }> = ({ children, farmsDa
 
   const [stakedOnly, setStakedOnly] = useUserFarmStakedOnly(isActive)
 
-  const activeFarms = farmsLP.filter((farm) => farm.pid !== 0 && farm.multiplier !== '0X' && !isArchivedPid(farm.pid))
-  const inactiveFarms = farmsLP.filter((farm) => farm.pid !== 0 && farm.multiplier === '0X' && !isArchivedPid(farm.pid))
-  const archivedFarms = farmsLP.filter((farm) => isArchivedPid(farm.pid))
+  const activeFarms = farmsLP.filter(
+    (farm) => farm.pid !== 0 && farm.multiplier !== '0X',
+    //  && (!poolLength || poolLength > farm.pid),
+  )
+  const inactiveFarms = farmsLP.filter((farm) => farm.pid !== 0 && farm.multiplier === '0X')
+  const archivedFarms = farmsLP
 
   const stakedOnlyFarms = activeFarms.filter(
     (farm) => farm.userData && new BigNumber(farm.userData.stakedBalance).isGreaterThan(0),
@@ -462,7 +464,7 @@ const FramsWrapper = ({ children }) => {
   useDidHide(() => {
     setIsHide(true)
   })
-  usePollFarmsWithUserData(false)
+  usePollFarmsWithUserData()
   return (
     <view>
       <Farms farmsData={farmsData} cakePrice={cakePrice} children={children} />

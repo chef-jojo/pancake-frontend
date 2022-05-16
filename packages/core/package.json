@@ -1,0 +1,9 @@
+{
+  "name": "@pancakeswap/core",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "postinstall": "yarn run typechain",
+    "typechain": "typechain --out-dir config/abi/types --target=ethers-v5 \"config/abi/*.json\""
+  }
+}

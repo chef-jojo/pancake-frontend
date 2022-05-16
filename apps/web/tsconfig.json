@@ -1,0 +1,10 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@pancakeswap/uikit": ["../../packages/uikit/src/index.ts"],
+      "@/*": ["../../packages/core/*"]
+    }
+  }
+}

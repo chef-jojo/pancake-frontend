@@ -1,5 +1,5 @@
-import { INFO_CLIENT } from '@/config/constants/endpoints'
 import { GraphQLClient } from 'graphql-request'
+import { INFO_CLIENT } from '@/config/constants/endpoints'
 
 // Extra headers
 // Mostly for dev environment

@@ -13,7 +13,8 @@
     "postinstall": "turbo run postinstall",
     "lint": "turbo run lint",
     "format:check:staged": "turbo run format:check:staged",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "updateLPsAPR": "NEXT_PUBLIC_CHAIN_ID=56 ts-node -r tsconfig-paths/register --project 'scripts/tsconfig.json' scripts/updateLPsAPR.ts"
   },
   "dependencies": {
     "@binance-chain/bsc-connector": "^1.0.0",

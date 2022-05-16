@@ -1,8 +1,8 @@
 import { BlockIcon, CheckmarkCircleIcon, Flex, Link, OpenNewIcon, RefreshIcon } from '@pancakeswap/uikit'
 import styled from 'styled-components'
-import { TransactionDetails } from 'state/transactions/reducer'
-import useActiveWeb3React from 'hooks/useActiveWeb3React'
-import { getBscScanLink } from 'utils'
+import { TransactionDetails } from '@/state/transactions/reducer'
+import useActiveWeb3React from '@/hooks/useActiveWeb3React'
+import { getBscScanLink } from '@/utils'
 
 interface TransactionRowProps {
   txn: TransactionDetails

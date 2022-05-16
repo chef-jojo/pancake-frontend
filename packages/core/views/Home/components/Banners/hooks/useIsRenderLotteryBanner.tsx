@@ -1,8 +1,8 @@
 import useSWR from 'swr'
-import { fetchCurrentLotteryId, fetchLottery } from 'state/lottery/helpers'
-import { FetchStatus } from 'config/constants/types'
-import { immutableMiddleware } from 'hooks/useSWRContract'
-import { FAST_INTERVAL, SLOW_INTERVAL } from 'config/constants'
+import { fetchCurrentLotteryId, fetchLottery } from '@/state/lottery/helpers'
+import { FetchStatus } from '@/config/constants/types'
+import { immutableMiddleware } from '@/hooks/useSWRContract'
+import { FAST_INTERVAL, SLOW_INTERVAL } from '@/config/constants'
 
 const useIsRenderLotteryBanner = () => {
   const { data: currentLotteryId, status: currentLotteryIdStatus } = useSWR(

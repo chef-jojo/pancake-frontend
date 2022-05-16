@@ -1,5 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
-import AddLiquidity from 'views/AddLiquidity'
+import AddLiquidity from '@/views/AddLiquidity'
 
 export default AddLiquidity
 

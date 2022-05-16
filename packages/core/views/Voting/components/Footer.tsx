@@ -1,8 +1,8 @@
 import { Box, Button, Text, Heading, ProposalIcon, Flex } from '@pancakeswap/uikit'
 import styled from 'styled-components'
-import { useTranslation } from 'contexts/Localization'
+import { useTranslation } from '@/contexts/Localization'
 import Link from 'next/link'
-import Container from 'components/Layout/Container'
+import Container from '@/components/Layout/Container'
 import DesktopImage from './DesktopImage'
 
 const StyledFooter = styled(Box)`

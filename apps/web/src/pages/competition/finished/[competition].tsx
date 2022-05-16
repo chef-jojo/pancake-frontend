@@ -1,9 +1,9 @@
 import { useMemo } from 'react'
 import { useRouter } from 'next/router'
-import SubMenu from '../../../views/TradingCompetition/components/SubMenu'
-import EasterCompetition from '../../../views/TradingCompetition/EasterCompetition'
-import MoboxCompetition from '../../../views/TradingCompetition/MoboxCompetition'
-import FanTokenCompetition from '../../../views/TradingCompetition/FanTokenCompetition'
+import SubMenu from '@/views/TradingCompetition/components/SubMenu'
+import EasterCompetition from '@/views/TradingCompetition/EasterCompetition'
+import MoboxCompetition from '@/views/TradingCompetition/MoboxCompetition'
+import FanTokenCompetition from '@/views/TradingCompetition/FanTokenCompetition'
 
 const CompetitionPage = () => {
   const router = useRouter()

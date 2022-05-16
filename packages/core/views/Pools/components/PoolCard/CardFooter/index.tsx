@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import BigNumber from 'bignumber.js'
 import styled from 'styled-components'
-import { useTranslation } from 'contexts/Localization'
+import { useTranslation } from '@/contexts/Localization'
 import { Flex, CardFooter, ExpandableLabel, HelpIcon, useTooltip } from '@pancakeswap/uikit'
-import { DeserializedPool } from 'state/types'
-import { CompoundingPoolTag, ManualPoolTag } from 'components/Tags'
+import { DeserializedPool } from '@/state/types'
+import { CompoundingPoolTag, ManualPoolTag } from '@/components/Tags'
 import PoolStatsInfo from '../../PoolStatsInfo'
 
 interface FooterProps {

@@ -1,13 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Text, Flex, useMatchBreakpoints } from '@pancakeswap/uikit'
-import { DeserializedPool } from 'state/types'
+import { DeserializedPool } from '@/state/types'
 import BigNumber from 'bignumber.js'
-import { BIG_ZERO } from 'utils/bigNumber'
-import { getBalanceNumber } from 'utils/formatBalance'
-import Balance from 'components/Balance'
-import { useTranslation } from 'contexts/Localization'
-import BaseCell, { CellContent } from 'views/Pools/components/PoolsTable/Cells/BaseCell'
+import { BIG_ZERO } from '@/utils/bigNumber'
+import { getBalanceNumber } from '@/utils/formatBalance'
+import Balance from '@/components/Balance'
+import { useTranslation } from '@/contexts/Localization'
+import BaseCell, { CellContent } from '@/views/Pools/components/PoolsTable/Cells/BaseCell'
 
 interface EarningsCellProps {
   pool: DeserializedPool

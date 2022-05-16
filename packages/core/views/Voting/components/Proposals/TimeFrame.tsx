@@ -1,7 +1,7 @@
 import { Text } from '@pancakeswap/uikit'
 import { toDate, format } from 'date-fns'
-import { useTranslation } from 'contexts/Localization'
-import { ProposalState } from 'state/types'
+import { useTranslation } from '@/contexts/Localization'
+import { ProposalState } from '@/state/types'
 
 interface TimeFrameProps {
   startDate: number

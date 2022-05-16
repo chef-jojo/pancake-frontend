@@ -1,7 +1,7 @@
 import { Button, ButtonProps } from '@pancakeswap/uikit'
-import { useTranslation } from 'contexts/Localization'
-import { useAppDispatch } from 'state'
-import { removeAllActivityFilters } from 'state/nftMarket/reducer'
+import { useTranslation } from '@/contexts/Localization'
+import { useAppDispatch } from '@/state'
+import { removeAllActivityFilters } from '@/state/nftMarket/reducer'
 
 interface ClearAllButtonProps extends ButtonProps {
   collectionAddress: string

@@ -1,13 +1,13 @@
 import styled from 'styled-components'
 import BigNumber from 'bignumber.js'
 import { Text, useMatchBreakpoints, TokenPairImage as UITokenPairImage } from '@pancakeswap/uikit'
-import { useTranslation } from 'contexts/Localization'
-import { DeserializedPool } from 'state/types'
-import { BIG_ZERO } from 'utils/bigNumber'
-import { vaultPoolConfig } from 'config/constants/pools'
-import { TokenPairImage } from 'components/TokenImage'
-import BaseCell, { CellContent } from 'views/Pools/components/PoolsTable/Cells/BaseCell'
-import { useVaultPoolByKeyV1 } from 'views/Migration/hook/V1/Pool/useFetchIfoPool'
+import { useTranslation } from '@/contexts/Localization'
+import { DeserializedPool } from '@/state/types'
+import { BIG_ZERO } from '@/utils/bigNumber'
+import { vaultPoolConfig } from '@/config/constants/pools'
+import { TokenPairImage } from '@/components/TokenImage'
+import BaseCell, { CellContent } from '@/views/Pools/components/PoolsTable/Cells/BaseCell'
+import { useVaultPoolByKeyV1 } from '@/views/Migration/hook/V1/Pool/useFetchIfoPool'
 
 interface NameCellProps {
   pool: DeserializedPool

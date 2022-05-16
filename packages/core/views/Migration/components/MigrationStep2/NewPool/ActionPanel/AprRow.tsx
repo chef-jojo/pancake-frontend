@@ -2,11 +2,11 @@ import React from 'react'
 import styled from 'styled-components'
 import { Text, Flex } from '@pancakeswap/uikit'
 import BigNumber from 'bignumber.js'
-import { useTranslation } from 'contexts/Localization'
-import { BIG_ZERO } from 'utils/bigNumber'
-import { DeserializedPool } from 'state/types'
-import { useVaultPoolByKey } from 'state/pools/hooks'
-import Apr from 'views/Pools/components/Apr'
+import { useTranslation } from '@/contexts/Localization'
+import { BIG_ZERO } from '@/utils/bigNumber'
+import { DeserializedPool } from '@/state/types'
+import { useVaultPoolByKey } from '@/state/pools/hooks'
+import Apr from '@/views/Pools/components/Apr'
 
 const Containter = styled(Flex)`
   margin: 12px 0 0 0;

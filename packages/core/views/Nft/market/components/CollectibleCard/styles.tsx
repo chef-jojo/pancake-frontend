@@ -13,8 +13,8 @@ import {
   Skeleton,
 } from '@pancakeswap/uikit'
 import { Price } from '@pancakeswap/sdk'
-import { useTranslation } from 'contexts/Localization'
-import { multiplyPriceByAmount } from 'utils/prices'
+import { useTranslation } from '@/contexts/Localization'
+import { multiplyPriceByAmount } from '@/utils/prices'
 import styled from 'styled-components'
 
 export const Footer: React.FC<BoxProps> = ({ children, ...props }) => (

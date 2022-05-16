@@ -1,10 +1,10 @@
 import { useWeb3React } from '@web3-react/core'
-import { LotteryStatus } from 'config/constants/types'
-import usePreviousValue from 'hooks/usePreviousValue'
+import { LotteryStatus } from '@/config/constants/types'
+import usePreviousValue from '@/hooks/usePreviousValue'
 import { useEffect } from 'react'
-import { useAppDispatch } from 'state'
-import { useLottery } from 'state/lottery/hooks'
-import { fetchPublicLotteries, fetchCurrentLotteryId, fetchUserLotteries } from 'state/lottery'
+import { useAppDispatch } from '@/state'
+import { useLottery } from '@/state/lottery/hooks'
+import { fetchPublicLotteries, fetchCurrentLotteryId, fetchUserLotteries } from '@/state/lottery'
 
 const useStatusTransitions = () => {
   const {

@@ -1,13 +1,13 @@
 import { ChainId, Pair, Token } from '@pancakeswap/sdk'
 import { differenceInDays } from 'date-fns'
 import flatMap from 'lodash/flatMap'
-import farms from 'config/constants/farms'
+import farms from '@/config/constants/farms'
 import { useCallback, useMemo } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { CHAIN_ID } from 'config/constants/networks'
-import { BASES_TO_TRACK_LIQUIDITY_FOR, PINNED_PAIRS } from 'config/constants'
-import useActiveWeb3React from 'hooks/useActiveWeb3React'
-import { useOfficialsAndUserAddedTokens } from 'hooks/Tokens'
+import { CHAIN_ID } from '@/config/constants/networks'
+import { BASES_TO_TRACK_LIQUIDITY_FOR, PINNED_PAIRS } from '@/config/constants'
+import useActiveWeb3React from '@/hooks/useActiveWeb3React'
+import { useOfficialsAndUserAddedTokens } from '@/hooks/Tokens'
 import { AppDispatch, AppState } from '../../index'
 import {
   addSerializedPair,

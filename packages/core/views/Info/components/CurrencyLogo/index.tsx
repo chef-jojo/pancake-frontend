@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 import styled from 'styled-components'
-import { isAddress } from 'utils'
+import { isAddress } from '@/utils'
 import LogoLoader from './LogoLoader'
 
 const StyledLogo = styled(LogoLoader)<{ size: string }>`

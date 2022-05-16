@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { BoxProps, Box, Flex, FlexProps } from '@pancakeswap/uikit'
-import Container from 'components/Layout/Container'
+import Container from '@/components/Layout/Container'
 import CurvedDivider from './CurvedDivider'
 import { ClipFill, DividerFill } from './types'
 

@@ -1,8 +1,8 @@
 import { Flex, Grid, Text, Button, Link, LinkExternal, BinanceIcon } from '@pancakeswap/uikit'
-import { useTranslation } from 'contexts/Localization'
-import { nftsBaseUrl, pancakeBunniesAddress } from 'views/Nft/market/constants'
-import { NftToken } from 'state/nftMarket/types'
-import { getBscScanLinkForNft } from 'utils'
+import { useTranslation } from '@/contexts/Localization'
+import { nftsBaseUrl, pancakeBunniesAddress } from '@/views/Nft/market/constants'
+import { NftToken } from '@/state/nftMarket/types'
+import { getBscScanLinkForNft } from '@/utils'
 import { Divider, HorizontalDivider, RoundedImage } from '../shared/styles'
 
 interface EditStageProps {

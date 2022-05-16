@@ -1,8 +1,8 @@
 import { Currency, currencyEquals, JSBI, Price } from '@pancakeswap/sdk'
-import tokens from 'config/constants/tokens'
-import useActiveWeb3React from 'hooks/useActiveWeb3React'
+import tokens from '@/config/constants/tokens'
+import useActiveWeb3React from '@/hooks/useActiveWeb3React'
 import { useMemo } from 'react'
-import { multiplyPriceByAmount } from 'utils/prices'
+import { multiplyPriceByAmount } from '@/utils/prices'
 import { wrappedCurrency } from '../utils/wrappedCurrency'
 import { PairState, usePairs } from './usePairs'
 

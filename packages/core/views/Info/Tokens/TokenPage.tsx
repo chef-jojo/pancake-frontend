@@ -1,6 +1,6 @@
 /* eslint-disable no-nested-ternary */
 import { useMemo } from 'react'
-import { NextLinkFromReactRouter } from 'components/NextLink'
+import { NextLinkFromReactRouter } from '@/components/NextLink'
 import { Duration } from 'date-fns'
 import styled from 'styled-components'
 import {
@@ -17,14 +17,14 @@ import {
   Image,
   useMatchBreakpoints,
 } from '@pancakeswap/uikit'
-import Page from 'components/Layout/Page'
-import { getBscScanLink } from 'utils'
-import truncateHash from 'utils/truncateHash'
-import useCMCLink from 'views/Info/hooks/useCMCLink'
-import { CurrencyLogo } from 'views/Info/components/CurrencyLogo'
-import { formatAmount } from 'utils/formatInfoNumbers'
-import Percent from 'views/Info/components/Percent'
-import SaveIcon from 'views/Info/components/SaveIcon'
+import Page from '@/components/Layout/Page'
+import { getBscScanLink } from '@/utils'
+import truncateHash from '@/utils/truncateHash'
+import useCMCLink from '@/views/Info/hooks/useCMCLink'
+import { CurrencyLogo } from '@/views/Info/components/CurrencyLogo'
+import { formatAmount } from '@/utils/formatInfoNumbers'
+import Percent from '@/views/Info/components/Percent'
+import SaveIcon from '@/views/Info/components/SaveIcon'
 import {
   usePoolDatas,
   useTokenData,
@@ -32,13 +32,13 @@ import {
   useTokenChartData,
   useTokenPriceData,
   useTokenTransactions,
-} from 'state/info/hooks'
-import PoolTable from 'views/Info/components/InfoTables/PoolsTable'
-import TransactionTable from 'views/Info/components/InfoTables/TransactionsTable'
-import { useWatchlistTokens } from 'state/user/hooks'
-import { ONE_HOUR_SECONDS } from 'config/constants/info'
-import { useTranslation } from 'contexts/Localization'
-import ChartCard from 'views/Info/components/InfoCharts/ChartCard'
+} from '@/state/info/hooks'
+import PoolTable from '@/views/Info/components/InfoTables/PoolsTable'
+import TransactionTable from '@/views/Info/components/InfoTables/TransactionsTable'
+import { useWatchlistTokens } from '@/state/user/hooks'
+import { ONE_HOUR_SECONDS } from '@/config/constants/info'
+import { useTranslation } from '@/contexts/Localization'
+import ChartCard from '@/views/Info/components/InfoCharts/ChartCard'
 
 const ContentLayout = styled.div`
   margin-top: 16px;

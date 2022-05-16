@@ -1,7 +1,7 @@
 import { useCallback } from 'react'
 import { parseUnits } from '@ethersproject/units'
-import { useSousChef } from 'hooks/useContract'
-import getGasPrice from 'utils/getGasPrice'
+import { useSousChef } from '@/hooks/useContract'
+import getGasPrice from '@/utils/getGasPrice'
 
 const sousUnstake = (sousChefContract: any, amount: string, decimals: number) => {
   const gasPrice = getGasPrice()

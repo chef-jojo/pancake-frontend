@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { Modal, Grid, Flex, Text, BinanceIcon, Skeleton } from '@pancakeswap/uikit'
-import { useBNBBusdPrice } from 'hooks/useBUSDPrice'
-import { multiplyPriceByAmount } from 'utils/prices'
+import { useBNBBusdPrice } from '@/hooks/useBUSDPrice'
+import { multiplyPriceByAmount } from '@/utils/prices'
 import { BuyingStage } from './types'
 
 export const StyledModal = styled(Modal)<{ stage: BuyingStage }>`

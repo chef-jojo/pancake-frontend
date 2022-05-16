@@ -1,9 +1,9 @@
 import { useEffect, memo } from 'react'
 import { useModal } from '@pancakeswap/uikit'
-import DisclaimerModal from 'components/DisclaimerModal'
-import { useUserLimitOrderAcceptedWarning } from 'state/user/hooks'
+import DisclaimerModal from '@/components/DisclaimerModal'
+import { useUserLimitOrderAcceptedWarning } from '@/state/user/hooks'
 
-import { useTranslation } from 'contexts/Localization'
+import { useTranslation } from '@/contexts/Localization'
 
 function ClaimWarning() {
   const { t } = useTranslation()

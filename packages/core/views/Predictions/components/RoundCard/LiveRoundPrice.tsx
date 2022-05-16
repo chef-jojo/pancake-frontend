@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, memo } from 'react'
 import { useCountUp } from 'react-countup'
 import { Skeleton, TooltipText } from '@pancakeswap/uikit'
-import { formatBigNumberToFixed } from 'utils/formatBalance'
+import { formatBigNumberToFixed } from '@/utils/formatBalance'
 import usePollOraclePrice from '../../hooks/usePollOraclePrice'
 
 interface LiveRoundPriceProps {

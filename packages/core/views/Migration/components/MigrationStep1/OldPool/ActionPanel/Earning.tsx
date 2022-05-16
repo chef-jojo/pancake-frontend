@@ -2,12 +2,12 @@ import React from 'react'
 import { Text, Flex, Heading, useMatchBreakpoints } from '@pancakeswap/uikit'
 import styled from 'styled-components'
 import BigNumber from 'bignumber.js'
-import { getBalanceNumber } from 'utils/formatBalance'
-import { useTranslation } from 'contexts/Localization'
-import Balance from 'components/Balance'
-import { BIG_ZERO } from 'utils/bigNumber'
-import { DeserializedPool } from 'state/types'
-import { ActionContainer, ActionTitles, ActionContent } from 'views/Pools/components/PoolsTable/ActionPanel/styles'
+import { getBalanceNumber } from '@/utils/formatBalance'
+import { useTranslation } from '@/contexts/Localization'
+import Balance from '@/components/Balance'
+import { BIG_ZERO } from '@/utils/bigNumber'
+import { DeserializedPool } from '@/state/types'
+import { ActionContainer, ActionTitles, ActionContent } from '@/views/Pools/components/PoolsTable/ActionPanel/styles'
 
 const Container = styled(ActionContainer)`
   flex: 2;

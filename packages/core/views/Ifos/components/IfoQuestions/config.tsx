@@ -1,4 +1,4 @@
-import Trans from 'components/Trans'
+import Trans from '@/components/Trans'
 
 const config = [
   {

@@ -1,5 +1,5 @@
 import { Progress, ProgressProps } from '@pancakeswap/uikit'
-import { useCurrentBlock } from 'state/block/hooks'
+import { useCurrentBlock } from '@/state/block/hooks'
 
 interface BlockProgressProps extends ProgressProps {
   startBlock: number

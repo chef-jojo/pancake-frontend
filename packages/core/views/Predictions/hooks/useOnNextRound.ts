@@ -1,8 +1,8 @@
 import { useLayoutEffect } from 'react'
 import { useWeb3React } from '@web3-react/core'
-import usePreviousValue from 'hooks/usePreviousValue'
-import useLocalDispatch from 'contexts/LocalRedux/useLocalDispatch'
-import { useGetSortedRoundsCurrentEpoch } from 'state/predictions/hooks'
+import usePreviousValue from '@/hooks/usePreviousValue'
+import useLocalDispatch from '@/contexts/LocalRedux/useLocalDispatch'
+import { useGetSortedRoundsCurrentEpoch } from '@/state/predictions/hooks'
 import useSwiper from './useSwiper'
 
 /**

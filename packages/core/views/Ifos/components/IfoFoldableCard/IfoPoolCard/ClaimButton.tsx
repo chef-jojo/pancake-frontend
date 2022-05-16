@@ -1,10 +1,10 @@
 import { AutoRenewIcon, Button } from '@pancakeswap/uikit'
-import { PoolIds } from 'config/constants/types'
-import { WalletIfoData } from 'views/Ifos/types'
-import { useTranslation } from 'contexts/Localization'
-import useToast from 'hooks/useToast'
-import useCatchTxError from 'hooks/useCatchTxError'
-import { ToastDescriptionWithTx } from 'components/Toast'
+import { PoolIds } from '@/config/constants/types'
+import { WalletIfoData } from '@/views/Ifos/types'
+import { useTranslation } from '@/contexts/Localization'
+import useToast from '@/hooks/useToast'
+import useCatchTxError from '@/hooks/useCatchTxError'
+import { ToastDescriptionWithTx } from '@/components/Toast'
 
 interface Props {
   poolId: PoolIds

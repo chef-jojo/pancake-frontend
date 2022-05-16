@@ -1,9 +1,9 @@
 import { useWeb3React } from '@web3-react/core'
-import { FetchStatus } from 'config/constants/types'
+import { FetchStatus } from '@/config/constants/types'
 import useSWRImmutable from 'swr/immutable'
-import { getAddress } from 'utils/addressHelpers'
-import { getActivePools } from 'utils/calls'
-import { simpleRpcProvider } from 'utils/providers'
+import { getAddress } from '@/utils/addressHelpers'
+import { getActivePools } from '@/utils/calls'
+import { simpleRpcProvider } from '@/utils/providers'
 import { getVotingPower } from '../helpers'
 
 interface State {

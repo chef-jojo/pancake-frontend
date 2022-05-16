@@ -1,7 +1,7 @@
 import { BigNumber } from '@ethersproject/bignumber'
-import { ContextApi } from 'contexts/Localization/types'
+import { ContextApi } from '@/contexts/Localization/types'
 import { DefaultTheme } from 'styled-components'
-import { UserInfos, EventInfos, UserStatusEnum } from 'views/PancakeSquad/types'
+import { UserInfos, EventInfos, UserStatusEnum } from '@/views/PancakeSquad/types'
 
 export type EventStepsProps = {
   eventInfos?: EventInfos

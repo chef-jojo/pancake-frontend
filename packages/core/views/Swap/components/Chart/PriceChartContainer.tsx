@@ -1,5 +1,5 @@
 import { Currency } from '@pancakeswap/sdk'
-import useTheme from 'hooks/useTheme'
+import useTheme from '@/hooks/useTheme'
 import { useCallback, useState } from 'react'
 import BnbWbnbNotice from './BnbWbnbNotice'
 import { BNB_ADDRESS } from './constants'

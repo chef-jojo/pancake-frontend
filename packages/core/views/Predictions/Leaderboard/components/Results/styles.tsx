@@ -1,9 +1,9 @@
 import { Token } from '@pancakeswap/sdk'
 import { Flex, FlexProps, Text } from '@pancakeswap/uikit'
-import { useTranslation } from 'contexts/Localization'
-import useBUSDPrice from 'hooks/useBUSDPrice'
-import { multiplyPriceByAmount } from 'utils/prices'
-import { useConfig } from 'views/Predictions/context/ConfigProvider'
+import { useTranslation } from '@/contexts/Localization'
+import useBUSDPrice from '@/hooks/useBUSDPrice'
+import { multiplyPriceByAmount } from '@/utils/prices'
+import { useConfig } from '@/views/Predictions/context/ConfigProvider'
 
 export const Row: React.FC<FlexProps> = ({ children, ...props }) => {
   return (

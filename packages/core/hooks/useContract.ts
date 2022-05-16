@@ -1,5 +1,5 @@
 import { useMemo } from 'react'
-import useActiveWeb3React from 'hooks/useActiveWeb3React'
+import useActiveWeb3React from '@/hooks/useActiveWeb3React'
 import {
   getBep20Contract,
   getCakeContract,
@@ -35,9 +35,9 @@ import {
   getErc721CollectionContract,
   getBunnySpecialXmasContract,
   getGalaxyNTFClaimingContract,
-} from 'utils/contractHelpers'
-import { getMulticallAddress } from 'utils/addressHelpers'
-import { Erc20, Erc20Bytes32, Multicall, Weth, Cake, Erc721collection, CakeVaultV2 } from 'config/abi/types'
+} from '@/utils/contractHelpers'
+import { getMulticallAddress } from '@/utils/addressHelpers'
+import { Erc20, Erc20Bytes32, Multicall, Weth, Cake, Erc721collection, CakeVaultV2 } from '@/config/abi/types'
 
 // Imports below migrated from Exchange useContract.ts
 import { Contract } from '@ethersproject/contracts'

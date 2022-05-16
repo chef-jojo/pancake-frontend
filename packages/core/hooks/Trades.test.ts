@@ -1,5 +1,5 @@
 import { renderHook } from '@testing-library/react-hooks'
-import { mainnetTokens } from 'config/constants/tokens'
+import { mainnetTokens } from '@/config/constants/tokens'
 import { createReduxWrapper } from 'testUtils'
 import { Pair, TokenAmount, CurrencyAmount, Trade } from '@pancakeswap/sdk'
 import * as UsePairs from './usePairs'

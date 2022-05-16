@@ -5,10 +5,10 @@ import {
   SerializedPool,
   SerializedCakeVault,
   DeserializedCakeVault,
-} from 'state/types'
-import { deserializeToken } from 'state/user/hooks/helpers'
-import { BIG_ZERO } from 'utils/bigNumber'
-import { convertSharesToCake } from 'views/Pools/helpers'
+} from '@/state/types'
+import { deserializeToken } from '@/state/user/hooks/helpers'
+import { BIG_ZERO } from '@/utils/bigNumber'
+import { convertSharesToCake } from '@/views/Pools/helpers'
 
 type UserData =
   | DeserializedPool['userData']

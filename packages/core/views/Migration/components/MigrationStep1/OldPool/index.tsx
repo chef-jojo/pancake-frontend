@@ -1,5 +1,5 @@
 import React from 'react'
-import { DeserializedPool } from 'state/types'
+import { DeserializedPool } from '@/state/types'
 import PoolsTable from './PoolTable'
 
 interface OldPoolProps {

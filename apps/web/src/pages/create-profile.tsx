@@ -1,3 +1,3 @@
-import ProfileCreation from '../views/ProfileCreation'
+import ProfileCreation from '@/views/ProfileCreation'
 
 export default ProfileCreation

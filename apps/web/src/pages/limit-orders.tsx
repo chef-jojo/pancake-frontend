@@ -1,4 +1,4 @@
-import LimitOrders from '../views/LimitOrders'
+import LimitOrders from '@/views/LimitOrders'
 
 const LimitOrdersPage = () => {
   return <LimitOrders />

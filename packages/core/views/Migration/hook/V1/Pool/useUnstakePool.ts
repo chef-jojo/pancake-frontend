@@ -1,9 +1,9 @@
 import BigNumber from 'bignumber.js'
 import { useCallback } from 'react'
-import { DEFAULT_GAS_LIMIT, DEFAULT_TOKEN_DECIMAL } from 'config'
+import { DEFAULT_GAS_LIMIT, DEFAULT_TOKEN_DECIMAL } from '@/config'
 import { parseUnits } from '@ethersproject/units'
-import { useMasterchefV1, useSousChef } from 'hooks/useContract'
-import getGasPrice from 'utils/getGasPrice'
+import { useMasterchefV1, useSousChef } from '@/hooks/useContract'
+import getGasPrice from '@/utils/getGasPrice'
 
 const sousUnstake = (sousChefContract: any, amount: string, decimals: number) => {
   const gasPrice = getGasPrice()

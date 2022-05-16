@@ -1,7 +1,7 @@
-import { testnetTokens } from 'config/constants/tokens'
+import { testnetTokens } from '@/config/constants/tokens'
 import tryParseAmount from './tryParseAmount'
 
-describe('utils/tryParseAmount', () => {
+describe('@/utils/tryParseAmount', () => {
   it('should be undefined when no valid input', () => {
     expect(tryParseAmount()).toBeUndefined()
   })

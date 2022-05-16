@@ -1,3 +1,3 @@
-import Lottery from '../views/Lottery'
+import Lottery from '@/views/Lottery'
 
 export default Lottery

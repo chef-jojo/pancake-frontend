@@ -1,5 +1,5 @@
-import { Bet, BetPosition } from 'state/types'
-import { formatNumber } from 'utils/formatBalance'
+import { Bet, BetPosition } from '@/state/types'
+import { formatNumber } from '@/utils/formatBalance'
 
 export const formatUsd = (usd: number) => {
   return `$${formatNumber(usd || 0, 3, 3)}`

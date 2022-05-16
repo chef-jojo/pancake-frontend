@@ -1,6 +1,6 @@
 import { Box, Button, Flex, Text } from '@pancakeswap/uikit'
-import { useTranslation } from 'contexts/Localization'
-import { LandingBodyWrapper, StyledWaveContainer } from 'views/PancakeSquad/styles'
+import { useTranslation } from '@/contexts/Localization'
+import { LandingBodyWrapper, StyledWaveContainer } from '@/views/PancakeSquad/styles'
 import { useTheme } from 'styled-components'
 import artistConfigBuilder from './config'
 import { StyledArtistBioContainer, StyledArtistSectionContainer, StyledSocialButton } from './styles'

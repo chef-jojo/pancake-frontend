@@ -1,10 +1,10 @@
 import styled from 'styled-components'
-import { useFarmUser } from 'state/farms/hooks'
-import { useTranslation } from 'contexts/Localization'
+import { useFarmUser } from '@/state/farms/hooks'
+import { useTranslation } from '@/contexts/Localization'
 import { Text } from '@pancakeswap/uikit'
 import { Token } from '@pancakeswap/sdk'
-import { getBalanceNumber } from 'utils/formatBalance'
-import { TokenPairImage } from 'components/TokenImage'
+import { getBalanceNumber } from '@/utils/formatBalance'
+import { TokenPairImage } from '@/components/TokenImage'
 
 export interface FarmProps {
   label: string

@@ -1,9 +1,9 @@
 import { useEffect, useReducer } from 'react'
 import { useWeb3React } from '@web3-react/core'
 import BigNumber from 'bignumber.js'
-import { BidderAuction } from 'config/constants/types'
-import { useFarmAuctionContract } from 'hooks/useContract'
-import { RECLAIM_AUCTIONS_TO_FETCH } from 'config'
+import { BidderAuction } from '@/config/constants/types'
+import { useFarmAuctionContract } from '@/hooks/useContract'
+import { RECLAIM_AUCTIONS_TO_FETCH } from '@/config'
 import { processBidderAuctions, sortAuctionBidders } from '../helpers'
 
 interface ReclaimableAuction {

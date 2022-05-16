@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
 import BigNumber from 'bignumber.js'
-import poolsConfig from 'config/constants/pools'
+import poolsConfig from '@/config/constants/pools'
 import {
   AppThunk,
   PoolsState,
@@ -8,16 +8,16 @@ import {
   SerializedVaultFees,
   SerializedCakeVault,
   SerializedLockedVaultUser,
-} from 'state/types'
-import { getPoolApr } from 'utils/apr'
-import { BIG_ZERO } from 'utils/bigNumber'
-import cakeAbi from 'config/abi/cake.json'
-import { getCakeVaultAddress } from 'utils/addressHelpers'
-import { multicallv2 } from 'utils/multicall'
-import tokens from 'config/constants/tokens'
-import { getBalanceNumber } from 'utils/formatBalance'
-import { simpleRpcProvider } from 'utils/providers'
-import priceHelperLpsConfig from 'config/constants/priceHelperLps'
+} from '@/state/types'
+import { getPoolApr } from '@/utils/apr'
+import { BIG_ZERO } from '@/utils/bigNumber'
+import cakeAbi from '@/config/abi/cake.json'
+import { getCakeVaultAddress } from '@/utils/addressHelpers'
+import { multicallv2 } from '@/utils/multicall'
+import tokens from '@/config/constants/tokens'
+import { getBalanceNumber } from '@/utils/formatBalance'
+import { simpleRpcProvider } from '@/utils/providers'
+import priceHelperLpsConfig from '@/config/constants/priceHelperLps'
 import fetchFarms from '../farms/fetchFarms'
 import getFarmsPrices from '../farms/getFarmsPrices'
 import {

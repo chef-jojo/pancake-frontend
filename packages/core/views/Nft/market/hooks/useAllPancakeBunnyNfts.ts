@@ -3,8 +3,8 @@ import {
   getAllPancakeBunniesLowestPrice,
   getAllPancakeBunniesRecentUpdatedAt,
   getNftsFromCollectionApi,
-} from 'state/nftMarket/helpers'
-import { NftToken } from 'state/nftMarket/types'
+} from '@/state/nftMarket/helpers'
+import { NftToken } from '@/state/nftMarket/types'
 import { pancakeBunniesAddress } from '../constants'
 
 // If collection is PancakeBunnies - gets all available bunnies, otherwise - null

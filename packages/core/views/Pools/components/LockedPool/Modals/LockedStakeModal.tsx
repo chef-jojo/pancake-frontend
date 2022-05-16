@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { Modal, Box } from '@pancakeswap/uikit'
-import useTheme from 'hooks/useTheme'
-import { useBUSDCakeAmount } from 'hooks/useBUSDPrice'
-import { useTranslation } from 'contexts/Localization'
+import useTheme from '@/hooks/useTheme'
+import { useBUSDCakeAmount } from '@/hooks/useBUSDPrice'
+import { useTranslation } from '@/contexts/Localization'
 import _toNumber from 'lodash/toNumber'
 import BigNumber from 'bignumber.js'
 

@@ -1,10 +1,10 @@
 // eslint-disable-next-line camelcase
 import { SWRConfig, unstable_serialize } from 'swr'
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next'
-import TeamPageRouter from 'views/Teams/TeamPageRouter'
-import teams from 'config/constants/teams'
-import { getTeam } from 'state/teams/helpers'
-import { teamsById } from 'utils/teamsById'
+import TeamPageRouter from '@/views/Teams/TeamPageRouter'
+import teams from '@/config/constants/teams'
+import { getTeam } from '@/state/teams/helpers'
+import { teamsById } from '@/utils/teamsById'
 
 const TeamPage = ({ fallback = {} }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (

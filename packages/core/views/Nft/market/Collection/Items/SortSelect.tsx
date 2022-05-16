@@ -1,8 +1,8 @@
-import Select, { OptionProps } from 'components/Select/Select'
-import { useTranslation } from 'contexts/Localization'
-import { useAppDispatch } from 'state'
-import { setOrdering } from 'state/nftMarket/reducer'
-import { useGetNftOrdering } from 'state/nftMarket/hooks'
+import Select, { OptionProps } from '@/components/Select/Select'
+import { useTranslation } from '@/contexts/Localization'
+import { useAppDispatch } from '@/state'
+import { setOrdering } from '@/state/nftMarket/reducer'
+import { useGetNftOrdering } from '@/state/nftMarket/hooks'
 
 const SortSelect: React.FC<{ collectionAddress: string }> = ({ collectionAddress }) => {
   const dispatch = useAppDispatch()

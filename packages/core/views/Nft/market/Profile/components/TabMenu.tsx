@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
-import { useTranslation } from 'contexts/Localization'
-import { NextLinkFromReactRouter } from 'components/NextLink'
+import { useTranslation } from '@/contexts/Localization'
+import { NextLinkFromReactRouter } from '@/components/NextLink'
 import styled from 'styled-components'
 import { Flex } from '@pancakeswap/uikit'
-import { nftsBaseUrl } from 'views/Nft/market/constants'
+import { nftsBaseUrl } from '@/views/Nft/market/constants'
 import { useRouter } from 'next/router'
 
 const Tab = styled.button<{ $active: boolean }>`

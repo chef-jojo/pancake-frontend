@@ -1,15 +1,15 @@
 import { useWeb3React } from '@web3-react/core'
-import { NftToken, ApiResponseCollectionTokens } from 'state/nftMarket/types'
+import { NftToken, ApiResponseCollectionTokens } from '@/state/nftMarket/types'
 import useSWR from 'swr'
 import {
   getNftsMarketData,
   getMetadataWithFallback,
   getPancakeBunniesAttributesField,
   combineApiAndSgResponseToNftToken,
-} from 'state/nftMarket/helpers'
-import { FAST_INTERVAL } from 'config/constants'
-import { FetchStatus } from 'config/constants/types'
-import { formatBigNumber } from 'utils/formatBalance'
+} from '@/state/nftMarket/helpers'
+import { FAST_INTERVAL } from '@/config/constants'
+import { FetchStatus } from '@/config/constants/types'
+import { formatBigNumber } from '@/utils/formatBalance'
 import { pancakeBunniesAddress } from '../constants'
 import { getLowestUpdatedToken } from './useGetLowestPrice'
 

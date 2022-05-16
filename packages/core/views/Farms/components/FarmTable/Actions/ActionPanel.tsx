@@ -1,9 +1,9 @@
 import styled, { keyframes, css } from 'styled-components'
-import { useTranslation } from 'contexts/Localization'
+import { useTranslation } from '@/contexts/Localization'
 import { LinkExternal, Text, useMatchBreakpoints } from '@pancakeswap/uikit'
-import getLiquidityUrlPathParts from 'utils/getLiquidityUrlPathParts'
-import { getAddress } from 'utils/addressHelpers'
-import { getBscScanLink } from 'utils'
+import getLiquidityUrlPathParts from '@/utils/getLiquidityUrlPathParts'
+import { getAddress } from '@/utils/addressHelpers'
+import { getBscScanLink } from '@/utils'
 import { FarmWithStakedValue } from '../../types'
 
 import HarvestAction from './HarvestAction'

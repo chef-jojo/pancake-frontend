@@ -1,6 +1,6 @@
 import { Heading, Text } from '@pancakeswap/uikit'
-import { useTranslation } from 'contexts/Localization'
-import ConnectWalletButton from 'components/ConnectWalletButton'
+import { useTranslation } from '@/contexts/Localization'
+import ConnectWalletButton from '@/components/ConnectWalletButton'
 
 const WalletNotConnected = () => {
   const { t } = useTranslation()

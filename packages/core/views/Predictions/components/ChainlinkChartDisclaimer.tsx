@@ -12,8 +12,8 @@ import {
   Box,
 } from '@pancakeswap/uikit'
 import styled from 'styled-components'
-import { useTranslation } from 'contexts/Localization'
-import { useUserPredictionChainlinkChartDisclaimerShow } from 'state/user/hooks'
+import { useTranslation } from '@/contexts/Localization'
+import { useUserPredictionChainlinkChartDisclaimerShow } from '@/state/user/hooks'
 
 const Ul = styled.ul`
   color: ${({ theme }) => theme.colors.textSubtle};

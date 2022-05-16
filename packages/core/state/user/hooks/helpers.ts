@@ -1,6 +1,6 @@
 import { Token } from '@pancakeswap/sdk'
-import { SerializedToken } from 'config/constants/types'
-import { WrappedTokenInfo } from 'state/types'
+import { SerializedToken } from '@/config/constants/types'
+import { WrappedTokenInfo } from '@/state/types'
 
 export function serializeToken(token: Token): SerializedToken {
   return {

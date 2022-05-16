@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 import { Box, Flex, BunnyPlaceholderIcon, Skeleton, Text } from '@pancakeswap/uikit'
-import truncateHash from 'utils/truncateHash'
-import { useProfileForAddress } from 'state/profile/hooks'
-import { NextLinkFromReactRouter } from 'components/NextLink'
+import truncateHash from '@/utils/truncateHash'
+import { useProfileForAddress } from '@/state/profile/hooks'
+import { NextLinkFromReactRouter } from '@/components/NextLink'
 import { nftsBaseUrl } from '../constants'
 
 const Avatar = styled.img`

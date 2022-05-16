@@ -1,9 +1,9 @@
 import styled from 'styled-components'
-import { useTranslation } from 'contexts/Localization'
+import { useTranslation } from '@/contexts/Localization'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import { DEFAULT_META, getCustomMeta } from 'config/constants/meta'
-import { useCakeBusdPrice } from 'hooks/useBUSDPrice'
+import { DEFAULT_META, getCustomMeta } from '@/config/constants/meta'
+import { useCakeBusdPrice } from '@/hooks/useBUSDPrice'
 import Container from './Container'
 
 const StyledPage = styled(Container)`

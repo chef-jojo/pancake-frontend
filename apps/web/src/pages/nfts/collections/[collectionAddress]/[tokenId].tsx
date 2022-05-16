@@ -1,9 +1,9 @@
-import IndividualNFT from 'views/Nft/market/Collection/IndividualNFTPage'
-import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next'
-import { getCollection, getNftApi } from 'state/nftMarket/helpers'
-import { NftToken } from 'state/nftMarket/types'
 // eslint-disable-next-line camelcase
 import { SWRConfig, unstable_serialize } from 'swr'
+import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next'
+import IndividualNFT from '@/views/Nft/market/Collection/IndividualNFTPage'
+import { getCollection, getNftApi } from '@/state/nftMarket/helpers'
+import { NftToken } from '@/state/nftMarket/types'
 
 const IndividualNFTPage = ({ fallback = {} }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (

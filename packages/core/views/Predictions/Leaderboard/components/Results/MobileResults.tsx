@@ -1,5 +1,5 @@
 import { Box } from '@pancakeswap/uikit'
-import { PredictionUser } from 'state/types'
+import { PredictionUser } from '@/state/types'
 import MobileRow from './MobileRow'
 
 interface MobileResultsProps {

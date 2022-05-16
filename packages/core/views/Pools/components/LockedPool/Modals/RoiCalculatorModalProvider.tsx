@@ -1,6 +1,6 @@
 import React, { useState, createContext } from 'react'
-import { useTranslation } from 'contexts/Localization'
-import { usePool } from 'state/pools/hooks'
+import { useTranslation } from '@/contexts/Localization'
+import { usePool } from '@/state/pools/hooks'
 import _toString from 'lodash/toString'
 
 import { VaultRoiCalculatorModal } from '../../Vault/VaultRoiCalculatorModal'

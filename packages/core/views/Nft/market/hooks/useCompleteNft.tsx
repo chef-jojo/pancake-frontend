@@ -1,12 +1,12 @@
 import { useWeb3React } from '@web3-react/core'
-import { FetchStatus } from 'config/constants/types'
+import { FetchStatus } from '@/config/constants/types'
 import { useCallback } from 'react'
-import { useErc721CollectionContract } from 'hooks/useContract'
-import { getNftApi, getNftsMarketData, getNftsOnChainMarketData } from 'state/nftMarket/helpers'
-import { NftLocation, NftToken, TokenMarketData } from 'state/nftMarket/types'
-import { useProfile } from 'state/profile/hooks'
+import { useErc721CollectionContract } from '@/hooks/useContract'
+import { getNftApi, getNftsMarketData, getNftsOnChainMarketData } from '@/state/nftMarket/helpers'
+import { NftLocation, NftToken, TokenMarketData } from '@/state/nftMarket/types'
+import { useProfile } from '@/state/profile/hooks'
 import useSWR from 'swr'
-import { NOT_ON_SALE_SELLER } from 'config/constants'
+import { NOT_ON_SALE_SELLER } from '@/config/constants'
 
 const useNftOwn = (collectionAddress: string, tokenId: string, marketData?: TokenMarketData) => {
   const { account } = useWeb3React()

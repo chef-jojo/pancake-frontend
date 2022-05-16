@@ -1,6 +1,6 @@
 import { Button, useWalletModal, ButtonProps } from '@pancakeswap/uikit'
-import useAuth from 'hooks/useAuth'
-import { useTranslation } from 'contexts/Localization'
+import useAuth from '@/hooks/useAuth'
+import { useTranslation } from '@/contexts/Localization'
 import Trans from './Trans'
 
 const ConnectWalletButton = ({ children, ...props }: ButtonProps) => {

@@ -1,12 +1,12 @@
 import { useCallback, useState, useMemo, useEffect, Fragment } from 'react'
 import styled from 'styled-components'
-import { NextLinkFromReactRouter } from 'components/NextLink'
+import { NextLinkFromReactRouter } from '@/components/NextLink'
 import { Text, Flex, Box, Skeleton, ArrowBackIcon, ArrowForwardIcon } from '@pancakeswap/uikit'
-import { formatAmount } from 'utils/formatInfoNumbers'
-import { PoolData } from 'state/info/types'
-import { ITEMS_PER_INFO_TABLE_PAGE } from 'config/constants/info'
-import { DoubleCurrencyLogo } from 'views/Info/components/CurrencyLogo'
-import { useTranslation } from 'contexts/Localization'
+import { formatAmount } from '@/utils/formatInfoNumbers'
+import { PoolData } from '@/state/info/types'
+import { ITEMS_PER_INFO_TABLE_PAGE } from '@/config/constants/info'
+import { DoubleCurrencyLogo } from '@/views/Info/components/CurrencyLogo'
+import { useTranslation } from '@/contexts/Localization'
 import { ClickableColumnHeader, TableWrapper, PageButtons, Arrow, Break } from './shared'
 
 /**

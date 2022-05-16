@@ -15,11 +15,11 @@ import {
   EllipsisIcon,
   LinkExternal,
 } from '@pancakeswap/uikit'
-import { getBscScanLink } from 'utils'
-import { getBalanceNumber } from 'utils/formatBalance'
-import { useTranslation } from 'contexts/Localization'
-import { usePriceCakeBusd } from 'state/farms/hooks'
-import { Bidder } from 'config/constants/types'
+import { getBscScanLink } from '@/utils'
+import { getBalanceNumber } from '@/utils/formatBalance'
+import { useTranslation } from '@/contexts/Localization'
+import { usePriceCakeBusd } from '@/state/farms/hooks'
+import { Bidder } from '@/config/constants/types'
 import WhitelistedBiddersModal from '../WhitelistedBiddersModal'
 
 const LeaderboardContainer = styled.div`

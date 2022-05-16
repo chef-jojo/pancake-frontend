@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import styled from 'styled-components'
 import { Box, Flex, Heading, Skeleton } from '@pancakeswap/uikit'
-import { LotteryStatus } from 'config/constants/types'
-import PageSection from 'components/PageSection'
-import { useTranslation } from 'contexts/Localization'
-import useTheme from 'hooks/useTheme'
-import { useFetchLottery, useLottery } from 'state/lottery/hooks'
+import { LotteryStatus } from '@/config/constants/types'
+import PageSection from '@/components/PageSection'
+import { useTranslation } from '@/contexts/Localization'
+import useTheme from '@/hooks/useTheme'
+import { useFetchLottery, useLottery } from '@/state/lottery/hooks'
 import {
   TITLE_BG,
   GET_TICKETS_BG,

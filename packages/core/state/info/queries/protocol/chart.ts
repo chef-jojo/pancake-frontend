@@ -1,9 +1,9 @@
 /* eslint-disable no-await-in-loop */
-import { PCS_V2_START } from 'config/constants/info'
+import { PCS_V2_START } from '@/config/constants/info'
 import { gql } from 'graphql-request'
 import { useEffect, useState } from 'react'
-import { ChartEntry } from 'state/info/types'
-import { infoClient } from 'utils/graphql'
+import { ChartEntry } from '@/state/info/types'
+import { infoClient } from '@/utils/graphql'
 import { fetchChartData, mapDayData } from '../helpers'
 import { PancakeDayDatasResponse } from '../types'
 

@@ -3,9 +3,9 @@ import { Button, Text, CheckmarkIcon, CogIcon, Input, Toggle, LinkExternal, useT
 import { useDispatch, useSelector } from 'react-redux'
 import styled from 'styled-components'
 import { TokenList, Version } from '@uniswap/token-lists'
-import Card from 'components/Card'
-import { UNSUPPORTED_LIST_URLS } from 'config/constants/lists'
-import { useTranslation } from 'contexts/Localization'
+import Card from '@/components/Card'
+import { UNSUPPORTED_LIST_URLS } from '@/config/constants/lists'
+import { useTranslation } from '@/contexts/Localization'
 import useFetchListCallback from '../../hooks/useFetchListCallback'
 
 import { AppDispatch, AppState } from '../../state'

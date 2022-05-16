@@ -1,16 +1,16 @@
 import { useEffect, useState, useRef } from 'react'
-import { NftToken, ApiResponseCollectionTokens } from 'state/nftMarket/types'
+import { NftToken, ApiResponseCollectionTokens } from '@/state/nftMarket/types'
 import {
   getNftsMarketData,
   getMetadataWithFallback,
   getPancakeBunniesAttributesField,
   combineApiAndSgResponseToNftToken,
   getNftsUpdatedMarketData,
-} from 'state/nftMarket/helpers'
+} from '@/state/nftMarket/helpers'
 import useSWRInfinite from 'swr/infinite'
-import { FetchStatus } from 'config/constants/types'
-import { formatBigNumber } from 'utils/formatBalance'
-import { NOT_ON_SALE_SELLER } from 'config/constants'
+import { FetchStatus } from '@/config/constants/types'
+import { formatBigNumber } from '@/utils/formatBalance'
+import { NOT_ON_SALE_SELLER } from '@/config/constants'
 import { pancakeBunniesAddress } from '../constants'
 
 const fetchMarketDataNfts = async (

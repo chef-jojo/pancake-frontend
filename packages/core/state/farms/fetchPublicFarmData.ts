@@ -1,7 +1,7 @@
-import erc20 from 'config/abi/erc20.json'
+import erc20 from '@/config/abi/erc20.json'
 import chunk from 'lodash/chunk'
-import { getAddress, getMasterChefAddress } from 'utils/addressHelpers'
-import { multicallv2 } from 'utils/multicall'
+import { getAddress, getMasterChefAddress } from '@/utils/addressHelpers'
+import { multicallv2 } from '@/utils/multicall'
 import { SerializedFarm } from '../types'
 import { SerializedFarmConfig } from '../../config/constants/types'
 

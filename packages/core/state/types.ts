@@ -13,7 +13,7 @@ import {
   TranslatableText,
   DeserializedFarmConfig,
   FetchStatus,
-} from 'config/constants/types'
+} from '@/config/constants/types'
 import { Token, ChainId } from '@pancakeswap/sdk'
 import { TokenInfo, TokenList, Tags } from '@uniswap/token-lists'
 import { parseUnits } from '@ethersproject/units'

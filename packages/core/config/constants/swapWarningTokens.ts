@@ -1,5 +1,5 @@
 import { Token } from '@pancakeswap/sdk'
-import tokens from 'config/constants/tokens'
+import tokens from '@/config/constants/tokens'
 
 const { bondly, safemoon, itam, ccar, bttold } = tokens
 

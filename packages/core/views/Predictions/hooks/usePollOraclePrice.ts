@@ -1,5 +1,5 @@
-import { useChainlinkOracleContract } from 'hooks/useContract'
-import { useSWRContract } from 'hooks/useSWRContract'
+import { useChainlinkOracleContract } from '@/hooks/useContract'
+import { useSWRContract } from '@/hooks/useSWRContract'
 import { Zero } from '@ethersproject/constants'
 import { useConfig } from '../context/ConfigProvider'
 

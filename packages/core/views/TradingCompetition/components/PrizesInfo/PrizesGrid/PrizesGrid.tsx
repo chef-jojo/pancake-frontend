@@ -13,9 +13,9 @@ import {
   Text,
 } from '@pancakeswap/uikit'
 import Image from 'next/image'
-import Trans from 'components/Trans'
-import { Tiers, PrizesConfig } from 'config/constants/trading-competition/prizes'
-import { useTranslation } from 'contexts/Localization'
+import Trans from '@/components/Trans'
+import { Tiers, PrizesConfig } from '@/config/constants/trading-competition/prizes'
+import { useTranslation } from '@/contexts/Localization'
 import { useState } from 'react'
 import { BoldTd, Td, StyledPrizeTable } from '../../StyledPrizeTable'
 

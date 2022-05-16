@@ -15,9 +15,9 @@ import {
   ArrowDownIcon,
   Spinner,
 } from '@pancakeswap/uikit'
-import { useTranslation } from 'contexts/Localization'
-import useTheme from 'hooks/useTheme'
-import { ApiResponseCollectionTokens } from 'state/nftMarket/types'
+import { useTranslation } from '@/contexts/Localization'
+import useTheme from '@/hooks/useTheme'
+import { ApiResponseCollectionTokens } from '@/state/nftMarket/types'
 import ForSaleTableRows from './ForSaleTableRows'
 import { StyledSortButton, TableHeading } from '../../shared/styles'
 import UpdateIndicator from './UpdateIndicator'

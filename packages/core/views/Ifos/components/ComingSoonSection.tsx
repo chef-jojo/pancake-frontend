@@ -1,10 +1,10 @@
 import { useMemo } from 'react'
 import { Card, Text, BunnyPlaceholderIcon, Box } from '@pancakeswap/uikit'
-import { useTranslation } from 'contexts/Localization'
+import { useTranslation } from '@/contexts/Localization'
 import styled from 'styled-components'
-// import ConnectWalletButton from 'components/ConnectWalletButton'
+// import ConnectWalletButton from '@/components/ConnectWalletButton'
 // import { useWeb3React } from '@web3-react/core'
-import { PoolIds } from 'config/constants/types'
+import { PoolIds } from '@/config/constants/types'
 
 import {
   // MessageTextLink,

@@ -3,11 +3,11 @@
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable import/no-unresolved */
 import { render as rtlRender } from '@testing-library/react'
-import Provider from 'Providers'
-import { initializeStore, makeStore } from 'state'
 import { RouterContext } from 'next/dist/shared/lib/router-context'
 import { NextRouter } from 'next/router'
 import { SWRConfig } from 'swr'
+import Provider from '@/Providers'
+import { initializeStore, makeStore } from '@/state'
 
 const mockRouter: NextRouter = {
   basePath: '',

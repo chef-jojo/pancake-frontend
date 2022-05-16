@@ -1,6 +1,6 @@
 import { Text, TextProps } from '@pancakeswap/uikit'
-import { useTranslation } from 'contexts/Localization'
-import { TranslatableText as AchievementTitleType } from 'config/constants/types'
+import { useTranslation } from '@/contexts/Localization'
+import { TranslatableText as AchievementTitleType } from '@/config/constants/types'
 
 interface AchievementTitleProps extends TextProps {
   title: AchievementTitleType

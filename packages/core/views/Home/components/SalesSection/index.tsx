@@ -1,5 +1,5 @@
 import { Flex, Text, Button, Link } from '@pancakeswap/uikit'
-import { NextLinkFromReactRouter as RouterLink } from 'components/NextLink'
+import { NextLinkFromReactRouter as RouterLink } from '@/components/NextLink'
 import CompositeImage, { CompositeImageProps } from '../CompositeImage'
 import ColoredWordHeading from '../ColoredWordHeading'
 

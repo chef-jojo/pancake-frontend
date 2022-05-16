@@ -1,11 +1,11 @@
 /* eslint-disable no-param-reassign */
 import { gql } from 'graphql-request'
 import { useEffect, useState } from 'react'
-import { TokenData } from 'state/info/types'
-import { infoClient } from 'utils/graphql'
-import { useBlocksFromTimestamps } from 'views/Info/hooks/useBlocksFromTimestamps'
-import { getAmountChange, getChangeForPeriod, getPercentChange } from 'views/Info/utils/infoDataHelpers'
-import { getDeltaTimestamps } from 'views/Info/utils/infoQueryHelpers'
+import { TokenData } from '@/state/info/types'
+import { infoClient } from '@/utils/graphql'
+import { useBlocksFromTimestamps } from '@/views/Info/hooks/useBlocksFromTimestamps'
+import { getAmountChange, getChangeForPeriod, getPercentChange } from '@/views/Info/utils/infoDataHelpers'
+import { getDeltaTimestamps } from '@/views/Info/utils/infoQueryHelpers'
 
 interface TokenFields {
   id: string

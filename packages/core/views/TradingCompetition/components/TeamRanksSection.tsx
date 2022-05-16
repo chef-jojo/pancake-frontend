@@ -1,6 +1,6 @@
 import { Box } from '@pancakeswap/uikit'
-import useTheme from 'hooks/useTheme'
-import PageSection from 'components/PageSection'
+import useTheme from '@/hooks/useTheme'
+import PageSection from '@/components/PageSection'
 import { TeamRanksProps } from '../types'
 import RibbonWithImage from './RibbonWithImage'
 import TeamRanks from './TeamRanks/TeamRanks'

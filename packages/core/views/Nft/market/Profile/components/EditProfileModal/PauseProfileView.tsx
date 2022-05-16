@@ -1,14 +1,14 @@
 import { useState } from 'react'
 import { AutoRenewIcon, Button, Checkbox, Flex, InjectedModalProps, Text } from '@pancakeswap/uikit'
-import { useTranslation } from 'contexts/Localization'
-import useGetProfileCosts from 'views/Nft/market/Profile/hooks/useGetProfileCosts'
-import { useProfile } from 'state/profile/hooks'
-import useToast from 'hooks/useToast'
-import { formatBigNumber } from 'utils/formatBalance'
-import { useProfileContract } from 'hooks/useContract'
-import { useCallWithGasPrice } from 'hooks/useCallWithGasPrice'
-import useCatchTxError from 'hooks/useCatchTxError'
-import { ToastDescriptionWithTx } from 'components/Toast'
+import { useTranslation } from '@/contexts/Localization'
+import useGetProfileCosts from '@/views/Nft/market/Profile/hooks/useGetProfileCosts'
+import { useProfile } from '@/state/profile/hooks'
+import useToast from '@/hooks/useToast'
+import { formatBigNumber } from '@/utils/formatBalance'
+import { useProfileContract } from '@/hooks/useContract'
+import { useCallWithGasPrice } from '@/hooks/useCallWithGasPrice'
+import useCatchTxError from '@/hooks/useCatchTxError'
+import { ToastDescriptionWithTx } from '@/components/Toast'
 
 interface PauseProfilePageProps extends InjectedModalProps {
   onSuccess?: () => void

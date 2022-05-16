@@ -1,5 +1,5 @@
 import { request, gql } from 'graphql-request'
-import { GRAPH_API_PREDICTION } from 'config/constants/endpoints'
+import { GRAPH_API_PREDICTION } from '@/config/constants/endpoints'
 import { BigNumber } from '@ethersproject/bignumber'
 import {
   Bet,
@@ -13,12 +13,12 @@ import {
   RoundData,
   PredictionUser,
   HistoryFilter,
-} from 'state/types'
-import { multicallv2 } from 'utils/multicall'
-import { getPredictionsContract } from 'utils/contractHelpers'
-import predictionsAbi from 'config/abi/predictions.json'
+} from '@/state/types'
+import { multicallv2 } from '@/utils/multicall'
+import { getPredictionsContract } from '@/utils/contractHelpers'
+import predictionsAbi from '@/config/abi/predictions.json'
 import { Zero } from '@ethersproject/constants'
-import { PredictionsClaimableResponse, PredictionsLedgerResponse, PredictionsRoundsResponse } from 'utils/types'
+import { PredictionsClaimableResponse, PredictionsLedgerResponse, PredictionsRoundsResponse } from '@/utils/types'
 import {
   BetResponse,
   getRoundBaseFields,

@@ -1,16 +1,16 @@
 import { Box, Button, Grid, Flex, useMatchBreakpoints, AutoRenewIcon } from '@pancakeswap/uikit'
-import useLocalDispatch from 'contexts/LocalRedux/useLocalDispatch'
+import useLocalDispatch from '@/contexts/LocalRedux/useLocalDispatch'
 import {
   useGetLeaderboardHasMoreResults,
   useGetLeaderboardLoadingState,
   useGetLeaderboardResults,
   useGetLeaderboardSkip,
-} from 'state/predictions/hooks'
-import { filterNextPageLeaderboard } from 'state/predictions'
-import { LEADERBOARD_RESULTS_PER_PAGE } from 'state/predictions/helpers'
-import { useTranslation } from 'contexts/Localization'
-import Container from 'components/Layout/Container'
-import { FetchStatus } from 'config/constants/types'
+} from '@/state/predictions/hooks'
+import { filterNextPageLeaderboard } from '@/state/predictions'
+import { LEADERBOARD_RESULTS_PER_PAGE } from '@/state/predictions/helpers'
+import { useTranslation } from '@/contexts/Localization'
+import Container from '@/components/Layout/Container'
+import { FetchStatus } from '@/config/constants/types'
 import DesktopResults from './DesktopResults'
 import MobileResults from './MobileResults'
 import RankingCard from './RankingCard'

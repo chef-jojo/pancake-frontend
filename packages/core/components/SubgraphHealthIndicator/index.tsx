@@ -1,10 +1,10 @@
-import { BSC_BLOCK_TIME } from 'config'
-import { useTranslation } from 'contexts/Localization'
-import { TranslateFunction } from 'contexts/Localization/types'
+import { BSC_BLOCK_TIME } from '@/config'
+import { useTranslation } from '@/contexts/Localization'
+import { TranslateFunction } from '@/contexts/Localization/types'
 import styled from 'styled-components'
 import { Card, Flex, Box, InfoIcon, Text, useTooltip } from '@pancakeswap/uikit'
-import { useSubgraphHealthIndicatorManager } from 'state/user/hooks'
-import useSubgraphHealth, { SubgraphStatus } from 'hooks/useSubgraphHealth'
+import { useSubgraphHealthIndicatorManager } from '@/state/user/hooks'
+import useSubgraphHealth, { SubgraphStatus } from '@/hooks/useSubgraphHealth'
 import { useRouter } from 'next/router'
 
 const StyledCard = styled(Card)`

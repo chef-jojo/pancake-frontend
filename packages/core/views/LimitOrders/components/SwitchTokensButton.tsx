@@ -1,8 +1,8 @@
 import React from 'react'
 import { ArrowDownIcon, IconButton, ArrowUpDownIcon } from '@pancakeswap/uikit'
 import styled from 'styled-components'
-import { AutoColumn } from 'components/Layout/Column'
-import { AutoRow } from 'components/Layout/Row'
+import { AutoColumn } from '@/components/Layout/Column'
+import { AutoRow } from '@/components/Layout/Row'
 
 const StyledButton = styled(IconButton)`
   box-shadow: inset 0px -2px 0px rgba(0, 0, 0, 0.1);

@@ -4,7 +4,7 @@ import {
   numberOrNull,
   transformBetResponse,
   transformUserResponse,
-} from 'state/predictions/helpers'
+} from '@/state/predictions/helpers'
 
 describe('numberOrNull', () => {
   it.each([

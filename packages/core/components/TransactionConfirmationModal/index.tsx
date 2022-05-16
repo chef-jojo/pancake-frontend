@@ -14,11 +14,11 @@ import {
   Modal,
   InjectedModalProps,
 } from '@pancakeswap/uikit'
-import { registerToken } from 'utils/wallet'
-import { useTranslation } from 'contexts/Localization'
-import useActiveWeb3React from 'hooks/useActiveWeb3React'
-import { wrappedCurrency } from 'utils/wrappedCurrency'
-import { WrappedTokenInfo } from 'state/types'
+import { registerToken } from '@/utils/wallet'
+import { useTranslation } from '@/contexts/Localization'
+import useActiveWeb3React from '@/hooks/useActiveWeb3React'
+import { wrappedCurrency } from '@/utils/wrappedCurrency'
+import { WrappedTokenInfo } from '@/state/types'
 import { RowFixed } from '../Layout/Row'
 import { AutoColumn, ColumnCenter } from '../Layout/Column'
 import { getBscScanLink } from '../../utils'

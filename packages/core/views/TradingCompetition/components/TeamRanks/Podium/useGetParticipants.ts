@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { TC_MOBOX_SUBGRAPH } from 'config/constants/endpoints'
+import { TC_MOBOX_SUBGRAPH } from '@/config/constants/endpoints'
 import request, { gql } from 'graphql-request'
 
 const useGetParticipants = (): string[] => {

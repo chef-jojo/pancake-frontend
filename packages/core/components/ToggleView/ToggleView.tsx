@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { ListViewIcon, CardViewIcon, IconButton } from '@pancakeswap/uikit'
-import { ViewMode } from 'state/user/actions'
+import { ViewMode } from '@/state/user/actions'
 
 interface ToggleViewProps {
   idPrefix: string

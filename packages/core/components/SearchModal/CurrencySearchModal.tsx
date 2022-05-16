@@ -12,9 +12,9 @@ import {
   Button,
 } from '@pancakeswap/uikit'
 import styled from 'styled-components'
-import usePrevious from 'hooks/usePreviousValue'
+import usePrevious from '@/hooks/usePreviousValue'
 import { TokenList } from '@uniswap/token-lists'
-import { useTranslation } from 'contexts/Localization'
+import { useTranslation } from '@/contexts/Localization'
 import CurrencySearch from './CurrencySearch'
 import ImportToken from './ImportToken'
 import Manage from './Manage'

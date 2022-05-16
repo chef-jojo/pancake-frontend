@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { useModal } from '@pancakeswap/uikit'
-import AvatarImage from 'views/Nft/market/components/BannerHeader/AvatarImage'
+import AvatarImage from '@/views/Nft/market/components/BannerHeader/AvatarImage'
 import EditProfileModal from './EditProfileModal'
 
 const EditOverlay = styled.div`

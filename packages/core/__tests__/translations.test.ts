@@ -1,8 +1,8 @@
 import Path from 'path'
 import fs from 'fs'
-import translations from 'config/localization/translations.json'
-import teams from 'config/constants/teams'
-import { NftLocation } from 'state/nftMarket/types'
+import translations from '@/config/localization/translations.json'
+import teams from '@/config/constants/teams'
+import { NftLocation } from '@/state/nftMarket/types'
 
 const allTranslationKeys = Object.keys(translations)
 

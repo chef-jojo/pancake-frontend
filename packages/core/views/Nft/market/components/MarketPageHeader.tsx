@@ -1,5 +1,5 @@
-import PageHeader, { PageHeaderProps } from 'components/PageHeader'
-import useTheme from 'hooks/useTheme'
+import PageHeader, { PageHeaderProps } from '@/components/PageHeader'
+import useTheme from '@/hooks/useTheme'
 
 const MarketPageHeader: React.FC<PageHeaderProps> = (props) => {
   const { theme } = useTheme()

@@ -1,5 +1,5 @@
-import AddressInputSelect from 'components/AddressInputSelect'
-import { nftsBaseUrl } from 'views/Nft/market/constants'
+import AddressInputSelect from '@/components/AddressInputSelect'
+import { nftsBaseUrl } from '@/views/Nft/market/constants'
 import { useRouter } from 'next/router'
 
 const SearchBar: React.FC = (props) => {

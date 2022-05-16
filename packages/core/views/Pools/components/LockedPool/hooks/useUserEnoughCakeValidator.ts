@@ -1,6 +1,6 @@
 import BigNumber from 'bignumber.js'
-import { useTranslation } from 'contexts/Localization'
-import { getBalanceAmount } from 'utils/formatBalance'
+import { useTranslation } from '@/contexts/Localization'
+import { getBalanceAmount } from '@/utils/formatBalance'
 
 import { useMemo } from 'react'
 

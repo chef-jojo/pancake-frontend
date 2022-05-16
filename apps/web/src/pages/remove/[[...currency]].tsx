@@ -1,5 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
-import RemoveLiquidity from 'views/RemoveLiquidity'
+import RemoveLiquidity from '@/views/RemoveLiquidity'
 
 export default RemoveLiquidity
 

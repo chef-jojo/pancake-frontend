@@ -1,5 +1,5 @@
 import { Flex, BinanceIcon, Text, Skeleton } from '@pancakeswap/uikit'
-import { multiplyPriceByAmount } from 'utils/prices'
+import { multiplyPriceByAmount } from '@/utils/prices'
 
 const ActivityPrice = ({ bnbBusdPrice, price }) => {
   const priceInUsd = multiplyPriceByAmount(bnbBusdPrice, price)

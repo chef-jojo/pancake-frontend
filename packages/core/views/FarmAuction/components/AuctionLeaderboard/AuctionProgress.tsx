@@ -1,7 +1,7 @@
 import { Progress } from '@pancakeswap/uikit'
 import { differenceInSeconds } from 'date-fns'
-import { Auction, AuctionStatus } from 'config/constants/types'
-import { SLOW_INTERVAL } from 'config/constants'
+import { Auction, AuctionStatus } from '@/config/constants/types'
+import { SLOW_INTERVAL } from '@/config/constants'
 import useSWR from 'swr'
 
 const AuctionProgress: React.FC<{ auction: Auction }> = ({ auction }) => {

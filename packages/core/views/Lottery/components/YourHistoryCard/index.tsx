@@ -13,12 +13,12 @@ import {
   Skeleton,
   Box,
 } from '@pancakeswap/uikit'
-import { useTranslation } from 'contexts/Localization'
-import { LotteryStatus } from 'config/constants/types'
-import { useGetUserLotteriesGraphData, useLottery } from 'state/lottery/hooks'
-import { fetchLottery } from 'state/lottery/helpers'
-import { LotteryRound } from 'state/types'
-import ConnectWalletButton from 'components/ConnectWalletButton'
+import { useTranslation } from '@/contexts/Localization'
+import { LotteryStatus } from '@/config/constants/types'
+import { useGetUserLotteriesGraphData, useLottery } from '@/state/lottery/hooks'
+import { fetchLottery } from '@/state/lottery/helpers'
+import { LotteryRound } from '@/state/types'
+import ConnectWalletButton from '@/components/ConnectWalletButton'
 import FinishedRoundTable from './FinishedRoundTable'
 import { WhiteBunny } from '../../svgs'
 import BuyTicketsButton from '../BuyTicketsButton'

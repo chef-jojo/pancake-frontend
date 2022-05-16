@@ -1,3 +1,3 @@
-import FarmAuction from '../../views/FarmAuction'
+import FarmAuction from '@/views/FarmAuction'
 
 export default FarmAuction

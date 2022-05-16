@@ -1,7 +1,7 @@
-import Token from 'views/Info/Tokens/TokenPage'
 import { GetStaticPaths, GetStaticProps } from 'next'
-import { isAddress } from 'utils'
-import { InfoPageLayout } from 'views/Info'
+import { isAddress } from '@/utils'
+import Token from '@/views/Info/Tokens/TokenPage'
+import { InfoPageLayout } from '@/views/Info'
 
 const TokenPage = ({ address }: { address: string }) => {
   if (!address) {

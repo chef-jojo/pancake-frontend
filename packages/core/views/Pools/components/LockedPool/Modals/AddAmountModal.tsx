@@ -1,13 +1,13 @@
 import { useState, useCallback } from 'react'
 import { Modal, Box, MessageText, Message, Checkbox, Flex, Text } from '@pancakeswap/uikit'
 import _noop from 'lodash/noop'
-import { useTranslation } from 'contexts/Localization'
+import { useTranslation } from '@/contexts/Localization'
 import BigNumber from 'bignumber.js'
 import _toNumber from 'lodash/toNumber'
 
-import useTheme from 'hooks/useTheme'
-import { useBUSDCakeAmount } from 'hooks/useBUSDPrice'
-import { getBalanceNumber, getDecimalAmount, getBalanceAmount } from 'utils/formatBalance'
+import useTheme from '@/hooks/useTheme'
+import { useBUSDCakeAmount } from '@/hooks/useBUSDPrice'
+import { getBalanceNumber, getDecimalAmount, getBalanceAmount } from '@/utils/formatBalance'
 
 import RoiCalculatorModalProvider from './RoiCalculatorModalProvider'
 

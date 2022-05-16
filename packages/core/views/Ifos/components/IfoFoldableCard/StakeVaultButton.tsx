@@ -1,6 +1,6 @@
 import { Button } from '@pancakeswap/uikit'
 
-import { useTranslation } from 'contexts/Localization'
+import { useTranslation } from '@/contexts/Localization'
 
 const StakeVaultButton = (props) => {
   const { t } = useTranslation()

@@ -1,10 +1,10 @@
 import { NoProfileAvatarIcon, Flex, Heading, Skeleton, Text, Box, useMatchBreakpoints } from '@pancakeswap/uikit'
 import { useWeb3React } from '@web3-react/core'
 import styled from 'styled-components'
-import { useProfile } from 'state/profile/hooks'
-import ProfileAvatarWithTeam from 'components/ProfileAvatarWithTeam'
-import { useTranslation } from 'contexts/Localization'
-import truncateHash from 'utils/truncateHash'
+import { useProfile } from '@/state/profile/hooks'
+import ProfileAvatarWithTeam from '@/components/ProfileAvatarWithTeam'
+import { useTranslation } from '@/contexts/Localization'
+import truncateHash from '@/utils/truncateHash'
 
 const Desktop = styled(Flex)`
   align-items: center;

@@ -1,6 +1,6 @@
 import { Interface } from '@ethersproject/abi'
 import { CallOverrides } from '@ethersproject/contracts'
-import { getMulticallContract } from 'utils/contractHelpers'
+import { getMulticallContract } from '@/utils/contractHelpers'
 
 export interface Call {
   address: string // Address of the contract

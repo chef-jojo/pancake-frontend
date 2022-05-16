@@ -1,6 +1,6 @@
-import masterchefABIV1 from 'config/abi/masterchefV1.json'
+import masterchefABIV1 from '@/config/abi/masterchefV1.json'
 import chunk from 'lodash/chunk'
-import { multicallv2 } from 'utils/multicall'
+import { multicallv2 } from '@/utils/multicall'
 import { SerializedFarmConfig } from '../../config/constants/types'
 import { SerializedFarm } from '../types'
 import { getMasterChefV1Address } from '../../utils/addressHelpers'

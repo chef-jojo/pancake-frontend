@@ -1,7 +1,7 @@
 import { renderHook } from '@testing-library/react-hooks'
 import { FixedNumber } from '@ethersproject/bignumber'
 import { createSWRWrapper } from 'testUtils'
-import * as PoolHooks from 'state/pools/hooks'
+import * as PoolHooks from '@/state/pools/hooks'
 import BigNumber from 'bignumber.js'
 import { useVaultApy } from './useVaultApy'
 

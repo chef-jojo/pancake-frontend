@@ -1,7 +1,7 @@
-import { useTranslation } from 'contexts/Localization'
+import { useTranslation } from '@/contexts/Localization'
 import styled from 'styled-components'
 import { Modal, Text, Button, OpenNewIcon, Link } from '@pancakeswap/uikit'
-import useTheme from 'hooks/useTheme'
+import useTheme from '@/hooks/useTheme'
 
 interface NotEnoughTokensModalProps {
   tokenSymbol: string

@@ -1,13 +1,13 @@
 import { Box, Button, Flex, InjectedModalProps, LinkExternal, Message, Skeleton, Text } from '@pancakeswap/uikit'
 import { useWeb3React } from '@web3-react/core'
-import tokens from 'config/constants/tokens'
-import { FetchStatus } from 'config/constants/types'
-import { useTranslation } from 'contexts/Localization'
-import useAuth from 'hooks/useAuth'
-import useTokenBalance, { useGetBnbBalance } from 'hooks/useTokenBalance'
+import tokens from '@/config/constants/tokens'
+import { FetchStatus } from '@/config/constants/types'
+import { useTranslation } from '@/contexts/Localization'
+import useAuth from '@/hooks/useAuth'
+import useTokenBalance, { useGetBnbBalance } from '@/hooks/useTokenBalance'
 
-import { getBscScanLink } from 'utils'
-import { formatBigNumber, getFullDisplayBalance } from 'utils/formatBalance'
+import { getBscScanLink } from '@/utils'
+import { formatBigNumber, getFullDisplayBalance } from '@/utils/formatBalance'
 import CopyAddress from './CopyAddress'
 
 interface WalletInfoProps {

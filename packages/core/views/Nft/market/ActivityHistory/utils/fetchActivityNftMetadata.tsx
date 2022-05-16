@@ -1,5 +1,5 @@
-import { Activity, NftToken, TokenIdWithCollectionAddress } from 'state/nftMarket/types'
-import { getNftsFromCollectionApi, getNftsFromDifferentCollectionsApi } from 'state/nftMarket/helpers'
+import { Activity, NftToken, TokenIdWithCollectionAddress } from '@/state/nftMarket/types'
+import { getNftsFromCollectionApi, getNftsFromDifferentCollectionsApi } from '@/state/nftMarket/helpers'
 import uniqBy from 'lodash/uniqBy'
 import { pancakeBunniesAddress } from '../../constants'
 

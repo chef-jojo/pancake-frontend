@@ -1,8 +1,8 @@
 import { request, gql } from 'graphql-request'
-import { campaignMap } from 'config/constants/campaigns'
-import { GRAPH_API_PROFILE } from 'config/constants/endpoints'
-import { Achievement } from 'state/types'
-import { getAchievementTitle, getAchievementDescription } from 'utils/achievements'
+import { campaignMap } from '@/config/constants/campaigns'
+import { GRAPH_API_PROFILE } from '@/config/constants/endpoints'
+import { Achievement } from '@/state/types'
+import { getAchievementTitle, getAchievementDescription } from '@/utils/achievements'
 
 interface UserPointIncreaseEvent {
   campaignId: string

@@ -1,11 +1,11 @@
 import { Box, BoxProps } from '@pancakeswap/uikit'
 import { FC, useEffect, useRef } from 'react'
-import useIntersectionObserver from 'hooks/useIntersectionObserver'
-import { NftToken } from 'state/nftMarket/types'
+import useIntersectionObserver from '@/hooks/useIntersectionObserver'
+import { NftToken } from '@/state/nftMarket/types'
 import styled from 'styled-components'
-import { useTryVideoNftMedia } from 'state/nftMarket/hooks'
-import { useAppDispatch } from 'state'
-import { setTryVideoNftMedia } from 'state/nftMarket/reducer'
+import { useTryVideoNftMedia } from '@/state/nftMarket/hooks'
+import { useAppDispatch } from '@/state'
+import { setTryVideoNftMedia } from '@/state/nftMarket/reducer'
 import { RoundedImage } from '../Collection/IndividualNFTPage/shared/styles'
 
 const StyledAspectRatio = styled(Box)`

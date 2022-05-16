@@ -1,11 +1,11 @@
 /* eslint-disable no-param-reassign */
-import { isTradeBetter } from 'utils/trades'
+import { isTradeBetter } from '@/utils/trades'
 import { Currency, CurrencyAmount, Pair, Token, Trade } from '@pancakeswap/sdk'
 import flatMap from 'lodash/flatMap'
 import { useMemo } from 'react'
-import useActiveWeb3React from 'hooks/useActiveWeb3React'
+import useActiveWeb3React from '@/hooks/useActiveWeb3React'
 
-import { useUserSingleHopOnly } from 'state/user/hooks'
+import { useUserSingleHopOnly } from '@/state/user/hooks'
 import {
   BASES_TO_CHECK_TRADES_AGAINST,
   CUSTOM_BASES,

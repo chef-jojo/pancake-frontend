@@ -10,10 +10,10 @@ import {
   useModal,
   ChartDisableIcon,
 } from '@pancakeswap/uikit'
-import TransactionsModal from 'components/App/Transactions/TransactionsModal'
-import GlobalSettings from 'components/Menu/GlobalSettings'
-import { useExpertModeManager } from 'state/user/hooks'
-import RefreshIcon from 'components/Svg/RefreshIcon'
+import TransactionsModal from '@/components/App/Transactions/TransactionsModal'
+import GlobalSettings from '@/components/Menu/GlobalSettings'
+import { useExpertModeManager } from '@/state/user/hooks'
+import RefreshIcon from '@/components/Svg/RefreshIcon'
 
 interface Props {
   title: string

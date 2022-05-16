@@ -1,9 +1,9 @@
 import BigNumber from 'bignumber.js'
-import { vaultPoolConfig } from 'config/constants/pools'
-import { DeserializedPool } from 'state/types'
-import { BIG_ZERO } from 'utils/bigNumber'
-import { getApy } from 'utils/compoundApyHelpers'
-import { getBalanceNumber, getFullDisplayBalance, getDecimalAmount } from 'utils/formatBalance'
+import { vaultPoolConfig } from '@/config/constants/pools'
+import { DeserializedPool } from '@/state/types'
+import { BIG_ZERO } from '@/utils/bigNumber'
+import { getApy } from '@/utils/compoundApyHelpers'
+import { getBalanceNumber, getFullDisplayBalance, getDecimalAmount } from '@/utils/formatBalance'
 
 export const convertSharesToCake = (
   shares: BigNumber,

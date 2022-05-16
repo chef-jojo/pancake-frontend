@@ -1,6 +1,6 @@
-import { ONE_DAY_UNIX, PCS_V2_START } from 'config/constants/info'
+import { ONE_DAY_UNIX, PCS_V2_START } from '@/config/constants/info'
 import { getUnixTime } from 'date-fns'
-import { TransactionType } from 'state/info/types'
+import { TransactionType } from '@/state/info/types'
 import { ChartEntry } from '../types'
 import { MintResponse, SwapResponse, BurnResponse, TokenDayData, PairDayData, PancakeDayData } from './types'
 

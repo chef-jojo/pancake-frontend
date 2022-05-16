@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 import { useModal } from '@pancakeswap/uikit'
 import { useWeb3React } from '@web3-react/core'
-import { getBunnySpecialXmasContract } from 'utils/contractHelpers'
-import { simpleRpcProvider } from 'utils/providers'
-import ClaimNftModal from 'components/ClaimNftModal/ClaimNftModal'
+import { getBunnySpecialXmasContract } from '@/utils/contractHelpers'
+import { simpleRpcProvider } from '@/utils/providers'
+import ClaimNftModal from '@/components/ClaimNftModal/ClaimNftModal'
 import noop from 'lodash/noop'
 
 const useNftClaimStatusCheck = () => {

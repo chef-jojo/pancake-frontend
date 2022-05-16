@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import { isAddress } from 'utils'
-import { useAppDispatch } from 'state'
+import { isAddress } from '@/utils'
+import { useAppDispatch } from '@/state'
 import {
   ArrowBackIcon,
   ArrowForwardIcon,
@@ -12,15 +12,15 @@ import {
   Th,
   useMatchBreakpoints,
 } from '@pancakeswap/uikit'
-import { getCollectionActivity } from 'state/nftMarket/helpers'
-import Container from 'components/Layout/Container'
-import TableLoader from 'components/TableLoader'
-import { Activity, Collection, NftToken } from 'state/nftMarket/types'
-import { useTranslation } from 'contexts/Localization'
-import { useBNBBusdPrice } from 'hooks/useBUSDPrice'
-import useTheme from 'hooks/useTheme'
-import useLastUpdated from 'hooks/useLastUpdated'
-import { useGetNftActivityFilters } from 'state/nftMarket/hooks'
+import { getCollectionActivity } from '@/state/nftMarket/helpers'
+import Container from '@/components/Layout/Container'
+import TableLoader from '@/components/TableLoader'
+import { Activity, Collection, NftToken } from '@/state/nftMarket/types'
+import { useTranslation } from '@/contexts/Localization'
+import { useBNBBusdPrice } from '@/hooks/useBUSDPrice'
+import useTheme from '@/hooks/useTheme'
+import useLastUpdated from '@/hooks/useLastUpdated'
+import { useGetNftActivityFilters } from '@/state/nftMarket/hooks'
 import { Arrow, PageButtons } from '../components/PaginationButtons'
 import NoNftsImage from '../components/Activity/NoNftsImage'
 import ActivityFilters from './ActivityFilters'

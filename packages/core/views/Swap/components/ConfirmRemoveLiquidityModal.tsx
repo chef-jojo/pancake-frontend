@@ -1,16 +1,16 @@
 import React, { useCallback } from 'react'
 import { Currency, CurrencyAmount, Pair, Percent, Token, TokenAmount } from '@pancakeswap/sdk'
 import { AddIcon, Button, InjectedModalProps, Text } from '@pancakeswap/uikit'
-import { useTranslation } from 'contexts/Localization'
+import { useTranslation } from '@/contexts/Localization'
 import TransactionConfirmationModal, {
   ConfirmationModalContent,
   TransactionErrorContent,
-} from 'components/TransactionConfirmationModal'
-import { AutoColumn } from 'components/Layout/Column'
-import { RowBetween, RowFixed } from 'components/Layout/Row'
-import { Field } from 'state/burn/actions'
-import { CurrencyLogo, DoubleCurrencyLogo } from 'components/Logo'
-import { ApprovalState } from 'hooks/useApproveCallback'
+} from '@/components/TransactionConfirmationModal'
+import { AutoColumn } from '@/components/Layout/Column'
+import { RowBetween, RowFixed } from '@/components/Layout/Row'
+import { Field } from '@/state/burn/actions'
+import { CurrencyLogo, DoubleCurrencyLogo } from '@/components/Logo'
+import { ApprovalState } from '@/hooks/useApproveCallback'
 
 interface ConfirmRemoveLiquidityModalProps {
   title: string

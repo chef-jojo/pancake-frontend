@@ -1,8 +1,8 @@
 import { Price } from '@pancakeswap/sdk'
 import { Flex, Text } from '@pancakeswap/uikit'
-import { multiplyPriceByAmount } from 'utils/prices'
-import { useTranslation } from 'contexts/Localization'
-import { useConfig } from 'views/Predictions/context/ConfigProvider'
+import { multiplyPriceByAmount } from '@/utils/prices'
+import { useTranslation } from '@/contexts/Localization'
+import { useConfig } from '@/views/Predictions/context/ConfigProvider'
 import { formatBnb } from '../helpers'
 
 type SummaryType = 'won' | 'lost' | 'entered'

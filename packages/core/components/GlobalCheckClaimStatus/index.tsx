@@ -4,9 +4,9 @@ import { useModal } from '@pancakeswap/uikit'
 import { useWeb3React } from '@web3-react/core'
 import dynamic from 'next/dynamic'
 import request, { gql } from 'graphql-request'
-import { GALAXY_NFT_CAMPAIGN_ID } from 'config/constants'
-import { GALAXY_NFT_CLAIMING_API } from 'config/constants/endpoints'
-import { useERC721 } from 'hooks/useContract'
+import { GALAXY_NFT_CAMPAIGN_ID } from '@/config/constants'
+import { GALAXY_NFT_CLAIMING_API } from '@/config/constants/endpoints'
+import { useERC721 } from '@/hooks/useContract'
 
 const GalaxyNFTClaimModal = dynamic(() => import('./GalaxyNFTClaimModal'), { ssr: false })
 

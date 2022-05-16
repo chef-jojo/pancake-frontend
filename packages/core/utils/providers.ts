@@ -1,5 +1,5 @@
 import { StaticJsonRpcProvider } from '@ethersproject/providers'
-import getRpcUrl from 'utils/getRpcUrl'
+import getRpcUrl from '@/utils/getRpcUrl'
 
 const RPC_URL = getRpcUrl()
 

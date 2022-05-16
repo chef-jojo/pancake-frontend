@@ -1,5 +1,5 @@
-import ifos from 'config/constants/ifo'
-import campaigns from 'config/constants/campaigns'
+import ifos from '@/config/constants/ifo'
+import campaigns from '@/config/constants/campaigns'
 
 describe('Config IFOs', () => {
   it.each(ifos.map((ifo) => ifo.id))('IFO %s has an unique id', (id) => {

@@ -1,8 +1,8 @@
 import { Flex, LinkExternal, Text } from '@pancakeswap/uikit'
-import { useTranslation } from 'contexts/Localization'
+import { useTranslation } from '@/contexts/Localization'
 import styled from 'styled-components'
-import { getBscScanLink } from 'utils'
-import { formatNumber } from 'utils/formatBalance'
+import { getBscScanLink } from '@/utils'
+import { formatNumber } from '@/utils/formatBalance'
 import { ModalInner, VotingBox } from './styles'
 
 const StyledLinkExternal = styled(LinkExternal)`

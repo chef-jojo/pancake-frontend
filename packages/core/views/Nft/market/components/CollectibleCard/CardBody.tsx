@@ -1,6 +1,6 @@
 import { Box, CardBody, Flex, Text } from '@pancakeswap/uikit'
-import { useTranslation } from 'contexts/Localization'
-import { useBNBBusdPrice } from 'hooks/useBUSDPrice'
+import { useTranslation } from '@/contexts/Localization'
+import { useBNBBusdPrice } from '@/hooks/useBUSDPrice'
 import PreviewImage from './PreviewImage'
 import { CostLabel, LowestPriceMetaRow, MetaRow } from './styles'
 import LocationTag from './LocationTag'

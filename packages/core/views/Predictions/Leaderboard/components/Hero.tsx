@@ -1,6 +1,6 @@
 import { Heading } from '@pancakeswap/uikit'
-import { useTranslation } from 'contexts/Localization'
-import PageHeader from 'components/PageHeader'
+import { useTranslation } from '@/contexts/Localization'
+import PageHeader from '@/components/PageHeader'
 import Crumbs from './Crumbs'
 
 const Hero = () => {

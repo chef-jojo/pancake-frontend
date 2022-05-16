@@ -12,11 +12,11 @@ import {
   Skeleton,
   AutoRenewIcon,
 } from '@pancakeswap/uikit'
-import { ModalActions, ModalInput } from 'components/Modal'
-import RoiCalculatorModal from 'components/RoiCalculatorModal'
-import { useTranslation } from 'contexts/Localization'
-import { getFullDisplayBalance, formatNumber } from 'utils/formatBalance'
-import { getInterestBreakdown } from 'utils/compoundApyHelpers'
+import { ModalActions, ModalInput } from '@/components/Modal'
+import RoiCalculatorModal from '@/components/RoiCalculatorModal'
+import { useTranslation } from '@/contexts/Localization'
+import { getFullDisplayBalance, formatNumber } from '@/utils/formatBalance'
+import { getInterestBreakdown } from '@/utils/compoundApyHelpers'
 
 const AnnualRoiContainer = styled(Flex)`
   cursor: pointer;

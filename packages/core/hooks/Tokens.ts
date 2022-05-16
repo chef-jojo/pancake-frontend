@@ -3,12 +3,12 @@ import { arrayify } from '@ethersproject/bytes'
 import { parseBytes32String } from '@ethersproject/strings'
 import { Currency, currencyEquals, ETHER, Token } from '@pancakeswap/sdk'
 import { createSelector } from '@reduxjs/toolkit'
-import { GELATO_NATIVE } from 'config/constants'
-import { CHAIN_ID } from 'config/constants/networks'
-import useActiveWeb3React from 'hooks/useActiveWeb3React'
+import { GELATO_NATIVE } from '@/config/constants'
+import { CHAIN_ID } from '@/config/constants/networks'
+import useActiveWeb3React from '@/hooks/useActiveWeb3React'
 import { useMemo } from 'react'
 import { useSelector } from 'react-redux'
-import { TokenAddressMap } from 'state/types'
+import { TokenAddressMap } from '@/state/types'
 import {
   combinedTokenMapFromActiveUrlsSelector,
   combinedTokenMapFromOfficialsUrlsSelector,

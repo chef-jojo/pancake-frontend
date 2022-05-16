@@ -1,3 +1,3 @@
-import Liquidity from '../views/Pool'
+import Liquidity from '@/views/Pool'
 
 export default Liquidity

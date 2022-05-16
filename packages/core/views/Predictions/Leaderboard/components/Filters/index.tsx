@@ -1,11 +1,11 @@
 import styled from 'styled-components'
 import { Box, Flex, Text } from '@pancakeswap/uikit'
-import { useTranslation } from 'contexts/Localization'
-import useLocalDispatch from 'contexts/LocalRedux/useLocalDispatch'
-import { setLeaderboardFilter } from 'state/predictions'
-import Select, { OptionProps } from 'components/Select/Select'
-import Container from 'components/Layout/Container'
-import { useConfig } from 'views/Predictions/context/ConfigProvider'
+import { useTranslation } from '@/contexts/Localization'
+import useLocalDispatch from '@/contexts/LocalRedux/useLocalDispatch'
+import { setLeaderboardFilter } from '@/state/predictions'
+import Select, { OptionProps } from '@/components/Select/Select'
+import Container from '@/components/Layout/Container'
+import { useConfig } from '@/views/Predictions/context/ConfigProvider'
 import AddressSearch from '../AddressSearch'
 
 const SearchWrapper = styled(Box)`

@@ -1,6 +1,6 @@
 import NextErrorComponent from 'next/error'
 import * as Sentry from '@sentry/nextjs'
-import NotFound from '../views/NotFound'
+import NotFound from '@/views/NotFound'
 
 const MyError = ({ hasGetInitialPropsRun, err }) => {
   if (!hasGetInitialPropsRun && err) {

@@ -13,12 +13,12 @@ import {
   SearchIcon,
   CloseIcon,
 } from '@pancakeswap/uikit'
-import { FetchStatus } from 'config/constants/types'
-import { useTranslation } from 'contexts/Localization'
+import { FetchStatus } from '@/config/constants/types'
+import { useTranslation } from '@/contexts/Localization'
 import orderBy from 'lodash/orderBy'
-import { useAppDispatch } from 'state'
-import { useGetNftFilterLoadingState, useGetNftFilters } from 'state/nftMarket/hooks'
-import { filterNftsFromCollection } from 'state/nftMarket/reducer'
+import { useAppDispatch } from '@/state'
+import { useGetNftFilterLoadingState, useGetNftFilters } from '@/state/nftMarket/hooks'
+import { filterNftsFromCollection } from '@/state/nftMarket/reducer'
 import styled from 'styled-components'
 import { Item } from './types'
 import { FilterButton, ListOrderState, SearchWrapper } from '../ListFilter/styles'

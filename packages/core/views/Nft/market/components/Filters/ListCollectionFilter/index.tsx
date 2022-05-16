@@ -12,15 +12,15 @@ import {
   ArrowUpIcon,
   ArrowDownIcon,
 } from '@pancakeswap/uikit'
-import { useAppDispatch } from 'state'
-import { Collection } from 'state/nftMarket/types'
-import { useGetCollections, useGetNftActivityFilters } from 'state/nftMarket/hooks'
+import { useAppDispatch } from '@/state'
+import { Collection } from '@/state/nftMarket/types'
+import { useGetCollections, useGetNftActivityFilters } from '@/state/nftMarket/hooks'
 import {
   addActivityCollectionFilters,
   removeActivityCollectionFilters,
   removeAllActivityCollectionFilters,
-} from 'state/nftMarket/reducer'
-import { useTranslation } from 'contexts/Localization'
+} from '@/state/nftMarket/reducer'
+import { useTranslation } from '@/contexts/Localization'
 import { CloseButton, FilterButton, ListOrderState, SearchWrapper, TriggerButton } from '../ListFilter/styles'
 import { CollectionItemRow } from './styles'
 

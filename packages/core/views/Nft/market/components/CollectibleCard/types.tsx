@@ -1,5 +1,5 @@
 import { CardProps } from '@pancakeswap/uikit'
-import { NftLocation, NftToken } from 'state/nftMarket/types'
+import { NftLocation, NftToken } from '@/state/nftMarket/types'
 
 export interface CollectibleCardProps extends CardProps {
   nft: NftToken

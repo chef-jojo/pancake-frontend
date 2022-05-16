@@ -2,11 +2,11 @@ import { useEffect, useState } from 'react'
 import { Flex, Spinner, Text } from '@pancakeswap/uikit'
 import { useWeb3React } from '@web3-react/core'
 import styled from 'styled-components'
-import ConnectWalletButton from 'components/ConnectWalletButton'
-import { useTranslation } from 'contexts/Localization'
-import { fetchNodeHistory } from 'state/predictions'
-import { getFilteredBets } from 'state/predictions/helpers'
-import useLocalDispatch from 'contexts/LocalRedux/useLocalDispatch'
+import ConnectWalletButton from '@/components/ConnectWalletButton'
+import { useTranslation } from '@/contexts/Localization'
+import { fetchNodeHistory } from '@/state/predictions'
+import { getFilteredBets } from '@/state/predictions/helpers'
+import useLocalDispatch from '@/contexts/LocalRedux/useLocalDispatch'
 import {
   useGetCurrentEpoch,
   useGetCurrentHistoryPage,
@@ -14,7 +14,7 @@ import {
   useGetHistoryFilter,
   useGetIsFetchingHistory,
   useIsHistoryPaneOpen,
-} from 'state/predictions/hooks'
+} from '@/state/predictions/hooks'
 import { Header, HistoryTabs } from './components/History'
 import RoundsTab from './components/History/RoundsTab'
 import PnlTab from './components/History/PnlTab/PnlTab'

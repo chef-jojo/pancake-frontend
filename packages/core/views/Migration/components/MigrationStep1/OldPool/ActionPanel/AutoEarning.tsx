@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Text, Flex, Heading, useMatchBreakpoints } from '@pancakeswap/uikit'
-import { useTranslation } from 'contexts/Localization'
-import Balance from 'components/Balance'
-import { ActionContainer, ActionTitles, ActionContent } from 'views/Pools/components/PoolsTable/ActionPanel/styles'
+import { useTranslation } from '@/contexts/Localization'
+import Balance from '@/components/Balance'
+import { ActionContainer, ActionTitles, ActionContent } from '@/views/Pools/components/PoolsTable/ActionPanel/styles'
 
 const Container = styled(ActionContainer)`
   flex: 2;

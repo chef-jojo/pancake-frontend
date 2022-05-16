@@ -1,4 +1,4 @@
-import { getAddress } from 'utils/addressHelpers'
+import { getAddress } from '@/utils/addressHelpers'
 
 describe('getAddress', () => {
   const address = {

@@ -13,9 +13,9 @@ import {
   useTooltip,
 } from '@pancakeswap/uikit'
 import BigNumber from 'bignumber.js'
-import { useTranslation } from 'contexts/Localization'
-import { getBalanceNumber } from 'utils/formatBalance'
-import useActiveWeb3React from 'hooks/useActiveWeb3React'
+import { useTranslation } from '@/contexts/Localization'
+import { getBalanceNumber } from '@/utils/formatBalance'
+import useActiveWeb3React from '@/hooks/useActiveWeb3React'
 
 import RoiCalculatorFooter from './RoiCalculatorFooter'
 import RoiCard from './RoiCard'

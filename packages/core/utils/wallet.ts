@@ -2,8 +2,8 @@
 
 import { ExternalProvider } from '@ethersproject/providers'
 import { ChainId } from '@pancakeswap/sdk'
-import { BAD_SRCS } from 'components/Logo/Logo'
-import { BASE_BSC_SCAN_URLS } from 'config'
+import { BAD_SRCS } from '@/components/Logo/Logo'
+import { BASE_BSC_SCAN_URLS } from '@/config'
 import { nodes } from './getRpcUrl'
 
 const NETWORK_CONFIG = {

@@ -12,7 +12,8 @@
     "start": "turbo run start",
     "postinstall": "turbo run postinstall",
     "lint": "turbo run lint",
-    "format:check:staged": "turbo run format:check:staged"
+    "format:check:staged": "turbo run format:check:staged",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@binance-chain/bsc-connector": "^1.0.0",
@@ -111,5 +112,6 @@
     "ts-node": "^9.1.1",
     "turbo": "^1.1.4",
     "typechain": "^6.1.0"
-  }
+  },
+  "packageManager": "yarn@1.22.10"
 }

@@ -3,7 +3,7 @@ import {
   getPercentChange,
   getChangeForPeriod,
   getLpFeesAndApr,
-} from 'views/Info/utils/infoDataHelpers'
+} from '@/views/Info/utils/infoDataHelpers'
 
 describe('info/utils/infoDataHelpers', () => {
   it.each`

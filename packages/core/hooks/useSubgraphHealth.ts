@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { request, gql } from 'graphql-request'
-import { simpleRpcProvider } from 'utils/providers'
-import { GRAPH_HEALTH } from 'config/constants/endpoints'
+import { simpleRpcProvider } from '@/utils/providers'
+import { GRAPH_HEALTH } from '@/config/constants/endpoints'
 import { useSlowRefreshEffect } from './useRefreshEffect'
 
 export enum SubgraphStatus {

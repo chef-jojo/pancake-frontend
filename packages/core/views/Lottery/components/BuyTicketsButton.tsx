@@ -1,7 +1,7 @@
 import { Button, useModal, WaitIcon, ButtonProps } from '@pancakeswap/uikit'
-import { useTranslation } from 'contexts/Localization'
-import { useLottery } from 'state/lottery/hooks'
-import { LotteryStatus } from 'config/constants/types'
+import { useTranslation } from '@/contexts/Localization'
+import { useLottery } from '@/state/lottery/hooks'
+import { LotteryStatus } from '@/config/constants/types'
 import BuyTicketsModal from './BuyTicketsModal/BuyTicketsModal'
 
 interface BuyTicketsButtonProps extends ButtonProps {

@@ -1,6 +1,6 @@
 import { SubMenuItems } from '@pancakeswap/uikit'
-import { useTranslation } from 'contexts/Localization'
-import { PageMeta } from 'components/Layout/Page'
+import { useTranslation } from '@/contexts/Localization'
+import { PageMeta } from '@/components/Layout/Page'
 import { useRouter } from 'next/router'
 import Hero from './components/Hero'
 

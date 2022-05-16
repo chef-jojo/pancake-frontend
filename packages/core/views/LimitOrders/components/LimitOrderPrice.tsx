@@ -2,9 +2,9 @@ import React from 'react'
 import { Currency, Percent, Price } from '@pancakeswap/sdk'
 import styled from 'styled-components'
 import { Input, Flex, Text, Button, AutoRenewIcon, SyncAltIcon, HelpIcon, useTooltip } from '@pancakeswap/uikit'
-import { useTranslation } from 'contexts/Localization'
-import { escapeRegExp } from 'utils'
-import { Rate } from 'state/limitOrders/types'
+import { useTranslation } from '@/contexts/Localization'
+import { escapeRegExp } from '@/utils'
+import { Rate } from '@/state/limitOrders/types'
 import { getRatePercentageMessage, PercentageDirection } from '../utils/getRatePercentageMessage'
 
 const inputRegex = RegExp(`^\\d*(?:\\\\[.])?\\d*$`) // match escaped "." characters via in a non-capturing group

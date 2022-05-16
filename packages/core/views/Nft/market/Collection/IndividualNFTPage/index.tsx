@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import PageLoader from 'components/Loader/PageLoader'
+import PageLoader from '@/components/Loader/PageLoader'
 import { pancakeBunniesAddress } from '../../constants'
 import IndividualPancakeBunnyPage from './PancakeBunnyPage'
 import IndividualNFTPage from './OneOfAKindNftPage'

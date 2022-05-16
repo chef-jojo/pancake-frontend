@@ -1,9 +1,9 @@
-import { MINIMUM_SEARCH_CHARACTERS } from 'config/constants/info'
+import { MINIMUM_SEARCH_CHARACTERS } from '@/config/constants/info'
 import { gql } from 'graphql-request'
 import { useEffect, useState } from 'react'
-import { usePoolDatas, useTokenDatas } from 'state/info/hooks'
-import { PoolData, TokenData } from 'state/info/types'
-import { infoClient } from 'utils/graphql'
+import { usePoolDatas, useTokenDatas } from '@/state/info/hooks'
+import { PoolData, TokenData } from '@/state/info/types'
+import { infoClient } from '@/utils/graphql'
 
 const TOKEN_SEARCH = gql`
   query tokens($symbol: String, $name: String, $id: String) {

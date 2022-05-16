@@ -1,4 +1,4 @@
-import { LotteryTicket } from 'config/constants/types'
+import { LotteryTicket } from '@/config/constants/types'
 import random from 'lodash/random'
 
 /**

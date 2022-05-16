@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { Modal, Text, Flex, Button, ArrowBackIcon, AutoRenewIcon } from '@pancakeswap/uikit'
-import useTheme from 'hooks/useTheme'
-import { useTranslation } from 'contexts/Localization'
+import useTheme from '@/hooks/useTheme'
+import { useTranslation } from '@/contexts/Localization'
 import TicketInput from './TicketInput'
 import { UpdateTicketAction, Ticket } from './useTicketsReducer'
 

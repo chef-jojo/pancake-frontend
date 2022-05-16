@@ -1,6 +1,6 @@
 import { ChainId, Token } from '@pancakeswap/sdk'
 import { createSelector } from '@reduxjs/toolkit'
-import { CHAIN_ID } from 'config/constants/networks'
+import { CHAIN_ID } from '@/config/constants/networks'
 import { useSelector } from 'react-redux'
 import { AppState } from '../../index'
 import { deserializeToken } from './helpers'

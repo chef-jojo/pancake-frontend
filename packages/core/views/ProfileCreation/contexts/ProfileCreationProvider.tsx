@@ -1,6 +1,6 @@
 import { createContext, useEffect, useMemo, useReducer } from 'react'
 import { useWeb3React } from '@web3-react/core'
-import { getBunnyFactoryContract } from 'utils/contractHelpers'
+import { getBunnyFactoryContract } from '@/utils/contractHelpers'
 import { MINT_COST, REGISTER_COST, ALLOWANCE_MULTIPLIER } from '../config'
 import { Actions, State, ContextType } from './types'
 

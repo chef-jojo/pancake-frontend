@@ -1,11 +1,11 @@
 import { ReactNode } from 'react'
 import { AutoRenewIcon, Button, ButtonProps } from '@pancakeswap/uikit'
-import { useTranslation } from 'contexts/Localization'
-import { usePredictionsContract } from 'hooks/useContract'
-import useToast from 'hooks/useToast'
-import { useCallWithGasPrice } from 'hooks/useCallWithGasPrice'
-import useCatchTxError from 'hooks/useCatchTxError'
-import { ToastDescriptionWithTx } from 'components/Toast'
+import { useTranslation } from '@/contexts/Localization'
+import { usePredictionsContract } from '@/hooks/useContract'
+import useToast from '@/hooks/useToast'
+import { useCallWithGasPrice } from '@/hooks/useCallWithGasPrice'
+import useCatchTxError from '@/hooks/useCatchTxError'
+import { ToastDescriptionWithTx } from '@/components/Toast'
 import { useConfig } from '../context/ConfigProvider'
 
 interface ReclaimPositionButtonProps extends ButtonProps {

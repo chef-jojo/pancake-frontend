@@ -1,18 +1,18 @@
 import { useMatchBreakpoints, useModal } from '@pancakeswap/uikit'
 import { useWeb3React } from '@web3-react/core'
-import { PageMeta } from 'components/Layout/Page'
-import PageLoader from 'components/Loader/PageLoader'
+import { PageMeta } from '@/components/Layout/Page'
+import PageLoader from '@/components/Loader/PageLoader'
 import { useEffect, useRef } from 'react'
-import { useInitialBlock } from 'state/block/hooks'
-import { initializePredictions } from 'state/predictions'
-import { useChartView, useGetPredictionsStatus, useIsChartPaneOpen } from 'state/predictions/hooks'
-import { PredictionsChartView, PredictionStatus } from 'state/types'
+import { useInitialBlock } from '@/state/block/hooks'
+import { initializePredictions } from '@/state/predictions'
+import { useChartView, useGetPredictionsStatus, useIsChartPaneOpen } from '@/state/predictions/hooks'
+import { PredictionsChartView, PredictionStatus } from '@/state/types'
 import {
   useUserPredictionAcceptedRisk,
   useUserPredictionChainlinkChartDisclaimerShow,
   useUserPredictionChartDisclaimerShow,
-} from 'state/user/hooks'
-import useLocalDispatch from 'contexts/LocalRedux/useLocalDispatch'
+} from '@/state/user/hooks'
+import useLocalDispatch from '@/contexts/LocalRedux/useLocalDispatch'
 
 import ChartDisclaimer from './components/ChartDisclaimer'
 import ChainlinkChartDisclaimer from './components/ChainlinkChartDisclaimer'

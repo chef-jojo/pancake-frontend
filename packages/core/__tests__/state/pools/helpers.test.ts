@@ -1,8 +1,8 @@
 import BigNumber from 'bignumber.js'
-import poolsConfig from 'config/constants/pools'
-import { SerializedPoolConfig } from 'config/constants/types'
-import { transformPool, transformUserData } from 'state/pools/helpers'
-import { SerializedPool } from 'state/types'
+import poolsConfig from '@/config/constants/pools'
+import { SerializedPoolConfig } from '@/config/constants/types'
+import { transformPool, transformUserData } from '@/state/pools/helpers'
+import { SerializedPool } from '@/state/types'
 
 describe('transformUserData', () => {
   it.each([

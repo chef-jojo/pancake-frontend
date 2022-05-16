@@ -1,4 +1,4 @@
-import tokens from 'config/constants/tokens'
+import tokens from '@/config/constants/tokens'
 import IfoContainer from './components/IfoContainer'
 import IfoSteps from './components/IfoSteps'
 import ComingSoonSection from './components/ComingSoonSection'

@@ -10,9 +10,9 @@ import {
   useWalletModal,
   useModal,
 } from '@pancakeswap/uikit'
-import useAuth from 'hooks/useAuth'
-import { useTranslation } from 'contexts/Localization'
-import { FINISHED, OVER } from 'config/constants/trading-competition/phases'
+import useAuth from '@/hooks/useAuth'
+import { useTranslation } from '@/contexts/Localization'
+import { FINISHED, OVER } from '@/config/constants/trading-competition/phases'
 import { useRouter } from 'next/router'
 import RegisterModal from '../RegisterModal'
 import ClaimModal from '../ClaimModal'

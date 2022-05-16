@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 import { Tag, Flex, Heading, Skeleton } from '@pancakeswap/uikit'
 import { Token } from '@pancakeswap/sdk'
-import { FarmAuctionTag, CoreTag } from 'components/Tags'
-import { TokenPairImage } from 'components/TokenImage'
+import { FarmAuctionTag, CoreTag } from '@/components/Tags'
+import { TokenPairImage } from '@/components/TokenImage'
 
 export interface ExpandableSectionProps {
   lpLabel?: string

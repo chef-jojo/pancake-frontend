@@ -1,9 +1,9 @@
 import { useContext } from 'react'
 import styled from 'styled-components'
 import { Breadcrumbs, Heading, Text, Link, Button } from '@pancakeswap/uikit'
-import { useTranslation } from 'contexts/Localization'
-import { nftsBaseUrl } from 'views/Nft/market/constants'
-import { TranslateFunction } from 'contexts/Localization/types'
+import { useTranslation } from '@/contexts/Localization'
+import { nftsBaseUrl } from '@/views/Nft/market/constants'
+import { TranslateFunction } from '@/contexts/Localization/types'
 import { ProfileCreationContext } from './contexts/ProfileCreationProvider'
 
 const Wrapper = styled.div`

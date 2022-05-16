@@ -1,11 +1,11 @@
 import merge from 'lodash/merge'
-import teamsList from 'config/constants/teams'
-import { getProfileContract } from 'utils/contractHelpers'
-import { Team } from 'config/constants/types'
-import { multicallv2 } from 'utils/multicall'
-import { TeamsById } from 'state/types'
-import profileABI from 'config/abi/pancakeProfile.json'
-import { getPancakeProfileAddress } from 'utils/addressHelpers'
+import teamsList from '@/config/constants/teams'
+import { getProfileContract } from '@/utils/contractHelpers'
+import { Team } from '@/config/constants/types'
+import { multicallv2 } from '@/utils/multicall'
+import { TeamsById } from '@/state/types'
+import profileABI from '@/config/abi/pancakeProfile.json'
+import { getPancakeProfileAddress } from '@/utils/addressHelpers'
 
 const profileContract = getProfileContract()
 

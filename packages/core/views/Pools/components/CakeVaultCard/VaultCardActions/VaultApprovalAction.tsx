@@ -1,5 +1,5 @@
 import { Button, AutoRenewIcon, Skeleton } from '@pancakeswap/uikit'
-import { useTranslation } from 'contexts/Localization'
+import { useTranslation } from '@/contexts/Localization'
 import { useVaultApprove } from '../../../hooks/useApprove'
 
 interface ApprovalActionProps {

@@ -1,4 +1,4 @@
-import { EventInfos, UserInfos, UserStatusEnum } from 'views/PancakeSquad/types'
+import { EventInfos, UserInfos, UserStatusEnum } from '@/views/PancakeSquad/types'
 
 export type PancakeSquadHeaderType = {
   account: string

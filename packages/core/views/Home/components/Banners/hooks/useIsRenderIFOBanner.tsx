@@ -1,5 +1,5 @@
-import { useCurrentBlock } from 'state/block/hooks'
-import { useActiveIfoWithBlocks } from 'hooks/useActiveIfoWithBlocks'
+import { useCurrentBlock } from '@/state/block/hooks'
+import { useActiveIfoWithBlocks } from '@/hooks/useActiveIfoWithBlocks'
 
 const useIsRenderIfoBanner = () => {
   const currentBlock = useCurrentBlock()

@@ -13,7 +13,7 @@ import {
   Button,
   AutoRenewIcon,
 } from '@pancakeswap/uikit'
-import { useTranslation } from 'contexts/Localization'
+import { useTranslation } from '@/contexts/Localization'
 import { getAllV1History } from './helpers'
 
 const Modal = styled(ModalContainer)`

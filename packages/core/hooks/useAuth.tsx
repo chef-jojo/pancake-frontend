@@ -10,11 +10,11 @@ import {
   WalletConnectConnector,
 } from '@web3-react/walletconnect-connector'
 import { ConnectorNames, connectorLocalStorageKey, Text, Box, LinkExternal } from '@pancakeswap/uikit'
-import { connectorsByName } from 'utils/web3React'
-import { setupNetwork } from 'utils/wallet'
-import useToast from 'hooks/useToast'
-import { useAppDispatch } from 'state'
-import { useTranslation } from 'contexts/Localization'
+import { connectorsByName } from '@/utils/web3React'
+import { setupNetwork } from '@/utils/wallet'
+import useToast from '@/hooks/useToast'
+import { useAppDispatch } from '@/state'
+import { useTranslation } from '@/contexts/Localization'
 import { clearUserStates } from '../utils/clearUserStates'
 
 const useAuth = () => {

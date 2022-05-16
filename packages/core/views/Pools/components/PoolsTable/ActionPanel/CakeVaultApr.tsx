@@ -1,10 +1,10 @@
 import { Box, Button, Flex, Skeleton, Text, CalculateIcon, useModal } from '@pancakeswap/uikit'
-import Balance from 'components/Balance'
-import { useTranslation } from 'contexts/Localization'
-import { DeserializedPool, DeserializedLockedVaultUser } from 'state/types'
-import { useVaultApy } from 'hooks/useVaultApy'
-import { VaultPosition } from 'utils/cakePool'
-import { MAX_LOCK_DURATION } from 'config/constants/pools'
+import Balance from '@/components/Balance'
+import { useTranslation } from '@/contexts/Localization'
+import { DeserializedPool, DeserializedLockedVaultUser } from '@/state/types'
+import { useVaultApy } from '@/hooks/useVaultApy'
+import { VaultPosition } from '@/utils/cakePool'
+import { MAX_LOCK_DURATION } from '@/config/constants/pools'
 import { VaultRoiCalculatorModal } from '../../Vault/VaultRoiCalculatorModal'
 
 interface CakeVaultAprProps {

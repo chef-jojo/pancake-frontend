@@ -15,20 +15,20 @@ import {
   useMatchBreakpoints,
   useTooltip,
 } from '@pancakeswap/uikit'
-import Page from 'components/Layout/Page'
-import { NextLinkFromReactRouter } from 'components/NextLink'
-import { useTranslation } from 'contexts/Localization'
+import Page from '@/components/Layout/Page'
+import { NextLinkFromReactRouter } from '@/components/NextLink'
+import { useTranslation } from '@/contexts/Localization'
 import { useState } from 'react'
-import { usePoolChartData, usePoolDatas, usePoolTransactions } from 'state/info/hooks'
-import { useWatchlistPools } from 'state/user/hooks'
+import { usePoolChartData, usePoolDatas, usePoolTransactions } from '@/state/info/hooks'
+import { useWatchlistPools } from '@/state/user/hooks'
 import styled from 'styled-components'
-import { getBscScanLink } from 'utils'
-import { CurrencyLogo, DoubleCurrencyLogo } from 'views/Info/components/CurrencyLogo'
-import ChartCard from 'views/Info/components/InfoCharts/ChartCard'
-import TransactionTable from 'views/Info/components/InfoTables/TransactionsTable'
-import Percent from 'views/Info/components/Percent'
-import SaveIcon from 'views/Info/components/SaveIcon'
-import { formatAmount } from 'utils/formatInfoNumbers'
+import { getBscScanLink } from '@/utils'
+import { CurrencyLogo, DoubleCurrencyLogo } from '@/views/Info/components/CurrencyLogo'
+import ChartCard from '@/views/Info/components/InfoCharts/ChartCard'
+import TransactionTable from '@/views/Info/components/InfoTables/TransactionsTable'
+import Percent from '@/views/Info/components/Percent'
+import SaveIcon from '@/views/Info/components/SaveIcon'
+import { formatAmount } from '@/utils/formatInfoNumbers'
 
 const ContentLayout = styled.div`
   display: grid;

@@ -12,9 +12,9 @@ import {
   MoreIcon,
   menuStatus,
 } from '@pancakeswap/uikit'
-import { ContextApi } from 'contexts/Localization/types'
-import { nftsBaseUrl } from 'views/Nft/market/constants'
-import { perpLangMap } from 'utils/getPerpetualLanguageCode'
+import { ContextApi } from '@/contexts/Localization/types'
+import { nftsBaseUrl } from '@/views/Nft/market/constants'
+import { perpLangMap } from '@/utils/getPerpetualLanguageCode'
 import { DropdownMenuItems } from '@pancakeswap/uikit/src/components/DropdownMenu/types'
 
 export type ConfigMenuDropDownItemsType = DropdownMenuItems & { hideSubNav?: boolean }

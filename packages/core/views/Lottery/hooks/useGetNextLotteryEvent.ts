@@ -1,5 +1,5 @@
-import { LotteryStatus } from 'config/constants/types'
-import { useTranslation } from 'contexts/Localization'
+import { LotteryStatus } from '@/config/constants/types'
+import { useTranslation } from '@/contexts/Localization'
 import { useMemo } from 'react'
 
 interface LotteryEvent {

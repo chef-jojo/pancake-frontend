@@ -1,6 +1,6 @@
 import { Box, Button, TooltipText, useTooltip } from '@pancakeswap/uikit'
-import { FlexGap } from 'components/Layout/Flex'
-import { useTranslation } from 'contexts/Localization'
+import { FlexGap } from '@/components/Layout/Flex'
+import { useTranslation } from '@/contexts/Localization'
 
 export const VaultStakeButtonGroup = ({
   onFlexibleClick,

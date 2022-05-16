@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react'
 import sumBy from 'lodash/sumBy'
-import { useAppDispatch } from 'state'
+import { useAppDispatch } from '@/state'
 import { useWeb3React } from '@web3-react/core'
 import { Card, CardBody, CardHeader, Flex, Heading, PrizeIcon } from '@pancakeswap/uikit'
-import { useProfile } from 'state/profile/hooks'
-import { Achievement } from 'state/types'
-import { useTranslation } from 'contexts/Localization'
-import { getClaimableIfoData } from 'utils/achievements'
+import { useProfile } from '@/state/profile/hooks'
+import { Achievement } from '@/state/types'
+import { useTranslation } from '@/contexts/Localization'
+import { getClaimableIfoData } from '@/utils/achievements'
 import AchievementRow from './AchievementRow'
 
 const ClaimPointsCallout: React.FC<{ onSuccess?: () => void }> = ({ onSuccess = null }) => {

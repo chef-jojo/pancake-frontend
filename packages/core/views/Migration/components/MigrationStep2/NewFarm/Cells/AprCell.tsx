@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Flex, Text } from '@pancakeswap/uikit'
-import { useTranslation } from 'contexts/Localization'
-import BaseCell, { CellContent } from 'views/Pools/components/PoolsTable/Cells/BaseCell'
-import Apr, { AprProps } from 'views/Farms/components/FarmTable/Apr'
+import { useTranslation } from '@/contexts/Localization'
+import BaseCell, { CellContent } from '@/views/Pools/components/PoolsTable/Cells/BaseCell'
+import Apr, { AprProps } from '@/views/Farms/components/FarmTable/Apr'
 
 const StyledCell = styled(BaseCell)`
   display: none;

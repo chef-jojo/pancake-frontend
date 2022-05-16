@@ -1,9 +1,9 @@
 import { useWeb3React } from '@web3-react/core'
 import { Flex, Text, Heading } from '@pancakeswap/uikit'
 import styled from 'styled-components'
-import { useTranslation } from 'contexts/Localization'
+import { useTranslation } from '@/contexts/Localization'
 import Link from 'next/link'
-import { nftsBaseUrl } from 'views/Nft/market/constants'
+import { nftsBaseUrl } from '@/views/Nft/market/constants'
 import HowToCard from './HowToCard'
 
 const StyledLink = styled(Link)`

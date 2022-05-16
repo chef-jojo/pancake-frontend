@@ -12,10 +12,10 @@ import {
   ModalTitle,
 } from '@pancakeswap/uikit'
 import { parseUnits } from '@ethersproject/units'
-import { useTranslation } from 'contexts/Localization'
+import { useTranslation } from '@/contexts/Localization'
 import styled from 'styled-components'
-import { useGetBnbBalance } from 'hooks/useTokenBalance'
-import { FetchStatus } from 'config/constants/types'
+import { useGetBnbBalance } from '@/hooks/useTokenBalance'
+import { FetchStatus } from '@/config/constants/types'
 import WalletInfo from './WalletInfo'
 import WalletTransactions from './WalletTransactions'
 import WalletWrongNetwork from './WalletWrongNetwork'

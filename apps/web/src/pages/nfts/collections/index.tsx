@@ -1,4 +1,4 @@
-import Collections from '../../../views/Nft/market/Collections'
+import Collections from '@/views/Nft/market/Collections'
 
 const CollectionsPage = () => {
   return <Collections />

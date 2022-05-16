@@ -1,15 +1,15 @@
 import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { ArrowForwardIcon, Button, Flex, Heading, Skeleton, Text } from '@pancakeswap/uikit'
-import { NextLinkFromReactRouter } from 'components/NextLink'
-import { useTranslation } from 'contexts/Localization'
-import { formatLocalisedCompactNumber } from 'utils/formatBalance'
-import useIntersectionObserver from 'hooks/useIntersectionObserver'
-import { getTotalWon } from 'state/predictions/helpers'
-import { useBNBBusdPrice } from 'hooks/useBUSDPrice'
-import { multiplyPriceByAmount } from 'utils/prices'
+import { NextLinkFromReactRouter } from '@/components/NextLink'
+import { useTranslation } from '@/contexts/Localization'
+import { formatLocalisedCompactNumber } from '@/utils/formatBalance'
+import useIntersectionObserver from '@/hooks/useIntersectionObserver'
+import { getTotalWon } from '@/state/predictions/helpers'
+import { useBNBBusdPrice } from '@/hooks/useBUSDPrice'
+import { multiplyPriceByAmount } from '@/utils/prices'
 import useSWR from 'swr'
-import { SLOW_INTERVAL } from 'config/constants'
+import { SLOW_INTERVAL } from '@/config/constants'
 
 const StyledLink = styled(NextLinkFromReactRouter)`
   width: 100%;

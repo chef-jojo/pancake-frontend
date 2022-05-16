@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
 import { BigNumber } from '@ethersproject/bignumber'
 import { Zero } from '@ethersproject/constants'
-import { useTranslation } from 'contexts/Localization'
-import { multicallv2 } from 'utils/multicall'
-import profileABI from 'config/abi/pancakeProfile.json'
-import { getPancakeProfileAddress } from 'utils/addressHelpers'
-import useToast from 'hooks/useToast'
+import { useTranslation } from '@/contexts/Localization'
+import { multicallv2 } from '@/utils/multicall'
+import profileABI from '@/config/abi/pancakeProfile.json'
+import { getPancakeProfileAddress } from '@/utils/addressHelpers'
+import useToast from '@/hooks/useToast'
 
 const useGetProfileCosts = () => {
   const { t } = useTranslation()

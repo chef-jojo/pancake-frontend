@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
 import isEqual from 'lodash/isEqual'
 import useSWR from 'swr'
-import { useFarmAuctionContract } from 'hooks/useContract'
-import { ConnectedBidder } from 'config/constants/types'
-import { getBidderInfo } from 'config/constants/farmAuctions'
-import { FAST_INTERVAL } from 'config/constants'
-import { BIG_ZERO } from 'utils/bigNumber'
+import { useFarmAuctionContract } from '@/hooks/useContract'
+import { ConnectedBidder } from '@/config/constants/types'
+import { getBidderInfo } from '@/config/constants/farmAuctions'
+import { FAST_INTERVAL } from '@/config/constants'
+import { BIG_ZERO } from '@/utils/bigNumber'
 import { useFarmAuction } from './useFarmAuction'
 
 export const useCurrentFarmAuction = (account: string) => {

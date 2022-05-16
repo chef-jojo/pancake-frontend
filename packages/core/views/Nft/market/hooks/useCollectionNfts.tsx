@@ -5,16 +5,16 @@ import {
   NftAttribute,
   NftToken,
   Collection,
-} from 'state/nftMarket/types'
-import { useGetNftFilters, useGetNftOrdering, useGetNftShowOnlyOnSale, useGetCollection } from 'state/nftMarket/hooks'
-import { FetchStatus } from 'config/constants/types'
+} from '@/state/nftMarket/types'
+import { useGetNftFilters, useGetNftOrdering, useGetNftShowOnlyOnSale, useGetCollection } from '@/state/nftMarket/hooks'
+import { FetchStatus } from '@/config/constants/types'
 import {
   fetchNftsFiltered,
   getMarketDataForTokenIds,
   getNftApi,
   getNftsFromCollectionApi,
   getNftsMarketData,
-} from 'state/nftMarket/helpers'
+} from '@/state/nftMarket/helpers'
 import useSWRInfinite from 'swr/infinite'
 import isEmpty from 'lodash/isEmpty'
 import uniqBy from 'lodash/uniqBy'

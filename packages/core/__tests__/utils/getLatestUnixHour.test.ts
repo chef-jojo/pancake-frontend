@@ -1,5 +1,5 @@
 import { fromUnixTime } from 'date-fns'
-import getLatestUnixHour from 'utils/getLatestUnixHour'
+import getLatestUnixHour from '@/utils/getLatestUnixHour'
 
 describe('getLatestUnixHour', () => {
   it('returns correct starting hour', () => {

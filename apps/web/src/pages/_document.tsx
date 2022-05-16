@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/iframe-has-title */
 import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
-import { nodes } from 'utils/getRpcUrl'
+import { nodes } from '@/utils/getRpcUrl'
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {

@@ -10,12 +10,12 @@ import {
   useModal,
   Skeleton,
 } from '@pancakeswap/uikit'
-import { NextLinkFromReactRouter } from 'components/NextLink'
-import { Activity, NftToken } from 'state/nftMarket/types'
+import { NextLinkFromReactRouter } from '@/components/NextLink'
+import { Activity, NftToken } from '@/state/nftMarket/types'
 import { Price } from '@pancakeswap/sdk'
-import { getBscScanLink } from 'utils'
-import useActiveWeb3React from 'hooks/useActiveWeb3React'
-import ProfileCell from 'views/Nft/market/components/ProfileCell'
+import { getBscScanLink } from '@/utils'
+import useActiveWeb3React from '@/hooks/useActiveWeb3React'
+import ProfileCell from '@/views/Nft/market/components/ProfileCell'
 import MobileModal from './MobileModal'
 import ActivityPrice from './ActivityPrice'
 import ActivityEventText from './ActivityEventText'

@@ -1,11 +1,11 @@
 import { useCallback, useState } from 'react'
-import { useTranslation } from 'contexts/Localization'
+import { useTranslation } from '@/contexts/Localization'
 import { useWeb3React } from '@web3-react/core'
 import { TransactionReceipt, TransactionResponse } from '@ethersproject/providers'
-import { ToastDescriptionWithTx } from 'components/Toast'
+import { ToastDescriptionWithTx } from '@/components/Toast'
 
-import useToast from 'hooks/useToast'
-import { logError, isUserRejected } from 'utils/sentry'
+import useToast from '@/hooks/useToast'
+import { logError, isUserRejected } from '@/utils/sentry'
 
 export type TxResponse = TransactionResponse | null
 

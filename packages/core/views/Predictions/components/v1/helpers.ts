@@ -1,6 +1,6 @@
 import request, { gql } from 'graphql-request'
 import flatten from 'lodash/flatten'
-import { GRAPH_API_PREDICTION_V1 } from 'config/constants/endpoints'
+import { GRAPH_API_PREDICTION_V1 } from '@/config/constants/endpoints'
 
 export const getV1History = async (skip = 0, where = {}): Promise<Record<string, any>[]> => {
   const response = await request(

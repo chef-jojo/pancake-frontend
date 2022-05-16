@@ -16,12 +16,12 @@ import {
   Spinner,
   Text,
 } from '@pancakeswap/uikit'
-import { useTranslation } from 'contexts/Localization'
-import useActiveWeb3React from 'hooks/useActiveWeb3React'
-import useTheme from 'hooks/useTheme'
+import { useTranslation } from '@/contexts/Localization'
+import useActiveWeb3React from '@/hooks/useActiveWeb3React'
+import useTheme from '@/hooks/useTheme'
 
-import { getBscScanLink } from 'utils'
-import truncateHash from 'utils/truncateHash'
+import { getBscScanLink } from '@/utils'
+import truncateHash from '@/utils/truncateHash'
 
 type ConfirmModalProps = {
   isLoading: boolean

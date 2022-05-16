@@ -12,15 +12,15 @@ import {
   HelpIcon,
   useTooltip,
 } from '@pancakeswap/uikit'
-import { useTranslation } from 'contexts/Localization'
-import useTheme from 'hooks/useTheme'
-import useToast from 'hooks/useToast'
-import { ToastDescriptionWithTx } from 'components/Toast'
+import { useTranslation } from '@/contexts/Localization'
+import useTheme from '@/hooks/useTheme'
+import useToast from '@/hooks/useToast'
+import { ToastDescriptionWithTx } from '@/components/Toast'
 import { Token } from '@pancakeswap/sdk'
-import { formatNumber } from 'utils/formatBalance'
-import useCatchTxError from 'hooks/useCatchTxError'
-import { updateUserBalance, updateUserPendingReward, updateUserStakedBalance } from 'state/pools'
-import { useAppDispatch } from 'state'
+import { formatNumber } from '@/utils/formatBalance'
+import useCatchTxError from '@/hooks/useCatchTxError'
+import { updateUserBalance, updateUserPendingReward, updateUserStakedBalance } from '@/state/pools'
+import { useAppDispatch } from '@/state'
 import useHarvestPool from '../../../hooks/useHarvestPool'
 import useStakePool from '../../../hooks/useStakePool'
 

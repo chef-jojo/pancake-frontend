@@ -1,14 +1,14 @@
 import { useMemo, useRef } from 'react'
 import isEmpty from 'lodash/isEmpty'
-import { useGetCollections } from 'state/nftMarket/hooks'
-import { NftLocation } from 'state/nftMarket/types'
-import { Profile } from 'state/types'
-import { getCompleteAccountNftData } from 'state/nftMarket/helpers'
+import { useGetCollections } from '@/state/nftMarket/hooks'
+import { NftLocation } from '@/state/nftMarket/types'
+import { Profile } from '@/state/types'
+import { getCompleteAccountNftData } from '@/state/nftMarket/helpers'
 import useSWR from 'swr'
-import { FetchStatus } from 'config/constants/types'
-import { laggyMiddleware } from 'hooks/useSWRContract'
-import usePrevious from 'hooks/usePreviousValue'
-import { isAddress } from 'utils'
+import { FetchStatus } from '@/config/constants/types'
+import { laggyMiddleware } from '@/hooks/useSWRContract'
+import usePrevious from '@/hooks/usePreviousValue'
+import { isAddress } from '@/utils'
 
 const useNftsForAddress = (account: string, profile: Profile, isProfileFetching: boolean) => {
   const { data: collections } = useGetCollections()

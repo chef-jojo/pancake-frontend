@@ -1,4 +1,4 @@
-import { useTranslation } from 'contexts/Localization'
+import { useTranslation } from '@/contexts/Localization'
 import { useRouter } from 'next/router'
 import BaseSubMenu from '../../components/BaseSubMenu'
 import { nftsBaseUrl } from '../../constants'

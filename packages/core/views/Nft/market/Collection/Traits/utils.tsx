@@ -1,4 +1,4 @@
-import { ApiResponseCollectionTokens } from 'state/nftMarket/types'
+import { ApiResponseCollectionTokens } from '@/state/nftMarket/types'
 
 type sortBuilder = {
   data: ApiResponseCollectionTokens

@@ -1,5 +1,5 @@
-import { useProfile } from 'state/profile/hooks'
-import { DeserializedPool } from 'state/types'
+import { useProfile } from '@/state/profile/hooks'
+import { DeserializedPool } from '@/state/types'
 
 export function useProfileRequirement(profileRequirement: DeserializedPool['profileRequirement']) {
   const { profile, hasProfile } = useProfile()

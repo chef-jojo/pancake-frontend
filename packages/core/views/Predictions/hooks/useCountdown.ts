@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react'
-import useIsWindowVisible from 'hooks/useIsWindowVisible'
+import useIsWindowVisible from '@/hooks/useIsWindowVisible'
 
 const getNow = () => Math.floor(Date.now() / 1000)
 

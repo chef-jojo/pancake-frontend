@@ -1,11 +1,11 @@
-import { FARM_AUCTION_HOSTING_IN_SECONDS } from 'config/constants'
-import farmAuctionAbi from 'config/abi/farmAuction.json'
-import { getFarmAuctionContract } from 'utils/contractHelpers'
-import { multicallv2 } from 'utils/multicall'
-import { ethersToBigNumber } from 'utils/bigNumber'
-import { BSC_BLOCK_TIME } from 'config'
+import { FARM_AUCTION_HOSTING_IN_SECONDS } from '@/config/constants'
+import farmAuctionAbi from '@/config/abi/farmAuction.json'
+import { getFarmAuctionContract } from '@/utils/contractHelpers'
+import { multicallv2 } from '@/utils/multicall'
+import { ethersToBigNumber } from '@/utils/bigNumber'
+import { BSC_BLOCK_TIME } from '@/config'
 import { add, sub } from 'date-fns'
-import { sortAuctionBidders } from '../../views/FarmAuction/helpers'
+import { sortAuctionBidders } from '@/views/FarmAuction/helpers'
 
 const fetchFarmsWithAuctions = async (
   currentBlock: number,

@@ -18,19 +18,19 @@ import {
   Message,
   MessageText,
 } from '@pancakeswap/uikit'
-import { PoolIds, Ifo } from 'config/constants/types'
-import { WalletIfoData, PublicIfoData } from 'views/Ifos/types'
-import { useTranslation } from 'contexts/Localization'
-import { formatNumber, getBalanceAmount } from 'utils/formatBalance'
-import ApproveConfirmButtons from 'components/ApproveConfirmButtons'
-import { ToastDescriptionWithTx } from 'components/Toast'
-import useApproveConfirmTransaction from 'hooks/useApproveConfirmTransaction'
-import { useCallWithGasPrice } from 'hooks/useCallWithGasPrice'
-import useToast from 'hooks/useToast'
-import { DEFAULT_TOKEN_DECIMAL } from 'config'
-import { useERC20 } from 'hooks/useContract'
-import tokens from 'config/constants/tokens'
-import { requiresApproval } from 'utils/requiresApproval'
+import { PoolIds, Ifo } from '@/config/constants/types'
+import { WalletIfoData, PublicIfoData } from '@/views/Ifos/types'
+import { useTranslation } from '@/contexts/Localization'
+import { formatNumber, getBalanceAmount } from '@/utils/formatBalance'
+import ApproveConfirmButtons from '@/components/ApproveConfirmButtons'
+import { ToastDescriptionWithTx } from '@/components/Toast'
+import useApproveConfirmTransaction from '@/hooks/useApproveConfirmTransaction'
+import { useCallWithGasPrice } from '@/hooks/useCallWithGasPrice'
+import useToast from '@/hooks/useToast'
+import { DEFAULT_TOKEN_DECIMAL } from '@/config'
+import { useERC20 } from '@/hooks/useContract'
+import tokens from '@/config/constants/tokens'
+import { requiresApproval } from '@/utils/requiresApproval'
 
 interface Props {
   poolId: PoolIds

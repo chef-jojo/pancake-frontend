@@ -1,9 +1,9 @@
 import { useMemo } from 'react'
-import { BOOST_WEIGHT, DURATION_FACTOR } from 'config/constants/pools'
+import { BOOST_WEIGHT, DURATION_FACTOR } from '@/config/constants/pools'
 import BigNumber from 'bignumber.js'
 import _toNumber from 'lodash/toNumber'
-import { useCakeVault } from 'state/pools/hooks'
-import { BIG_TEN } from 'utils/bigNumber'
+import { useCakeVault } from '@/state/pools/hooks'
+import { BIG_TEN } from '@/utils/bigNumber'
 
 import formatSecondsToWeeks from '../utils/formatSecondsToWeeks'
 

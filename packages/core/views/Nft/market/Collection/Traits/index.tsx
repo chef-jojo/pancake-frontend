@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import Container from 'components/Layout/Container'
+import Container from '@/components/Layout/Container'
 import PancakeBunniesTraits from './PancakeBunniesTraits'
 import { pancakeBunniesAddress } from '../../constants'
 import CollectionTraits from './CollectionTraits'

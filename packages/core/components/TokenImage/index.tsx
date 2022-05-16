@@ -4,7 +4,7 @@ import {
   TokenImage as UIKitTokenImage,
   ImageProps,
 } from '@pancakeswap/uikit'
-import tokens from 'config/constants/tokens'
+import tokens from '@/config/constants/tokens'
 import { Token } from '@pancakeswap/sdk'
 
 interface TokenPairImageProps extends Omit<UIKitTokenPairImageProps, 'primarySrc' | 'secondarySrc'> {

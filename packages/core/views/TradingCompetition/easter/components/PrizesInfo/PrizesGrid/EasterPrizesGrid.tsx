@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Tiers, Rank, easterPrizes } from 'config/constants/trading-competition/prizes'
+import { Tiers, Rank, easterPrizes } from '@/config/constants/trading-competition/prizes'
 import {
   BlockIcon,
   Box,
@@ -17,7 +17,7 @@ import {
   TeamPlayerIcon,
   TrophyGoldIcon,
 } from '@pancakeswap/uikit'
-import { useTranslation } from 'contexts/Localization'
+import { useTranslation } from '@/contexts/Localization'
 import { Td, BoldTd, StyledPrizeTable } from '../../../../components/StyledPrizeTable'
 
 const COLOR_GOLD = '#FFBF33'

@@ -1,10 +1,10 @@
 import { useMemo } from 'react'
 import { Text, Heading, Card } from '@pancakeswap/uikit'
-import Page from 'components/Layout/Page'
-import PoolTable from 'views/Info/components/InfoTables/PoolsTable'
-import { useAllPoolData, usePoolDatas } from 'state/info/hooks'
-import { useWatchlistPools } from 'state/user/hooks'
-import { useTranslation } from 'contexts/Localization'
+import Page from '@/components/Layout/Page'
+import PoolTable from '@/views/Info/components/InfoTables/PoolsTable'
+import { useAllPoolData, usePoolDatas } from '@/state/info/hooks'
+import { useWatchlistPools } from '@/state/user/hooks'
+import { useTranslation } from '@/contexts/Localization'
 
 const PoolsOverview: React.FC = () => {
   const { t } = useTranslation()

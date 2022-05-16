@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 import { Text, Box, Flex, Button } from '@pancakeswap/uikit'
-import { useTranslation } from 'contexts/Localization'
-import { LotteryStatus } from 'config/constants/types'
-import { useGetUserLotteriesGraphData } from 'state/lottery/hooks'
+import { useTranslation } from '@/contexts/Localization'
+import { LotteryStatus } from '@/config/constants/types'
+import { useGetUserLotteriesGraphData } from '@/state/lottery/hooks'
 import FinishedRoundRow from './FinishedRoundRow'
 
 const Grid = styled(Box)`

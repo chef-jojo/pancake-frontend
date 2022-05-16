@@ -1,3 +1,3 @@
-import TradingCompetition from '../../views/TradingCompetition'
+import TradingCompetition from '@/views/TradingCompetition'
 
 export default TradingCompetition

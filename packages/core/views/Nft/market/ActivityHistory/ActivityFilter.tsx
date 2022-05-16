@@ -1,10 +1,10 @@
 import styled from 'styled-components'
 import { Box, Button, Flex, IconButton, CloseIcon } from '@pancakeswap/uikit'
-import { useAppDispatch } from 'state'
-import { addActivityTypeFilters, removeActivityTypeFilters } from 'state/nftMarket/reducer'
-import { useGetNftActivityFilters } from 'state/nftMarket/hooks'
-import { ContextApi } from 'contexts/Localization/types'
-import { useTranslation } from 'contexts/Localization'
+import { useAppDispatch } from '@/state'
+import { addActivityTypeFilters, removeActivityTypeFilters } from '@/state/nftMarket/reducer'
+import { useGetNftActivityFilters } from '@/state/nftMarket/hooks'
+import { ContextApi } from '@/contexts/Localization/types'
+import { useTranslation } from '@/contexts/Localization'
 import { MarketEvent } from '../../../../state/nftMarket/types'
 
 interface ActivityFilterProps {
@@ -16,7 +16,7 @@ const TriggerButton = styled(Button)<{ hasItem: boolean }>`
   white-space: nowrap;
   ${({ hasItem }) =>
     hasItem &&
-    `  
+    `
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
     padding-right: 8px;

@@ -17,8 +17,8 @@ import {
   LeaderboardFilter,
   PredictionsChartView,
   PredictionConfig,
-} from 'state/types'
-import { FetchStatus } from 'config/constants/types'
+} from '@/state/types'
+import { FetchStatus } from '@/config/constants/types'
 import {
   FUTURE_ROUND_COUNT,
   LEADERBOARD_MIN_ROUNDS_PLAYED,

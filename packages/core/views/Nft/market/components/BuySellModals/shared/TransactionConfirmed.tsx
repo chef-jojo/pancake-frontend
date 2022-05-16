@@ -1,7 +1,7 @@
 import { Flex, Text, Button, ArrowUpIcon, LinkExternal } from '@pancakeswap/uikit'
-import { useTranslation } from 'contexts/Localization'
-import { getBscScanLink } from 'utils'
-import useActiveWeb3React from 'hooks/useActiveWeb3React'
+import { useTranslation } from '@/contexts/Localization'
+import { getBscScanLink } from '@/utils'
+import useActiveWeb3React from '@/hooks/useActiveWeb3React'
 import { Divider } from './styles'
 
 interface TransactionConfirmedProps {

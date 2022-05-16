@@ -1,11 +1,11 @@
 import { toDate, add, differenceInHours } from 'date-fns'
-import { BSC_BLOCK_TIME, DEFAULT_TOKEN_DECIMAL } from 'config'
-import { getBidderInfo } from 'config/constants/farmAuctions'
-import { simpleRpcProvider } from 'utils/providers'
-import { AuctionsResponse, FarmAuctionContractStatus, BidsPerAuction } from 'utils/types'
-import { Auction, AuctionStatus, Bidder, BidderAuction } from 'config/constants/types'
-import { ethersToBigNumber } from 'utils/bigNumber'
-import { FarmAuction } from 'config/abi/types'
+import { BSC_BLOCK_TIME, DEFAULT_TOKEN_DECIMAL } from '@/config'
+import { getBidderInfo } from '@/config/constants/farmAuctions'
+import { simpleRpcProvider } from '@/utils/providers'
+import { AuctionsResponse, FarmAuctionContractStatus, BidsPerAuction } from '@/utils/types'
+import { Auction, AuctionStatus, Bidder, BidderAuction } from '@/config/constants/types'
+import { ethersToBigNumber } from '@/utils/bigNumber'
+import { FarmAuction } from '@/config/abi/types'
 import orderBy from 'lodash/orderBy'
 
 export const FORM_ADDRESS =

@@ -1,9 +1,9 @@
 import { useRef, useState, useEffect, useCallback, Dispatch, SetStateAction } from 'react'
-import { useTranslation } from 'contexts/Localization'
+import { useTranslation } from '@/contexts/Localization'
 import { createChart, IChartApi } from 'lightweight-charts'
 import { format } from 'date-fns'
-import useTheme from 'hooks/useTheme'
-import { CandleChartLoader } from 'views/Info/components/ChartLoaders'
+import useTheme from '@/hooks/useTheme'
+import { CandleChartLoader } from '@/views/Info/components/ChartLoaders'
 
 const CANDLE_CHART_HEIGHT = 250
 

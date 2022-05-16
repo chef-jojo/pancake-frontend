@@ -1,8 +1,8 @@
 import BigNumber from 'bignumber.js'
-import { DEFAULT_GAS_LIMIT, DEFAULT_TOKEN_DECIMAL } from 'config'
+import { DEFAULT_GAS_LIMIT, DEFAULT_TOKEN_DECIMAL } from '@/config'
 import { useCallback } from 'react'
-import getGasPrice from 'utils/getGasPrice'
-import { useMasterchefV1 } from 'hooks/useContract'
+import getGasPrice from '@/utils/getGasPrice'
+import { useMasterchefV1 } from '@/hooks/useContract'
 
 const options = {
   gasLimit: DEFAULT_GAS_LIMIT,

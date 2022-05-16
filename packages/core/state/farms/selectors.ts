@@ -1,6 +1,6 @@
 import BigNumber from 'bignumber.js'
-import { BIG_ZERO } from 'utils/bigNumber'
-import { getBalanceAmount } from 'utils/formatBalance'
+import { BIG_ZERO } from '@/utils/bigNumber'
+import { getBalanceAmount } from '@/utils/formatBalance'
 import { createSelector } from '@reduxjs/toolkit'
 import { State, SerializedFarm, DeserializedFarm, DeserializedFarmUserData } from '../types'
 import { deserializeToken } from '../user/hooks/helpers'

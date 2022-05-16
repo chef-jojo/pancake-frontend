@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
-import { getCollectionDistributionApi, getNftsFromCollectionApi } from 'state/nftMarket/helpers'
-import { ApiCollectionDistribution, ApiResponseCollectionTokens, ApiSingleTokenData } from 'state/nftMarket/types'
-import { getPancakeBunniesAddress } from 'utils/addressHelpers'
-import { multicallv2 } from 'utils/multicall'
-import pancakeBunniesAbi from 'config/abi/pancakeBunnies.json'
+import { getCollectionDistributionApi, getNftsFromCollectionApi } from '@/state/nftMarket/helpers'
+import { ApiCollectionDistribution, ApiResponseCollectionTokens, ApiSingleTokenData } from '@/state/nftMarket/types'
+import { getPancakeBunniesAddress } from '@/utils/addressHelpers'
+import { multicallv2 } from '@/utils/multicall'
+import pancakeBunniesAbi from '@/config/abi/pancakeBunnies.json'
 import useSWRImmutable from 'swr/immutable'
-import { FetchStatus } from 'config/constants/types'
+import { FetchStatus } from '@/config/constants/types'
 import { pancakeBunniesAddress } from '../constants'
 
 const useGetCollectionDistribution = (collectionAddress: string) => {

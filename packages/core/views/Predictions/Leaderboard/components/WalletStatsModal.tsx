@@ -14,16 +14,16 @@ import {
   Skeleton,
   Heading,
 } from '@pancakeswap/uikit'
-import { useProfileForAddress } from 'state/profile/hooks'
-import useTheme from 'hooks/useTheme'
+import { useProfileForAddress } from '@/state/profile/hooks'
+import useTheme from '@/hooks/useTheme'
 import styled from 'styled-components'
-import { getBscScanLink } from 'utils'
-import truncateHash from 'utils/truncateHash'
+import { getBscScanLink } from '@/utils'
+import truncateHash from '@/utils/truncateHash'
 import { Token } from '@pancakeswap/sdk'
 
-import { useTranslation } from 'contexts/Localization'
-import { FetchStatus } from 'config/constants/types'
-import { PredictionUser } from 'state/types'
+import { useTranslation } from '@/contexts/Localization'
+import { FetchStatus } from '@/config/constants/types'
+import { PredictionUser } from '@/state/types'
 import { NetWinningsView } from './Results/styles'
 import MobileBetsTable from './MobileBetsTable'
 import DesktopBetsTable from './Results/DesktopBetsTable'

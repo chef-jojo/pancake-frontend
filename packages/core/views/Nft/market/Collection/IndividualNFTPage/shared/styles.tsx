@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { NextLinkFromReactRouter } from 'components/NextLink'
+import { NextLinkFromReactRouter } from '@/components/NextLink'
 import { Box, Flex, Grid, Image } from '@pancakeswap/uikit'
 
 export const TwoColumnsContainer = styled(Flex)`

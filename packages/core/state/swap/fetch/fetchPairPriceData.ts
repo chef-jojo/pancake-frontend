@@ -1,5 +1,5 @@
-import requestWithTimeout from 'utils/requestWithTimeout'
-import { infoClient } from 'utils/graphql'
+import requestWithTimeout from '@/utils/requestWithTimeout'
+import { infoClient } from '@/utils/graphql'
 import lastPairDayId from '../queries/lastPairDayId'
 import pairHourDatas from '../queries/pairHourDatas'
 import pairDayDatasByIdsQuery from '../queries/pairDayDatasByIdsQuery'

@@ -1,7 +1,7 @@
 import { getUnixTime, subDays, subWeeks, startOfMinute } from 'date-fns'
 import { GraphQLClient } from 'graphql-request'
-import { getGQLHeaders } from 'utils/graphql'
-import requestWithTimeout from 'utils/requestWithTimeout'
+import { getGQLHeaders } from '@/utils/graphql'
+import requestWithTimeout from '@/utils/requestWithTimeout'
 
 /**
  * Helper function to get large amount GraphQL subqueries

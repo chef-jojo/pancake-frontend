@@ -1,5 +1,5 @@
 import BigNumber from 'bignumber.js'
-import { getMasterchefV1Contract } from 'utils/contractHelpers'
+import { getMasterchefV1Contract } from '@/utils/contractHelpers'
 
 export const fetchUserStakeBalances = async (account) => {
   // Cake / Cake pool

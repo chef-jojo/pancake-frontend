@@ -1,6 +1,6 @@
 import BigNumber from 'bignumber.js'
-import ifoPoolAbi from 'config/abi/ifoPool.json'
-import { multicallv2 } from 'utils/multicall'
+import ifoPoolAbi from '@/config/abi/ifoPool.json'
+import { multicallv2 } from '@/utils/multicall'
 
 const fetchIfoPoolUser = async (account: string, ifoPoolAddress: string) => {
   try {

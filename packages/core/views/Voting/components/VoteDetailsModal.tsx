@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Box, Flex, InjectedModalProps, Modal, Button, Spinner } from '@pancakeswap/uikit'
-import { useTranslation } from 'contexts/Localization'
-import useTheme from 'hooks/useTheme'
+import { useTranslation } from '@/contexts/Localization'
+import useTheme from '@/hooks/useTheme'
 import useGetVotingPower from '../hooks/useGetVotingPower'
 import DetailsView from './CastVoteModal/DetailsView'
 

@@ -10,11 +10,11 @@ import {
   LineGraphIcon,
   useMatchBreakpoints,
 } from '@pancakeswap/uikit'
-import { CurrencyLogo, DoubleCurrencyLogo } from 'components/Logo'
-// import { TradingViewLabel } from 'components/TradingView'
-import { useTranslation } from 'contexts/Localization'
-import { ChartViewMode } from 'state/user/actions'
-import { useExchangeChartViewManager } from 'state/user/hooks'
+import { CurrencyLogo, DoubleCurrencyLogo } from '@/components/Logo'
+// import { TradingViewLabel } from '@/components/TradingView'
+import { useTranslation } from '@/contexts/Localization'
+import { ChartViewMode } from '@/state/user/actions'
+import { useExchangeChartViewManager } from '@/state/user/hooks'
 import styled from 'styled-components'
 import BasicChart from './BasicChart'
 import { StyledPriceChart } from './styles'

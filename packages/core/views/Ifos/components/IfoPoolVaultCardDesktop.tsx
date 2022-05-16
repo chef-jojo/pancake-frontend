@@ -1,14 +1,14 @@
 import { Box, Card, CardBody, CardHeader, Flex, Text, Message, Button } from '@pancakeswap/uikit'
 import styled from 'styled-components'
 import BigNumber from 'bignumber.js'
-import Balance from 'components/Balance'
-import { useTranslation } from 'contexts/Localization'
-import tokens from 'config/constants/tokens'
-import { TokenPairImage } from 'components/TokenImage'
+import Balance from '@/components/Balance'
+import { useTranslation } from '@/contexts/Localization'
+import tokens from '@/config/constants/tokens'
+import { TokenPairImage } from '@/components/TokenImage'
 import { useRouter } from 'next/router'
-import { DeserializedPool } from 'state/types'
-import { convertSharesToCake, getCakeVaultEarnings } from 'views/Pools/helpers'
-import { useVaultPoolByKeyV1 } from 'views/Migration/hook/V1/Pool/useFetchIfoPool'
+import { DeserializedPool } from '@/state/types'
+import { convertSharesToCake, getCakeVaultEarnings } from '@/views/Pools/helpers'
+import { useVaultPoolByKeyV1 } from '@/views/Migration/hook/V1/Pool/useFetchIfoPool'
 
 const StyledCardDesktop = styled(Card)`
   width: 100%;

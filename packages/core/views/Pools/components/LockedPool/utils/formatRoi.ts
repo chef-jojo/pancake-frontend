@@ -1,4 +1,4 @@
-import { formatNumber } from 'utils/formatBalance'
+import { formatNumber } from '@/utils/formatBalance'
 
 interface FormatRoiArgs {
   lockedApy: string

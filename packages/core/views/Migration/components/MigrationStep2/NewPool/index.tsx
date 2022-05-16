@@ -1,15 +1,15 @@
 import React, { useEffect, useMemo } from 'react'
 import { useWeb3React } from '@web3-react/core'
-import { useCakeVault, usePoolsWithVault } from 'state/pools/hooks'
-import { useFastRefreshEffect } from 'hooks/useRefreshEffect'
-import { useAppDispatch } from 'state'
+import { useCakeVault, usePoolsWithVault } from '@/state/pools/hooks'
+import { useFastRefreshEffect } from '@/hooks/useRefreshEffect'
+import { useAppDispatch } from '@/state'
 import {
   fetchCakePoolUserDataAsync,
   fetchCakeVaultFees,
   fetchCakeVaultPublicData,
   fetchCakeVaultUserData,
   fetchCakePoolPublicDataAsync,
-} from 'state/pools'
+} from '@/state/pools'
 import PoolsTable from './PoolTable'
 
 const NewPool: React.FC = () => {

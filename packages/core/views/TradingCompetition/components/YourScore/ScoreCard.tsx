@@ -13,9 +13,9 @@ import {
   CheckmarkCircleIcon,
   useModal,
 } from '@pancakeswap/uikit'
-import { CLAIM, OVER } from 'config/constants/trading-competition/phases'
-import ConnectWalletButton from 'components/ConnectWalletButton'
-import { useTranslation } from 'contexts/Localization'
+import { CLAIM, OVER } from '@/config/constants/trading-competition/phases'
+import ConnectWalletButton from '@/components/ConnectWalletButton'
+import { useTranslation } from '@/contexts/Localization'
 import ClaimModal from '../ClaimModal'
 import CardUserInfo from './CardUserInfo'
 import ShareImageModal from '../ShareImageModal'

@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 import { Card, CardHeader, CardBody, CommunityIcon, Heading, PrizeIcon, Text, Skeleton } from '@pancakeswap/uikit'
-import { FetchStatus } from 'config/constants/types'
+import { FetchStatus } from '@/config/constants/types'
 import useSWR from 'swr'
-import { getTeam } from 'state/teams/helpers'
-import { useTranslation } from 'contexts/Localization'
+import { getTeam } from '@/state/teams/helpers'
+import { useTranslation } from '@/contexts/Localization'
 import ComingSoon from './ComingSoon'
 import IconStatBox from './IconStatBox'
 

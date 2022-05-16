@@ -16,14 +16,14 @@ import {
   TooltipText,
   Link,
 } from '@pancakeswap/uikit'
-import { NextLinkFromReactRouter as RouterLink } from 'components/NextLink'
+import { NextLinkFromReactRouter as RouterLink } from '@/components/NextLink'
 import { useWeb3React } from '@web3-react/core'
 
-import { useTranslation } from 'contexts/Localization'
-import Container from 'components/Layout/Container'
-import { useProfile } from 'state/profile/hooks'
-import { nftsBaseUrl } from 'views/Nft/market/constants'
-import ConnectWalletButton from 'components/ConnectWalletButton'
+import { useTranslation } from '@/contexts/Localization'
+import Container from '@/components/Layout/Container'
+import { useProfile } from '@/state/profile/hooks'
+import { nftsBaseUrl } from '@/views/Nft/market/constants'
+import ConnectWalletButton from '@/components/ConnectWalletButton'
 
 interface TypeProps {
   ifoCurrencyAddress: string

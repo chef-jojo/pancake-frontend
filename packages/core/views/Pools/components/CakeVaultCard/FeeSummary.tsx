@@ -1,8 +1,8 @@
 import { Text, Flex, useTooltip, TooltipText } from '@pancakeswap/uikit'
-import { useTranslation } from 'contexts/Localization'
-import { VaultKey } from 'state/types'
-import { useVaultPoolByKey } from 'state/pools/hooks'
-import { secondsToDay } from 'utils/timeHelper'
+import { useTranslation } from '@/contexts/Localization'
+import { VaultKey } from '@/state/types'
+import { useVaultPoolByKey } from '@/state/pools/hooks'
+import { secondsToDay } from '@/utils/timeHelper'
 import { getHasWithdrawFee } from '../../hooks/useWithdrawalFeeTimer'
 import UnstakingFeeCountdownRow from './UnstakingFeeCountdownRow'
 

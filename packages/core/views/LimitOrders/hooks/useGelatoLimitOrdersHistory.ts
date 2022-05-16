@@ -1,11 +1,11 @@
 import { Order, GelatoLimitOrders } from '@gelatonetwork/limit-orders-lib'
-import useActiveWeb3React from 'hooks/useActiveWeb3React'
+import useActiveWeb3React from '@/hooks/useActiveWeb3React'
 import useSWR from 'swr'
-import { SLOW_INTERVAL } from 'config/constants'
+import { SLOW_INTERVAL } from '@/config/constants'
 import { useMemo } from 'react'
 
-import { getLSOrders, saveOrder, saveOrders, hashOrderSet, hashOrder } from 'utils/localStorageOrders'
-import useGelatoLimitOrdersLib from 'hooks/limitOrders/useGelatoLimitOrdersLib'
+import { getLSOrders, saveOrder, saveOrders, hashOrderSet, hashOrder } from '@/utils/localStorageOrders'
+import useGelatoLimitOrdersLib from '@/hooks/limitOrders/useGelatoLimitOrdersLib'
 
 import orderBy from 'lodash/orderBy'
 import { ORDER_CATEGORY, LimitOrderStatus } from '../types'

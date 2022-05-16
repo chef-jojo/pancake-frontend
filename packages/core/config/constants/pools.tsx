@@ -1,6 +1,6 @@
 import { BigNumber } from '@ethersproject/bignumber'
-import Trans from 'components/Trans'
-import { VaultKey } from 'state/types'
+import Trans from '@/components/Trans'
+import { VaultKey } from '@/state/types'
 import { CHAIN_ID } from './networks'
 import tokens, { serializeTokens } from './tokens'
 import { SerializedPoolConfig, PoolCategory } from './types'

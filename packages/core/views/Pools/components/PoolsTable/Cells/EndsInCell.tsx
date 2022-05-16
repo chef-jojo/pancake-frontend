@@ -1,11 +1,11 @@
 import styled from 'styled-components'
 import { Flex, Link, Skeleton, Text, TimerIcon } from '@pancakeswap/uikit'
-import { getBscScanLink } from 'utils'
-import { DeserializedPool } from 'state/types'
-import { useCurrentBlock } from 'state/block/hooks'
-import Balance from 'components/Balance'
-import { useTranslation } from 'contexts/Localization'
-import { getPoolBlockInfo } from 'views/Pools/helpers'
+import { getBscScanLink } from '@/utils'
+import { DeserializedPool } from '@/state/types'
+import { useCurrentBlock } from '@/state/block/hooks'
+import Balance from '@/components/Balance'
+import { useTranslation } from '@/contexts/Localization'
+import { getPoolBlockInfo } from '@/views/Pools/helpers'
 import BaseCell, { CellContent } from './BaseCell'
 
 interface FinishCellProps {

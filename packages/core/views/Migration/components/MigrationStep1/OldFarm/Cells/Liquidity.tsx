@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Flex, HelpIcon, Text, useTooltip } from '@pancakeswap/uikit'
-import { useTranslation } from 'contexts/Localization'
+import { useTranslation } from '@/contexts/Localization'
 import BigNumber from 'bignumber.js'
 
-import BaseCell, { CellContent } from 'views/Pools/components/PoolsTable/Cells/BaseCell'
+import BaseCell, { CellContent } from '@/views/Pools/components/PoolsTable/Cells/BaseCell'
 
 const StyledCell = styled(BaseCell)`
   flex: 1 0 100px;

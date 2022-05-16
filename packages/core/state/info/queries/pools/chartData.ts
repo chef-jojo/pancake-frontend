@@ -1,7 +1,7 @@
 import { gql } from 'graphql-request'
-import { infoClient } from 'utils/graphql'
-import { ChartEntry } from 'state/info/types'
-import { PCS_V2_START } from 'config/constants/info'
+import { infoClient } from '@/utils/graphql'
+import { ChartEntry } from '@/state/info/types'
+import { PCS_V2_START } from '@/config/constants/info'
 import { PairDayDatasResponse } from '../types'
 import { mapPairDayData, fetchChartData } from '../helpers'
 

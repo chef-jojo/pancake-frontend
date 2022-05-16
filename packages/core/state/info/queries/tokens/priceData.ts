@@ -1,18 +1,18 @@
 import { getUnixTime } from 'date-fns'
 import { gql } from 'graphql-request'
-import { getBlocksFromTimestamps } from 'views/Info/hooks/useBlocksFromTimestamps'
-import { multiQuery } from 'views/Info/utils/infoQueryHelpers'
-import { PriceChartEntry } from 'state/info/types'
-import { INFO_CLIENT } from 'config/constants/endpoints'
+import { getBlocksFromTimestamps } from '@/views/Info/hooks/useBlocksFromTimestamps'
+import { multiQuery } from '@/views/Info/utils/infoQueryHelpers'
+import { PriceChartEntry } from '@/state/info/types'
+import { INFO_CLIENT } from '@/config/constants/endpoints'
 import orderBy from 'lodash/orderBy'
 
 const getPriceSubqueries = (tokenAddress: string, blocks: any) =>
   blocks.map(
     (block: any) => `
-      t${block.timestamp}:token(id:"${tokenAddress}", block: { number: ${block.number} }) { 
+      t${block.timestamp}:token(id:"${tokenAddress}", block: { number: ${block.number} }) {
         derivedBNB
       }
-      b${block.timestamp}: bundle(id:"1", block: { number: ${block.number} }) { 
+      b${block.timestamp}: bundle(id:"1", block: { number: ${block.number} }) {
         bnbPrice
       }
     `,

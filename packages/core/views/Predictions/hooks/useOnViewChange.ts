@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import usePrevious from 'hooks/usePreviousValue'
+import usePrevious from '@/hooks/usePreviousValue'
 import useSwiper from './useSwiper'
 import { PageView } from '../types'
 

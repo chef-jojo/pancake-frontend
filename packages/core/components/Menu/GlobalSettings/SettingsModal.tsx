@@ -7,10 +7,10 @@ import {
   useSubgraphHealthIndicatorManager,
   useUserExpertModeAcknowledgementShow,
   useUserSingleHopOnly,
-} from 'state/user/hooks'
-import { useTranslation } from 'contexts/Localization'
-import { useSwapActionHandlers } from 'state/swap/hooks'
-import useTheme from 'hooks/useTheme'
+} from '@/state/user/hooks'
+import { useTranslation } from '@/contexts/Localization'
+import { useSwapActionHandlers } from '@/state/swap/hooks'
+import useTheme from '@/hooks/useTheme'
 import QuestionHelper from '../../QuestionHelper'
 import TransactionSettings from './TransactionSettings'
 import ExpertModal from './ExpertModal'

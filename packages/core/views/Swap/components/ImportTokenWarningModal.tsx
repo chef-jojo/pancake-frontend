@@ -1,7 +1,7 @@
 import { Token } from '@pancakeswap/sdk'
 import { Modal, InjectedModalProps } from '@pancakeswap/uikit'
-import ImportToken from 'components/SearchModal/ImportToken'
-import { useTranslation } from 'contexts/Localization'
+import ImportToken from '@/components/SearchModal/ImportToken'
+import { useTranslation } from '@/contexts/Localization'
 
 interface Props extends InjectedModalProps {
   tokens: Token[]

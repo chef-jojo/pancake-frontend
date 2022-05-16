@@ -1,9 +1,9 @@
 import { BigNumber } from '@ethersproject/bignumber'
 import { AddressZero } from '@ethersproject/constants'
 import { TokenAmount, Token, ChainId, Percent, JSBI } from '@pancakeswap/sdk'
-import { getBscScanLink, calculateSlippageAmount, isAddress, calculateGasMargin, basisPointsToPercent } from 'utils'
+import { getBscScanLink, calculateSlippageAmount, isAddress, calculateGasMargin, basisPointsToPercent } from '@/utils'
 
-describe('utils', () => {
+describe('@/utils', () => {
   describe('#getBscScanLink', () => {
     it('correct for tx', () => {
       expect(getBscScanLink('abc', 'transaction', ChainId.MAINNET)).toEqual('https://bscscan.com/tx/abc')

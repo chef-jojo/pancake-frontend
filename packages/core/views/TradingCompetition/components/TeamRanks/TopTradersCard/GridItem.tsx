@@ -1,6 +1,6 @@
 import { Heading, Text, Flex } from '@pancakeswap/uikit'
 import styled from 'styled-components'
-import truncateHash from 'utils/truncateHash'
+import truncateHash from '@/utils/truncateHash'
 import { LeaderboardDataItem } from '../../../types'
 import { localiseTradingVolume } from '../../../helpers'
 

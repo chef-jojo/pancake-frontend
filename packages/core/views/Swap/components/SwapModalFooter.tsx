@@ -2,17 +2,17 @@ import { useMemo, useState } from 'react'
 import styled from 'styled-components'
 import { Trade, TradeType } from '@pancakeswap/sdk'
 import { Button, Text, AutoRenewIcon } from '@pancakeswap/uikit'
-import { useTranslation } from 'contexts/Localization'
-import { Field } from 'state/swap/actions'
+import { useTranslation } from '@/contexts/Localization'
+import { Field } from '@/state/swap/actions'
 import {
   computeSlippageAdjustedAmounts,
   computeTradePriceBreakdown,
   formatExecutionPrice,
   warningSeverity,
-} from 'utils/prices'
-import { AutoColumn } from 'components/Layout/Column'
-import QuestionHelper from 'components/QuestionHelper'
-import { AutoRow, RowBetween, RowFixed } from 'components/Layout/Row'
+} from '@/utils/prices'
+import { AutoColumn } from '@/components/Layout/Column'
+import QuestionHelper from '@/components/QuestionHelper'
+import { AutoRow, RowBetween, RowFixed } from '@/components/Layout/Row'
 import FormattedPriceImpact from './FormattedPriceImpact'
 import { StyledBalanceMaxMini, SwapCallbackError } from './styleds'
 

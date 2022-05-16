@@ -1,9 +1,9 @@
 import { Heading, Flex } from '@pancakeswap/uikit'
 import { BigNumber } from 'bignumber.js'
-import Balance from 'components/Balance'
+import Balance from '@/components/Balance'
 import { useCallback } from 'react'
-import { useLpTokenPrice } from 'state/farms/hooks'
-import { getBalanceAmount, getBalanceNumber, getFullDisplayBalance } from 'utils/formatBalance'
+import { useLpTokenPrice } from '@/state/farms/hooks'
+import { getBalanceAmount, getBalanceNumber, getFullDisplayBalance } from '@/utils/formatBalance'
 
 interface StackedLPProps {
   stakedBalance: BigNumber

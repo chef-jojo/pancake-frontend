@@ -1,6 +1,6 @@
 import { Text } from '@pancakeswap/uikit'
-import getTimePeriods from 'utils/getTimePeriods'
-import { useTranslation } from 'contexts/Localization'
+import getTimePeriods from '@/utils/getTimePeriods'
+import { useTranslation } from '@/contexts/Localization'
 
 const WithdrawalFeeTimer: React.FC<{ secondsRemaining: number }> = ({ secondsRemaining }) => {
   const { t } = useTranslation()

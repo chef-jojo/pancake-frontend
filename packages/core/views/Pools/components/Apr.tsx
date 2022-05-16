@@ -1,14 +1,14 @@
 import styled from 'styled-components'
 import { Text, Flex, useModal, CalculateIcon, Skeleton, FlexProps, Button } from '@pancakeswap/uikit'
-import RoiCalculatorModal from 'components/RoiCalculatorModal'
-import { BalanceWithLoading } from 'components/Balance'
-import { DeserializedPool } from 'state/types'
-import { useTranslation } from 'contexts/Localization'
+import RoiCalculatorModal from '@/components/RoiCalculatorModal'
+import { BalanceWithLoading } from '@/components/Balance'
+import { DeserializedPool } from '@/state/types'
+import { useTranslation } from '@/contexts/Localization'
 import BigNumber from 'bignumber.js'
-import { BIG_ZERO } from 'utils/bigNumber'
-import { vaultPoolConfig } from 'config/constants/pools'
-import { useCurrentBlock } from 'state/block/hooks'
-import { getPoolBlockInfo } from 'views/Pools/helpers'
+import { BIG_ZERO } from '@/utils/bigNumber'
+import { vaultPoolConfig } from '@/config/constants/pools'
+import { useCurrentBlock } from '@/state/block/hooks'
+import { getPoolBlockInfo } from '@/views/Pools/helpers'
 
 const AprLabelContainer = styled(Flex)`
   &:hover {

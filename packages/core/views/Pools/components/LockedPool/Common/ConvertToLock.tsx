@@ -1,8 +1,8 @@
 import { Token } from '@pancakeswap/sdk'
 import { Flex, Message, MessageText, useMatchBreakpoints } from '@pancakeswap/uikit'
-import { useTranslation } from 'contexts/Localization'
+import { useTranslation } from '@/contexts/Localization'
 import { memo } from 'react'
-import { useVaultApy } from 'hooks/useVaultApy'
+import { useVaultApy } from '@/hooks/useVaultApy'
 
 import ExtendButton from '../Buttons/ExtendDurationButton'
 import useAvgLockDuration from '../hooks/useAvgLockDuration'

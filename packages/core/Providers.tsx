@@ -1,19 +1,19 @@
-import { ModalProvider, light, dark } from '@pancakeswap/uikit'
-import { Web3ReactProvider } from '@web3-react/core'
-import { Provider } from 'react-redux'
-import { SWRConfig } from 'swr'
-import { ThemeProvider } from 'styled-components'
-import { getLibrary } from 'utils/web3React'
-import { LanguageProvider } from 'contexts/Localization'
-import { ToastsProvider } from 'contexts/ToastsContext'
-import { fetchStatusMiddleware } from 'hooks/useSWRContract'
-import { Store } from '@reduxjs/toolkit'
-import { ThemeProvider as NextThemeProvider, useTheme as useNextTheme } from 'next-themes'
+import { ModalProvider, light, dark } from "@pancakeswap/uikit";
+import { Web3ReactProvider } from "@web3-react/core";
+import { Provider } from "react-redux";
+import { SWRConfig } from "swr";
+import { ThemeProvider } from "styled-components";
+import { Store } from "@reduxjs/toolkit";
+import { ThemeProvider as NextThemeProvider, useTheme as useNextTheme } from "next-themes";
+import { getLibrary } from "@/utils/web3React";
+import { LanguageProvider } from "@/contexts/Localization";
+import { ToastsProvider } from "@/contexts/ToastsContext";
+import { fetchStatusMiddleware } from "@/hooks/useSWRContract";
 
 const StyledThemeProvider = (props) => {
-  const { resolvedTheme } = useNextTheme()
-  return <ThemeProvider theme={resolvedTheme === 'dark' ? dark : light} {...props} />
-}
+  const { resolvedTheme } = useNextTheme();
+  return <ThemeProvider theme={resolvedTheme === "dark" ? dark : light} {...props} />;
+};
 
 const Providers: React.FC<{ store: Store }> = ({ children, store }) => {
   return (
@@ -36,7 +36,7 @@ const Providers: React.FC<{ store: Store }> = ({ children, store }) => {
         </ToastsProvider>
       </Provider>
     </Web3ReactProvider>
-  )
-}
+  );
+};
 
-export default Providers
+export default Providers;

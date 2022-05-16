@@ -1,6 +1,6 @@
-import { FAST_INTERVAL, SLOW_INTERVAL } from 'config/constants'
+import { FAST_INTERVAL, SLOW_INTERVAL } from '@/config/constants'
 import useSWR, { useSWRConfig } from 'swr'
-import { simpleRpcProvider } from 'utils/providers'
+import { simpleRpcProvider } from '@/utils/providers'
 import useSWRImmutable from 'swr/immutable'
 
 const REFRESH_BLOCK_INTERVAL = 6000

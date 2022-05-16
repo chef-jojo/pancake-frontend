@@ -1,6 +1,6 @@
 import { IconButton, Text, Skeleton, Button, AutoRenewIcon, ChevronRightIcon, Message } from '@pancakeswap/uikit'
-import { useTranslation } from 'contexts/Localization'
-import { formatNumber } from 'utils/formatBalance'
+import { useTranslation } from '@/contexts/Localization'
+import { formatNumber } from '@/utils/formatBalance'
 import TextEllipsis from '../TextEllipsis'
 import { VotingBox, ModalInner } from './styles'
 import { CastVoteModalProps } from './types'

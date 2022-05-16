@@ -1,6 +1,6 @@
-import { BuyButtonsEnum } from 'views/PancakeSquad/components/Buttons/types'
-import { getBuyButton, getBuyButtonText } from 'views/PancakeSquad/components/Buttons/utils'
-import { SaleStatusEnum } from 'views/PancakeSquad/types'
+import { BuyButtonsEnum } from '@/views/PancakeSquad/components/Buttons/types'
+import { getBuyButton, getBuyButtonText } from '@/views/PancakeSquad/components/Buttons/utils'
+import { SaleStatusEnum } from '@/views/PancakeSquad/types'
 
 describe('PancakeSquad/buttons/utils/getBuyButtonText', () => {
   it('Should return Max purchased text', () => {

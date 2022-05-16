@@ -1,5 +1,5 @@
 import { ErrorIcon, Flex, Text } from '@pancakeswap/uikit'
-import { AutoColumn } from 'components/Layout/Column'
+import { AutoColumn } from '@/components/Layout/Column'
 import styled, { css } from 'styled-components'
 
 export const Wrapper = styled(Flex)`

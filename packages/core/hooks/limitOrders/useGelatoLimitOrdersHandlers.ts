@@ -4,16 +4,16 @@ import { BigNumber } from '@ethersproject/bignumber'
 import { Overrides } from '@ethersproject/contracts'
 import { TransactionResponse } from '@ethersproject/abstract-provider'
 
-import { useOrderActionHandlers } from 'state/limitOrders/hooks'
-import { Field, Rate } from 'state/limitOrders/types'
+import { useOrderActionHandlers } from '@/state/limitOrders/hooks'
+import { Field, Rate } from '@/state/limitOrders/types'
 import { Currency, Price } from '@pancakeswap/sdk'
-import useActiveWeb3React from 'hooks/useActiveWeb3React'
-import { useTransactionAdder } from 'state/transactions/hooks'
+import useActiveWeb3React from '@/hooks/useActiveWeb3React'
+import { useTransactionAdder } from '@/state/transactions/hooks'
 import { useSWRConfig } from 'swr'
 import {
   OPEN_ORDERS_SWR_KEY,
   EXECEUTED_CANCELLED_ORDERS_SWR_KEY,
-} from '../../views/LimitOrders/hooks/useGelatoLimitOrdersHistory'
+} from '@/views/LimitOrders/hooks/useGelatoLimitOrdersHistory'
 import useGelatoLimitOrdersLib from './useGelatoLimitOrdersLib'
 
 export interface GelatoLimitOrdersHandlers {

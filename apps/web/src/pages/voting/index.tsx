@@ -1,3 +1,3 @@
-import Voting from '../../views/Voting'
+import Voting from '@/views/Voting'
 
 export default Voting

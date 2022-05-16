@@ -1,7 +1,7 @@
 import { Box, Button, Text } from '@pancakeswap/uikit'
-import { useTranslation } from 'contexts/Localization'
-import useLocalDispatch from 'contexts/LocalRedux/useLocalDispatch'
-import { setHistoryPaneState } from 'state/predictions'
+import { useTranslation } from '@/contexts/Localization'
+import useLocalDispatch from '@/contexts/LocalRedux/useLocalDispatch'
+import { setHistoryPaneState } from '@/state/predictions'
 import Notification from './Notification'
 
 const PauseNotification = () => {

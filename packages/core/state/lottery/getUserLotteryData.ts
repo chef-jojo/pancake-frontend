@@ -1,7 +1,7 @@
 import { request, gql } from 'graphql-request'
-import { GRAPH_API_LOTTERY } from 'config/constants/endpoints'
-import { LotteryTicket } from 'config/constants/types'
-import { LotteryUserGraphEntity, LotteryResponse, UserRound } from 'state/types'
+import { GRAPH_API_LOTTERY } from '@/config/constants/endpoints'
+import { LotteryTicket } from '@/config/constants/types'
+import { LotteryUserGraphEntity, LotteryResponse, UserRound } from '@/state/types'
 import { getRoundIdsArray, fetchMultipleLotteries, hasRoundBeenClaimed } from './helpers'
 import { fetchUserTicketsForMultipleRounds } from './getUserTicketsData'
 

@@ -1,6 +1,6 @@
 import { Text, Flex, Button, Input, Box } from '@pancakeswap/uikit'
 import styled from 'styled-components'
-import { useTranslation } from 'contexts/Localization'
+import { useTranslation } from '@/contexts/Localization'
 import _toNumber from 'lodash/toNumber'
 import { secondsToWeeks, weeksToSeconds } from '../utils/formatSecondsToWeeks'
 import { LockDurationFieldPropsType } from '../types'

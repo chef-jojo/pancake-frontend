@@ -1,4 +1,4 @@
-import { SerializedFarmConfig } from 'config/constants/types'
+import { SerializedFarmConfig } from '@/config/constants/types'
 import BigNumber from 'bignumber.js'
 import { BIG_TEN, BIG_ZERO, BIG_TWO } from '../../utils/bigNumber'
 import { fetchPublicFarmsData } from './fetchPublicFarmData'

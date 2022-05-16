@@ -1,10 +1,10 @@
 import { Tag, TagProps, Text, SplitIcon, LockIcon, UnlockIcon, HotIcon, Box } from '@pancakeswap/uikit'
-import { FlexGap, FlexGapProps } from 'components/Layout/Flex'
-import Trans from 'components/Trans'
-import { useTranslation } from 'contexts/Localization'
+import { FlexGap, FlexGapProps } from '@/components/Layout/Flex'
+import Trans from '@/components/Trans'
+import { useTranslation } from '@/contexts/Localization'
 import { FC, ReactNode, useMemo } from 'react'
-import { DeserializedLockedVaultUser } from 'state/types'
-import { VaultPosition, getVaultPosition } from 'utils/cakePool'
+import { DeserializedLockedVaultUser } from '@/state/types'
+import { VaultPosition, getVaultPosition } from '@/utils/cakePool'
 
 const tagConfig: Record<VaultPosition, TagProps> = {
   [VaultPosition.None]: {},

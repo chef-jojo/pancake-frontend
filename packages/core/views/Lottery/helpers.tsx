@@ -1,5 +1,5 @@
 import BigNumber from 'bignumber.js'
-import { LotteryResponse, LotteryRound, LotteryRoundUserTickets } from 'state/types'
+import { LotteryResponse, LotteryRound, LotteryRoundUserTickets } from '@/state/types'
 
 /**
  * Remove the '1' and reverse the digits in a lottery number retrieved from the smart contract

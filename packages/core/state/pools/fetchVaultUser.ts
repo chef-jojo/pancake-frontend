@@ -1,8 +1,8 @@
 import BigNumber from 'bignumber.js'
-import { SerializedLockedVaultUser } from 'state/types'
-import { getCakeVaultAddress } from 'utils/addressHelpers'
-import cakeVaultAbi from 'config/abi/cakeVaultV2.json'
-import { multicallv2 } from 'utils/multicall'
+import { SerializedLockedVaultUser } from '@/state/types'
+import { getCakeVaultAddress } from '@/utils/addressHelpers'
+import cakeVaultAbi from '@/config/abi/cakeVaultV2.json'
+import { multicallv2 } from '@/utils/multicall'
 
 const cakeVaultAddress = getCakeVaultAddress()
 

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { Flex, Heading, Skeleton, useMatchBreakpoints } from '@pancakeswap/uikit'
-import { useTranslation } from 'contexts/Localization'
-import { Achievement } from 'state/types'
+import { useTranslation } from '@/contexts/Localization'
+import { Achievement } from '@/state/types'
 import AchievementCard from './AchievementCard'
 
 const Grid = styled.div`

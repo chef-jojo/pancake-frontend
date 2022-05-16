@@ -10,8 +10,8 @@ import {
   TooltipText,
   InfoIcon,
 } from '@pancakeswap/uikit'
-import { BetPosition } from 'state/types'
-import { useTranslation } from 'contexts/Localization'
+import { BetPosition } from '@/state/types'
+import { useTranslation } from '@/contexts/Localization'
 
 interface TagProps extends FlexProps {
   bg?: string

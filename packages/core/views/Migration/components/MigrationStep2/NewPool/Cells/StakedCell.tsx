@@ -1,14 +1,14 @@
 import { Box, Flex, Text, useMatchBreakpoints } from '@pancakeswap/uikit'
 import BigNumber from 'bignumber.js'
-import Balance from 'components/Balance'
-import { useTranslation } from 'contexts/Localization'
+import Balance from '@/components/Balance'
+import { useTranslation } from '@/contexts/Localization'
 import React from 'react'
-import { useVaultPoolByKey } from 'state/pools/hooks'
-import { DeserializedPool } from 'state/types'
+import { useVaultPoolByKey } from '@/state/pools/hooks'
+import { DeserializedPool } from '@/state/types'
 import styled from 'styled-components'
-import { BIG_ZERO } from 'utils/bigNumber'
-import { getBalanceNumber } from 'utils/formatBalance'
-import BaseCell, { CellContent } from 'views/Pools/components/PoolsTable/Cells/BaseCell'
+import { BIG_ZERO } from '@/utils/bigNumber'
+import { getBalanceNumber } from '@/utils/formatBalance'
+import BaseCell, { CellContent } from '@/views/Pools/components/PoolsTable/Cells/BaseCell'
 
 interface StakedCellProps {
   pool: DeserializedPool

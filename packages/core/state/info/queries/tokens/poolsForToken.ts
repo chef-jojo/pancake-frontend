@@ -1,6 +1,6 @@
-import { TOKEN_BLACKLIST } from 'config/constants/info'
+import { TOKEN_BLACKLIST } from '@/config/constants/info'
 import { gql } from 'graphql-request'
-import { infoClient } from 'utils/graphql'
+import { infoClient } from '@/utils/graphql'
 
 /**
  * Data for showing Pools table on the Token page

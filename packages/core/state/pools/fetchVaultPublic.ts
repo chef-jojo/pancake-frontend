@@ -1,9 +1,9 @@
 import BigNumber from 'bignumber.js'
-import { multicallv2 } from 'utils/multicall'
-import cakeVaultAbi from 'config/abi/cakeVaultV2.json'
-import { getCakeVaultAddress } from 'utils/addressHelpers'
-import { BIG_ZERO } from 'utils/bigNumber'
-import { getCakeContract } from 'utils/contractHelpers'
+import { multicallv2 } from '@/utils/multicall'
+import cakeVaultAbi from '@/config/abi/cakeVaultV2.json'
+import { getCakeVaultAddress } from '@/utils/addressHelpers'
+import { BIG_ZERO } from '@/utils/bigNumber'
+import { getCakeContract } from '@/utils/contractHelpers'
 
 const cakeVaultV2 = getCakeVaultAddress()
 const cakeContract = getCakeContract()

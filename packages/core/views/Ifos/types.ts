@@ -2,7 +2,7 @@ import BigNumber from 'bignumber.js'
 import { BigNumber as EthersBigNumber } from '@ethersproject/bignumber'
 import { Contract } from '@ethersproject/contracts'
 
-import { IfoStatus, PoolIds } from 'config/constants/types'
+import { IfoStatus, PoolIds } from '@/config/constants/types'
 
 // PoolCharacteristics retrieved from the contract
 export interface PoolCharacteristics {

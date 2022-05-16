@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { DeserializedPool } from 'state/types'
+import { DeserializedPool } from '@/state/types'
 import UnstakeButton from '../UnstakeButton'
 
 const Container = styled.div`

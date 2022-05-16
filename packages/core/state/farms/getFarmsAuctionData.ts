@@ -1,4 +1,4 @@
-import { SerializedFarm } from 'state/types'
+import { SerializedFarm } from '@/state/types'
 import { CHAIN_ID } from '../../config/constants/networks'
 
 const getFarmsAuctionData = (farms: SerializedFarm[], winnerFarms: string[], auctionHostingEndDate: string) => {

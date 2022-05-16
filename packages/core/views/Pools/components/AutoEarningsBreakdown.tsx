@@ -1,8 +1,8 @@
 import { Text } from '@pancakeswap/uikit'
-import { useTranslation } from 'contexts/Localization'
+import { useTranslation } from '@/contexts/Localization'
 import { differenceInHours } from 'date-fns'
-import { useVaultPoolByKey } from 'state/pools/hooks'
-import { DeserializedPool } from 'state/types'
+import { useVaultPoolByKey } from '@/state/pools/hooks'
+import { DeserializedPool } from '@/state/types'
 import { getCakeVaultEarnings } from '../helpers'
 
 interface AutoEarningsBreakdownProps {

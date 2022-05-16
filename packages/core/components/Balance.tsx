@@ -2,7 +2,7 @@ import { Text, TextProps, Skeleton } from '@pancakeswap/uikit'
 import { useEffect, useRef } from 'react'
 import CountUp from 'react-countup'
 import styled, { keyframes } from 'styled-components'
-import isUndefinedOrNull from 'utils/isUndefinedOrNull'
+import isUndefinedOrNull from '@/utils/isUndefinedOrNull'
 import _toNumber from 'lodash/toNumber'
 import _isNaN from 'lodash/isNaN'
 import _replace from 'lodash/replace'
@@ -68,7 +68,7 @@ const appear = keyframes`
   from {
     opacity:0;
   }
-  
+
   to {
     opacity:1;
   }

@@ -4,7 +4,7 @@ import BigNumber from 'bignumber.js'
 import { MaxUint256 } from '@ethersproject/constants'
 import { Modal, Text, Flex, BalanceInput, Box, Button, LogoRoundIcon } from '@pancakeswap/uikit'
 import { useTranslation } from 'contexts/Localization'
-import { useWeb3React } from '@web3-react/core'
+import { useAccount } from 'wagmi'
 import { formatNumber, getBalanceAmount, getBalanceNumber } from 'utils/formatBalance'
 import useTheme from 'hooks/useTheme'
 import useTokenBalance from 'hooks/useTokenBalance'
@@ -53,7 +53,7 @@ const PlaceBidModal: React.FC<PlaceBidModalProps> = ({
   connectedBidder,
   refreshBidders,
 }) => {
-  const { account } = useWeb3React()
+  const { address: account } = useAccount()
   const { t } = useTranslation()
   const { theme } = useTheme()
   const { callWithGasPrice } = useCallWithGasPrice()

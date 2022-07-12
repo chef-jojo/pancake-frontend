@@ -1,4 +1,4 @@
-import { useWeb3React } from '@web3-react/core'
+import { useAccount } from 'wagmi'
 import {
   ArrowForwardIcon,
   Box,
@@ -57,7 +57,7 @@ const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab }) => {
   const isFetchingHistory = useGetIsFetchingHistory()
   const { t } = useTranslation()
   const dispatch = useLocalDispatch()
-  const { account } = useWeb3React()
+  const { address: account } = useAccount()
 
   const handleClick = () => {
     dispatch(setHistoryPaneState(false))

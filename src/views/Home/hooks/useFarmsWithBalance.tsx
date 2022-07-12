@@ -1,5 +1,5 @@
 import BigNumber from 'bignumber.js'
-import { useWeb3React } from '@web3-react/core'
+import { useAccount } from 'wagmi'
 import multicall from 'utils/multicall'
 import { getMasterChefAddress } from 'utils/addressHelpers'
 import masterChefABI from 'config/abi/masterchef.json'
@@ -14,7 +14,7 @@ export interface FarmWithBalance extends SerializedFarmConfig {
 }
 
 const useFarmsWithBalance = () => {
-  const { account } = useWeb3React()
+  const { address: account } = useAccount()
   const poolLength = useFarmsPoolLength()
 
   const {

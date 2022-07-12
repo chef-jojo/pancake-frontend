@@ -1,6 +1,6 @@
 import { useTranslation } from 'contexts/Localization'
 import { Button } from '@pancakeswap/uikit'
-import { useWeb3React } from '@web3-react/core'
+import { useAccount } from 'wagmi'
 import { NextLinkFromReactRouter } from 'components/NextLink'
 import { Ifo, PoolIds } from 'config/constants/types'
 import { WalletIfoData, PublicIfoData } from 'views/Ifos/types'
@@ -33,7 +33,7 @@ const IfoCardActions: React.FC<Props> = ({
   enableStatus,
 }) => {
   const { t } = useTranslation()
-  const { account } = useWeb3React()
+  const { address: account } = useAccount()
   const userPoolCharacteristics = walletIfoData[poolId]
 
   if (isLoading) {

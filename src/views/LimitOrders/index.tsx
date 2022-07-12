@@ -20,7 +20,7 @@ import { GELATO_NATIVE } from 'config/constants'
 import { LIMIT_ORDERS_DOCS_URL } from 'config/constants/exchange'
 import { useExchangeChartManager } from 'state/user/hooks'
 import PriceChartContainer from 'views/Swap/components/Chart/PriceChartContainer'
-import { useWeb3React } from '@web3-react/core'
+import { useAccount } from 'wagmi'
 import ClaimWarning from './components/ClaimWarning'
 
 import { Wrapper, StyledInputCurrencyWrapper, StyledSwapContainer } from './styles'
@@ -36,7 +36,7 @@ import ImportTokenWarningModal from '../../components/ImportTokenWarningModal'
 
 const LimitOrders = () => {
   // Helpers
-  const { account } = useWeb3React()
+  const { address: account } = useAccount()
   const { t } = useTranslation()
   const router = useRouter()
   const { isMobile, isTablet } = useMatchBreakpointsContext()

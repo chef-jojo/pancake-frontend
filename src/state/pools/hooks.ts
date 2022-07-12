@@ -1,5 +1,5 @@
 import { useEffect, useMemo } from 'react'
-import { useWeb3React } from '@web3-react/core'
+import { useAccount } from 'wagmi'
 import { batch, useSelector } from 'react-redux'
 import { useAppDispatch } from 'state'
 import { useFastRefreshEffect, useSlowRefreshEffect } from 'hooks/useRefreshEffect'
@@ -78,7 +78,7 @@ export const useDeserializedPoolByVaultKey = (vaultKey) => {
 }
 
 export const usePoolsPageFetch = () => {
-  const { account } = useWeb3React()
+  const { address: account } = useAccount()
   const dispatch = useAppDispatch()
   useFetchPublicPoolsData()
 
@@ -104,7 +104,7 @@ export const usePoolsPageFetch = () => {
 }
 
 export const useFetchIfo = () => {
-  const { account } = useWeb3React()
+  const { address: account } = useAccount()
   const dispatch = useAppDispatch()
 
   useFastRefreshEffect(() => {

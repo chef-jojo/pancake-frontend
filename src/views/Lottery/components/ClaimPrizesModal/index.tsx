@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import styled from 'styled-components'
 import { Heading, ModalContainer, ModalHeader, ModalTitle, ModalBody, ModalCloseButton } from '@pancakeswap/uikit'
-import { useWeb3React } from '@web3-react/core'
+import { useAccount } from 'wagmi'
 import { useTranslation } from 'contexts/Localization'
 import delay from 'lodash/delay'
 import confetti from 'canvas-confetti'
@@ -54,7 +54,7 @@ interface ClaimPrizesModalModalProps {
 
 const ClaimPrizesModal: React.FC<ClaimPrizesModalModalProps> = ({ onDismiss, roundsToClaim }) => {
   const { t } = useTranslation()
-  const { account } = useWeb3React()
+  const { address: account } = useAccount()
   const { currentLotteryId } = useLottery()
   const dispatch = useAppDispatch()
 

@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react'
-import { useWeb3React } from '@web3-react/core'
+import { useAccount } from 'wagmi'
 import styled from 'styled-components'
 import {
   CardHeader,
@@ -52,7 +52,7 @@ const YourHistoryCard: React.FC<YourHistoryCardProps> = ({ handleShowMoreClick, 
     t,
     currentLanguage: { locale },
   } = useTranslation()
-  const { account } = useWeb3React()
+  const { address: account } = useAccount()
   const [shouldShowRoundDetail, setShouldShowRoundDetail] = useState(false)
   const [selectedLotteryNodeData, setSelectedLotteryNodeData] = useState<LotteryRound>(null)
   const [selectedLotteryId, setSelectedLotteryId] = useState<string>(null)

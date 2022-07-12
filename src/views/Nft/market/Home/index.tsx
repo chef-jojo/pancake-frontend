@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { Box, Button, Flex, Heading, LinkExternal } from '@pancakeswap/uikit'
-import { useWeb3React } from '@web3-react/core'
+import { useAccount } from 'wagmi'
 import { NextLinkFromReactRouter } from 'components/NextLink'
 import { useTranslation } from 'contexts/Localization'
 import PageHeader from 'components/PageHeader'
@@ -54,7 +54,7 @@ const StyledHeaderInner = styled(Flex)`
 
 const Home = () => {
   const { t } = useTranslation()
-  const { account } = useWeb3React()
+  const { address: account } = useAccount()
   const { theme } = useTheme()
   const { data: collections, status } = useGetCollections()
 

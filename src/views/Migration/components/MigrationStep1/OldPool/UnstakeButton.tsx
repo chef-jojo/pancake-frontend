@@ -8,7 +8,7 @@ import { useCallWithGasPrice } from 'hooks/useCallWithGasPrice'
 import { ToastDescriptionWithTx } from 'components/Toast'
 import useCatchTxError from 'hooks/useCatchTxError'
 import useToast from 'hooks/useToast'
-import { useWeb3React } from '@web3-react/core'
+import { useAccount } from 'wagmi'
 import { vaultPoolConfig } from 'config/constants/pools'
 import ifoPoolAbi from 'config/abi/ifoPool.json'
 import cakeVaultAbi from 'config/abi/cakeVaultV2.json'
@@ -25,7 +25,7 @@ export interface UnstakeButtonProps {
 const UnstakeButton: React.FC<UnstakeButtonProps> = ({ pool }) => {
   const { sousId, stakingToken, earningToken, userData, vaultKey } = pool
   const { t } = useTranslation()
-  const { account } = useWeb3React()
+  const { address: account } = useAccount()
   const { library } = useActiveWeb3React()
   const { fetchWithCatchTxError, loading: pendingTx } = useCatchTxError()
   const { callWithGasPrice } = useCallWithGasPrice()

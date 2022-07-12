@@ -1,5 +1,5 @@
 import { useLayoutEffect } from 'react'
-import { useWeb3React } from '@web3-react/core'
+import { useAccount } from 'wagmi'
 import usePreviousValue from 'hooks/usePreviousValue'
 import useLocalDispatch from 'contexts/LocalRedux/useLocalDispatch'
 import { useGetSortedRoundsCurrentEpoch } from 'state/predictions/hooks'
@@ -9,7 +9,7 @@ import useSwiper from './useSwiper'
  * Hooks for actions to be performed when the round changes
  */
 const useOnNextRound = () => {
-  const { account } = useWeb3React()
+  const { address: account } = useAccount()
   const dispatch = useLocalDispatch()
   const { swiper } = useSwiper()
   const { currentEpoch, rounds } = useGetSortedRoundsCurrentEpoch()

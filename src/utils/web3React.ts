@@ -1,7 +1,7 @@
 import { InjectedConnector } from '@web3-react/injected-connector'
 import { WalletConnectConnector } from '@web3-react/walletconnect-connector'
 import { AbstractConnector } from '@web3-react/abstract-connector'
-import { ChainId } from '@pancakeswap/sdk'
+import { Connector } from 'wagmi'
 import { BscConnector } from '@binance-chain/bsc-connector'
 import { ConnectorNames } from '@pancakeswap/uikit'
 import { hexlify } from '@ethersproject/bytes'
@@ -9,6 +9,8 @@ import { toUtf8Bytes } from '@ethersproject/strings'
 import { Web3Provider } from '@ethersproject/providers'
 import { CHAIN_ID } from 'config/constants/networks'
 import getNodeUrl from './getRpcUrl'
+
+import { coinbaseConnector, walletConnectConnector, injectedConnector } from './wagmi'
 
 const POLLING_INTERVAL = 12000
 const rpcUrl = getNodeUrl()
@@ -25,22 +27,23 @@ const walletconnect = new WalletConnectConnector({
 const bscConnector = new BscConnector({ supportedChainIds: [chainId] })
 
 export const connectorsByName = {
-  [ConnectorNames.Injected]: injected,
-  [ConnectorNames.WalletConnect]: walletconnect,
+  [ConnectorNames.Injected]: injectedConnector,
+  [ConnectorNames.WalletConnect]: walletConnectConnector,
   [ConnectorNames.BSC]: bscConnector,
   [ConnectorNames.Blocto]: async () => {
     const { BloctoConnector } = await import('@blocto/blocto-connector')
     return new BloctoConnector({ chainId, rpc: rpcUrl })
   },
-  [ConnectorNames.WalletLink]: async () => {
-    const { WalletLinkConnector } = await import('@web3-react/walletlink-connector')
-    return new WalletLinkConnector({
-      url: rpcUrl,
-      appName: 'PancakeSwap',
-      appLogoUrl: 'https://pancakeswap.com/logo.png',
-      supportedChainIds: [ChainId.MAINNET, ChainId.TESTNET],
-    })
-  },
+  [ConnectorNames.WalletLink]: coinbaseConnector,
+  // [ConnectorNames.WalletLink]: async () => {
+  //   const { WalletLinkConnector } = await import('@web3-react/walletlink-connector')
+  //   return new WalletLinkConnector({
+  //     url: rpcUrl,
+  //     appName: 'PancakeSwap',
+  //     appLogoUrl: 'https://pancakeswap.com/logo.png',
+  //     supportedChainIds: [ChainId.MAINNET, ChainId.TESTNET],
+  //   })
+  // },
 } as const
 
 export const getLibrary = (provider): Web3Provider => {
@@ -54,7 +57,7 @@ export const getLibrary = (provider): Web3Provider => {
  * @see https://docs.binance.org/smart-chain/wallet/wallet_api.html#binancechainbnbsignaddress-string-message-string-promisepublickey-string-signature-string
  */
 export const signMessage = async (
-  connector: AbstractConnector,
+  connector: Connector,
   provider: any,
   account: string,
   message: string,

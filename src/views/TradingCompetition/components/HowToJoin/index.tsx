@@ -1,4 +1,4 @@
-import { useWeb3React } from '@web3-react/core'
+import { useAccount } from 'wagmi'
 import { Flex, Text, Heading } from '@pancakeswap/uikit'
 import styled from 'styled-components'
 import { useTranslation } from 'contexts/Localization'
@@ -13,7 +13,7 @@ const StyledLink = styled(Link)`
 
 const HowToJoin = () => {
   const { t } = useTranslation()
-  const { account } = useWeb3React()
+  const { address: account } = useAccount()
 
   return (
     <Flex flexDirection="column" maxWidth="736px">

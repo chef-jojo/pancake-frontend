@@ -16,7 +16,7 @@ import {
   ArrowForwardIcon,
 } from '@pancakeswap/uikit'
 import { useTranslation } from 'contexts/Localization'
-import { useWeb3React } from '@web3-react/core'
+import { useAccount } from 'wagmi'
 import tokens from 'config/constants/tokens'
 import { getFullDisplayBalance } from 'utils/formatBalance'
 import { BIG_ZERO } from 'utils/bigNumber'
@@ -60,7 +60,7 @@ enum BuyingStage {
 }
 
 const BuyTicketsModal: React.FC<BuyTicketsModalProps> = ({ onDismiss }) => {
-  const { account } = useWeb3React()
+  const { address: account } = useAccount()
   const { t } = useTranslation()
   const { theme } = useTheme()
   const {

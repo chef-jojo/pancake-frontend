@@ -1,5 +1,5 @@
 import { ChainId } from '@pancakeswap/sdk'
-import { useWeb3React } from '@web3-react/core'
+import { useAccount } from 'wagmi'
 import BigNumber from 'bignumber.js'
 import { farmsConfig, SLOW_INTERVAL } from 'config/constants'
 import { CHAIN_ID } from 'config/constants/networks'
@@ -22,7 +22,7 @@ import {
 
 export const usePollFarmsWithUserData = () => {
   const dispatch = useAppDispatch()
-  const { account } = useWeb3React()
+  const { address: account } = useAccount()
 
   useSWRImmutable(
     ['publicFarmData'],

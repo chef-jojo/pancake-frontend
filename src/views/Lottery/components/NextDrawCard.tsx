@@ -14,7 +14,7 @@ import {
   CardFooter,
   ExpandableLabel,
 } from '@pancakeswap/uikit'
-import { useWeb3React } from '@web3-react/core'
+import { useAccount } from 'wagmi'
 import { LotteryStatus } from 'config/constants/types'
 import { useTranslation } from 'contexts/Localization'
 import { usePriceCakeBusd } from 'state/farms/hooks'
@@ -58,7 +58,7 @@ const NextDrawCard = () => {
     t,
     currentLanguage: { locale },
   } = useTranslation()
-  const { account } = useWeb3React()
+  const { address: account } = useAccount()
   const { currentLotteryId, isTransitioning, currentRound } = useLottery()
   const { endTime, amountCollectedInCake, userTickets, status } = currentRound
 

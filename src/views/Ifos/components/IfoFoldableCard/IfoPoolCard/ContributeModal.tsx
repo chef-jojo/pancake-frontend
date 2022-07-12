@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import styled from 'styled-components'
-import { useWeb3React } from '@web3-react/core'
+import { useAccount } from 'wagmi'
 import BigNumber from 'bignumber.js'
 import { MaxUint256 } from '@ethersproject/constants'
 import { parseUnits } from '@ethersproject/units'
@@ -93,7 +93,7 @@ const ContributeModal: React.FC<Props> = ({
   const { amountTokenCommittedInLP } = userPoolCharacteristics
   const { contract } = walletIfoData
   const [value, setValue] = useState('')
-  const { account } = useWeb3React()
+  const { address: account } = useAccount()
   const { callWithGasPrice } = useCallWithGasPrice()
   const raisingTokenContractReader = useERC20(currency.address, false)
   const raisingTokenContractApprover = useERC20(currency.address)

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import styled from 'styled-components'
 import { Button, Card, CardBody, CardHeader, CardProps, Heading, Radio, Text, useModal } from '@pancakeswap/uikit'
-import { useWeb3React } from '@web3-react/core'
+import { useAccount } from 'wagmi'
 import { Proposal } from 'state/types'
 import useToast from 'hooks/useToast'
 import { useTranslation } from 'contexts/Localization'
@@ -41,7 +41,7 @@ const Vote: React.FC<VoteProps> = ({ proposal, onSuccess, ...props }) => {
   const [vote, setVote] = useState<State>(null)
   const { t } = useTranslation()
   const { toastSuccess } = useToast()
-  const { account } = useWeb3React()
+  const { address: account } = useAccount()
 
   const handleSuccess = async () => {
     toastSuccess(t('Vote cast!'))

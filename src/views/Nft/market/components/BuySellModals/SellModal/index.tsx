@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { InjectedModalProps } from '@pancakeswap/uikit'
-import { useWeb3React } from '@web3-react/core'
+import { useAccount } from 'wagmi'
 import { parseUnits } from '@ethersproject/units'
 import useTheme from 'hooks/useTheme'
 import useApproveConfirmTransaction from 'hooks/useApproveConfirmTransaction'
@@ -90,7 +90,7 @@ const SellModal: React.FC<SellModalProps> = ({
   const [confirmedTxHash, setConfirmedTxHash] = useState('')
   const { t } = useTranslation()
   const { theme } = useTheme()
-  const { account } = useWeb3React()
+  const { address: account } = useAccount()
   const { callWithGasPrice } = useCallWithGasPrice()
   const { toastSuccess } = useToast()
   const { reader: collectionContractReader, signer: collectionContractSigner } = useErc721CollectionContract(

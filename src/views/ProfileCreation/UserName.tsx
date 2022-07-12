@@ -16,7 +16,7 @@ import {
   Checkbox,
 } from '@pancakeswap/uikit'
 import { parseISO, formatDistance } from 'date-fns'
-import { useWeb3React } from '@web3-react/core'
+import { useAccount } from 'wagmi'
 import { formatUnits } from '@ethersproject/units'
 import { API_PROFILE } from 'config/constants/endpoints'
 import useToast from 'hooks/useToast'
@@ -61,7 +61,7 @@ const UserName: React.FC = () => {
   const [isAcknowledged, setIsAcknowledged] = useState(false)
   const { teamId, selectedNft, userName, actions, minimumCakeRequired, allowance } = useProfileCreation()
   const { t } = useTranslation()
-  const { account } = useWeb3React()
+  const { address: account } = useAccount()
   const { toastError } = useToast()
   const { library, connector } = useWeb3Provider()
   const [existingUserState, setExistingUserState] = useState<ExistingUserState>(ExistingUserState.IDLE)

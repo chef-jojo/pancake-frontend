@@ -8,7 +8,7 @@ import {
   ExpandableButton,
   useMatchBreakpointsContext,
 } from '@pancakeswap/uikit'
-import { useWeb3React } from '@web3-react/core'
+import { useAccount } from 'wagmi'
 import { ToastDescriptionWithTx } from 'components/Toast'
 import { Ifo, PoolIds } from 'config/constants/types'
 import { useTranslation } from 'contexts/Localization'
@@ -256,7 +256,7 @@ const IfoCard: React.FC<IfoFoldableCardProps> = ({ ifo, publicIfoData, walletIfo
   } = walletIfoData
   const [enableStatus, setEnableStatus] = useState(EnableStatus.DISABLED)
   const { t } = useTranslation()
-  const { account } = useWeb3React()
+  const { address: account } = useAccount()
   const raisingTokenContract = useERC20(ifo.currency.address, false)
   // Continue to fetch 2 more minutes / is vesting need get latest data
   const isRecentlyActive =

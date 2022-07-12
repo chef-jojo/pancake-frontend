@@ -8,7 +8,7 @@ import useToast from 'hooks/useToast'
 import useCatchTxError from 'hooks/useCatchTxError'
 import { useCallWithGasPrice } from 'hooks/useCallWithGasPrice'
 import { useVaultPoolContract } from 'hooks/useContract'
-import { useWeb3React } from '@web3-react/core'
+import { useAccount } from 'wagmi'
 import { ToastDescriptionWithTx } from 'components/Toast'
 import { vaultPoolConfig } from 'config/constants/pools'
 import { VaultKey } from 'state/types'
@@ -16,7 +16,7 @@ import { VaultKey } from 'state/types'
 const ConvertToFlexibleButton: React.FC<ButtonProps> = (props) => {
   const dispatch = useAppDispatch()
 
-  const { account } = useWeb3React()
+  const { address: account } = useAccount()
   const { fetchWithCatchTxError, loading: pendingTx } = useCatchTxError()
   const vaultPoolContract = useVaultPoolContract(VaultKey.CakeVault)
   const { callWithGasPrice } = useCallWithGasPrice()

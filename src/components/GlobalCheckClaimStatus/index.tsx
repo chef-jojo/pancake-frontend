@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { useRouter } from 'next/router'
 import { useModal } from '@pancakeswap/uikit'
-import { useWeb3React } from '@web3-react/core'
+import { useAccount } from 'wagmi'
 import dynamic from 'next/dynamic'
 import request, { gql } from 'graphql-request'
 import { GALAXY_NFT_CAMPAIGN_ID } from 'config/constants'
@@ -18,7 +18,7 @@ interface GlobalCheckClaimStatusProps {
 const enable = false
 
 const GlobalCheckClaimStatus: React.FC<GlobalCheckClaimStatusProps> = (props) => {
-  const { account } = useWeb3React()
+  const { address: account } = useAccount()
   if (!enable) {
     return null
   }
@@ -37,7 +37,7 @@ const GlobalCheckClaim: React.FC<GlobalCheckClaimStatusProps> = ({ excludeLocati
   const [canClaimNFT, setCanClaimNFT] = useState(false)
   const [nftBalance, setNftBalance] = useState(999) // default high to avoid flashing modal
   const galaxyNFTContract = useERC721('0x2aD5745b7aD37037339EDe18407bf9395DE2d97F', false)
-  const { account } = useWeb3React()
+  const { address: account } = useAccount()
   const { pathname } = useRouter()
   const [onPresentModal] = useModal(<GalaxyNFTClaimModal cid={cid} />, false, true, 'galaxyNFTClaimModal')
 

@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react'
-import { useWeb3React } from '@web3-react/core'
+import { useAccount } from 'wagmi'
 import styled from 'styled-components'
 import { useTranslation } from 'contexts/Localization'
 import { Box, Flex, Text, ChevronRightIcon, useModal } from '@pancakeswap/uikit'
@@ -27,7 +27,7 @@ const ClaimCheck = () => {
   const [isFetching, setIsFetching] = useState(false)
   const [history, setHistory] = useState<Bet[]>([])
   const { t } = useTranslation()
-  const { account } = useWeb3React()
+  const { address: account } = useAccount()
   const dispatch = useLocalDispatch()
   const predictionsV1Address = useMemo(() => getPredictionsV1Address(), [])
 

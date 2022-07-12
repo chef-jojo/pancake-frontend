@@ -11,7 +11,7 @@ import { CHAIN_ID } from 'config/constants/networks'
 import { ChainId } from '@pancakeswap/sdk'
 import { parseUnits, formatEther } from '@ethersproject/units'
 import { useERC20, useNftMarketContract } from 'hooks/useContract'
-import { useWeb3React } from '@web3-react/core'
+import { useAccount } from 'wagmi'
 import { useCallWithGasPrice } from 'hooks/useCallWithGasPrice'
 import useApproveConfirmTransaction from 'hooks/useApproveConfirmTransaction'
 import { requiresApproval } from 'utils/requiresApproval'
@@ -49,7 +49,7 @@ const BuyModal: React.FC<BuyModalProps> = ({ nftToBuy, onDismiss }) => {
   const { t } = useTranslation()
   const { callWithGasPrice } = useCallWithGasPrice()
 
-  const { account } = useWeb3React()
+  const { address: account } = useAccount()
   const wbnbContractReader = useERC20(wbnbAddress, false)
   const wbnbContractApprover = useERC20(wbnbAddress)
   const nftMarketContract = useNftMarketContract()

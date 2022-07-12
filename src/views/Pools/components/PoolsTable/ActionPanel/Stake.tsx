@@ -12,7 +12,7 @@ import {
   SkeletonV2,
   useMatchBreakpointsContext,
 } from '@pancakeswap/uikit'
-import { useWeb3React } from '@web3-react/core'
+import { useAccount } from 'wagmi'
 import BigNumber from 'bignumber.js'
 import Balance from 'components/Balance'
 import ConnectWalletButton from 'components/ConnectWalletButton'
@@ -67,7 +67,7 @@ const Staked: React.FunctionComponent<StackedActionProps> = ({ pool }) => {
     userDataLoaded,
   } = pool
   const { t } = useTranslation()
-  const { account } = useWeb3React()
+  const { address: account } = useAccount()
   const { isMobile } = useMatchBreakpointsContext()
 
   const stakingTokenContract = useERC20(stakingToken.address || '')

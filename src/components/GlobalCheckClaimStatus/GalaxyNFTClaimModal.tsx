@@ -9,7 +9,7 @@ import request, { gql } from 'graphql-request'
 import { GALAXY_NFT_CAMPAIGN_ID } from 'config/constants'
 import useToast from 'hooks/useToast'
 import { GALAXY_NFT_CLAIMING_API } from 'config/constants/endpoints'
-import { useWeb3React } from '@web3-react/core'
+import { useAccount } from 'wagmi'
 
 const NFTImage = styled.img`
   border-radius: 12px;
@@ -33,7 +33,7 @@ const showConfetti = () => {
 
 const GalaxyNFTClaimModal: React.FC<InjectedModalProps & { cid: number }> = ({ onDismiss, cid }) => {
   const { t } = useTranslation()
-  const { account } = useWeb3React()
+  const { address: account } = useAccount()
   const [isLoading, setIsLoading] = useState(false)
   const galaxyNFTClaimingContract = useGalaxyNFTClaimingContract()
   const { toastSuccess, toastError } = useToast()

@@ -1,5 +1,5 @@
 import { Currency, CurrencyAmount, Trade } from '@pancakeswap/sdk'
-import { useWeb3React } from '@web3-react/core'
+import { useAccount } from 'wagmi'
 import { ParsedUrlQuery } from 'querystring'
 import { useEffect, useMemo, useState } from 'react'
 import { SLOW_INTERVAL } from 'config/constants'
@@ -99,7 +99,7 @@ export function useDerivedSwapInfo(
   v2Trade: Trade | undefined
   inputError?: string
 } {
-  const { account } = useWeb3React()
+  const { address: account } = useAccount()
   const { t } = useTranslation()
 
   const to: string | null = (recipient === null ? account : isAddress(recipient) || null) ?? null

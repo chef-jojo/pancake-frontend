@@ -12,7 +12,7 @@ import {
   Skeleton,
   useModal,
 } from '@pancakeswap/uikit'
-import { useWeb3React } from '@web3-react/core'
+import { useAccount } from 'wagmi'
 import { useProfile } from 'state/profile/hooks'
 import { NftLocation, NftToken, Collection } from 'state/nftMarket/types'
 import { formatNumber } from 'utils/formatBalance'
@@ -153,7 +153,7 @@ const getNftFilter = (location: NftLocation) => {
 
 const ManageNFTsCard: React.FC<ManageNftsCardProps> = ({ collection, tokenId, lowestPrice, onSuccess }) => {
   const { t } = useTranslation()
-  const { account } = useWeb3React()
+  const { address: account } = useAccount()
 
   const { isLoading: isProfileLoading, profile } = useProfile()
 

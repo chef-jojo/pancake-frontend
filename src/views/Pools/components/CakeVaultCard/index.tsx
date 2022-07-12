@@ -1,5 +1,5 @@
 import { Box, CardBody, CardProps, Flex, Text, TokenPairImage } from '@pancakeswap/uikit'
-import { useWeb3React } from '@web3-react/core'
+import { useAccount } from 'wagmi'
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import { FlexGap } from 'components/Layout/Flex'
 import { vaultPoolConfig } from 'config/constants/pools'
@@ -112,7 +112,7 @@ const CakeVaultCard: React.FC<CakeVaultProps> = ({
   showICake = false,
   ...props
 }) => {
-  const { account } = useWeb3React()
+  const { address: account } = useAccount()
 
   const vaultPool = useVaultPoolByKey(pool.vaultKey)
 

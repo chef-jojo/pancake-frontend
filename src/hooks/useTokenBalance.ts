@@ -1,4 +1,4 @@
-import { useWeb3React } from '@web3-react/core'
+import { useAccount } from 'wagmi'
 import BigNumber from 'bignumber.js'
 import tokens from 'config/constants/tokens'
 import { FAST_INTERVAL } from 'config/constants'
@@ -11,7 +11,7 @@ import { useTokenContract } from './useContract'
 import { useSWRContract } from './useSWRContract'
 
 const useTokenBalance = (tokenAddress: string) => {
-  const { account } = useWeb3React()
+  const { address: account } = useAccount()
 
   const contract = useTokenContract(tokenAddress, false)
   const { data, status, ...rest } = useSWRContract(
@@ -35,7 +35,7 @@ const useTokenBalance = (tokenAddress: string) => {
 }
 
 export const useGetBnbBalance = () => {
-  const { account } = useWeb3React()
+  const { address: account } = useAccount()
   const { status, data, mutate } = useSWR([account, 'bnbBalance'], async () => {
     return simpleRpcProvider.getBalance(account)
   })

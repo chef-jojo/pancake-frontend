@@ -1,4 +1,4 @@
-import { useWeb3React } from '@web3-react/core'
+import { useAccount } from 'wagmi'
 import { LotteryStatus } from 'config/constants/types'
 import usePreviousValue from 'hooks/usePreviousValue'
 import { useEffect } from 'react'
@@ -13,7 +13,7 @@ const useStatusTransitions = () => {
     currentRound: { status },
   } = useLottery()
 
-  const { account } = useWeb3React()
+  const { address: account } = useAccount()
   const dispatch = useAppDispatch()
   const previousStatus = usePreviousValue(status)
 

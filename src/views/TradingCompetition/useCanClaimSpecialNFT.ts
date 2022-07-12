@@ -1,9 +1,9 @@
-import { useWeb3React } from '@web3-react/core'
+import { useAccount } from 'wagmi'
 import { useEffect, useState } from 'react'
 
 export const useCanClaimSpecialNFT = () => {
   const profileApiUrl = process.env.NEXT_PUBLIC_API_PROFILE
-  const { account } = useWeb3React()
+  const { address: account } = useAccount()
   const [canClaimSpecialNFT, setCanClaimSpecialNFT] = useState(false)
   useEffect(() => {
     const fetchUserTradingStats = async () => {

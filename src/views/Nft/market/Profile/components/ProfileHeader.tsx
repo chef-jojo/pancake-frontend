@@ -5,7 +5,7 @@ import { getBscScanLink } from 'utils'
 import { formatNumber } from 'utils/formatBalance'
 import truncateHash from 'utils/truncateHash'
 import { Achievement, Profile } from 'state/types'
-import { useWeb3React } from '@web3-react/core'
+import { useAccount } from 'wagmi'
 import { useMemo } from 'react'
 import EditProfileAvatar from './EditProfileAvatar'
 import BannerHeader from '../../components/BannerHeader'
@@ -37,7 +37,7 @@ const ProfileHeader: React.FC<HeaderProps> = ({
   onSuccess,
 }) => {
   const { t } = useTranslation()
-  const { account } = useWeb3React()
+  const { address: account } = useAccount()
   const [onEditProfileModal] = useModal(
     <EditProfileModal
       onSuccess={() => {

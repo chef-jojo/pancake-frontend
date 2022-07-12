@@ -16,7 +16,7 @@ import BigNumber from 'bignumber.js'
 import { useTranslation } from 'contexts/Localization'
 import { getBalanceNumber } from 'utils/formatBalance'
 
-import { useWeb3React } from '@web3-react/core'
+import { useAccount } from 'wagmi'
 import RoiCalculatorFooter from './RoiCalculatorFooter'
 import RoiCard from './RoiCard'
 import useRoiCalculatorReducer, {
@@ -99,7 +99,7 @@ const RoiCalculatorModal: React.FC<RoiCalculatorModalProps> = ({
   children,
 }) => {
   const { t } = useTranslation()
-  const { account } = useWeb3React()
+  const { address: account } = useAccount()
   const balanceInputRef = useRef<HTMLInputElement | null>(null)
 
   const {

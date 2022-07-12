@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useModal } from '@pancakeswap/uikit'
-import { useWeb3React } from '@web3-react/core'
+import { useAccount } from 'wagmi'
 import { getBunnySpecialXmasContract } from 'utils/contractHelpers'
 import { simpleRpcProvider } from 'utils/providers'
 import ClaimNftModal from 'components/ClaimNftModal/ClaimNftModal'
@@ -8,7 +8,7 @@ import noop from 'lodash/noop'
 
 const useNftClaimStatusCheck = () => {
   const [hasDisplayedModal, setHasDisplayedModal] = useState(false)
-  const { account } = useWeb3React()
+  const { address: account } = useAccount()
   const [onPresentNftClaimModal] = useModal(<ClaimNftModal />)
 
   useEffect(() => {

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useWeb3React } from '@web3-react/core'
+import { useAccount } from 'wagmi'
 import { useProfile } from 'state/profile/hooks'
 import { Flex, Box, useMatchBreakpointsContext } from '@pancakeswap/uikit'
 import styled from 'styled-components'
@@ -49,7 +49,7 @@ const BannerFlex = styled(Flex)`
 
 const EasterCompetition = () => {
   const profileApiUrl = process.env.NEXT_PUBLIC_API_PROFILE
-  const { account } = useWeb3React()
+  const { address: account } = useAccount()
   const { isMobile } = useMatchBreakpointsContext()
   const { profile, isLoading } = useProfile()
   const { isDark } = useTheme()

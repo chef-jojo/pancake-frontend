@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import { useWeb3React, UnsupportedChainIdError } from '@web3-react/core'
 import {
   Flex,
   LogoutIcon,
@@ -15,6 +14,7 @@ import Trans from 'components/Trans'
 import useAuth from 'hooks/useAuth'
 import { useRouter } from 'next/router'
 import { useProfile } from 'state/profile/hooks'
+import { useAccount, useNetwork } from 'wagmi'
 import { usePendingTransactions } from 'state/transactions/hooks'
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import { useTranslation } from 'contexts/Localization'
@@ -26,7 +26,8 @@ import WalletUserMenuItem from './WalletUserMenuItem'
 const UserMenu = () => {
   const router = useRouter()
   const { t } = useTranslation()
-  const { account, error } = useWeb3React()
+  const { address } = useAccount()
+  const { chain } = useNetwork()
   const { logout } = useAuth()
   const { hasPendingTransactions, pendingNumber } = usePendingTransactions()
   const { isInitialized, isLoading, profile } = useProfile()
@@ -37,7 +38,7 @@ const UserMenu = () => {
   const avatarSrc = profile?.nft?.image?.thumbnail
   const [userMenuText, setUserMenuText] = useState<string>('')
   const [userMenuVariable, setUserMenuVariable] = useState<UserMenuVariant>('default')
-  const isWrongNetwork: boolean = error && error instanceof UnsupportedChainIdError
+  const isWrongNetwork: boolean = chain?.unsupported
 
   useEffect(() => {
     if (hasPendingTransactions) {
@@ -69,7 +70,7 @@ const UserMenu = () => {
         <UserMenuItem
           as="button"
           disabled={isWrongNetwork}
-          onClick={() => router.push(`${nftsBaseUrl}/profile/${account.toLowerCase()}`)}
+          onClick={() => router.push(`${nftsBaseUrl}/profile/${address.toLowerCase()}`)}
         >
           {t('Your NFTs')}
         </UserMenuItem>
@@ -85,17 +86,17 @@ const UserMenu = () => {
     )
   }
 
-  if (account) {
+  if (isWrongNetwork) {
     return (
-      <UIKitUserMenu account={account} avatarSrc={avatarSrc} text={userMenuText} variant={userMenuVariable}>
+      <UIKitUserMenu text={t('Network')} variant="danger">
         {({ isOpen }) => (isOpen ? <UserMenuItems /> : null)}
       </UIKitUserMenu>
     )
   }
 
-  if (isWrongNetwork) {
+  if (address) {
     return (
-      <UIKitUserMenu text={t('Network')} variant="danger">
+      <UIKitUserMenu account={address} avatarSrc={avatarSrc} text={userMenuText} variant={userMenuVariable}>
         {({ isOpen }) => (isOpen ? <UserMenuItems /> : null)}
       </UIKitUserMenu>
     )

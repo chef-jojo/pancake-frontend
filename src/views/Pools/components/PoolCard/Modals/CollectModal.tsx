@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useWeb3React } from '@web3-react/core'
+import { useAccount } from 'wagmi'
 import {
   Modal,
   Text,
@@ -48,7 +48,7 @@ const CollectModal: React.FC<CollectModalProps> = ({
   const { t } = useTranslation()
   const { theme } = useTheme()
   const { toastSuccess } = useToast()
-  const { account } = useWeb3React()
+  const { address: account } = useAccount()
   const dispatch = useAppDispatch()
   const { fetchWithCatchTxError, loading: pendingTx } = useCatchTxError()
   const { onReward } = useHarvestPool(sousId, isBnbPool)

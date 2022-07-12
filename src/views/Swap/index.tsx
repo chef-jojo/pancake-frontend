@@ -24,7 +24,7 @@ import { EXCHANGE_DOCS_URLS } from 'config/constants'
 import { BIG_INT_ZERO } from 'config/constants/exchange'
 import { maxAmountSpend } from 'utils/maxAmountSpend'
 import shouldShowSwapWarning from 'utils/shouldShowSwapWarning'
-import { useWeb3React } from '@web3-react/core'
+import { useAccount } from 'wagmi'
 import { useSwapActionHandlers } from 'state/swap/useSwapActionHandlers'
 import useRefreshBlockNumberID from './hooks/useRefreshBlockNumber'
 import AddressInputPanel from './components/AddressInputPanel'
@@ -122,7 +122,7 @@ export default function Swap() {
       return !(token.address in defaultTokens)
     })
 
-  const { account } = useWeb3React()
+  const { address: account } = useAccount()
 
   // for expert mode
   const [isExpertMode] = useExpertModeManager()

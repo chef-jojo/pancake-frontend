@@ -87,7 +87,7 @@ export function TransactionSubmittedContent({
               {t('View on BscScan')}
             </Link>
           )}
-          {currencyToAdd && library?.provider?.isMetaMask && (
+          {currencyToAdd && window?.ethereum?.isMetaMask && (
             <Button
               variant="tertiary"
               mt="12px"

@@ -1,4 +1,4 @@
-import { useWeb3React } from '@web3-react/core'
+import { useAccount } from 'wagmi'
 import { FetchStatus } from 'config/constants/types'
 import useSWRImmutable from 'swr/immutable'
 import { getAddress } from 'utils/addressHelpers'
@@ -17,7 +17,7 @@ interface State {
 }
 
 const useGetVotingPower = (block?: number, isActive = true): State & { isLoading: boolean; isError: boolean } => {
-  const { account } = useWeb3React()
+  const { address: account } = useAccount()
   const { data, status, error } = useSWRImmutable(
     account && isActive ? [account, block, 'votingPower'] : null,
     async () => {

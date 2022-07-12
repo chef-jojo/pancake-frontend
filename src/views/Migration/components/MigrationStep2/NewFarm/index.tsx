@@ -1,6 +1,6 @@
 import React, { useMemo, useCallback } from 'react'
 import BigNumber from 'bignumber.js'
-import { useWeb3React } from '@web3-react/core'
+import { useAccount } from 'wagmi'
 import { getFarmApr } from 'utils/apr'
 import { RowType } from '@pancakeswap/uikit'
 import { ChainId } from '@pancakeswap/sdk'
@@ -15,7 +15,7 @@ import { RowProps } from './FarmRow'
 import { DesktopV2ColumnSchema } from '../../types'
 
 const OldFarmStep1: React.FC = () => {
-  const { account } = useWeb3React()
+  const { address: account } = useAccount()
   const { data: farmsLP, userDataLoaded, regularCakePerBlock } = useFarms()
   const { data: farmsV1LP } = useFarmsV1()
   const cakePrice = usePriceCakeBusd()

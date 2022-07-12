@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useTranslation } from 'contexts/Localization'
-import { useWeb3React } from '@web3-react/core'
+import { useAccount } from 'wagmi'
 import { useProfile } from 'state/profile/hooks'
 import { Flex, Box, useMatchBreakpointsContext } from '@pancakeswap/uikit'
 import Image from 'next/image'
@@ -45,7 +45,7 @@ import PrizesInfoSection from './components/PrizesInfoSection'
 
 const MoDCompetition = () => {
   const profileApiUrl = process.env.NEXT_PUBLIC_API_PROFILE
-  const { account } = useWeb3React()
+  const { address: account } = useAccount()
   const { t } = useTranslation()
   const { profile, isLoading } = useProfile()
   const { isMobile } = useMatchBreakpointsContext()

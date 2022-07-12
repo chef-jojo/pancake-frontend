@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { useWeb3React } from '@web3-react/core'
+import { useAccount } from 'wagmi'
 import {
   Box,
   Card,
@@ -36,7 +36,7 @@ interface IfoPoolVaultCardMobileProps {
 
 const IfoPoolVaultCardMobile: React.FC<IfoPoolVaultCardMobileProps> = ({ pool }) => {
   const { t } = useTranslation()
-  const { account } = useWeb3React()
+  const { address: account } = useAccount()
   const credit = useIfoCredit()
   const { isExpanded, setIsExpanded } = useConfig()
   const cakeAsNumberBalance = getBalanceNumber(credit)

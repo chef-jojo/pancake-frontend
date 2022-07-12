@@ -1,5 +1,5 @@
 import { Text, Flex, Skeleton, Heading, Box, useMatchBreakpointsContext } from '@pancakeswap/uikit'
-import { useWeb3React } from '@web3-react/core'
+import { useAccount } from 'wagmi'
 import { getCakeVaultEarnings } from 'views/Pools/helpers'
 import { useTranslation } from 'contexts/Localization'
 import { BalanceWithLoading } from 'components/Balance'
@@ -18,7 +18,7 @@ const AutoHarvestAction: React.FunctionComponent<DeserializedPool> = ({
   vaultKey,
 }) => {
   const { t } = useTranslation()
-  const { account } = useWeb3React()
+  const { address: account } = useAccount()
   const { isMobile } = useMatchBreakpointsContext()
 
   const vaultData = useVaultPoolByKey(vaultKey)

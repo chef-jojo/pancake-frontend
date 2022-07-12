@@ -1,5 +1,5 @@
 import React from 'react'
-import { useWeb3React } from '@web3-react/core'
+import { useAccount } from 'wagmi'
 import { useTranslation } from 'contexts/Localization'
 import { Button, AutoRenewIcon } from '@pancakeswap/uikit'
 import useCatchTxError from 'hooks/useCatchTxError'
@@ -17,7 +17,7 @@ export interface UnstakeButtonProps {
 
 const UnstakeButton: React.FC<UnstakeButtonProps> = ({ pid }) => {
   const { t } = useTranslation()
-  const { account } = useWeb3React()
+  const { address: account } = useAccount()
   const { toastSuccess } = useToast()
   const { fetchWithCatchTxError, loading: pendingTx } = useCatchTxError()
   const { stakedBalance } = useFarmUser(pid)

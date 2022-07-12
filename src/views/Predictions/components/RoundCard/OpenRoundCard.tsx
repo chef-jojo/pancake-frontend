@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo } from 'react'
-import { useWeb3React } from '@web3-react/core'
+import { useAccount } from 'wagmi'
 import {
   Card,
   CardBody,
@@ -55,7 +55,7 @@ const OpenRoundCard: React.FC<OpenRoundCardProps> = ({
   const { t } = useTranslation()
   const { theme } = useTheme()
   const { toastSuccess } = useToast()
-  const { account } = useWeb3React()
+  const { address: account } = useAccount()
   const dispatch = useLocalDispatch()
   const { token } = useConfig()
   const { lockTimestamp } = round ?? { lockTimestamp: null }

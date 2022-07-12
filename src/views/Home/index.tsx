@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import PageSection from 'components/PageSection'
-import { useWeb3React } from '@web3-react/core'
+import { useAccount } from 'wagmi'
 import useTheme from 'hooks/useTheme'
 import Container from 'components/Layout/Container'
 import { PageMeta } from 'components/Layout/Page'
@@ -43,7 +43,7 @@ const UserBannerWrapper = styled(Container)`
 
 const Home: React.FC = () => {
   const { theme } = useTheme()
-  const { account } = useWeb3React()
+  const { address: account } = useAccount()
 
   const HomeSectionContainerStyles = { margin: '0', width: '100%', maxWidth: '968px' }
 

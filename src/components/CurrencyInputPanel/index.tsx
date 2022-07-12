@@ -186,7 +186,7 @@ export default function CurrencyInputPanel({
                 tooltipRight={40}
                 tooltipFontSize={12}
               />
-              {library?.provider?.isMetaMask && (
+              {window?.ethereum?.isMetaMask && (
                 <MetamaskIcon
                   style={{ cursor: 'pointer' }}
                   width="16px"

@@ -1,6 +1,5 @@
 import { useState, useMemo } from 'react'
 import { Button, Box, InjectedModalProps, Text, Skeleton } from '@pancakeswap/uikit'
-import { useWeb3React } from '@web3-react/core'
 import { useProfile } from 'state/profile/hooks'
 import { useTranslation } from 'contexts/Localization'
 import useToast from 'hooks/useToast'
@@ -12,6 +11,7 @@ import { getPancakeProfileAddress } from 'utils/addressHelpers'
 import { ToastDescriptionWithTx } from 'components/Toast'
 import ApproveConfirmButtons from 'components/ApproveConfirmButtons'
 import SelectionCard from 'views/ProfileCreation/SelectionCard'
+import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import { useApprovalNfts } from 'state/nftMarket/hooks'
 import { NftLocation } from 'state/nftMarket/types'
 import { useNftsForAddress } from '../../../hooks/useNftsForAddress'
@@ -26,7 +26,7 @@ const ChangeProfilePicPage: React.FC<ChangeProfilePicPageProps> = ({ onDismiss, 
     collectionAddress: null,
   })
   const { t } = useTranslation()
-  const { account, library } = useWeb3React()
+  const { account, library } = useActiveWeb3React()
   const { isLoading: isProfileLoading, profile, refresh: refreshProfile } = useProfile()
   const { nfts, isLoading } = useNftsForAddress(account, profile, isProfileLoading)
   const profileContract = useProfileContract()

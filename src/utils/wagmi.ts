@@ -46,7 +46,7 @@ const bscTest: Chain = {
     public: 'https://data-seed-prebsc-1-s2.binance.org:8545/',
   },
   blockExplorers: {
-    default: { name: 'BscScan', url: 'BASE_BSC_SCAN_URLS[ChainId.TESTNET]' },
+    default: { name: 'BscScan', url: BASE_BSC_SCAN_URLS[ChainId.TESTNET] },
   },
   multicall: {
     address: addresses.multiCall[97],
@@ -55,7 +55,7 @@ const bscTest: Chain = {
   testnet: true,
 }
 
-const { provider } = configureChains(
+const { provider, chains } = configureChains(
   [bsc, bscTest],
   [
     jsonRpcProvider({
@@ -66,17 +66,12 @@ const { provider } = configureChains(
   ],
 )
 
-export const client = createClient({
-  autoConnect: true,
-  provider,
-})
-
 export const injectedConnector = new InjectedConnector({
-  chains: [bsc, bscTest],
+  chains,
 })
 
 export const coinbaseConnector = new CoinbaseWalletConnector({
-  chains: [bsc, bscTest],
+  chains,
   options: {
     appName: 'PancakeSwap',
     appLogoUrl: 'https://pancakeswap.com/logo.png',
@@ -85,7 +80,7 @@ export const coinbaseConnector = new CoinbaseWalletConnector({
 })
 
 export const walletConnectConnector = new WalletConnectConnector({
-  chains: [bsc, bscTest],
+  chains,
   options: {
     rpc: {
       [bsc.id]: bsc.rpcUrls.default,
@@ -93,4 +88,10 @@ export const walletConnectConnector = new WalletConnectConnector({
     },
     qrcode: true,
   },
+})
+
+export const client = createClient({
+  autoConnect: true,
+  provider,
+  connectors: [injectedConnector, coinbaseConnector, walletConnectConnector],
 })

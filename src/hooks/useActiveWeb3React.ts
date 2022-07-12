@@ -13,7 +13,9 @@ const useActiveWeb3React = () => {
   const { data } = useConnect()
   // const { connector } = useClient()
   const provider = useProvider()
-  const library = getLibrary(provider)
+  // console.log(provider, 'aaa')
+  // const library = provider ? getLibrary(provider) : null
+  const library = provider as any
   // const { library, chainId, ...web3React } = useWeb3React()
 
   return { library, chainId: chain?.id ?? parseInt(CHAIN_ID, 10), ...data }

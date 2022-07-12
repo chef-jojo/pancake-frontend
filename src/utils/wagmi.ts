@@ -6,6 +6,7 @@ import addresses from 'config/constants/contracts'
 import { InjectedConnector } from 'wagmi/connectors/injected'
 import { CoinbaseWalletConnector } from 'wagmi/connectors/coinbaseWallet'
 import { WalletConnectConnector } from 'wagmi/connectors/walletConnect'
+import { BscConnector } from './connectors/bscConnector'
 
 const bscExplorer = { name: 'BscScan', url: BASE_BSC_SCAN_URLS[ChainId.MAINNET] }
 
@@ -90,8 +91,10 @@ export const walletConnectConnector = new WalletConnectConnector({
   },
 })
 
+export const bscConnector = new BscConnector({ chains })
+
 export const client = createClient({
   autoConnect: true,
   provider,
-  connectors: [injectedConnector, coinbaseConnector, walletConnectConnector],
+  connectors: [injectedConnector, coinbaseConnector, walletConnectConnector, bscConnector],
 })

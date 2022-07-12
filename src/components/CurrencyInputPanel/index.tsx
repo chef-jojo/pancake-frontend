@@ -113,7 +113,7 @@ export default function CurrencyInputPanel({
   error,
   showBUSD,
 }: CurrencyInputPanelProps) {
-  const { account, library } = useActiveWeb3React()
+  const { account } = useActiveWeb3React()
   const selectedCurrencyBalance = useCurrencyBalance(account ?? undefined, currency ?? undefined)
   const {
     t,

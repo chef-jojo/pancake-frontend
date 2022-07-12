@@ -68,8 +68,6 @@ export function TransactionSubmittedContent({
   chainId: ChainId
   currencyToAdd?: Currency | undefined
 }) {
-  const { library } = useActiveWeb3React()
-
   const { t } = useTranslation()
 
   const token: Token | undefined = wrappedCurrency(currencyToAdd, chainId)

@@ -1,40 +1,27 @@
-import { useCallback } from 'react'
 // import { UnsupportedChainIdError } from '@web3-react/core'
-import { NoBscProviderError } from '@binance-chain/bsc-connector'
-import {
-  NoEthereumProviderError,
-  UserRejectedRequestError as UserRejectedRequestErrorInjected,
-} from '@web3-react/injected-connector'
-import {
-  UserRejectedRequestError as UserRejectedRequestErrorWalletConnect,
-  WalletConnectConnector,
-} from '@web3-react/walletconnect-connector'
-import { ConnectorNames, connectorLocalStorageKey, Text, Box, LinkExternal } from '@pancakeswap/uikit'
-import { connectorsByName } from 'utils/web3React'
-import { useAccount, useConnect } from 'wagmi'
-import { setupNetwork } from 'utils/wallet'
+import { ConnectorNames } from '@pancakeswap/uikit'
+// import { connectorsByName } from 'utils/web3React'
+import { useTranslation } from 'contexts/Localization'
 import useToast from 'hooks/useToast'
 import { useAppDispatch } from 'state'
-import { useTranslation } from 'contexts/Localization'
+import { useConnect, useDisconnect, useNetwork } from 'wagmi'
 import { clearUserStates } from '../utils/clearUserStates'
-import useActiveWeb3React from './useActiveWeb3React'
 
 const useAuth = () => {
   const { t } = useTranslation()
   const dispatch = useAppDispatch()
-  const { connect, connectors, error, isLoading, pendingConnector } = useConnect()
-  // const { chainId, activate, deactivate, setError } = useActiveWeb3React()
+  const { connect, connectors } = useConnect()
+  const { chain } = useNetwork()
+  const { disconnect } = useDisconnect()
   const { toastError } = useToast()
 
-  const login = async (connectorID: ConnectorNames) => {
-    const connectorOrGetConnector = connectorsByName[connectorID]
-    const connector =
-      typeof connectorOrGetConnector !== 'function' ? connectorsByName[connectorID] : await connectorOrGetConnector()
-    // @ts-ignore
-    connect({ connector })
+  const login = async (connectorId: ConnectorNames) => {
+    const findConnector = connectors.find((c) => c.id === connectorId)
+    connect({ connector: findConnector })
   }
   const logout = () => {
-    //
+    disconnect()
+    clearUserStates(dispatch, chain?.id, true)
   }
 
   // const login = useCallback(

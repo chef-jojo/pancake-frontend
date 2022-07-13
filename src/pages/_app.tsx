@@ -5,8 +5,6 @@ import BigNumber from 'bignumber.js'
 import GlobalCheckClaimStatus from 'components/GlobalCheckClaimStatus'
 import FixedSubgraphHealthIndicator from 'components/SubgraphHealthIndicator'
 import { ToastListener } from 'contexts/ToastsContext'
-import useEagerConnect from 'hooks/useEagerConnect'
-import useEagerConnectMP from 'hooks/useEagerConnect.bmp'
 import { useAccountEventListener } from 'hooks/useAccountEventListener'
 import useSentryUser from 'hooks/useSentryUser'
 import useUserAgent from 'hooks/useUserAgent'
@@ -35,20 +33,13 @@ BigNumber.config({
 
 function GlobalHooks() {
   usePollBlockNumber()
-  useEagerConnect()
   usePollCoreFarmData()
   useUserAgent()
-  useAccountEventListener()
-  useSentryUser()
   useThemeCookie()
   return null
 }
 
-function MPGlobalHooks() {
-  usePollBlockNumber()
-  useEagerConnectMP()
-  usePollCoreFarmData()
-  useUserAgent()
+function Web3ScopedHooks() {
   useAccountEventListener()
   useSentryUser()
   return null
@@ -83,8 +74,9 @@ function MyApp(props: AppProps) {
         )}
       </Head>
       <Providers store={store}>
+        <Web3ScopedHooks />
         <Blocklist>
-          {(Component as NextPageWithLayout).mp ? <MPGlobalHooks /> : <GlobalHooks />}
+          <GlobalHooks />
           <ResetCSS />
           <GlobalStyle />
           <GlobalCheckClaimStatus excludeLocations={[]} />

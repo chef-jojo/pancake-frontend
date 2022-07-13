@@ -15,8 +15,8 @@ const bsc: Chain = {
   name: 'BNB Smart Chain Mainnet',
   network: 'bsc',
   rpcUrls: {
-    default: 'https://bsc-dataseed.binance.org',
-    public: 'https://bsc-dataseed.binance.org',
+    default: 'https://binance.nodereal.io',
+    public: 'https://binance.nodereal.io',
   },
   blockExplorers: {
     default: bscExplorer,
@@ -76,7 +76,8 @@ export const coinbaseConnector = new CoinbaseWalletConnector({
   options: {
     appName: 'PancakeSwap',
     appLogoUrl: 'https://pancakeswap.com/logo.png',
-    jsonRpcUrl: 'https://bsc-dataseed.binance.org',
+    chainId: bsc.id,
+    jsonRpcUrl: bsc.rpcUrls.default,
   },
 })
 

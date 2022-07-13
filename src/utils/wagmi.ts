@@ -56,7 +56,7 @@ const bscTest: Chain = {
   testnet: true,
 }
 
-const { provider, chains } = configureChains(
+export const { provider, chains } = configureChains(
   [bsc, bscTest],
   [
     jsonRpcProvider({

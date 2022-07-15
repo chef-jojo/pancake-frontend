@@ -14,16 +14,14 @@ import {
   Text,
   useModal,
 } from '@pancakeswap/uikit'
-import { useAccount } from 'wagmi'
+import { useAccount, useSignMessage } from 'wagmi'
 import times from 'lodash/times'
 import isEmpty from 'lodash/isEmpty'
 import { useInitialBlock } from 'state/block/hooks'
 import { SnapshotCommand } from 'state/types'
 import useToast from 'hooks/useToast'
-import useWeb3Provider from 'hooks/useActiveWeb3React'
 import { getBscScanLink } from 'utils'
 import truncateHash from 'utils/truncateHash'
-import { signMessage } from 'utils/web3React'
 import { useTranslation } from 'contexts/Localization'
 import Container from 'components/Layout/Container'
 import { DatePicker, TimePicker, DatePickerPortal } from 'views/Voting/components/DatePicker'
@@ -63,11 +61,11 @@ const CreateProposal = () => {
   const { address: account } = useAccount()
   const initialBlock = useInitialBlock()
   const { push } = useRouter()
-  const { library, connector } = useWeb3Provider()
   const { toastSuccess, toastError } = useToast()
   const [onPresentVoteDetailsModal] = useModal(<VoteDetailsModal block={state.snapshot} />)
   const { name, body, choices, startDate, startTime, endDate, endTime, snapshot } = state
   const formErrors = getFormErrors(state, t)
+  const { signMessageAsync } = useSignMessage()
 
   const handleSubmit = async (evt: FormEvent<HTMLFormElement>) => {
     evt.preventDefault()
@@ -93,7 +91,7 @@ const CreateProposal = () => {
         },
       })
 
-      const sig = await signMessage(connector, library, account, proposal)
+      const sig = await signMessageAsync({ message: proposal })
 
       if (sig) {
         const msg: Message = { address: account, msg: proposal, sig }

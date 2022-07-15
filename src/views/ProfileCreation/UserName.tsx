@@ -16,14 +16,12 @@ import {
   Checkbox,
 } from '@pancakeswap/uikit'
 import { parseISO, formatDistance } from 'date-fns'
-import { useAccount } from 'wagmi'
+import { useAccount, useSignMessage } from 'wagmi'
 import { formatUnits } from '@ethersproject/units'
 import { API_PROFILE } from 'config/constants/endpoints'
 import useToast from 'hooks/useToast'
 import { useGetCakeBalance } from 'hooks/useTokenBalance'
-import { signMessage } from 'utils/web3React'
 import fetchWithTimeout from 'utils/fetchWithTimeout'
-import useWeb3Provider from 'hooks/useActiveWeb3React'
 import { useTranslation } from 'contexts/Localization'
 import { FetchStatus } from 'config/constants/types'
 import ConfirmProfileCreationModal from './ConfirmProfileCreationModal'
@@ -62,8 +60,8 @@ const UserName: React.FC = () => {
   const { teamId, selectedNft, userName, actions, minimumCakeRequired, allowance } = useProfileCreation()
   const { t } = useTranslation()
   const { address: account } = useAccount()
+  const { signMessageAsync } = useSignMessage()
   const { toastError } = useToast()
-  const { library, connector } = useWeb3Provider()
   const [existingUserState, setExistingUserState] = useState<ExistingUserState>(ExistingUserState.IDLE)
   const [isValid, setIsValid] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
@@ -143,7 +141,7 @@ const UserName: React.FC = () => {
     try {
       setIsLoading(true)
 
-      const signature = await signMessage(connector, library, account, userName)
+      const signature = await signMessageAsync({ message: userName })
       const response = await fetch(`${API_PROFILE}/api/users/register`, {
         method: 'POST',
         headers: {

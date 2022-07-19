@@ -1,6 +1,6 @@
-import { ChainId, JSBI, Percent, Token } from '@pancakeswap/sdk'
+import { ChainId, JSBI, Percent, Token, WNATIVE } from '@pancakeswap/sdk'
 import { BigNumber } from '@ethersproject/bignumber'
-import { bscTokens, bscTestnetTokens } from './tokens'
+import { bscTokens, bscTestnetTokens, USDC, BUSD } from './tokens'
 import { ChainTokenList } from './types'
 
 export const ROUTER_ADDRESS = {
@@ -12,8 +12,8 @@ export const ROUTER_ADDRESS = {
 
 // used to construct intermediary pairs for trading
 export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
-  [ChainId.ETHEREUM]: [],
-  [ChainId.RINKEBY]: [],
+  [ChainId.ETHEREUM]: [WNATIVE[ChainId.ETHEREUM], USDC[ChainId.ETHEREUM], BUSD[ChainId.ETHEREUM]],
+  [ChainId.RINKEBY]: [WNATIVE[ChainId.RINKEBY], USDC[ChainId.RINKEBY], BUSD[ChainId.RINKEBY]],
   [ChainId.BSC]: [
     bscTokens.wbnb,
     bscTokens.cake,

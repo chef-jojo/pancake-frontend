@@ -1,11 +1,11 @@
-import { Currency, currencyEquals, ETHER, WETH } from '@pancakeswap/sdk'
+import { Currency, currencyEquals, ETHER, WNATIVE } from '@pancakeswap/sdk'
 import { useMemo } from 'react'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import { useTranslation } from 'contexts/Localization'
 import tryParseAmount from 'utils/tryParseAmount'
 import { useTransactionAdder } from '../state/transactions/hooks'
 import { useCurrencyBalance } from '../state/wallet/hooks'
-import { useWBNBContract } from './useContract'
+import { useWNativeContract } from './useContract'
 import { useCallWithGasPrice } from './useCallWithGasPrice'
 
 export enum WrapType {
@@ -29,7 +29,7 @@ export default function useWrapCallback(
   const { t } = useTranslation()
   const { chainId, account } = useActiveWeb3React()
   const { callWithGasPrice } = useCallWithGasPrice()
-  const wbnbContract = useWBNBContract()
+  const wbnbContract = useWNativeContract()
   const balance = useCurrencyBalance(account ?? undefined, inputCurrency)
   // we can always parse the amount typed as the input currency, since wrapping is 1:1
   const inputAmount = useMemo(() => tryParseAmount(typedValue, inputCurrency), [inputCurrency, typedValue])
@@ -40,7 +40,7 @@ export default function useWrapCallback(
 
     const sufficientBalance = inputAmount && balance && !balance.lessThan(inputAmount)
 
-    if (inputCurrency === ETHER && currencyEquals(WETH[chainId], outputCurrency)) {
+    if (inputCurrency === ETHER && currencyEquals(WNATIVE[chainId], outputCurrency)) {
       return {
         wrapType: WrapType.WRAP,
         execute:
@@ -62,7 +62,7 @@ export default function useWrapCallback(
         inputError: sufficientBalance ? undefined : t('Insufficient BNB balance'),
       }
     }
-    if (currencyEquals(WETH[chainId], inputCurrency) && outputCurrency === ETHER) {
+    if (currencyEquals(WNATIVE[chainId], inputCurrency) && outputCurrency === ETHER) {
       return {
         wrapType: WrapType.UNWRAP,
         execute:

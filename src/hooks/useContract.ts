@@ -56,7 +56,7 @@ import zapAbi from 'config/abi/zap.json'
 // Imports below migrated from Exchange useContract.ts
 import { Contract } from '@ethersproject/contracts'
 import { bscRpcProvider } from 'utils/providers'
-import { WETH } from '@pancakeswap/sdk'
+import { WNATIVE } from '@pancakeswap/sdk'
 import IPancakePairABI from '../config/abi/IPancakePair.json'
 import { ERC20_BYTES32_ABI } from '../config/abi/erc20'
 import ERC20_ABI from '../config/abi/erc20.json'
@@ -356,9 +356,9 @@ export function useTokenContract(tokenAddress?: string, withSignerIfPossible?: b
   return useContract<Erc20>(tokenAddress, ERC20_ABI, withSignerIfPossible)
 }
 
-export function useWBNBContract(withSignerIfPossible?: boolean): Contract | null {
+export function useWNativeContract(withSignerIfPossible?: boolean): Contract | null {
   const { chainId } = useActiveWeb3React()
-  return useContract<Weth>(chainId ? WETH[chainId].address : undefined, WETH_ABI, withSignerIfPossible)
+  return useContract<Weth>(chainId ? WNATIVE[chainId].address : undefined, WETH_ABI, withSignerIfPossible)
 }
 
 export function useBytes32TokenContract(tokenAddress?: string, withSignerIfPossible?: boolean): Contract | null {

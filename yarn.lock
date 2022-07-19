@@ -3466,10 +3466,10 @@
   dependencies:
     "@octokit/openapi-types" "^11.2.0"
 
-"@pancakeswap/sdk@^2.4.5":
-  version "2.4.5"
-  resolved "https://registry.yarnpkg.com/@pancakeswap/sdk/-/sdk-2.4.5.tgz#783c02efc7ca89d2297b0b07040639d90c3e610d"
-  integrity sha512-qfHOPGXitDQ5y1dmYloe6UQe/0Ki0enow4MLtr5W49Jl7ZXr8oB6XV7usYtT63R7vqLSKY83rd8Wyw18vxP7dA==
+"@pancakeswap/sdk@^3.0.0-0":
+  version "3.0.0-0"
+  resolved "https://registry.yarnpkg.com/@pancakeswap/sdk/-/sdk-3.0.0-0.tgz#713b734e38ebe3fd99b65062635bf1485a0804d0"
+  integrity sha512-yoeJILRkpeurvTmJ6CzzIEea5EKnUsII9bRRHyC68V6KfNNrRAmUcheFuAyCgYh+fUpM+sdCY848oN9uKuM4Og==
   dependencies:
     big.js "^5.2.2"
     decimal.js-light "^2.5.0"

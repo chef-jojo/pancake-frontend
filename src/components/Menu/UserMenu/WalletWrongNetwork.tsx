@@ -2,8 +2,6 @@ import styled from 'styled-components'
 import { useTranslation } from 'contexts/Localization'
 import { Button, Text, Link, HelpIcon } from '@pancakeswap/uikit'
 import { setupNetwork } from 'utils/wallet'
-import { useWeb3React } from '@web3-react/core'
-import { InjectedConnector } from '@web3-react/injected-connector'
 import { ChainId } from '@pancakeswap/sdk'
 
 const StyledLink = styled(Link)`
@@ -19,21 +17,18 @@ interface WalletWrongNetworkProps {
 
 const WalletWrongNetwork: React.FC<WalletWrongNetworkProps> = ({ onDismiss }) => {
   const { t } = useTranslation()
-  const { connector, library } = useWeb3React()
 
   const handleSwitchNetwork = async (): Promise<void> => {
-    await setupNetwork(ChainId.BSC, library)
+    await setupNetwork(ChainId.BSC)
     onDismiss?.()
   }
 
   return (
     <>
       <Text mb="24px">{t('You’re connected to the wrong network.')}</Text>
-      {connector instanceof InjectedConnector && (
-        <Button onClick={handleSwitchNetwork} mb="24px">
-          {t('Switch Network')}
-        </Button>
-      )}
+      <Button onClick={handleSwitchNetwork} mb="24px">
+        {t('Switch Network')}
+      </Button>
       <StyledLink href="https://docs.pancakeswap.finance/get-started/connection-guide" external>
         <Button width="100%" variant="secondary">
           {t('Learn How')}

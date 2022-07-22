@@ -1,50 +1,19 @@
-import { InjectedConnector } from '@web3-react/injected-connector'
-import { WalletConnectConnector } from '@web3-react/walletconnect-connector'
-import { AbstractConnector } from '@web3-react/abstract-connector'
-import { ChainId } from '@pancakeswap/sdk'
 import { BscConnector } from '@binance-chain/bsc-connector'
-import { ConnectorNames } from '@pancakeswap/uikit'
 import { hexlify } from '@ethersproject/bytes'
 import { toUtf8Bytes } from '@ethersproject/strings'
-import { Web3Provider } from '@ethersproject/providers'
-
-const POLLING_INTERVAL = 12000
-
-const SUPPORTED_CHAIN_ID = [ChainId.BSC, ChainId.BSC_TESTNET]
-
-export const injected = new InjectedConnector({ supportedChainIds: SUPPORTED_CHAIN_ID })
-
-const walletconnect = new WalletConnectConnector({
-  qrcode: true,
-  pollingInterval: POLLING_INTERVAL,
-})
-
-const bscConnector = new BscConnector({ supportedChainIds: SUPPORTED_CHAIN_ID })
+import { ConnectorNames } from '@pancakeswap/uikit'
+import { AbstractConnector } from '@web3-react/abstract-connector'
+import { coinbaseWallet } from '../connectors/coinbaseWallet'
+import { metamask } from '../connectors/metamask'
+import { walletConnect } from '../connectors/walletConnect'
 
 export const connectorsByName = {
-  [ConnectorNames.Injected]: injected,
-  [ConnectorNames.WalletConnect]: walletconnect,
-  [ConnectorNames.BSC]: bscConnector,
-  [ConnectorNames.Blocto]: async () => {
-    const { BloctoConnector } = await import('@blocto/blocto-connector')
-    return new BloctoConnector({ chainId: ChainId.BSC, rpc: 'https://bsc.nodereal.io' })
-  },
-  [ConnectorNames.WalletLink]: async () => {
-    const { WalletLinkConnector } = await import('@web3-react/walletlink-connector')
-    return new WalletLinkConnector({
-      url: 'https://pancakeswap.finance',
-      appName: 'PancakeSwap',
-      appLogoUrl: 'https://pancakeswap.com/logo.png',
-      supportedChainIds: SUPPORTED_CHAIN_ID,
-    })
-  },
+  [ConnectorNames.Injected]: metamask,
+  [ConnectorNames.WalletConnect]: walletConnect,
+  [ConnectorNames.BSC]: metamask,
+  [ConnectorNames.Blocto]: metamask,
+  [ConnectorNames.WalletLink]: coinbaseWallet,
 } as const
-
-export const getLibrary = (provider): Web3Provider => {
-  const library = new Web3Provider(provider)
-  library.pollingInterval = POLLING_INTERVAL
-  return library
-}
 
 /**
  * BSC Wallet requires a different sign method

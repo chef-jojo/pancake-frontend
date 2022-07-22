@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import { useWeb3React, UnsupportedChainIdError } from '@web3-react/core'
 import {
   Flex,
   LogoutIcon,
@@ -13,6 +12,8 @@ import {
 } from '@pancakeswap/uikit'
 import Trans from 'components/Trans'
 import useAuth from 'hooks/useAuth'
+import useActiveWeb3React from 'hooks/useActiveWeb3React'
+import { isChainSupported } from 'config/constants/chains'
 import { useRouter } from 'next/router'
 import { useProfile } from 'state/profile/hooks'
 import { usePendingTransactions } from 'state/transactions/hooks'
@@ -26,7 +27,7 @@ import WalletUserMenuItem from './WalletUserMenuItem'
 const UserMenu = () => {
   const router = useRouter()
   const { t } = useTranslation()
-  const { account, error } = useWeb3React()
+  const { account, chainId } = useActiveWeb3React()
   const { logout } = useAuth()
   const { hasPendingTransactions, pendingNumber } = usePendingTransactions()
   const { isInitialized, isLoading, profile } = useProfile()
@@ -37,7 +38,7 @@ const UserMenu = () => {
   const avatarSrc = profile?.nft?.image?.thumbnail
   const [userMenuText, setUserMenuText] = useState<string>('')
   const [userMenuVariable, setUserMenuVariable] = useState<UserMenuVariant>('default')
-  const isWrongNetwork: boolean = error && error instanceof UnsupportedChainIdError
+  const isWrongNetwork: boolean = isChainSupported(chainId)
 
   useEffect(() => {
     if (hasPendingTransactions) {

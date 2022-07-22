@@ -28,7 +28,7 @@ type TxError = {
 const isGasEstimationError = (err: TxError): boolean => err?.data?.code === -32000
 
 export default function useCatchTxError(): CatchTxErrorReturn {
-  const { library } = useWeb3React()
+  const { provider } = useWeb3React()
   const { t } = useTranslation()
   const { toastError, toastSuccess } = useToast()
   const [loading, setLoading] = useState(false)
@@ -75,7 +75,7 @@ export default function useCatchTxError(): CatchTxErrorReturn {
           if (!tx) {
             handleNormalError(error)
           } else {
-            library
+            provider
               .call(tx, tx.blockNumber)
               .then(() => {
                 handleNormalError(error, tx)
@@ -127,7 +127,7 @@ export default function useCatchTxError(): CatchTxErrorReturn {
 
       return null
     },
-    [handleNormalError, toastError, library, toastSuccess, t],
+    [handleNormalError, toastError, provider, toastSuccess, t],
   )
 
   return {

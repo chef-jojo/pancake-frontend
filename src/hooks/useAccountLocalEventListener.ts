@@ -2,25 +2,16 @@ import { useEffect } from 'react'
 import useLocalDispatch from '../contexts/LocalRedux/useLocalDispatch'
 import { resetUserState } from '../state/global/actions'
 import useActiveWeb3React from './useActiveWeb3React'
+import usePreviousValue from './usePreviousValue'
 
 export const useAccountLocalEventListener = () => {
-  const { account, chainId, connector } = useActiveWeb3React()
+  const { account, chainId, connector, isActive } = useActiveWeb3React()
   const dispatch = useLocalDispatch()
+  const previousIsActive = usePreviousValue(isActive)
 
   useEffect(() => {
-    if (account && connector) {
-      const handleEvent = () => {
-        dispatch(resetUserState({ chainId }))
-      }
-
-      connector.addListener('Web3ReactDeactivate', handleEvent)
-      connector.addListener('Web3ReactUpdate', handleEvent)
-
-      return () => {
-        connector.removeListener('Web3ReactDeactivate', handleEvent)
-        connector.removeListener('Web3ReactUpdate', handleEvent)
-      }
+    if (previousIsActive && !isActive) {
+      dispatch(resetUserState({ chainId }))
     }
-    return undefined
-  }, [account, chainId, dispatch, connector])
+  }, [account, chainId, dispatch, connector, previousIsActive, isActive])
 }

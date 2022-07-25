@@ -1,6 +1,7 @@
 /* eslint-disable prefer-destructuring */
 /* eslint-disable consistent-return */
 /* eslint-disable class-methods-use-this */
+import { getAddress } from '@ethersproject/address'
 import { Chain, ConnectorNotFoundError, ResourceUnavailableError, RpcError, UserRejectedRequestError } from 'wagmi'
 import { InjectedConnector } from 'wagmi/connectors/injected'
 import getWeb3Provider from '../mpBridge'
@@ -57,6 +58,16 @@ export class BnInjectedConnector extends InjectedConnector {
       if ((<RpcError>error).code === -32002) throw new ResourceUnavailableError(error)
       throw error
     }
+  }
+
+  async getAccount() {
+    const provider = await this.getProvider()
+    if (!provider) throw new ConnectorNotFoundError()
+    const accounts = await provider.request({
+      method: 'eth_accounts',
+    })
+    // return checksum address
+    return getAddress(<string>accounts[0])
   }
 
   async getProvider() {

@@ -20,8 +20,8 @@ export class BnInjectedConnector extends InjectedConnector {
   } = {}) {
     const options = {
       name: 'BnInjected',
-      shimDisconnect: true,
-      shimChainChangedDisconnect: true,
+      shimDisconnect: false,
+      shimChainChangedDisconnect: false,
     }
     super({
       chains,

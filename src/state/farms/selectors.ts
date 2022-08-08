@@ -17,7 +17,7 @@ const deserializeFarmUserData = (farm: SerializedFarm): DeserializedFarmUserData
   }
 }
 
-const deserializeFarm = (farm: SerializedFarm): DeserializedFarm => {
+export const deserializeFarm = (farm: SerializedFarm): DeserializedFarm => {
   const {
     lpAddresses,
     lpSymbol,
@@ -56,15 +56,15 @@ const deserializeFarm = (farm: SerializedFarm): DeserializedFarm => {
     auctionHostingEndDate: auctionHostingEndDate?.toJSON(),
     quoteTokenPriceBusd,
     tokenPriceBusd,
-    token: deserializeToken(farm.token),
-    quoteToken: deserializeToken(farm.quoteToken),
-    userData: deserializeFarmUserData(farm),
-    tokenAmountTotal: farm.tokenAmountTotal ? new BigNumber(farm.tokenAmountTotal) : BIG_ZERO,
-    quoteTokenAmountTotal: farm.quoteTokenAmountTotal ? new BigNumber(farm.quoteTokenAmountTotal) : BIG_ZERO,
-    lpTotalInQuoteToken: farm.lpTotalInQuoteToken ? new BigNumber(farm.lpTotalInQuoteToken) : BIG_ZERO,
-    lpTotalSupply: farm.lpTotalSupply ? new BigNumber(farm.lpTotalSupply) : BIG_ZERO,
-    tokenPriceVsQuote: farm.tokenPriceVsQuote ? new BigNumber(farm.tokenPriceVsQuote) : BIG_ZERO,
-    poolWeight: farm.poolWeight ? new BigNumber(farm.poolWeight) : BIG_ZERO,
+    token: farm.token,
+    quoteToken: farm.quoteToken,
+    userData: farm.userData,
+    tokenAmountTotal: farm.tokenAmountTotal,
+    quoteTokenAmountTotal: farm.quoteTokenAmountTotal,
+    lpTotalInQuoteToken: farm.lpTotalInQuoteToken,
+    lpTotalSupply: farm.lpTotalSupply,
+    tokenPriceVsQuote: farm.tokenPriceVsQuote,
+    poolWeight: farm.poolWeight,
   }
 }
 

@@ -5,7 +5,7 @@ import BigNumber from 'bignumber.js'
 import { ChainId } from '@pancakeswap/sdk'
 import chunk from 'lodash/chunk'
 import { sub, getUnixTime } from 'date-fns'
-import farmsConfig from '../src/config/constants/farms'
+import farmsConfig from '../src/config/constants/farms/56'
 import type { BlockResponse } from '../src/components/SubgraphHealthIndicator'
 import { BLOCKS_CLIENT } from '../src/config/constants/endpoints'
 import { infoClient } from '../src/utils/graphql'
@@ -112,7 +112,7 @@ const fetchAndUpdateLPsAPR = async () => {
     allAprs = { ...allAprs, ...aprs }
   }
 
-  fs.writeFile(`src/config/constants/lpAprs.json`, JSON.stringify(allAprs, null, 2) + os.EOL, (err) => {
+  fs.writeFile(`src/config/constants/lpAprs/56.json`, JSON.stringify(allAprs, null, 2) + os.EOL, (err) => {
     if (err) throw err
     console.info(` ✅ - lpAprs.json has been updated!`)
   })

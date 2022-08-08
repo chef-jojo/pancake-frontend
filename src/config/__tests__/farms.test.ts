@@ -1,4 +1,4 @@
-import farms from 'config/constants/farms'
+import farms from 'config/constants/farms/56'
 import { SerializedFarm } from 'state/types'
 import { getLpContract } from 'utils/contractHelpers'
 

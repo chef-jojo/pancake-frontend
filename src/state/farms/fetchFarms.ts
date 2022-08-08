@@ -1,15 +1,20 @@
-import { SerializedFarmConfig } from 'config/constants/types'
 import BigNumber from 'bignumber.js'
+import { SerializedFarmConfig } from 'config/constants/types'
 import { getFullDecimalMultiplier } from 'utils/getFullDecimalMultiplier'
-import { BIG_ZERO, BIG_TWO } from '../../utils/bigNumber'
-import { fetchPublicFarmsData } from './fetchPublicFarmData'
-import { fetchMasterChefData } from './fetchMasterChefData'
+import { ReturnUseMultiCall } from 'utils/multicall'
+import { BIG_TWO, BIG_ZERO } from '../../utils/bigNumber'
 import { SerializedFarm } from '../types'
+import { fetchMasterChefData } from './fetchMasterChefData'
+import { fetchPublicFarmsData } from './fetchPublicFarmData'
 
-const fetchFarms = async (farmsToFetch: SerializedFarmConfig[]): Promise<SerializedFarm[]> => {
+const fetchFarms = async (
+  multicall: ReturnUseMultiCall,
+  chainId: number,
+  farmsToFetch: SerializedFarmConfig[],
+): Promise<SerializedFarm[]> => {
   const [farmResult, masterChefResult] = await Promise.all([
-    fetchPublicFarmsData(farmsToFetch),
-    fetchMasterChefData(farmsToFetch),
+    fetchPublicFarmsData(multicall, chainId, farmsToFetch),
+    fetchMasterChefData(multicall, chainId, farmsToFetch),
   ])
 
   return farmsToFetch.map((farm, index) => {
@@ -46,12 +51,12 @@ const fetchFarms = async (farmsToFetch: SerializedFarmConfig[]): Promise<Seriali
       ...farm,
       token: farm.token,
       quoteToken: farm.quoteToken,
-      tokenAmountTotal: tokenAmountTotal.toJSON(),
-      quoteTokenAmountTotal: quoteTokenAmountTotal.toJSON(),
-      lpTotalSupply: lpTotalSupplyBN.toJSON(),
-      lpTotalInQuoteToken: lpTotalInQuoteToken.toJSON(),
-      tokenPriceVsQuote: quoteTokenAmountTotal.div(tokenAmountTotal).toJSON(),
-      poolWeight: poolWeight.toJSON(),
+      tokenAmountTotal,
+      quoteTokenAmountTotal,
+      lpTotalSupply,
+      lpTotalInQuoteToken,
+      tokenPriceVsQuote: quoteTokenAmountTotal.div(tokenAmountTotal),
+      poolWeight,
       multiplier: `${allocPoint.div(100).toString()}X`,
     }
   })

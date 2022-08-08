@@ -3,7 +3,7 @@ import { useWeb3React } from '@web3-react/core'
 import { batch, useSelector } from 'react-redux'
 import { useAppDispatch } from 'state'
 import { useFastRefreshEffect, useSlowRefreshEffect } from 'hooks/useRefreshEffect'
-import farmsConfig from 'config/constants/farms'
+import farmsConfig from 'config/constants/farms/56'
 import { livePools } from 'config/constants/pools'
 
 import {

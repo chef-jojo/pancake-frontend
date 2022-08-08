@@ -6,7 +6,7 @@ import type {
 } from '@reduxjs/toolkit/dist/matchers'
 import { createAsyncThunk, createSlice, isAnyOf } from '@reduxjs/toolkit'
 import stringify from 'fast-json-stable-stringify'
-import farmsConfig from 'config/constants/farms'
+import farmsConfig from 'config/constants/farms/56'
 import multicall from 'utils/multicall'
 import masterchefABI from 'config/abi/masterchef.json'
 import { getMasterChefAddress } from 'utils/addressHelpers'
@@ -22,7 +22,6 @@ import {
   fetchFarmUserStakedBalances,
 } from './fetchFarmUser'
 import { SerializedFarmsState, SerializedFarm } from '../types'
-import { fetchMasterChefFarmPoolLength } from './fetchMasterChefData'
 import { resetUserState } from '../global/actions'
 
 const noAccountFarmConfig = farmsConfig.map((farm) => ({
@@ -103,25 +102,25 @@ export const fetchFarmUserDataAsync = createAsyncThunk<
 >(
   'farms/fetchFarmUserDataAsync',
   async ({ account, pids }) => {
-    const poolLength = await fetchMasterChefFarmPoolLength()
-    const farmsToFetch = farmsConfig.filter((farmConfig) => pids.includes(farmConfig.pid))
-    const farmsCanFetch = farmsToFetch.filter((f) => poolLength.gt(f.pid))
-    const [userFarmAllowances, userFarmTokenBalances, userStakedBalances, userFarmEarnings] = await Promise.all([
-      fetchFarmUserAllowances(account, farmsCanFetch),
-      fetchFarmUserTokenBalances(account, farmsCanFetch),
-      fetchFarmUserStakedBalances(account, farmsCanFetch),
-      fetchFarmUserEarnings(account, farmsCanFetch),
-    ])
+    // const poolLength = await fetchMasterChefFarmPoolLength()
+    // const farmsToFetch = farmsConfig.filter((farmConfig) => pids.includes(farmConfig.pid))
+    // const farmsCanFetch = farmsToFetch.filter((f) => poolLength.gt(f.pid))
+    // const [userFarmAllowances, userFarmTokenBalances, userStakedBalances, userFarmEarnings] = await Promise.all([
+    //   fetchFarmUserAllowances(account, farmsCanFetch),
+    //   fetchFarmUserTokenBalances(account, farmsCanFetch),
+    //   fetchFarmUserStakedBalances(account, farmsCanFetch),
+    //   fetchFarmUserEarnings(account, farmsCanFetch),
+    // ])
 
-    return userFarmAllowances.map((farmAllowance, index) => {
-      return {
-        pid: farmsCanFetch[index].pid,
-        allowance: userFarmAllowances[index],
-        tokenBalance: userFarmTokenBalances[index],
-        stakedBalance: userStakedBalances[index],
-        earnings: userFarmEarnings[index],
-      }
-    })
+    // return userFarmAllowances.map((farmAllowance, index) => {
+    //   return {
+    //     pid: farmsCanFetch[index].pid,
+    //     allowance: userFarmAllowances[index],
+    //     tokenBalance: userFarmTokenBalances[index],
+    //     stakedBalance: userStakedBalances[index],
+    //     earnings: userFarmEarnings[index],
+    //   }
+    // })
   },
   {
     condition: (arg, { getState }) => {

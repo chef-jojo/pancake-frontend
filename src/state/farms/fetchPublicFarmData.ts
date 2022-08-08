@@ -1,11 +1,11 @@
 import erc20 from 'config/abi/erc20.json'
 import chunk from 'lodash/chunk'
 import { getAddress, getMasterChefAddress } from 'utils/addressHelpers'
-import { multicallv2 } from 'utils/multicall'
-import { SerializedFarm } from '../types'
+import { ReturnUseMultiCall } from 'utils/multicall'
 import { SerializedFarmConfig } from '../../config/constants/types'
+import { SerializedFarm } from '../types'
 
-const fetchFarmCalls = (farm: SerializedFarm) => {
+const fetchFarmCalls = (masterChefAddress: string, farm: SerializedFarm) => {
   const { lpAddresses, token, quoteToken } = farm
   const lpAddress = getAddress(lpAddresses)
   return [
@@ -45,9 +45,14 @@ const fetchFarmCalls = (farm: SerializedFarm) => {
   ]
 }
 
-export const fetchPublicFarmsData = async (farms: SerializedFarmConfig[]): Promise<any[]> => {
-  const farmCalls = farms.flatMap((farm) => fetchFarmCalls(farm))
+export const fetchPublicFarmsData = async (
+  multicall: ReturnUseMultiCall,
+  chainId: number,
+  farms: SerializedFarmConfig[],
+): Promise<any[]> => {
+  const masterChefAddress = getMasterChefAddress(chainId)
+  const farmCalls = farms.flatMap((farm) => fetchFarmCalls(masterChefAddress, farm))
   const chunkSize = farmCalls.length / farms.length
-  const farmMultiCallResult = await multicallv2(erc20, farmCalls)
+  const farmMultiCallResult = await multicall(erc20, farmCalls)
   return chunk(farmMultiCallResult, chunkSize)
 }

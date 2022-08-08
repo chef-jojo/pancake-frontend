@@ -1,7 +1,7 @@
 import { ChainId, Pair, Token } from '@pancakeswap/sdk'
 import { differenceInDays } from 'date-fns'
 import flatMap from 'lodash/flatMap'
-import farms from 'config/constants/farms'
+import farms from 'config/constants/farms/56'
 import { useCallback, useMemo } from 'react'
 import { useSelector } from 'react-redux'
 import { BASES_TO_TRACK_LIQUIDITY_FOR, PINNED_PAIRS } from 'config/constants'

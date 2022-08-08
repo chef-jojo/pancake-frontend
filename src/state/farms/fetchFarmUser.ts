@@ -1,26 +1,35 @@
 import BigNumber from 'bignumber.js'
 import erc20ABI from 'config/abi/erc20.json'
 import masterchefABI from 'config/abi/masterchef.json'
-import multicall from 'utils/multicall'
-import { getAddress, getMasterChefAddress } from 'utils/addressHelpers'
 import { SerializedFarmConfig } from 'config/constants/types'
+import { getAddress, getMasterChefAddress } from 'utils/addressHelpers'
+import { ReturnUseMultiCall } from 'utils/multicall'
 
-export const fetchFarmUserAllowances = async (account: string, farmsToFetch: SerializedFarmConfig[]) => {
-  const masterChefAddress = getMasterChefAddress()
+export const fetchFarmUserAllowances = async (
+  multi: ReturnUseMultiCall,
+  chainId: number,
+  account: string,
+  farmsToFetch: SerializedFarmConfig[],
+) => {
+  const masterChefAddress = getMasterChefAddress(chainId)
 
   const calls = farmsToFetch.map((farm) => {
     const lpContractAddress = getAddress(farm.lpAddresses)
     return { address: lpContractAddress, name: 'allowance', params: [account, masterChefAddress] }
   })
 
-  const rawLpAllowances = await multicall<BigNumber[]>(erc20ABI, calls)
+  const rawLpAllowances = await multi<BigNumber[]>(erc20ABI, calls)
   const parsedLpAllowances = rawLpAllowances.map((lpBalance) => {
-    return new BigNumber(lpBalance).toJSON()
+    return new BigNumber(lpBalance)
   })
   return parsedLpAllowances
 }
 
-export const fetchFarmUserTokenBalances = async (account: string, farmsToFetch: SerializedFarmConfig[]) => {
+export const fetchFarmUserTokenBalances = async (
+  multi: ReturnUseMultiCall,
+  account: string,
+  farmsToFetch: SerializedFarmConfig[],
+) => {
   const calls = farmsToFetch.map((farm) => {
     const lpContractAddress = getAddress(farm.lpAddresses)
     return {
@@ -30,15 +39,20 @@ export const fetchFarmUserTokenBalances = async (account: string, farmsToFetch: 
     }
   })
 
-  const rawTokenBalances = await multicall(erc20ABI, calls)
+  const rawTokenBalances = await multi(erc20ABI, calls)
   const parsedTokenBalances = rawTokenBalances.map((tokenBalance) => {
-    return new BigNumber(tokenBalance).toJSON()
+    return new BigNumber(tokenBalance)
   })
-  return parsedTokenBalances
+  return parsedTokenBalances as BigNumber[]
 }
 
-export const fetchFarmUserStakedBalances = async (account: string, farmsToFetch: SerializedFarmConfig[]) => {
-  const masterChefAddress = getMasterChefAddress()
+export const fetchFarmUserStakedBalances = async (
+  multi: ReturnUseMultiCall,
+  chainId: number,
+  account: string,
+  farmsToFetch: SerializedFarmConfig[],
+) => {
+  const masterChefAddress = getMasterChefAddress(chainId)
 
   const calls = farmsToFetch.map((farm) => {
     return {
@@ -48,15 +62,20 @@ export const fetchFarmUserStakedBalances = async (account: string, farmsToFetch:
     }
   })
 
-  const rawStakedBalances = await multicall(masterchefABI, calls)
+  const rawStakedBalances = await multi(masterchefABI, calls)
   const parsedStakedBalances = rawStakedBalances.map((stakedBalance) => {
-    return new BigNumber(stakedBalance[0]._hex).toJSON()
+    return new BigNumber(stakedBalance[0]._hex)
   })
-  return parsedStakedBalances
+  return parsedStakedBalances as BigNumber[]
 }
 
-export const fetchFarmUserEarnings = async (account: string, farmsToFetch: SerializedFarmConfig[]) => {
-  const masterChefAddress = getMasterChefAddress()
+export const fetchFarmUserEarnings = async (
+  multi: ReturnUseMultiCall,
+  chainId: number,
+  account: string,
+  farmsToFetch: SerializedFarmConfig[],
+) => {
+  const masterChefAddress = getMasterChefAddress(chainId)
 
   const calls = farmsToFetch.map((farm) => {
     return {
@@ -66,9 +85,9 @@ export const fetchFarmUserEarnings = async (account: string, farmsToFetch: Seria
     }
   })
 
-  const rawEarnings = await multicall(masterchefABI, calls)
+  const rawEarnings = await multi(masterchefABI, calls)
   const parsedEarnings = rawEarnings.map((earnings) => {
-    return new BigNumber(earnings).toJSON()
+    return new BigNumber(earnings)
   })
-  return parsedEarnings
+  return parsedEarnings as BigNumber[]
 }

@@ -1,6 +1,6 @@
 import BigNumber from 'bignumber.js'
 import { BLOCKS_PER_YEAR } from 'config'
-import lpAprs from 'config/constants/lpAprs.json'
+import lpAprs from 'config/constants/lpAprs/56.json'
 
 /**
  * Get the APR value in %

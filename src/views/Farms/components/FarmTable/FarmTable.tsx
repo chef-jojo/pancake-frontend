@@ -103,6 +103,8 @@ const FarmTable: React.FC<ITableProps> = ({ farms, cakePrice, userDataReady }) =
     })
   }, [])
 
+  console.log(farms, 'farms')
+
   const rowData = farms.map((farm) => {
     const { token, quoteToken } = farm
     const tokenAddress = token.address

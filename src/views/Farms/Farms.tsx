@@ -7,7 +7,13 @@ import { NextLinkFromReactRouter } from 'components/NextLink'
 import styled from 'styled-components'
 import FlexLayout from 'components/Layout/Flex'
 import Page from 'components/Layout/Page'
-import { useFarms, usePollFarmsWithUserData, usePriceCakeBusd } from 'state/farms/hooks'
+import {
+  useFarms,
+  useFarmsLength,
+  usePollFarmsWithUserData,
+  usePriceCakeBusd,
+  useRegularCakePerBlock,
+} from 'state/farms/hooks'
 import useIntersectionObserver from 'hooks/useIntersectionObserver'
 import { DeserializedFarm } from 'state/types'
 import { useTranslation } from 'contexts/Localization'
@@ -25,6 +31,7 @@ import ToggleView from 'components/ToggleView/ToggleView'
 import Table from './components/FarmTable/FarmTable'
 import FarmTabButtons from './components/FarmTabButtons'
 import { FarmWithStakedValue } from './components/types'
+import { useFarmsPoolLength } from 'state/farmsV1/hooks'
 
 const ControlContainer = styled.div`
   display: flex;
@@ -118,7 +125,10 @@ const NUMBER_OF_FARMS_VISIBLE = 12
 const Farms: React.FC = ({ children }) => {
   const { pathname, query: urlQuery } = useRouter()
   const { t } = useTranslation()
-  const { data: farmsLP, userDataLoaded, poolLength, regularCakePerBlock } = useFarms()
+  const { data: regularCakePerBlock } = useRegularCakePerBlock()
+  const { data: poolLength } = useFarmsLength()
+
+  const { data: farmsLP, userDataLoaded } = useFarms()
   const cakePrice = usePriceCakeBusd()
 
   const [_query, setQuery] = useState('')

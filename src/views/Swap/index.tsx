@@ -299,7 +299,9 @@ export default function Swap() {
 
   const handleInputSelect = useCallback(
     (currencyInput) => {
-      log.info('Select Input Token', { currencyInput })
+      log.debug('Select Input Token', { currencyInput })
+      log.warn('Select Input Token', { currencyInput })
+      log.error('Select Input Token', { currencyInput })
       setApprovalSubmitted(false) // reset 2 step UI for approvals
       onCurrencySelection(Field.INPUT, currencyInput)
       const showSwapWarning = shouldShowSwapWarning(currencyInput)

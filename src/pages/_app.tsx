@@ -149,3 +149,5 @@ const App = ({ Component, pageProps, ...appProps }: AppPropsWithLayout) => {
 }
 
 export default MyApp
+
+export { reportWebVitals } from 'next-axiom'

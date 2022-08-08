@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
+import { log } from 'next-axiom'
 import styled from 'styled-components'
 import { ChainId, CurrencyAmount, Token, Trade } from '@pancakeswap/sdk'
 import { computeTradePriceBreakdown, warningSeverity } from 'utils/exchange'
@@ -298,6 +299,7 @@ export default function Swap() {
 
   const handleInputSelect = useCallback(
     (currencyInput) => {
+      log.info('Select Input Token', { currencyInput })
       setApprovalSubmitted(false) // reset 2 step UI for approvals
       onCurrencySelection(Field.INPUT, currencyInput)
       const showSwapWarning = shouldShowSwapWarning(currencyInput)

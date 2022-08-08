@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
+const { withAxiom } = require('next-axiom')
 const { withSentryConfig } = require('@sentry/nextjs')
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
@@ -134,4 +135,4 @@ const config = {
   },
 }
 
-module.exports = withBundleAnalyzer(withSentryConfig(withTM(config), sentryWebpackPluginOptions))
+module.exports = withBundleAnalyzer(withSentryConfig(withAxiom(withTM(config)), sentryWebpackPluginOptions))

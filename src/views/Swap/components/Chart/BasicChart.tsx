@@ -1,6 +1,6 @@
 import { Box, ButtonMenu, ButtonMenuItem, Flex, Text } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
-import { useState, memo } from 'react'
+import { useState, memo, Suspense } from 'react'
 import { useFetchPairPrices } from 'state/swap/hooks'
 import dynamic from 'next/dynamic'
 import { PairDataTimeWindowEnum } from 'state/swap/types'
@@ -98,15 +98,17 @@ const BasicChart = ({
           </ButtonMenu>
         </Box>
       </Flex>
-      <Box height={isMobile ? '100%' : chartHeight} p={isMobile ? '0px' : '16px'} width="100%">
-        <SwapLineChart
-          data={pairPrices}
-          setHoverValue={setHoverValue}
-          setHoverDate={setHoverDate}
-          isChangePositive={isChangePositive}
-          timeWindow={timeWindow}
-        />
-      </Box>
+      <Suspense>
+        <Box height={isMobile ? '100%' : chartHeight} p={isMobile ? '0px' : '16px'} width="100%">
+          <SwapLineChart
+            data={pairPrices}
+            setHoverValue={setHoverValue}
+            setHoverDate={setHoverDate}
+            isChangePositive={isChangePositive}
+            timeWindow={timeWindow}
+          />
+        </Box>
+      </Suspense>
     </>
   )
 }

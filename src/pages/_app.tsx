@@ -13,7 +13,7 @@ import useUserAgent from 'hooks/useUserAgent'
 import useThemeCookie from 'hooks/useThemeCookie'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
-import { Fragment } from 'react'
+import { Fragment, Suspense } from 'react'
 import { PersistGate } from 'redux-persist/integration/react'
 import { useStore, persistor } from 'state'
 import { usePollBlockNumber } from 'state/block/hooks'
@@ -138,7 +138,9 @@ const App = ({ Component, pageProps, ...appProps }: AppPropsWithLayout) => {
     <ProductionErrorBoundary>
       <ShowMenu>
         <Layout>
-          <Component {...pageProps} />
+          <Suspense>
+            <Component {...pageProps} />
+          </Suspense>
         </Layout>
       </ShowMenu>
       <EasterEgg iterations={2} />

@@ -66,6 +66,7 @@ const ListsConfig = {
   serialize: false,
   deserialize: false,
   storage: IndexedDBStorage('lists'),
+  timeout: 0,
 }
 
 const persistedReducer = persistReducer(

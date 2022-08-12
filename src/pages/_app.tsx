@@ -89,10 +89,10 @@ function MyApp(props: AppProps) {
           <ResetCSS />
           <GlobalStyle />
           <GlobalCheckClaimStatus excludeLocations={[]} />
-          {/* <PersistGate loading={null} persistor={persistor}> */}
-          <Updaters />
-          <App {...props} />
-          {/* </PersistGate> */}
+          <PersistGate loading={null} persistor={persistor}>
+            <Updaters />
+            <App {...props} />
+          </PersistGate>
         </Blocklist>
       </Providers>
       <Script

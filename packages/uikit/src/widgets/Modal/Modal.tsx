@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, Suspense } from "react";
 import { useTheme } from "styled-components";
 import Heading from "../../components/Heading/Heading";
 import getThemeValue from "../../util/getThemeValue";
@@ -23,31 +23,33 @@ const Modal: React.FC<React.PropsWithChildren<ModalProps>> = ({
   const { isMobile } = useMatchBreakpointsContext();
   const wrapperRef = useRef<HTMLDivElement>(null);
   return (
-    // @ts-ignore
-    <ModalContainer
-      drag={isMobile ? "y" : false}
-      dragConstraints={{ top: 0, bottom: 600 }}
-      dragElastic={{ top: 0 }}
-      dragSnapToOrigin
-      onDragStart={() => {
-        if (wrapperRef.current) wrapperRef.current.style.animation = "none";
-      }}
-      onDragEnd={(e, info) => {
-        if (info.velocity.y > MODAL_SWIPE_TO_CLOSE_VELOCITY && onDismiss) onDismiss();
-      }}
-      ref={wrapperRef}
-      minWidth={minWidth}
-      {...props}
-    >
-      <ModalHeader background={getThemeValue(theme, `colors.${headerBackground}`, headerBackground)}>
-        <ModalTitle>
-          {onBack && <ModalBackButton onBack={onBack} />}
-          <Heading>{title}</Heading>
-        </ModalTitle>
-        {!hideCloseButton && <ModalCloseButton onDismiss={onDismiss} />}
-      </ModalHeader>
-      <ModalBody p={bodyPadding}>{children}</ModalBody>
-    </ModalContainer>
+    <Suspense>
+      {/* @ts-ignore */}
+      <ModalContainer
+        drag={isMobile ? "y" : false}
+        dragConstraints={{ top: 0, bottom: 600 }}
+        dragElastic={{ top: 0 }}
+        dragSnapToOrigin
+        onDragStart={() => {
+          if (wrapperRef.current) wrapperRef.current.style.animation = "none";
+        }}
+        onDragEnd={(e, info) => {
+          if (info.velocity.y > MODAL_SWIPE_TO_CLOSE_VELOCITY && onDismiss) onDismiss();
+        }}
+        ref={wrapperRef}
+        minWidth={minWidth}
+        {...props}
+      >
+        <ModalHeader background={getThemeValue(theme, `colors.${headerBackground}`, headerBackground)}>
+          <ModalTitle>
+            {onBack && <ModalBackButton onBack={onBack} />}
+            <Heading>{title}</Heading>
+          </ModalTitle>
+          {!hideCloseButton && <ModalCloseButton onDismiss={onDismiss} />}
+        </ModalHeader>
+        <ModalBody p={bodyPadding}>{children}</ModalBody>
+      </ModalContainer>
+    </Suspense>
   );
 };
 

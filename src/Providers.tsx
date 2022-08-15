@@ -34,6 +34,7 @@ const Providers: React.FC<React.PropsWithChildren<{ store: Store; children: Reac
                 <LanguageProvider>
                   <SWRConfig
                     value={{
+                      suspense: true,
                       use: [fetchStatusMiddleware],
                     }}
                   >

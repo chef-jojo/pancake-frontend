@@ -1,24 +1,22 @@
 import { ResetCSS } from '@pancakeswap/uikit'
-import Script from 'next/script'
-import dynamic from 'next/dynamic'
 import BigNumber from 'bignumber.js'
 import GlobalCheckClaimStatus from 'components/GlobalCheckClaimStatus'
 import { FixedSubgraphHealthIndicator } from 'components/SubgraphHealthIndicator/FixedSubgraphHealthIndicator'
 import { ToastListener } from 'contexts/ToastsContext'
 import useEagerConnect from 'hooks/useEagerConnect'
 import useEagerConnectMP from 'hooks/useEagerConnect.bmp'
-import { useAccountEventListener } from 'hooks/useAccountEventListener'
 import useSentryUser from 'hooks/useSentryUser'
-import useUserAgent from 'hooks/useUserAgent'
 import useThemeCookie from 'hooks/useThemeCookie'
+import useUserAgent from 'hooks/useUserAgent'
+import { NextPage } from 'next'
 import type { AppProps } from 'next/app'
+import dynamic from 'next/dynamic'
 import Head from 'next/head'
+import Script from 'next/script'
 import { Fragment, Suspense } from 'react'
 import { PersistGate } from 'redux-persist/integration/react'
-import { useStore, persistor } from 'state'
+import { persistor, useStore } from 'state'
 import { usePollBlockNumber } from 'state/block/hooks'
-import { usePollCoreFarmData } from 'state/farms/hooks'
-import { NextPage } from 'next'
 import { Blocklist, Updaters } from '..'
 import ErrorBoundary from '../components/ErrorBoundary'
 import Menu from '../components/Menu'
@@ -36,9 +34,7 @@ BigNumber.config({
 function GlobalHooks() {
   usePollBlockNumber()
   useEagerConnect()
-  usePollCoreFarmData()
   useUserAgent()
-  useAccountEventListener()
   useSentryUser()
   useThemeCookie()
   return null
@@ -47,9 +43,7 @@ function GlobalHooks() {
 function MPGlobalHooks() {
   usePollBlockNumber()
   useEagerConnectMP()
-  usePollCoreFarmData()
   useUserAgent()
-  useAccountEventListener()
   useSentryUser()
   return null
 }
@@ -137,7 +131,7 @@ const App = ({ Component, pageProps, ...appProps }: AppPropsWithLayout) => {
   return (
     <ProductionErrorBoundary>
       <ShowMenu>
-        <Suspense>
+        <Suspense fallback={<div>loading....</div>}>
           <Layout>
             <Component {...pageProps} />
           </Layout>

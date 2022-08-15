@@ -1,11 +1,15 @@
 import { ReactNode, useMemo } from 'react'
 import { useWeb3React } from '@pancakeswap/wagmi'
+import { useAccountEventListener } from 'hooks/useAccountEventListener'
+import { usePollCoreFarmData } from 'state/farms/hooks'
 import { BLOCKED_ADDRESSES } from './config/constants'
 import ListsUpdater from './state/lists/updater'
 import MulticallUpdater from './state/multicall/updater'
 import TransactionUpdater from './state/transactions/updater'
 
 export function Updaters() {
+  useAccountEventListener()
+  usePollCoreFarmData()
   return (
     <>
       <ListsUpdater />

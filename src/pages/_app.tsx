@@ -130,16 +130,16 @@ const App = ({ Component, pageProps, ...appProps }: AppPropsWithLayout) => {
 
   return (
     <ProductionErrorBoundary>
-      <ShowMenu>
-        <Suspense fallback={<div>loading....</div>}>
+      <Suspense fallback={<div>loading....</div>}>
+        <ShowMenu>
           <Layout>
             <Component {...pageProps} />
           </Layout>
-        </Suspense>
-      </ShowMenu>
-      <EasterEgg iterations={2} />
-      <ToastListener />
-      <FixedSubgraphHealthIndicator />
+        </ShowMenu>
+        <EasterEgg iterations={2} />
+        <ToastListener />
+        <FixedSubgraphHealthIndicator />
+      </Suspense>
     </ProductionErrorBoundary>
   )
 }

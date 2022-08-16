@@ -49,7 +49,7 @@ export const NetworkSwitcher = () => {
       // @ts-ignore // TODO: add type later
       window.ethereum?.isSafePal)
 
-  if (!chainId || chainId === ChainId.BSC) {
+  if (!chainId) {
     return null
   }
 

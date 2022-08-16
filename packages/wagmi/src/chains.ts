@@ -165,7 +165,7 @@ export const CHAINS_TESTNET = [
 export const CHAINS = [
   bsc,
   // TODO: ETH
-  // mainnet,
+  mainnet,
   bscTest,
   rinkeby,
   goerli,

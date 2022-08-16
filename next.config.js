@@ -38,6 +38,7 @@ const config = {
     images: {
       allowFutureImage: true,
     },
+    runtime: 'experimental-edge',
   },
   reactStrictMode: true,
   swcMinify: true,

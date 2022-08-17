@@ -16360,10 +16360,10 @@ nested-error-stacks@^2.0.0, nested-error-stacks@^2.1.0:
   resolved "https://registry.yarnpkg.com/nested-error-stacks/-/nested-error-stacks-2.1.1.tgz#26c8a3cee6cc05fbcf1e333cd2fc3e003326c0b5"
   integrity sha512-9iN1ka/9zmX1ZvLV9ewJYEk9h7RyRRtqdK0woXcqohu8EWIerfPUjYJPg0ULy0UqP7cslmdGc8xKDJcojlKiaw==
 
-next-axiom@^0.11.1:
-  version "0.11.1"
-  resolved "https://registry.yarnpkg.com/next-axiom/-/next-axiom-0.11.1.tgz#71d1fc1e525d59c6471a36c1e47256e0353aebfb"
-  integrity sha512-v2Z3hXgqdxsqtWxGCLzzKs9YjETcQQTk8ucHZO1tfJl/v7Bn7VS6SU+39uR9DNOr9lLf/sQfNe9dwTwW8RUHkg==
+next-axiom@^0.13.0:
+  version "0.13.0"
+  resolved "https://registry.yarnpkg.com/next-axiom/-/next-axiom-0.13.0.tgz#1858b2a83ac7594393d477243fd74da47909564b"
+  integrity sha512-yWNsTd2abreXa9KBYeAhhVCsTFClZI37jUG0c+CfkENxl51EpSVlY+dWSA8hGJQtXWOXKs6yeW1PaiVr2NU1rw==
   dependencies:
     whatwg-fetch "^3.6.2"
 

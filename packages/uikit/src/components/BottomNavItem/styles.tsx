@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "@pancakeswap/styled";
 import { Text } from "../Text";
 
 export const StyledBottomNavItem = styled.button`

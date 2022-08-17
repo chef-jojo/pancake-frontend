@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import { useWeb3React } from '@pancakeswap/wagmi'
 import { Button, Flex, Text, InjectedModalProps } from '@pancakeswap/uikit'
 import { formatBigNumber } from 'utils/formatBalance'
@@ -20,7 +20,7 @@ interface StartPageProps extends InjectedModalProps {
   goToApprove: UseEditProfileResponse['goToApprove']
 }
 
-const DangerOutline = styled(Button).attrs({ variant: 'secondary' })`
+const DangerOutline = styled(Button)`
   border-color: ${({ theme }) => theme.colors.failure};
   color: ${({ theme }) => theme.colors.failure};
   margin-bottom: 24px;
@@ -30,6 +30,7 @@ const DangerOutline = styled(Button).attrs({ variant: 'secondary' })`
     opacity: 0.8;
   }
 `
+DangerOutline.defaultProps = { variant: 'secondary' }
 
 const AvatarWrapper = styled.div`
   height: 64px;

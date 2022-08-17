@@ -1,5 +1,5 @@
 import { Box, BoxProps, Flex } from '@pancakeswap/uikit'
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 
 const Wrapper = styled(Flex)`
   overflow-x: scroll;
@@ -22,9 +22,7 @@ interface TabProps extends BoxProps {
   onClick?: () => void
 }
 
-export const TabToggle = styled(Box).attrs({
-  as: 'button',
-})<TabProps>`
+export const TabToggle = styled(Box)<TabProps>`
   display: inline-flex;
   justify-content: center;
   cursor: pointer;
@@ -42,6 +40,7 @@ export const TabToggle = styled(Box).attrs({
 
 TabToggle.defaultProps = {
   p: '16px',
+  as: 'button',
 }
 
 interface TabToggleGroupProps {

@@ -1,5 +1,5 @@
 import Link, { LinkProps } from 'next/link'
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 
 const StyledInternalLink = styled('a')`
   text-decoration: none;

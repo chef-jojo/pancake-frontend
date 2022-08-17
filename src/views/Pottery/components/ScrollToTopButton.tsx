@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react'
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import { Button, ArrowUpIcon } from '@pancakeswap/uikit'
 import throttle from 'lodash/throttle'
 

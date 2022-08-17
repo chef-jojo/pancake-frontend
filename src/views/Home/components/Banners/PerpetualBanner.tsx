@@ -2,7 +2,7 @@ import { ArrowForwardIcon, Button, Text, Link, useMatchBreakpointsContext } from
 import { useTranslation } from '@pancakeswap/localization'
 import Image from 'next/image'
 import { memo, useMemo } from 'react'
-import styled, { useTheme } from 'styled-components'
+import styled, { useTheme } from '@pancakeswap/styled'
 import { perpLangMap } from 'utils/getPerpetualLanguageCode'
 import { perpTheme } from 'utils/getPerpetualTheme'
 import { perpetualImage, perpetualMobileImage } from './images'

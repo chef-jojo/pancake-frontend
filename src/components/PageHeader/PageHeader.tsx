@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import { Box } from '@pancakeswap/uikit'
 import Container from '../Layout/Container'
 import { PageHeaderProps } from './types'

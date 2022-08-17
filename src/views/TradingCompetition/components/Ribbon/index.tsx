@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import { Flex, LaurelLeftIcon, LaurelRightIcon } from '@pancakeswap/uikit'
 import { RibbonProps } from '../../types'
 import {

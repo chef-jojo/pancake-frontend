@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "@pancakeswap/styled";
 import { darkColors } from "../../theme/colors";
 import { Box, Flex } from "../Box";
 import SocialLinks from "./Components/SocialLinks";

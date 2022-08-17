@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled from "@pancakeswap/styled";
 import LogoRound from "../Svg/Icons/LogoRound";
 import Text from "../Text/Text";
 import Skeleton from "../Skeleton/Skeleton";

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import SwiperCore, { Keyboard, Mousewheel, FreeMode } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css/bundle'

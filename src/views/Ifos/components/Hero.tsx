@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import { Box, Heading, Text, Button, Flex, useMatchBreakpointsContext } from '@pancakeswap/uikit'
 import Container from 'components/Layout/Container'
 import { useTranslation } from '@pancakeswap/localization'

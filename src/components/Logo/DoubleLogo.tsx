@@ -1,5 +1,5 @@
 import { Currency } from '@pancakeswap/sdk'
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import CurrencyLogo from './CurrencyLogo'
 
 const Wrapper = styled.div<{ margin: boolean }>`

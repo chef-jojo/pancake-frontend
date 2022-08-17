@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 
 const Label = styled.div`
   font-size: 12px;

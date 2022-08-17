@@ -1,4 +1,4 @@
-import styled, { DefaultTheme, keyframes, css } from "styled-components";
+import styled, { Theme, keyframes, css } from "@pancakeswap/styled";
 import { space } from "styled-system";
 import { Box } from "../Box";
 import { CardProps } from "./types";
@@ -16,7 +16,7 @@ const PromotedGradient = keyframes`
 `;
 
 interface StyledCardProps extends CardProps {
-  theme: DefaultTheme;
+  theme: Theme;
 }
 
 /**

@@ -2,7 +2,7 @@ import { AnimatePresence, Variants, LazyMotion, domAnimation } from "framer-moti
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { usePopper } from "react-popper";
-import { DefaultTheme, ThemeProvider } from "styled-components";
+import { Theme, ThemeProvider } from "@pancakeswap/styled";
 import { dark, light } from "../../theme";
 import getPortalRoot from "../../util/getPortalRoot";
 import isTouchDevice from "../../util/isTouchDevice";
@@ -21,7 +21,7 @@ const animationMap = {
   exit: "exit",
 };
 
-const invertTheme = (currentTheme: DefaultTheme) => {
+const invertTheme = (currentTheme: Theme) => {
   if (currentTheme.isDark) {
     return light;
   }

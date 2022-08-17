@@ -1,4 +1,4 @@
-import { DefaultTheme } from "styled-components";
+import { Theme } from "@pancakeswap/styled";
 import { light as lightAlert } from "../components/Alert/theme";
 import { light as lightCard } from "../components/Card/theme";
 import { light as lightPancakeToggle } from "../components/PancakeToggle/theme";
@@ -10,7 +10,7 @@ import { light as lightModal } from "../widgets/Modal/theme";
 import base from "./base";
 import { lightColors } from "./colors";
 
-const lightTheme: DefaultTheme = {
+const lightTheme: Theme = {
   ...base,
   isDark: false,
   alert: lightAlert,

@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import { NextLinkFromReactRouter } from 'components/NextLink'
 import { Box, Flex, Grid, Image } from '@pancakeswap/uikit'
 

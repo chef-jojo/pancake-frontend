@@ -1,4 +1,4 @@
-import styled, { css, keyframes } from "styled-components";
+import styled, { css, keyframes } from "@pancakeswap/styled";
 import { FC, useEffect } from "react";
 import { Box, BoxProps } from "../Box";
 

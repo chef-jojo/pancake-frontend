@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import { Button } from '@pancakeswap/uikit'
 
 interface PercentageButtonProps {

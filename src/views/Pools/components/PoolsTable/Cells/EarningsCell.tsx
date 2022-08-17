@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import { Skeleton, Text, Flex, Box, useModal, useMatchBreakpointsContext } from '@pancakeswap/uikit'
 import { DeserializedPool } from 'state/types'
 import BigNumber from 'bignumber.js'

@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 
 export const PageButtons = styled.div`
   width: 100%;

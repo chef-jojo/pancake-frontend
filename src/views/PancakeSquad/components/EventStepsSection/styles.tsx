@@ -1,5 +1,5 @@
 import { Flex } from '@pancakeswap/uikit'
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 
 export const StyledEventStepsSectionContainer = styled(Flex)<{ $isDark: boolean }>`
   position: relative;

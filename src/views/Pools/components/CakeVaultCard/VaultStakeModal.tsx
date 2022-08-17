@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react'
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import {
   Modal,
   Text,

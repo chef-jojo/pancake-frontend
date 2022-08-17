@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled from "@pancakeswap/styled";
 import BunnyPlaceholder from "../Svg/Icons/BunnyPlaceholder";
 import BackgroundImage from "./BackgroundImage";
 import { BackgroundImageProps } from "./types";

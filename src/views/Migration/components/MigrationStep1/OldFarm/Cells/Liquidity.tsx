@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import { Flex, HelpIcon, Text, useTooltip } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import BigNumber from 'bignumber.js'

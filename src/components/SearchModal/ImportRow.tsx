@@ -7,7 +7,7 @@ import CurrencyLogo from 'components/Logo/CurrencyLogo'
 import { ListLogo } from 'components/Logo'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import { useCombinedInactiveList } from 'state/lists/hooks'
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import { useIsUserAddedToken, useIsTokenActive } from 'hooks/Tokens'
 import { useTranslation } from '@pancakeswap/localization'
 

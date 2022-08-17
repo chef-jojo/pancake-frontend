@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "@pancakeswap/styled";
 import { space } from "styled-system";
 import { RadioProps, scales } from "./types";
 
@@ -22,7 +22,7 @@ const getCheckedScale = ({ scale }: RadioProps) => {
   }
 };
 
-const Radio = styled.input.attrs({ type: "radio" })<RadioProps>`
+const Radio = styled.input<RadioProps>`
   appearance: none;
   overflow: hidden;
   cursor: pointer;
@@ -73,6 +73,7 @@ const Radio = styled.input.attrs({ type: "radio" })<RadioProps>`
 Radio.defaultProps = {
   scale: scales.MD,
   m: 0,
+  type: "radio",
 };
 
 export default Radio;

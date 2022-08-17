@@ -1,5 +1,5 @@
 import { useEffect, useState, useMemo } from 'react'
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import BigNumber from 'bignumber.js'
 import useDelayedUnmount from 'hooks/useDelayedUnmount'
 import { BalanceWithLoading } from 'components/Balance'

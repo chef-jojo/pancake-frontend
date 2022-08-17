@@ -14,7 +14,7 @@ import {
 import { useWeb3React } from '@pancakeswap/wagmi'
 import { useState } from 'react'
 import { useTranslation } from '@pancakeswap/localization'
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import { useBalance } from 'wagmi'
 import WalletInfo from './WalletInfo'
 import WalletTransactions from './WalletTransactions'

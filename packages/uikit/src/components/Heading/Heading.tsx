@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "@pancakeswap/styled";
 import Text from "../Text/Text";
 import { tags, scales, HeadingProps } from "./types";
 
@@ -21,7 +21,7 @@ const style = {
   },
 };
 
-const Heading = styled(Text).attrs({ bold: true })<HeadingProps>`
+const Heading = styled(Text)<HeadingProps>`
   font-size: ${({ scale }) => style[scale || scales.MD].fontSize};
   font-weight: 600;
   line-height: 1.1;
@@ -33,6 +33,7 @@ const Heading = styled(Text).attrs({ bold: true })<HeadingProps>`
 
 Heading.defaultProps = {
   as: tags.H2,
+  bold: true,
 };
 
 export default Heading;

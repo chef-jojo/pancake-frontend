@@ -1,23 +1,27 @@
-import { createGlobalStyle } from 'styled-components'
+import { css, Global } from '@pancakeswap/styled'
 import { PancakeTheme } from '@pancakeswap/uikit'
 
-declare module 'styled-components' {
+declare module '@pancakeswap/styled' {
   /* eslint-disable @typescript-eslint/no-empty-interface */
-  export interface DefaultTheme extends PancakeTheme {}
+  export interface Theme extends PancakeTheme {}
 }
 
-const GlobalStyle = createGlobalStyle`
-  * {
-    font-family: 'Kanit', sans-serif;
-  }
-  body {
-    background-color: ${({ theme }) => theme.colors.background};
+const GlobalStyle = () => (
+  <Global
+    styles={css`
+      * {
+        font-family: 'Kanit', sans-serif;
+      }
+      body {
+        background-color: ${({ theme }) => theme.colors.background};
 
-    img {
-      height: auto;
-      max-width: 100%;
-    }
-  }
-`
+        img {
+          height: auto;
+          max-width: 100%;
+        }
+      }
+    `}
+  />
+)
 
 export default GlobalStyle

@@ -1,6 +1,6 @@
 import { ErrorIcon, Flex, Text } from '@pancakeswap/uikit'
 import { AutoColumn } from 'components/Layout/Column'
-import styled, { css } from 'styled-components'
+import styled, { css } from '@pancakeswap/styled'
 
 export const Wrapper = styled(Flex)`
   position: relative;
@@ -60,9 +60,11 @@ export const StyledBalanceMaxMini = styled.button`
   }
 `
 
-export const TruncatedText = styled(Text).attrs({ ellipsis: true })`
+export const TruncatedText = styled(Text)`
   width: 220px;
 `
+
+TruncatedText.defaultProps = { ellipsis: true }
 
 const SwapCallbackErrorInner = styled.div`
   background-color: ${({ theme }) => `${theme.colors.failure}33`};

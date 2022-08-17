@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import { Tag, Flex, Heading, Skeleton } from '@pancakeswap/uikit'
 import { Token } from '@pancakeswap/sdk'
 import { FarmAuctionTag, CoreTag } from 'components/Tags'

@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import { ChevronRightIcon, Button as UIKitButton, AutoRenewIcon, ChevronDownIcon, Box, Flex } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 
@@ -40,7 +40,7 @@ const Button = styled(UIKitButton)`
 
 const iconAttrs = { width: '24px', color: 'textDisabled' }
 
-const ChevronRight = styled(ChevronRightIcon).attrs(iconAttrs)`
+const ChevronRight = styled(ChevronRightIcon)`
   display: none;
 
   ${({ theme }) => theme.mediaQueries.md} {
@@ -48,13 +48,17 @@ const ChevronRight = styled(ChevronRightIcon).attrs(iconAttrs)`
   }
 `
 
-const ChevronBottom = styled(ChevronDownIcon).attrs(iconAttrs)`
+ChevronRight.defaultProps = iconAttrs
+
+const ChevronBottom = styled(ChevronDownIcon)`
   display: block;
 
   ${({ theme }) => theme.mediaQueries.md} {
     display: none;
   }
 `
+
+ChevronDownIcon.defaultProps = iconAttrs
 
 const spinnerIcon = <AutoRenewIcon spin color="currentColor" />
 

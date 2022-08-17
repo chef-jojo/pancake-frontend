@@ -13,7 +13,7 @@ import {
   Box,
 } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 
 interface CheckType {
   key: string

@@ -7,7 +7,10 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   compiler: {
-    styledComponents: true,
+    emotion: {
+      autoLabel: 'always',
+      sourceMap: true,
+    },
   },
   experimental: {
     images: {

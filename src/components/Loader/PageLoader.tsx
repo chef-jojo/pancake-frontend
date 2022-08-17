@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import { Spinner } from '@pancakeswap/uikit'
 import Page from '../Layout/Page'
 

@@ -1,4 +1,4 @@
-import styled, { DefaultTheme } from "styled-components";
+import styled, { Theme } from "@pancakeswap/styled";
 import { Colors } from "../../theme";
 import { Text } from "../Text";
 import { StyledDropdownMenuItemProps } from "./types";
@@ -7,7 +7,7 @@ const getTextColor = ({
   $isActive,
   disabled,
   theme,
-}: StyledDropdownMenuItemProps & { theme: DefaultTheme; $isActive: boolean }) => {
+}: StyledDropdownMenuItemProps & { theme: Theme; $isActive: boolean }) => {
   if (disabled) return theme.colors.textDisabled;
   if ($isActive) return theme.colors.secondary;
 

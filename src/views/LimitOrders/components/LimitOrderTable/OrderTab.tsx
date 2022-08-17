@@ -1,5 +1,5 @@
 import { ButtonMenu, ButtonMenuItem } from '@pancakeswap/uikit'
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import useTheme from 'hooks/useTheme'
 import { useTranslation } from '@pancakeswap/localization'
 import { ORDER_CATEGORY } from '../../types'

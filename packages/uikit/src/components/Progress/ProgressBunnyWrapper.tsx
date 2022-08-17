@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "@pancakeswap/styled";
 
 const ProgressBunnyWrapper = styled.div`
   display: flex;

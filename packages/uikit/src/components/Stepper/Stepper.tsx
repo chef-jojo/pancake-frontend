@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled from "@pancakeswap/styled";
 import { ThemedProps } from "./types";
 
 const StepperWrapper = styled.div<ThemedProps>`

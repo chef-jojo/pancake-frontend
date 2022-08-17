@@ -1,5 +1,5 @@
 import { useCallback } from 'react'
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import { AutoRenewIcon, Button, Card, CardBody, Flex, Skeleton, Text, ArrowForwardIcon } from '@pancakeswap/uikit'
 import { NextLinkFromReactRouter } from 'components/NextLink'
 import BigNumber from 'bignumber.js'

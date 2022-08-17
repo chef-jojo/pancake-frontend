@@ -1,6 +1,6 @@
 import { AnimatePresence, domMax, LazyMotion, m } from "framer-motion";
 import React, { createContext, useEffect, useRef, useState } from "react";
-import styled from "styled-components";
+import styled from "@pancakeswap/styled";
 import { mountAnimation, unmountAnimation } from "../../components/BottomDrawer/styles";
 import { Overlay } from "../../components/Overlay";
 import {

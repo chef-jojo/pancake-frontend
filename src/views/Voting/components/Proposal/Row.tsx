@@ -1,9 +1,11 @@
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import { Grid, Box } from '@pancakeswap/uikit'
 
-export const AddressColumn = styled(Box).attrs({ alignItems: 'center' })`
+export const AddressColumn = styled(Box)`
   grid-area: address;
 `
+
+AddressColumn.defaultProps = { alignItems: 'center' }
 
 export const ChoiceColumn = styled(Box)`
   grid-area: choice;

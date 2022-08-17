@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react'
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import { AutoRenewIcon, Button, Card, CardBody, Heading, Skeleton, Text } from '@pancakeswap/uikit'
 import { useWeb3React } from '@pancakeswap/wagmi'
 import { NextLinkFromReactRouter } from 'components/NextLink'

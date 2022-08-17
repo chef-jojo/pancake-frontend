@@ -1,5 +1,5 @@
 import React, { forwardRef } from "react";
-import styled from "styled-components";
+import styled from "@pancakeswap/styled";
 import { space } from "styled-system";
 import { WrapperProps } from "./types";
 

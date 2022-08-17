@@ -1,6 +1,6 @@
 import { InjectedModalProps, Modal, Flex, Text, Button, useModal, Link, Grid, LinkExternal } from '@pancakeswap/uikit'
 import useTheme from 'hooks/useTheme'
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import { NftToken } from 'state/nftMarket/types'
 import { useTranslation } from '@pancakeswap/localization'
 import { getBscScanLinkForNft } from 'utils'

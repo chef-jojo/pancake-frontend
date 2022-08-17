@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import PageSection from 'components/PageSection'
 import { useWeb3React } from '@pancakeswap/wagmi'
 import useTheme from 'hooks/useTheme'

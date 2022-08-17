@@ -1,5 +1,5 @@
 import { useEffect, useState, createElement, useRef } from 'react'
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import { Box, Flex, useMatchBreakpointsContext } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import useDelayedUnmount from 'hooks/useDelayedUnmount'

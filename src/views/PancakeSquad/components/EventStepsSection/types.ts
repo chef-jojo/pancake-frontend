@@ -1,6 +1,6 @@
 import { BigNumber } from '@ethersproject/bignumber'
 import { ContextApi } from '@pancakeswap/localization'
-import { DefaultTheme } from 'styled-components'
+import { Theme } from '@pancakeswap/styled'
 import { UserInfos, EventInfos, UserStatusEnum } from 'views/PancakeSquad/types'
 
 export type EventStepsProps = {
@@ -11,7 +11,7 @@ export type EventStepsProps = {
   account: string
 }
 
-export type EventStepsType = { t: ContextApi['t']; theme: DefaultTheme; cakeBalance: BigNumber } & Pick<
+export type EventStepsType = { t: ContextApi['t']; theme: Theme; cakeBalance: BigNumber } & Pick<
   EventStepsProps,
   'eventInfos' | 'userInfos' | 'userStatus' | 'account'
 >

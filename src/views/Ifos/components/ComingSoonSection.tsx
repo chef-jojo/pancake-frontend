@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import { Card, Text, BunnyPlaceholderIcon, Box } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import { PoolIds } from 'config/constants/types'
 
 import { CardsWrapper } from './IfoCardStyles'

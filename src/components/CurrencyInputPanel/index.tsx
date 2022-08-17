@@ -1,6 +1,6 @@
 import { Currency, Pair } from '@pancakeswap/sdk'
 import { Button, ChevronDownIcon, Text, useModal, Flex, Box } from '@pancakeswap/uikit'
-import styled, { css } from 'styled-components'
+import styled, { css } from '@pancakeswap/styled'
 import { isAddress } from 'utils'
 import { useTranslation } from '@pancakeswap/localization'
 import { WrappedTokenInfo } from 'state/types'
@@ -22,7 +22,7 @@ const InputRow = styled.div<{ selected: boolean }>`
   justify-content: flex-end;
   padding: ${({ selected }) => (selected ? '0.75rem 0.5rem 0.75rem 1rem' : '0.75rem 0.75rem 0.75rem 1rem')};
 `
-const CurrencySelectButton = styled(Button).attrs({ variant: 'text', scale: 'sm' })<{ zapStyle?: ZapStyle }>`
+const CurrencySelectButton = styled(Button)<{ zapStyle?: ZapStyle }>`
   padding: 0 0.5rem;
 
   ${({ zapStyle, theme }) =>
@@ -35,6 +35,8 @@ const CurrencySelectButton = styled(Button).attrs({ variant: 'text', scale: 'sm'
       height: auto;
     `};
 `
+CurrencySelectButton.defaultProps = { variant: 'text', scale: 'sm' }
+
 const LabelRow = styled.div`
   display: flex;
   flex-flow: row nowrap;

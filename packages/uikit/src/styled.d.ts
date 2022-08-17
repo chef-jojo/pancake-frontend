@@ -1,7 +1,7 @@
-import "styled-components";
+import "@pancakeswap/styled";
 import { PancakeTheme } from "./theme";
 
-declare module "styled-components" {
+declare module "@pancakeswap/styled" {
   /* eslint-disable @typescript-eslint/no-empty-interface */
-  export interface DefaultTheme extends PancakeTheme {}
+  export interface Theme extends PancakeTheme {}
 }

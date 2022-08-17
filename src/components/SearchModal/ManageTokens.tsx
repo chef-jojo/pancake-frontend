@@ -1,7 +1,7 @@
 import { useRef, RefObject, useCallback, useState, useMemo } from 'react'
 import { Token } from '@pancakeswap/sdk'
 import { Text, Button, CloseIcon, IconButton, LinkExternal, Input, Link } from '@pancakeswap/uikit'
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import Row, { RowBetween, RowFixed } from 'components/Layout/Row'
 import { useToken } from 'hooks/Tokens'
 import { useRemoveUserAddedToken } from 'state/user/hooks'

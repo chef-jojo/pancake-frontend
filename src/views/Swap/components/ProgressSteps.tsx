@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import { RowBetween } from 'components/Layout/Row'
 import { AutoColumn } from 'components/Layout/Column'
 

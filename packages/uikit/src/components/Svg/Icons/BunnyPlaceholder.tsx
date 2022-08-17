@@ -1,5 +1,5 @@
 import React from "react";
-import { useTheme } from "styled-components";
+import { useTheme } from "@pancakeswap/styled";
 import Svg from "../Svg";
 import { SvgProps } from "../types";
 

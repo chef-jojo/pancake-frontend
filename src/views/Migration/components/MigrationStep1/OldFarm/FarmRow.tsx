@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import useDelayedUnmount from 'hooks/useDelayedUnmount'
 import ExpandActionCell from 'views/Migration/components/MigrationStep1/OldPool/Cells/ExpandActionCell'
 import { useFarmUser } from 'state/farmsV1/hooks'

@@ -1,5 +1,5 @@
 import { useCallback, useState, useMemo, useEffect, Fragment } from 'react'
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import { NextLinkFromReactRouter } from 'components/NextLink'
 import { Text, Flex, Box, Skeleton, ArrowBackIcon, ArrowForwardIcon } from '@pancakeswap/uikit'
 import { formatAmount } from 'utils/formatInfoNumbers'

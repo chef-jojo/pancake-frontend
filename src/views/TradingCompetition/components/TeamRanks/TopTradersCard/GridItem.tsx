@@ -1,6 +1,6 @@
 import { Flex, Heading, Text, SkeletonV2, ProfileAvatar } from '@pancakeswap/uikit'
 import { useProfileForAddress } from 'state/profile/hooks'
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import truncateHash from 'utils/truncateHash'
 import { localiseTradingVolume } from '../../../helpers'
 import { LeaderboardDataItem } from '../../../types'

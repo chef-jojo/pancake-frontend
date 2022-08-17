@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import useHttpLocations from '../../hooks/useHttpLocations'
 import Logo from './Logo'
 

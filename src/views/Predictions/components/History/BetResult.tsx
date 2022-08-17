@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import { useWeb3React } from '@pancakeswap/wagmi'
 import { Box, Flex, Heading, Text, PrizeIcon, BlockIcon, LinkExternal, useTooltip, InfoIcon } from '@pancakeswap/uikit'
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import useLocalDispatch from 'contexts/LocalRedux/useLocalDispatch'
 import { useTranslation } from '@pancakeswap/localization'
 import { REWARD_RATE } from 'state/predictions/config'

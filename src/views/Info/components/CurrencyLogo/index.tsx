@@ -1,5 +1,5 @@
 import { useMemo } from 'react'
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import { isAddress } from 'utils'
 import LogoLoader from './LogoLoader'
 

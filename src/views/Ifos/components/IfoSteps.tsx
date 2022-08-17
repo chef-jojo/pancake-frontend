@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import every from 'lodash/every'
 import {
   Stepper,

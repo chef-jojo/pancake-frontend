@@ -1,5 +1,5 @@
 import { Skeleton, Text, Flex, Button, CalculateIcon, useModal, useMatchBreakpointsContext } from '@pancakeswap/uikit'
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import Balance from 'components/Balance'
 import { FlexGap } from 'components/Layout/Flex'
 import { useTranslation } from '@pancakeswap/localization'

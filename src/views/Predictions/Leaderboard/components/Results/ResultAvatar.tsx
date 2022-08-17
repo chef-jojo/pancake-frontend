@@ -1,5 +1,5 @@
 import { Box, Flex, FlexProps, Link, ProfileAvatar, SubMenu, SubMenuItem, useModal, Text } from '@pancakeswap/uikit'
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import { getBlockExploreLink } from 'utils'
 import { PredictionUser } from 'state/types'
 import { useProfileForAddress } from 'state/profile/hooks'

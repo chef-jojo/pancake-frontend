@@ -2,14 +2,14 @@ import { PancakeTheme, ResetCSS, dark, light, ModalProvider } from '@pancakeswap
 import { useEffect, useState } from 'react'
 import { AppProps } from 'next/app'
 import Script from 'next/script'
-import { createGlobalStyle, ThemeProvider } from 'styled-components'
+import { Global, ThemeProvider, css } from '@pancakeswap/styled'
 import { ThemeProvider as NextThemeProvider, useTheme as useNextTheme } from 'next-themes'
 import Head from 'next/head'
 import { Menu } from '../components/Menu'
 
-declare module 'styled-components' {
+declare module '@pancakeswap/styled' {
   /* eslint-disable @typescript-eslint/no-empty-interface */
-  export interface DefaultTheme extends PancakeTheme {}
+  export interface Theme extends PancakeTheme {}
 }
 
 const StyledThemeProvider: React.FC<React.PropsWithChildren> = (props) => {
@@ -21,26 +21,32 @@ const StyledThemeProvider: React.FC<React.PropsWithChildren> = (props) => {
   )
 }
 
-const GlobalStyle = createGlobalStyle`
-  * {
-    font-family: 'Kanit', sans-serif;
-  }
-  html, body, #__next {
-    height: 100%;
-  }
-  #__next {
-    display: flex;
-    flex-direction: column;
-  }
-  body {
-    background-color: ${({ theme }) => theme.colors.background};
+const GlobalStyle = () => (
+  <Global
+    styles={css`
+      * {
+        font-family: 'Kanit', sans-serif;
+      }
+      html,
+      body,
+      #__next {
+        height: 100%;
+      }
+      #__next {
+        display: flex;
+        flex-direction: column;
+      }
+      body {
+        background-color: ${({ theme }) => theme.colors.background};
 
-    img {
-      height: auto;
-      max-width: 100%;
-    }
-  }
-`
+        img {
+          height: auto;
+          max-width: 100%;
+        }
+      }
+    `}
+  />
+)
 
 function useIsMounted() {
   const [isMounted, setIsMounted] = useState(false)

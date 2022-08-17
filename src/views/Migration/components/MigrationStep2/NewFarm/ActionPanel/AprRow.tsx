@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import { Flex, Text } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import Apr, { AprProps } from 'views/Farms/components/FarmTable/Apr'

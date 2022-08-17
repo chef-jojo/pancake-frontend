@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useTranslation } from '@pancakeswap/localization'
 import { NextLinkFromReactRouter } from 'components/NextLink'
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import { Flex } from '@pancakeswap/uikit'
 import { useRouter } from 'next/router'
 

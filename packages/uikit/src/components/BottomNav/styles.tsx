@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "@pancakeswap/styled";
 import { Flex } from "../Box";
 
 const StyledBottomNav = styled(Flex)`

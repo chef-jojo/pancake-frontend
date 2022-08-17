@@ -1,11 +1,11 @@
-import styled, { DefaultTheme } from "styled-components";
+import styled, { Theme } from "@pancakeswap/styled";
 import { space, variant, typography } from "styled-system";
 import { Colors } from "../../theme/types";
 import { scaleVariants, styleVariants } from "./theme";
 import { TagProps, variants } from "./types";
 
 interface ThemedProps extends TagProps {
-  theme: DefaultTheme;
+  theme: Theme;
 }
 
 const getOutlineStyles = ({ outline, theme, variant: variantKey = variants.PRIMARY }: ThemedProps) => {

@@ -1,6 +1,6 @@
 import BigNumber from 'bignumber.js'
 
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import { Flex, Text, Box } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import { DeserializedPool } from 'state/types'

@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 
 const StyledBannerImageWrapper = styled.div`
   ${({ theme }) => `background-color: ${theme.colors.cardBorder}`};

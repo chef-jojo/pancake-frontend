@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "@pancakeswap/styled";
 import { space, variant as StyledSystemVariant } from "styled-system";
 import { lightColors } from "../../theme";
 import { styleVariants, styleScales } from "./themes";

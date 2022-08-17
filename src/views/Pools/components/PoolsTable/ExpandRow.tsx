@@ -1,5 +1,5 @@
 import { useState, memo, ReactNode, useCallback, useEffect, useRef } from 'react'
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import useDelayedUnmount from 'hooks/useDelayedUnmount'
 import { useMatchBreakpointsContext } from '@pancakeswap/uikit'
 

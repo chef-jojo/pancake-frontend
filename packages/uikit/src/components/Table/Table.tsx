@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "@pancakeswap/styled";
 import { space } from "styled-system";
 import { Td } from "./Cell";
 

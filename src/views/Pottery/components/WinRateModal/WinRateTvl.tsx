@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import Trans from 'components/Trans'
 import { useTranslation } from '@pancakeswap/localization'
 import { Text, Button, Flex, Box } from '@pancakeswap/uikit'

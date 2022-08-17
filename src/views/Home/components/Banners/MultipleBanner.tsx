@@ -1,7 +1,7 @@
 import { appearAnimation, useMatchBreakpointsContext } from '@pancakeswap/uikit'
 import { useWeb3React } from '@pancakeswap/wagmi'
 import { useLayoutEffect, useState } from 'react'
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import SwiperCore, { Autoplay, EffectFade, Pagination } from 'swiper'
 import 'swiper/css'
 import 'swiper/css/effect-fade'

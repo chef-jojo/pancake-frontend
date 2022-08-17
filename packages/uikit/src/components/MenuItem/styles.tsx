@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "@pancakeswap/styled";
 import { StyledMenuItemProps } from "./types";
 
 export const StyledMenuItemContainer = styled.div<StyledMenuItemProps>`

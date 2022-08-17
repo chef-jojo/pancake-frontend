@@ -1,9 +1,9 @@
 import React from "react";
-import styled, { DefaultTheme } from "styled-components";
+import styled, { Theme } from "@pancakeswap/styled";
 import { CardRibbonProps } from "./types";
 
 interface StyledCardRibbonProps extends CardRibbonProps {
-  theme: DefaultTheme;
+  theme: Theme;
 }
 
 const StyledCardRibbon = styled.div<Partial<StyledCardRibbonProps>>`

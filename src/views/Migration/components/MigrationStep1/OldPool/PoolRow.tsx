@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import useDelayedUnmount from 'hooks/useDelayedUnmount'
 import { DeserializedPool, VaultKey } from 'state/types'
 import { useVaultPoolByKeyV1 } from 'views/Migration/hook/V1/Pool/useFetchIfoPool'

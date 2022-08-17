@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components'
+import styled, { keyframes } from '@pancakeswap/styled'
 
 const rotate = keyframes`
   from {

@@ -1,4 +1,4 @@
-import { useTheme } from 'styled-components'
+import { useTheme } from '@pancakeswap/styled'
 import { Svg, SvgProps } from '@pancakeswap/uikit'
 
 interface MultiplierProps extends SvgProps {

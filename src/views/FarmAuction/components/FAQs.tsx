@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import { Text, Heading, Card, CardHeader, CardBody, Flex, Link, Box } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import FoldableText from 'components/FoldableSection/FoldableText'

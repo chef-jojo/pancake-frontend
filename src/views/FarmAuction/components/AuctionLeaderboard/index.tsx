@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import { Text, Card, Flex, Box, Spinner } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import { Auction, AuctionStatus, Bidder } from 'config/constants/types'

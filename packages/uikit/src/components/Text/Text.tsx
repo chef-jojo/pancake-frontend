@@ -1,10 +1,10 @@
-import styled, { DefaultTheme } from "styled-components";
+import styled, { Theme } from "@pancakeswap/styled";
 import { space, typography, layout } from "styled-system";
 import getThemeValue from "../../util/getThemeValue";
 import { TextProps } from "./types";
 
 interface ThemedProps extends TextProps {
-  theme: DefaultTheme;
+  theme: Theme;
 }
 
 const getColor = ({ color, theme }: ThemedProps) => {

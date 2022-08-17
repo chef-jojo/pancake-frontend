@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 
 interface AvatarImageProps {
   src: string
@@ -6,9 +6,7 @@ interface AvatarImageProps {
   alt?: string
 }
 
-const AvatarImage = styled.div.attrs<AvatarImageProps>(({ alt }) => ({
-  alt,
-}))<AvatarImageProps>`
+const AvatarImage = styled.div<AvatarImageProps>`
   background: url('${({ src }) => src}');
   background-repeat: no-repeat;
   background-size: cover;

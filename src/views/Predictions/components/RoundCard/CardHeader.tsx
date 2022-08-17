@@ -1,6 +1,6 @@
 import { ReactElement } from 'react'
 import { Flex, Text } from '@pancakeswap/uikit'
-import styled, { DefaultTheme } from 'styled-components'
+import styled, { Theme } from '@pancakeswap/styled'
 
 type Status = 'expired' | 'live' | 'next' | 'soon' | 'canceled' | 'calculating'
 
@@ -16,7 +16,7 @@ const HEADER_HEIGHT = '37px'
 // Used to get the gradient for the card border, which depends on the header color to create the illusion
 // that header is overlapping the 1px card border.
 // 'live' is not included into the switch case because it has isActive border style
-export const getBorderBackground = (theme: DefaultTheme, status: Status) => {
+export const getBorderBackground = (theme: Theme, status: Status) => {
   const gradientStopPoint = `calc(${HEADER_HEIGHT} + 1px)`
   switch (status) {
     case 'calculating':
@@ -32,7 +32,7 @@ export const getBorderBackground = (theme: DefaultTheme, status: Status) => {
   }
 }
 
-const getBackgroundColor = (theme: DefaultTheme, status: Status) => {
+const getBackgroundColor = (theme: Theme, status: Status) => {
   switch (status) {
     case 'calculating':
       return theme.colors.gradients.cardHeader

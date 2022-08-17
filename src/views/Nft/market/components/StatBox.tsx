@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import { Box, BoxProps, Flex, Skeleton, Text } from '@pancakeswap/uikit'
 
 export interface StatBoxItemProps extends BoxProps {

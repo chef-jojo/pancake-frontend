@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import { Skeleton, Text, useTooltip, HelpIcon, Flex, Box, useMatchBreakpointsContext } from '@pancakeswap/uikit'
 import { DeserializedPool, VaultKey, DeserializedPoolLockedVault } from 'state/types'
 import Balance from 'components/Balance'

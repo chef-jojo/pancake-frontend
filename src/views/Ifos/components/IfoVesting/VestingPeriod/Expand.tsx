@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import styled, { keyframes, css } from 'styled-components'
+import styled, { keyframes, css } from '@pancakeswap/styled'
 import { useTranslation } from '@pancakeswap/localization'
 import { Box, Text } from '@pancakeswap/uikit'
 import { VestingData } from 'views/Ifos/hooks/vesting/fetchUserWalletIfoData'

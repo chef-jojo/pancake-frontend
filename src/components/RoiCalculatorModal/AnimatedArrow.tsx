@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Flex, ArrowDownIcon, ArrowUpIcon } from '@pancakeswap/uikit'
-import styled, { keyframes } from 'styled-components'
+import styled, { keyframes } from '@pancakeswap/styled'
 import { CalculatorMode, RoiCalculatorReducerState } from './useRoiCalculatorReducer'
 
 const rotate = keyframes`

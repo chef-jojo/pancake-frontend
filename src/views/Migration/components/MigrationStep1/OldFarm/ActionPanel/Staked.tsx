@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react'
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import { useTranslation } from '@pancakeswap/localization'
 import { Heading, Text } from '@pancakeswap/uikit'
 import Balance from 'components/Balance'

@@ -1,6 +1,6 @@
 import throttle from "lodash/throttle";
 import React, { useEffect, useRef, useState } from "react";
-import styled from "styled-components";
+import styled from "@pancakeswap/styled";
 import BottomNav from "../../components/BottomNav";
 import { Box } from "../../components/Box";
 import Flex from "../../components/Box/Flex";

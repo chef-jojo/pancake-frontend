@@ -6,7 +6,7 @@ import Balance from 'components/Balance'
 import { memo } from 'react'
 import { FlexGap } from 'components/Layout/Flex'
 import { DeserializedPool, VaultKey } from 'state/types'
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import { VaultRoiCalculatorModal } from '../Vault/VaultRoiCalculatorModal'
 
 const AprLabelContainer = styled(Flex)`

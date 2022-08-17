@@ -1,8 +1,8 @@
-import styled, { DefaultTheme } from "styled-components";
+import styled, { Theme } from "@pancakeswap/styled";
 import { InputProps, scales } from "./types";
 
 interface StyledInputProps extends InputProps {
-  theme: DefaultTheme;
+  theme: Theme;
 }
 
 /**

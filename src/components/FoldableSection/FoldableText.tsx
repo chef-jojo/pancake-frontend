@@ -1,5 +1,5 @@
 import { useState, ReactNode } from 'react'
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import { ExpandableLabel, Flex, FlexProps, Text } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 

@@ -9,7 +9,7 @@ import useApproveConfirmTransaction from 'hooks/useApproveConfirmTransaction'
 import { useCallWithGasPrice } from 'hooks/useCallWithGasPrice'
 import { useCake, useNftSaleContract } from 'hooks/useContract'
 import useToast from 'hooks/useToast'
-import { DefaultTheme } from 'styled-components'
+import { Theme } from '@pancakeswap/styled'
 import { requiresApproval } from 'utils/requiresApproval'
 import { PancakeSquadContext } from 'views/PancakeSquad/context'
 import { SaleStatusEnum, UserStatusEnum } from '../../types'
@@ -24,7 +24,7 @@ type BuyTicketsProps = {
   account: string
   saleStatus: SaleStatusEnum
   userStatus: UserStatusEnum
-  theme: DefaultTheme
+  theme: Theme
   canClaimForGen0: boolean
   maxPerAddress: number
   maxPerTransaction: number

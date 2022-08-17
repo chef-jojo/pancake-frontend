@@ -1,7 +1,7 @@
 import Script from 'next/script'
 import { useEffect, useState } from 'react'
 import Image from 'next/future/image'
-import styled, { useTheme } from 'styled-components'
+import styled, { useTheme } from '@pancakeswap/styled'
 import { Flex, Text, Box } from '@pancakeswap/uikit'
 import { STARGATE_JS } from '../components/stargate/config'
 import { StargateWidget } from '../components/stargate'

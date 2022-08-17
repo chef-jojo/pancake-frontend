@@ -1,6 +1,6 @@
 import React from 'react'
 import { DeserializedPool } from 'state/types'
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import { useTranslation } from '@pancakeswap/localization'
 import { Flex, Text } from '@pancakeswap/uikit'
 import { ActionContainer, ActionContent, ActionTitles } from 'views/Pools/components/PoolsTable/ActionPanel/styles'

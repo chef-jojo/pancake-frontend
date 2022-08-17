@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import { Card, Radio } from '@pancakeswap/uikit'
 
 interface SelectionCardProps {

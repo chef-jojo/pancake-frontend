@@ -12,7 +12,7 @@ import {
   WaitIcon,
 } from '@pancakeswap/uikit'
 import { useWeb3React } from '@pancakeswap/wagmi'
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import useLocalDispatch from 'contexts/LocalRedux/useLocalDispatch'
 import { Bet, PredictionStatus } from 'state/types'
 import { REWARD_RATE } from 'state/predictions/config'
@@ -29,11 +29,13 @@ interface BetProps {
   bet: Bet
 }
 
-const StyledBet = styled(Flex).attrs({ alignItems: 'center', p: '16px' })`
+const StyledBet = styled(Flex)`
   background-color: ${({ theme }) => theme.card.background};
   border-bottom: 2px solid ${({ theme }) => theme.colors.cardBorder};
   cursor: pointer;
 `
+
+StyledBet.defaultProps = { alignItems: 'center', p: '16px' }
 
 const YourResult = styled(Box)`
   flex: 1;

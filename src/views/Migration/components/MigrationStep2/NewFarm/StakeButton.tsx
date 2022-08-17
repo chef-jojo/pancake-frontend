@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react'
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import { useWeb3React } from '@pancakeswap/wagmi'
 import { useTranslation } from '@pancakeswap/localization'
 import { Button, useModal, IconButton, AddIcon, MinusIcon, useMatchBreakpointsContext } from '@pancakeswap/uikit'

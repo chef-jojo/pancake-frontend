@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import UnstakeButton from '../UnstakeButton'
 
 const Container = styled.div`

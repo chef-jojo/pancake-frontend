@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import { Flex, Box, Text } from '@pancakeswap/uikit'
 import { TeamLeaderboardProps } from '../../../types'
 

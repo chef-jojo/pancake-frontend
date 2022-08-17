@@ -1,7 +1,7 @@
 import { Heading } from '@pancakeswap/uikit'
-import styled, { DefaultTheme } from 'styled-components'
+import styled, { Theme } from '@pancakeswap/styled'
 
-const H1SizeStyles = (theme: DefaultTheme) => `
+const H1SizeStyles = (theme: Theme) => `
   font-size: 48px;
   white-space: nowrap;
 
@@ -10,7 +10,7 @@ const H1SizeStyles = (theme: DefaultTheme) => `
   }
 `
 
-const H2SizeStyles = (theme: DefaultTheme) => `
+const H2SizeStyles = (theme: Theme) => `
   font-size: 32px;
   white-space: nowrap;
 

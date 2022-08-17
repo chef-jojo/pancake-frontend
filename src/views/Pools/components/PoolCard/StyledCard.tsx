@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import { Card } from '@pancakeswap/uikit'
 
 export const StyledCard = styled(Card)<{ isFinished?: boolean }>`

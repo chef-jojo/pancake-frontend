@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "@pancakeswap/styled";
 
 const StyledTh = styled.th`
   background: #eff4f5;

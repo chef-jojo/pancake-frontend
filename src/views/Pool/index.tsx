@@ -1,5 +1,5 @@
 import { useMemo } from 'react'
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import { Text, Flex, CardBody, CardFooter, Button, AddIcon } from '@pancakeswap/uikit'
 import Link from 'next/link'
 import { useWeb3React } from '@pancakeswap/wagmi'

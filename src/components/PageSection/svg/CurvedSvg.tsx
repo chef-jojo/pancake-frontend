@@ -1,4 +1,4 @@
-import styled, { css, DefaultTheme } from 'styled-components'
+import styled, { css, Theme } from '@pancakeswap/styled'
 import { Box } from '@pancakeswap/uikit'
 import { ClipFill } from '../types'
 
@@ -10,7 +10,7 @@ interface ContainerProps extends CurveProps {
   clipPath: string
 }
 
-const sharedStyles = (theme: DefaultTheme, clipPath: string, clipFill?: ClipFill) => css`
+const sharedStyles = (theme: Theme, clipPath: string, clipFill?: ClipFill) => css`
   width: 100%;
   height: 20px;
   clip-path: url(${clipPath});

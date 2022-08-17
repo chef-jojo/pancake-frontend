@@ -1,13 +1,13 @@
-import { DefaultTheme } from "styled-components";
+import { Theme } from "@pancakeswap/styled";
 
 export interface ThemedProps {
-  theme: DefaultTheme;
+  theme: Theme;
 }
 
 export type Status = "past" | "current" | "future";
 
 export interface StatusProps extends ThemedProps {
-  theme: DefaultTheme;
+  theme: Theme;
   status?: Status;
   $isFirstStep?: boolean;
   $isLastStep?: boolean;

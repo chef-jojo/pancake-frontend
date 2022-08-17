@@ -2,7 +2,7 @@ import { Box, FlexProps, useMatchBreakpointsContext } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import Script from 'next/script'
 import { useEffect } from 'react'
-import { DefaultTheme, useTheme } from 'styled-components'
+import { Theme, useTheme } from '@pancakeswap/styled'
 import { ChartByLabel } from './Chart/ChartbyLabel'
 
 /**
@@ -20,7 +20,7 @@ const tradingViewListener = async () =>
     }),
   )
 
-const initializeTradingView = (TradingViewObj: any, theme: DefaultTheme, localeCode: string, opts: any) => {
+const initializeTradingView = (TradingViewObj: any, theme: Theme, localeCode: string, opts: any) => {
   let timezone = 'Etc/UTC'
   try {
     timezone = Intl.DateTimeFormat().resolvedOptions().timeZone

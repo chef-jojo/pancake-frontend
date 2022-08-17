@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styled from "styled-components";
+import styled from "@pancakeswap/styled";
 import Text from "../../components/Text/Text";
 import { CopyIcon } from "../../components/Svg";
 
@@ -7,12 +7,16 @@ interface Props {
   toCopy: string;
 }
 
-const StyleButton = styled(Text).attrs({ role: "button" })`
+const StyleButton = styled(Text)`
   position: relative;
   display: flex;
   align-items: center;
   color: ${({ theme }) => theme.colors.primary};
 `;
+
+StyleButton.defaultProps = {
+  role: "button",
+};
 
 const Tooltip = styled.div<{ isTooltipDisplayed: boolean }>`
   display: ${({ isTooltipDisplayed }) => (isTooltipDisplayed ? "block" : "none")};

@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo, ReactNode } from 'react'
 import shuffle from 'lodash/shuffle'
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 // eslint-disable-next-line import/no-unresolved
 import { Swiper, SwiperSlide } from 'swiper/react'
 // eslint-disable-next-line import/no-unresolved

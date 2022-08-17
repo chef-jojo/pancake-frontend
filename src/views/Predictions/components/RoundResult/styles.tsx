@@ -1,5 +1,5 @@
 import { useMemo } from 'react'
-import styled, { DefaultTheme } from 'styled-components'
+import styled, { Theme } from '@pancakeswap/styled'
 import { BigNumber } from '@ethersproject/bignumber'
 import { Box, Flex, FlexProps, Skeleton, Text } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
@@ -105,7 +105,7 @@ const getBackgroundColor = ({
   isNext,
   isLive,
   hasEntered,
-}: RoundResultBoxProps & { theme: DefaultTheme }) => {
+}: RoundResultBoxProps & { theme: Theme }) => {
   if (isNext) {
     return 'linear-gradient(180deg, #53DEE9 0%, #7645D9 100%)'
   }

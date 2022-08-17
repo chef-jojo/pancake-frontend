@@ -2,7 +2,7 @@ import { Button, Flex, Box, Modal, Text, ChevronRightIcon, InjectedModalProps, T
 import { useTranslation } from '@pancakeswap/localization'
 import useTheme from 'hooks/useTheme'
 import { memo, useCallback, useState } from 'react'
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import { FormattedOrderData } from 'views/LimitOrders/hooks/useFormattedOrderData'
 import useGelatoLimitOrdersHandlers from 'hooks/limitOrders/useGelatoLimitOrdersHandlers'
 import { Order } from '@gelatonetwork/limit-orders-lib'

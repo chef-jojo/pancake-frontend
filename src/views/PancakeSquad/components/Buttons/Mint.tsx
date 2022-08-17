@@ -7,13 +7,13 @@ import { useCallWithGasPrice } from 'hooks/useCallWithGasPrice'
 import { useNftSaleContract } from 'hooks/useContract'
 import useToast from 'hooks/useToast'
 import useCatchTxError from 'hooks/useCatchTxError'
-import { DefaultTheme } from 'styled-components'
+import { Theme } from '@pancakeswap/styled'
 import { SaleStatusEnum } from '../../types'
 import ConfirmModal from '../Modals/Confirm'
 
 type PreEventProps = {
   t: ContextApi['t']
-  theme: DefaultTheme
+  theme: Theme
   saleStatus: SaleStatusEnum
   numberTicketsOfUser: number
   numberTokensOfUser: number

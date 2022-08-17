@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "@pancakeswap/styled";
 import { space, SpaceProps } from "styled-system";
 import { CardTheme } from "./types";
 

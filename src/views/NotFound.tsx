@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import { Button, Heading, Text, LogoIcon } from '@pancakeswap/uikit'
 import Page from 'components/Layout/Page'
 import { useTranslation } from '@pancakeswap/localization'

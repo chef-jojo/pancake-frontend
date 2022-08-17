@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "@pancakeswap/styled";
 
 const Placeholder = styled.div`
   height: 100%;

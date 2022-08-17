@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react'
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import { useWeb3React } from '@pancakeswap/wagmi'
 import BigNumber from 'bignumber.js'
 import { MaxUint256 } from '@ethersproject/constants'

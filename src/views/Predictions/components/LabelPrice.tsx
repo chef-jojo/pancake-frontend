@@ -2,7 +2,7 @@ import { useMemo, memo } from 'react'
 import CountUp from 'react-countup'
 import { Text } from '@pancakeswap/uikit'
 import { formatBigNumberToFixed } from 'utils/formatBalance'
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import { BigNumber } from '@ethersproject/bignumber'
 
 const Price = styled(Text)`

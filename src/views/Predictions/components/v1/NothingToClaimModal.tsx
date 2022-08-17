@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useWeb3React } from '@pancakeswap/wagmi'
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import {
   ModalContainer,
   ModalBody,

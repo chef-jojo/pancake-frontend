@@ -15,7 +15,7 @@ import {
 } from '@pancakeswap/uikit'
 import { PredictionUser } from 'state/types'
 import { useProfileForAddress } from 'state/profile/hooks'
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import { getBlockExploreLink } from 'utils'
 import truncateHash from 'utils/truncateHash'
 import { useTranslation } from '@pancakeswap/localization'

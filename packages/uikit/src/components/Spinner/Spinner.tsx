@@ -1,5 +1,5 @@
 import React from "react";
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes } from "@pancakeswap/styled";
 import PanIcon from "./PanIcon";
 import PancakeIcon from "./PancakeIcon";
 import { SpinnerProps } from "./types";

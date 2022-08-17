@@ -1,5 +1,5 @@
 import React from "react";
-import styled, { DefaultTheme } from "styled-components";
+import styled, { Theme } from "@pancakeswap/styled";
 import CheckmarkCircleIcon from "../Svg/Icons/CheckmarkCircle";
 import ErrorIcon from "../Svg/Icons/Error";
 import BlockIcon from "../Svg/Icons/Block";
@@ -12,7 +12,7 @@ import { AlertProps, variants } from "./types";
 
 interface ThemedIconLabel {
   variant: AlertProps["variant"];
-  theme: DefaultTheme;
+  theme: Theme;
   hasDescription: boolean;
 }
 

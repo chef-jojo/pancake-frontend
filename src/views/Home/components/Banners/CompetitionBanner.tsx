@@ -3,7 +3,7 @@ import { NextLinkFromReactRouter } from 'components/NextLink'
 import { useTranslation } from '@pancakeswap/localization'
 import Image from 'next/image'
 import { memo } from 'react'
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import { modImage, modMobileImage, modWhiteLogo } from './images'
 import * as S from './Styled'
 

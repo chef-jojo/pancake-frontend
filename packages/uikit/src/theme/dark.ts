@@ -1,4 +1,4 @@
-import { DefaultTheme } from "styled-components";
+import { Theme } from "@pancakeswap/styled";
 import { dark as darkAlert } from "../components/Alert/theme";
 import { dark as darkCard } from "../components/Card/theme";
 import { dark as darkPancakeToggle } from "../components/PancakeToggle/theme";
@@ -10,7 +10,7 @@ import { dark as darkTooltip } from "../components/Tooltip/theme";
 import base from "./base";
 import { darkColors } from "./colors";
 
-const darkTheme: DefaultTheme = {
+const darkTheme: Theme = {
   ...base,
   isDark: true,
   alert: darkAlert,

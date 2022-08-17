@@ -1,6 +1,6 @@
 import React from "react";
 import { isDesktop } from "react-device-detect";
-import styled from "styled-components";
+import styled from "@pancakeswap/styled";
 import Button from "../../components/Button/Button";
 import Text from "../../components/Text/Text";
 import MoreHorizontal from "../../components/Svg/Icons/MoreHorizontal";
@@ -14,7 +14,7 @@ interface Props {
   onDismiss: () => void;
 }
 
-const WalletButton = styled(Button).attrs({ width: "100%", variant: "text", py: "16px" })`
+const WalletButton = styled(Button)`
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -23,6 +23,12 @@ const WalletButton = styled(Button).attrs({ width: "100%", variant: "text", py: 
   margin-left: auto;
   margin-right: auto;
 `;
+
+WalletButton.defaultProps = {
+  width: "100%",
+  variant: "text",
+  py: "16px",
+};
 
 interface MoreWalletCardProps extends ButtonProps {
   t: (key: string) => string;

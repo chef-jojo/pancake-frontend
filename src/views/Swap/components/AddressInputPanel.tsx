@@ -1,5 +1,5 @@
 import { useCallback } from 'react'
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import { Text, Link } from '@pancakeswap/uikit'
 import { isAddress } from 'utils'
 import { useTranslation } from '@pancakeswap/localization'

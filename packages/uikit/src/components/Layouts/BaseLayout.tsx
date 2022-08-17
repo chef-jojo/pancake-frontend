@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "@pancakeswap/styled";
 import Grid from "../Box/Grid";
 
 const GridLayout = styled(Grid)`

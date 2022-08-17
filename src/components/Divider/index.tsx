@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 
 const Divider = styled.hr`
   border: 1px solid ${({ theme }) => theme.colors.cardBorder};

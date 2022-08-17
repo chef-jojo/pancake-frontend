@@ -1,4 +1,4 @@
-import styled, { DefaultTheme } from 'styled-components'
+import styled, { Theme } from '@pancakeswap/styled'
 import Link from 'next/link'
 import { Button, Card, CommunityIcon, Flex, Heading, PrizeIcon, Text } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
@@ -9,7 +9,7 @@ interface TeamCardProps {
   team: Team
 }
 
-const getBackground = (theme: DefaultTheme) => {
+const getBackground = (theme: Theme) => {
   if (theme.isDark) {
     return 'linear-gradient(139.73deg, #142339 0%, #24243D 47.4%, #37273F 100%)'
   }
@@ -48,13 +48,15 @@ const Avatar = styled.img`
   border-radius: 50%;
 `
 
-const TeamName = styled(Heading).attrs({ as: 'h3' })`
+const TeamName = styled(Heading)`
   font-size: 24px;
 
   ${({ theme }) => theme.mediaQueries.md} {
     font-size: 40px;
   }
 `
+
+TeamName.defaultProps = { as: 'h3' }
 
 const MobileAvatar = styled.div`
   flex: none;

@@ -3,7 +3,7 @@
 import { BigNumber } from '@ethersproject/bignumber'
 import { Flex } from '@pancakeswap/uikit'
 import { ContextApi } from '@pancakeswap/localization'
-import { DefaultTheme } from 'styled-components'
+import { Theme } from '@pancakeswap/styled'
 import { SaleStatusEnum, UserStatusEnum } from '../../types'
 import BuyTicketsButtons from '../Buttons/BuyTickets'
 import MintButton from '../Buttons/Mint'
@@ -17,7 +17,7 @@ export type CtaButtonsProps = {
   account: string
   saleStatus: SaleStatusEnum
   userStatus: UserStatusEnum
-  theme: DefaultTheme
+  theme: Theme
   canClaimForGen0: boolean
   maxPerAddress: number
   maxPerTransaction: number

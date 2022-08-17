@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import { Flex, Skeleton, Td, useMatchBreakpointsContext } from '@pancakeswap/uikit'
 
 const GridItem = styled(Flex)`

@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled from "@pancakeswap/styled";
 import { PolymorphicComponent } from "../../util/polymorphic";
 import Button from "../Button/Button";
 import { BaseButtonProps, variants } from "../Button/types";

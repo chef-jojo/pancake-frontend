@@ -1,5 +1,5 @@
 import { useTranslation } from '@pancakeswap/localization'
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import { Flex, Box, Text, Skeleton } from '@pancakeswap/uikit'
 import TeamPodiumIcon from './TeamPodiumIcon'
 import { PodiumBase } from '../../../svgs'

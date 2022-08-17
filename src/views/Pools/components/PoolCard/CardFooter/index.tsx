@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import BigNumber from 'bignumber.js'
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import { useTranslation } from '@pancakeswap/localization'
 import { Flex, CardFooter, ExpandableLabel, HelpIcon, useTooltip } from '@pancakeswap/uikit'
 import { DeserializedPool } from 'state/types'

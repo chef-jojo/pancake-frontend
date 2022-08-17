@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import { Card, CardHeader, CardBody, CommunityIcon, Heading, PrizeIcon, Text, Skeleton } from '@pancakeswap/uikit'
 import { FetchStatus } from 'config/constants/types'
 import useSWR from 'swr'
@@ -52,13 +52,15 @@ const StyledCardHeader = styled(CardHeader)<{ bg: string }>`
   text-align: center;
 `
 
-const TeamName = styled(Heading).attrs({ as: 'h2' })`
+const TeamName = styled(Heading)`
   font-size: 24px;
 
   ${({ theme }) => theme.mediaQueries.md} {
     font-size: 40px;
   }
 `
+
+TeamName.defaultProps = { as: 'h2' }
 
 const StatRow = styled.div`
   display: grid;

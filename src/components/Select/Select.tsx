@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import styled, { css } from 'styled-components'
+import styled, { css } from '@pancakeswap/styled'
 import { ArrowDropDownIcon, Box, BoxProps, Text } from '@pancakeswap/uikit'
 
 const DropDownHeader = styled.div`

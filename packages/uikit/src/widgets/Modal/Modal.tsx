@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { useTheme } from "styled-components";
+import { useTheme } from "@pancakeswap/styled";
 import Heading from "../../components/Heading/Heading";
 import getThemeValue from "../../util/getThemeValue";
 import { ModalBody, ModalHeader, ModalTitle, ModalContainer, ModalCloseButton, ModalBackButton } from "./styles";

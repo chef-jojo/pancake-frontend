@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "@pancakeswap/styled";
 import { CheckboxProps, scales } from "./types";
 
 const getScale = ({ scale }: CheckboxProps) => {
@@ -11,7 +11,7 @@ const getScale = ({ scale }: CheckboxProps) => {
   }
 };
 
-const Checkbox = styled.input.attrs({ type: "checkbox" })<CheckboxProps>`
+const Checkbox = styled.input<CheckboxProps>`
   appearance: none;
   overflow: hidden;
   cursor: pointer;
@@ -66,6 +66,7 @@ const Checkbox = styled.input.attrs({ type: "checkbox" })<CheckboxProps>`
 
 Checkbox.defaultProps = {
   scale: scales.MD,
+  type: "checkbox",
 };
 
 export default Checkbox;

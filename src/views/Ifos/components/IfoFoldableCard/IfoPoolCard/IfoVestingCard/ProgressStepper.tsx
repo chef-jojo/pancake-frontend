@@ -1,5 +1,5 @@
 import { useEffect, Fragment, useState } from 'react'
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import { Flex } from '@pancakeswap/uikit'
 import { PoolIds } from 'config/constants/types'
 import { useTranslation } from '@pancakeswap/localization'

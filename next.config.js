@@ -31,7 +31,7 @@ const sentryWebpackPluginOptions =
 /** @type {import('next').NextConfig} */
 const config = {
   compiler: {
-    styledComponents: true,
+    emotion: true,
   },
   experimental: {
     scrollRestoration: true,

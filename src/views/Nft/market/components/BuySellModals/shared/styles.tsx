@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import { Flex, Image } from '@pancakeswap/uikit'
 
 export const RoundedImage = styled(Image)`

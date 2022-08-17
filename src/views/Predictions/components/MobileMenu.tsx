@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import { useWeb3React } from '@pancakeswap/wagmi'
 import {
   ArrowBackIcon,

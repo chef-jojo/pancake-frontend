@@ -1,19 +1,23 @@
 import { Text, TextProps } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import { TranslatableText as AchievementDescriptionType } from 'config/constants/types'
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 
 interface AchievementDescriptionProps extends TextProps {
   description?: AchievementDescriptionType
 }
 
-const Description = styled(Text).attrs({ as: 'p' })`
+const Description = styled(Text)`
   display: none;
 
   ${({ theme }) => theme.mediaQueries.md} {
     display: block;
   }
 `
+
+Description.defaultProps = {
+  as: 'p',
+}
 
 const AchievementDescription: React.FC<React.PropsWithChildren<AchievementDescriptionProps>> = ({
   description,

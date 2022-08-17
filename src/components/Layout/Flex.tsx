@@ -1,5 +1,5 @@
 import { Flex, FlexProps } from '@pancakeswap/uikit'
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 
 const FlexLayout = styled.div`
   display: flex;

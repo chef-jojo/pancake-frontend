@@ -1,6 +1,6 @@
 import { Heading, Text } from '@pancakeswap/uikit'
 import { NormalComponents, SpecialComponents } from 'react-markdown/src/ast-to-react'
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 
 const Table = styled.table`
   margin-bottom: 32px;

@@ -2,7 +2,7 @@ import { Box, ButtonMenu, ButtonMenuItem, Flex } from '@pancakeswap/uikit'
 import { NextLinkFromReactRouter } from 'components/NextLink'
 import { useTranslation } from '@pancakeswap/localization'
 import { useRouter } from 'next/router'
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import Search from 'views/Info/components/InfoSearch'
 
 const NavWrapper = styled(Flex)`

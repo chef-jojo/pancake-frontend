@@ -13,7 +13,7 @@ import {
   TooltipText,
   useTooltip,
 } from '@pancakeswap/uikit'
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import { NextLinkFromReactRouter } from 'components/NextLink'
 import { useTranslation } from '@pancakeswap/localization'
 import useTotalSupply from 'hooks/useTotalSupply'

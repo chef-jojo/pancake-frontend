@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 import { Flex, Skeleton, Text } from '@pancakeswap/uikit'
-import styled from 'styled-components'
+import styled from '@pancakeswap/styled'
 import { useTranslation } from '@pancakeswap/localization'
 import Balance from 'components/Balance'
 import { DeserializedPool } from 'state/types'

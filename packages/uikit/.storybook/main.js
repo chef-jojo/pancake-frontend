@@ -9,7 +9,7 @@ module.exports = {
     },
     "@storybook/addon-links",
     "@storybook/addon-a11y",
-    "themeprovider-storybook/register",
+    "storybook-addon-emotion-theme/dist/register",
   ],
   core: { builder: "@storybook/builder-vite" },
 };

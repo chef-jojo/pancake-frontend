@@ -11,6 +11,7 @@
     "lib": ["dom", "dom.iterable", "esnext"],
     "module": "esnext",
     "noEmit": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "jsxImportSource": "@emotion/react"
   }
 }

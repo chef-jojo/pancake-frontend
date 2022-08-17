@@ -2,7 +2,7 @@ import { css, Global } from "@pancakeswap/styled";
 
 const ResetCSS = () => (
   <Global
-    styles={css`
+    styles={(theme) => css`
       /* prettier-ignore */
       html, body, div, span, applet, object, iframe,
   h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -85,11 +85,11 @@ const ResetCSS = () => (
         width: 8px;
       }
       ::-webkit-scrollbar-thumb {
-        background: ${({ theme }) => theme.colors.textSubtle};
+        background: ${theme.colors.textSubtle};
         border-radius: 8px;
       }
       ::-webkit-scrollbar-track {
-        box-shadow: inset 0 0 5px ${({ theme }) => theme.colors.input};
+        box-shadow: inset 0 0 5px ${theme.colors.input};
         border-radius: 10px;
       }
 

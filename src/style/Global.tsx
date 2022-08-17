@@ -8,12 +8,12 @@ declare module '@pancakeswap/styled' {
 
 const GlobalStyle = () => (
   <Global
-    styles={css`
+    styles={(theme) => css`
       * {
         font-family: 'Kanit', sans-serif;
       }
       body {
-        background-color: ${({ theme }) => theme.colors.background};
+        background-color: ${theme.colors.background};
 
         img {
           height: auto;

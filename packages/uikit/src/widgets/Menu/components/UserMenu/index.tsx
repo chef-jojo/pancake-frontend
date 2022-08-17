@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { usePopper } from "react-popper";
-import styled from "@pancakeswap/styled";
+import styled from "@emotion/styled";
 import { Box, Flex } from "../../../../components/Box";
 import { ChevronDownIcon } from "../../../../components/Svg";
 import { UserMenuProps, variants } from "./types";

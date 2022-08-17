@@ -1,7 +1,7 @@
-import { css, Global } from '@pancakeswap/styled'
+import { css, Global } from '@emotion/react'
 import { PancakeTheme } from '@pancakeswap/uikit'
 
-declare module '@pancakeswap/styled' {
+declare module '@emotion/react' {
   /* eslint-disable @typescript-eslint/no-empty-interface */
   export interface Theme extends PancakeTheme {}
 }

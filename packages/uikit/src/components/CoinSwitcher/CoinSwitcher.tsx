@@ -1,5 +1,5 @@
 import { memo, useCallback, useState, useMemo } from "react";
-import styled from "@pancakeswap/styled";
+import styled from "@emotion/styled";
 import { bnb2CakeImages, cake2BnbImages } from "./constant";
 import { SequencePlayer } from "./SequencePlayer";
 

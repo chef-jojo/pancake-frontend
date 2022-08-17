@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { StaticImageData } from 'next/dist/client/image'
 import { Flex, Heading, useMatchBreakpointsContext } from '@pancakeswap/uikit'
 import { NextLinkFromReactRouter } from 'components/NextLink'

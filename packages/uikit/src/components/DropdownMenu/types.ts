@@ -18,7 +18,7 @@ export interface DropdownMenuProps extends BoxProps {
   setMenuOpenByIndex?: React.Dispatch<React.SetStateAction<Record<number, boolean>>>;
 }
 
-export interface StyledDropdownMenuItemProps extends React.ComponentPropsWithoutRef<"button"> {
+export interface StyledDropdownMenuItemProps {
   disabled?: boolean;
   isActive?: boolean;
 }

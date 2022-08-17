@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { Trade, Currency, TradeType } from '@pancakeswap/sdk'
 import { Button, Text, AutoRenewIcon } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'

@@ -1,4 +1,4 @@
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 
 const Loading = styled.div`
   border: 8px solid #f3f3f3;

@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { Button, ChevronUpIcon } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import throttle from 'lodash/throttle'

@@ -1,4 +1,4 @@
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { Box, Flex, Text, SearchIcon, Link } from '@pancakeswap/uikit'
 import { getBlockExploreLink } from 'utils'
 import { formatNumber } from 'utils/formatBalance'

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Text, Flex, Heading, useMatchBreakpointsContext } from '@pancakeswap/uikit'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import BigNumber from 'bignumber.js'
 import { getBalanceNumber } from 'utils/formatBalance'
 import { useTranslation } from '@pancakeswap/localization'

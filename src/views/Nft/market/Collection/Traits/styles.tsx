@@ -1,4 +1,4 @@
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { Flex, Image, Text } from '@pancakeswap/uikit'
 
 export const StyledSortButton = styled.button`

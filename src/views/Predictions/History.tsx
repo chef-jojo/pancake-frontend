@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Flex, Spinner, Text } from '@pancakeswap/uikit'
 import { useWeb3React } from '@pancakeswap/wagmi'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import { useTranslation } from '@pancakeswap/localization'
 import { fetchNodeHistory } from 'state/predictions'

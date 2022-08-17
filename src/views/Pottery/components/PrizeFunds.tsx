@@ -1,4 +1,4 @@
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { Box, Flex, Text, Heading } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import Divider from 'components/Divider'

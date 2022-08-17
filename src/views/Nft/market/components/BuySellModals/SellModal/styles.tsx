@@ -1,4 +1,4 @@
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { Modal, Box, Flex, Text, BinanceIcon, Input } from '@pancakeswap/uikit'
 import { useBNBBusdPrice } from 'hooks/useBUSDPrice'
 import { multiplyPriceByAmount } from 'utils/prices'

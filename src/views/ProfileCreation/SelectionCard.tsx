@@ -1,4 +1,4 @@
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { Card, Radio } from '@pancakeswap/uikit'
 
 interface SelectionCardProps {

@@ -1,4 +1,5 @@
-import styled, { css, keyframes } from "@pancakeswap/styled";
+import { css, keyframes } from "@emotion/react";
+import styled from "@emotion/styled";
 import { space } from "styled-system";
 import getThemeValue from "../../util/getThemeValue";
 import { SvgProps } from "./types";

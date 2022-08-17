@@ -1,5 +1,5 @@
 import { Box, BoxProps, Flex } from '@pancakeswap/uikit'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 
 const Wrapper = styled(Flex)`
   overflow-x: scroll;

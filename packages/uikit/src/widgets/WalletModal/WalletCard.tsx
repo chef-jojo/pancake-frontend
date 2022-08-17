@@ -1,6 +1,6 @@
 import React from "react";
 import { isDesktop } from "react-device-detect";
-import styled from "@pancakeswap/styled";
+import styled from "@emotion/styled";
 import Button from "../../components/Button/Button";
 import Text from "../../components/Text/Text";
 import MoreHorizontal from "../../components/Svg/Icons/MoreHorizontal";

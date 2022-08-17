@@ -1,4 +1,5 @@
-import styled, { keyframes } from '@pancakeswap/styled'
+import { keyframes } from '@emotion/react'
+import styled from '@emotion/styled'
 import { Box, Flex, Heading, Skeleton } from '@pancakeswap/uikit'
 import { LotteryStatus } from 'config/constants/types'
 import { useTranslation } from '@pancakeswap/localization'

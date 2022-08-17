@@ -1,5 +1,5 @@
 import { memo } from 'react'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { Table, Td } from '@pancakeswap/uikit'
 import CompactRow from './CompactRow'
 

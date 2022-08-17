@@ -1,5 +1,6 @@
 import React from "react";
-import styled, { Theme } from "@pancakeswap/styled";
+import { Theme } from "@emotion/react";
+import styled from "@emotion/styled";
 import CheckmarkCircleIcon from "../Svg/Icons/CheckmarkCircle";
 import ErrorIcon from "../Svg/Icons/Error";
 import BlockIcon from "../Svg/Icons/Block";
@@ -12,11 +13,10 @@ import { AlertProps, variants } from "./types";
 
 interface ThemedIconLabel {
   variant: AlertProps["variant"];
-  theme: Theme;
   hasDescription: boolean;
 }
 
-const getThemeColor = ({ theme, variant = variants.INFO }: ThemedIconLabel) => {
+const getThemeColor = ({ theme, variant = variants.INFO }: ThemedIconLabel & { theme: Theme }) => {
   switch (variant) {
     case variants.DANGER:
       return theme.colors.failure;

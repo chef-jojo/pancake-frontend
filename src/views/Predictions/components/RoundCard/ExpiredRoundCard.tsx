@@ -1,4 +1,4 @@
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { Card, Box, BlockIcon, CardBody } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import { NodeRound, BetPosition, NodeLedger } from 'state/types'

@@ -1,4 +1,4 @@
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { isAfter, differenceInSeconds } from 'date-fns'
 import { Text, Flex, PocketWatchIcon, Skeleton } from '@pancakeswap/uikit'
 import { Auction, AuctionStatus } from 'config/constants/types'

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { CopyIcon, SvgProps } from '@pancakeswap/uikit'
 import { copyText } from 'utils/copyText'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 
 const Tooltip = styled.div<{
   isTooltipDisplayed: boolean

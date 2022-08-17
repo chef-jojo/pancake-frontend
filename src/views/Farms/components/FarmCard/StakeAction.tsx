@@ -1,5 +1,5 @@
 import { useCallback, useContext } from 'react'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { Button, Flex, IconButton, AddIcon, MinusIcon, useModal } from '@pancakeswap/uikit'
 import useToast from 'hooks/useToast'
 import useCatchTxError from 'hooks/useCatchTxError'

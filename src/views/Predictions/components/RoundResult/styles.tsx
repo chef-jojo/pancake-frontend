@@ -1,5 +1,6 @@
 import { useMemo } from 'react'
-import styled, { Theme } from '@pancakeswap/styled'
+import { Theme } from '@emotion/react'
+import styled from '@emotion/styled'
 import { BigNumber } from '@ethersproject/bignumber'
 import { Box, Flex, FlexProps, Skeleton, Text } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'

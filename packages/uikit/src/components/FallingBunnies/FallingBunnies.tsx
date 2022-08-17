@@ -1,5 +1,6 @@
 import React from "react";
-import styled, { keyframes } from "@pancakeswap/styled";
+import { keyframes } from "@emotion/react";
+import styled from "@emotion/styled";
 import BunnyIcon from "../Svg/Icons/Logo";
 import { BunnyProps, FallingBunniesProps } from "./types";
 

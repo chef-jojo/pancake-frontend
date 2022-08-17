@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 
 const StyledTable = styled.div`
   border-radius: 0px 0px 16px 16px;

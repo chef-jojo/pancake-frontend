@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { Card, Text, Skeleton, CardHeader, Flex, BunnyPlaceholderIcon } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import { useAppDispatch } from 'state'

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import useDelayedUnmount from 'hooks/useDelayedUnmount'
 import { AprProps } from 'views/Farms/components/FarmTable/Apr'
 import Farm, { FarmProps } from 'views/Migration/components/MigrationStep1/OldFarm/Cells/Farm'

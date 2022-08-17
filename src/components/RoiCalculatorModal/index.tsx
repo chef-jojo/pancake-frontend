@@ -1,5 +1,5 @@
 import { useRef, useEffect, useMemo } from 'react'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import {
   Modal,
   Text,

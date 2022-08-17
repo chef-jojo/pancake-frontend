@@ -1,4 +1,5 @@
-import styled, { Theme } from "@pancakeswap/styled";
+import { Theme } from "@emotion/react";
+import styled from "@emotion/styled";
 import { Colors } from "../../theme";
 import { Text } from "../Text";
 import { StyledDropdownMenuItemProps } from "./types";

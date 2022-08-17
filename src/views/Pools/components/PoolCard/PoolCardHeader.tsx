@@ -1,6 +1,6 @@
 import { CardHeader, Flex, Heading, Text } from '@pancakeswap/uikit'
 import { ReactNode } from 'react'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 
 const Wrapper = styled(CardHeader)<{ isFinished?: boolean; background?: string }>`
   background: ${({ isFinished, background, theme }) =>

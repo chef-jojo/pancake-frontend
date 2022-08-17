@@ -1,4 +1,4 @@
-import styled from "@pancakeswap/styled";
+import styled from "@emotion/styled";
 import { ToggleProps, HandleProps, InputProps, ScaleKeys, scales, StyleToggleProps } from "./types";
 
 const scaleKeyValues = {

@@ -1,6 +1,7 @@
 import { memo, useEffect, useRef, useState } from 'react'
 import { useWeb3React } from '@pancakeswap/wagmi'
-import styled, { css, keyframes } from '@pancakeswap/styled'
+import { keyframes, css } from '@emotion/react'
+import styled from '@emotion/styled'
 import { Button, CloseIcon, IconButton, TrophyGoldIcon } from '@pancakeswap/uikit'
 import { CSSTransition } from 'react-transition-group'
 import { useTranslation } from '@pancakeswap/localization'

@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect, useMemo } from 'react'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { Text, Input, Flex, Skeleton, useMatchBreakpointsContext } from '@pancakeswap/uikit'
 import useFetchSearchResults from 'state/info/queries/search'
 import { CurrencyLogo, DoubleCurrencyLogo } from 'views/Info/components/CurrencyLogo'

@@ -1,5 +1,5 @@
 import { Box, BoxProps } from '@pancakeswap/uikit'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 
 export const VotingBoxBorder = styled(Box)<{ hasBoosted?: boolean }>`
   border-radius: 12px;

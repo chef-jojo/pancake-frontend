@@ -16,7 +16,7 @@ import { useTranslation } from '@pancakeswap/localization'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import useTheme from 'hooks/useTheme'
 import { memo } from 'react'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { wrappedCurrency } from 'utils/wrappedCurrency'
 import LimitOrderDisclaimer from './LimitOrderDisclaimer'
 

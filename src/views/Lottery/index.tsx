@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { Box, Flex, Heading, Skeleton } from '@pancakeswap/uikit'
 import { LotteryStatus } from 'config/constants/types'
 import PageSection from 'components/PageSection'

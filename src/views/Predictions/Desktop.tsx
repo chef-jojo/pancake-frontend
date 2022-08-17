@@ -1,5 +1,5 @@
 import { memo, useEffect, useRef } from 'react'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import Split, { SplitInstance } from 'split-grid'
 import { Button, ChartIcon, Flex, Box } from '@pancakeswap/uikit'
 import debounce from 'lodash/debounce'

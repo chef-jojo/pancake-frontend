@@ -1,5 +1,5 @@
 import { Box, Skeleton } from '@pancakeswap/uikit'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { LeaderboardDataItem } from '../../../types'
 import GridItem from './GridItem'
 import ExpandedGridItem from './ExpandedGridItem'

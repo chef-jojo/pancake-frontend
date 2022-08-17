@@ -1,4 +1,5 @@
-import styled, { css, Theme } from '@pancakeswap/styled'
+import { css, Theme } from '@emotion/react'
+import styled from '@emotion/styled'
 import { Box } from '@pancakeswap/uikit'
 import { ClipFill } from '../types'
 
@@ -15,12 +16,9 @@ const sharedStyles = (theme: Theme, clipPath: string, clipFill?: ClipFill) => cs
   height: 20px;
   clip-path: url(${clipPath});
 
-  background: ${() => {
-    if (theme.isDark) {
-      return clipFill?.dark || clipFill?.light || theme.colors.background
-    }
-    return clipFill?.light || theme.colors.background
-  }};
+  background: ${theme.isDark
+    ? clipFill?.dark || clipFill?.light || theme.colors.background
+    : clipFill?.light || theme.colors.background};
 
   & svg {
     display: block;

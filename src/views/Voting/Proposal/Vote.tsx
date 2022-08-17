@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { Button, Card, CardBody, CardHeader, CardProps, Heading, Radio, Text, useModal } from '@pancakeswap/uikit'
 import { useWeb3React } from '@pancakeswap/wagmi'
 import { Proposal } from 'state/types'

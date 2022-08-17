@@ -3,7 +3,7 @@ import confetti from 'canvas-confetti'
 import { useTranslation } from '@pancakeswap/localization'
 import delay from 'lodash/delay'
 import { useEffect } from 'react'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 
 const NFTImage = styled.img`
   border-radius: 12px;

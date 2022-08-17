@@ -1,4 +1,4 @@
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { Spinner } from '@pancakeswap/uikit'
 import Page from '../Layout/Page'
 

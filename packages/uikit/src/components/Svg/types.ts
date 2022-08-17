@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { ElementType, SVGAttributes } from "react";
-import { Theme } from "@pancakeswap/styled";
+import { Theme } from "@emotion/react";
 import { SpaceProps } from "styled-system";
 import { Colors } from "../../theme";
 

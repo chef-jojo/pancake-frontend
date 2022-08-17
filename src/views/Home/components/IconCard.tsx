@@ -1,5 +1,5 @@
 import { ReactNode } from 'react'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { Card, CardBody, Box, CardProps } from '@pancakeswap/uikit'
 
 const StyledCard = styled(Card)<{ background: string; rotation?: string }>`

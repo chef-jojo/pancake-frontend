@@ -1,5 +1,5 @@
 import React, { cloneElement, Children, ReactElement } from "react";
-import styled from "@pancakeswap/styled";
+import styled from "@emotion/styled";
 import Flex from "../Box/Flex";
 import { TabMenuProps } from "./types";
 

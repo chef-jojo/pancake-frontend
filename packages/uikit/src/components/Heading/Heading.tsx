@@ -1,4 +1,4 @@
-import styled from "@pancakeswap/styled";
+import styled from "@emotion/styled";
 import Text from "../Text/Text";
 import { tags, scales, HeadingProps } from "./types";
 

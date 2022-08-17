@@ -16,7 +16,7 @@ import {
 } from '@pancakeswap/uikit'
 import { useProfileForAddress } from 'state/profile/hooks'
 import useTheme from 'hooks/useTheme'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { getBlockExploreLink } from 'utils'
 import truncateHash from 'utils/truncateHash'
 import { Token } from '@pancakeswap/sdk'

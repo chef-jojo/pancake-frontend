@@ -13,7 +13,7 @@ import {
   useMatchBreakpointsContext,
   MODAL_SWIPE_TO_CLOSE_VELOCITY,
 } from '@pancakeswap/uikit'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { usePreviousValue } from '@pancakeswap/hooks'
 import { TokenList } from '@uniswap/token-lists'
 import { useTranslation } from '@pancakeswap/localization'

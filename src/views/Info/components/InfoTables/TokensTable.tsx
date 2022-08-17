@@ -1,5 +1,5 @@
 import { useState, useMemo, useCallback, useEffect, Fragment } from 'react'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import {
   Text,
   Flex,

@@ -1,6 +1,6 @@
 import { NoProfileAvatarIcon } from '@pancakeswap/uikit'
 import { Profile } from 'state/types'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 
 export interface ProfileAvatarProps {
   profile: Profile

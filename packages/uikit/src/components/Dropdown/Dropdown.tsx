@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import throttle from "lodash/throttle";
-import styled, { css } from "@pancakeswap/styled";
+import { css } from "@emotion/react";
+import styled from "@emotion/styled";
 import { DropdownProps, PositionProps, Position } from "./types";
 import { useMatchBreakpoints } from "../../hooks";
 

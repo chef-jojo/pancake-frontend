@@ -1,4 +1,4 @@
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { Heading, Text } from '@pancakeswap/uikit'
 import { useProfile } from 'state/profile/hooks'
 import { useTranslation } from '@pancakeswap/localization'

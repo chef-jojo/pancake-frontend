@@ -1,5 +1,5 @@
 import { Text } from '@pancakeswap/uikit'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 
 const CrossText = styled(Text)`
   text-decoration: line-through;

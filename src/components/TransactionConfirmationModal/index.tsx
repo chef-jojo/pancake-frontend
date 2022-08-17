@@ -1,6 +1,6 @@
 import { useCallback } from 'react'
 import { ChainId, Currency, Token } from '@pancakeswap/sdk'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import {
   Button,
   Text,

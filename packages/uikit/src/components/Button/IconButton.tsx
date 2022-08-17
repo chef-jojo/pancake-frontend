@@ -1,4 +1,4 @@
-import styled from "@pancakeswap/styled";
+import styled from "@emotion/styled";
 import { PolymorphicComponent } from "../../util/polymorphic";
 import Button from "./Button";
 import { BaseButtonProps } from "./types";

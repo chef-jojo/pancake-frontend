@@ -15,7 +15,7 @@ import {
 } from '@pancakeswap/uikit'
 import { PredictionUser } from 'state/types'
 import { useProfileForAddress } from 'state/profile/hooks'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { getBlockExploreLink } from 'utils'
 import truncateHash from 'utils/truncateHash'
 import { useTranslation } from '@pancakeswap/localization'
@@ -48,6 +48,8 @@ const getRankingColor = (rank: number) => {
 
   return 'gold'
 }
+
+const SubMenuItemLink = SubMenuItem.withComponent(Link)
 
 const RankingCard: React.FC<React.PropsWithChildren<RankingCardProps>> = ({ rank, user }) => {
   const { t } = useTranslation()
@@ -91,9 +93,15 @@ const RankingCard: React.FC<React.PropsWithChildren<RankingCardProps>> = ({ rank
             options={{ placement: 'bottom' }}
           >
             <SubMenuItem onClick={onPresentWalletStatsModal}>{t('View Stats')}</SubMenuItem>
-            <SubMenuItem as={Link} href={getBlockExploreLink(user.id, 'address')} bold={false} color="text" external>
+            <SubMenuItemLink
+              as={Link}
+              href={getBlockExploreLink(user.id, 'address')}
+              bold={false}
+              color="text"
+              external
+            >
               {t('View on BscScan')}
-            </SubMenuItem>
+            </SubMenuItemLink>
           </SubMenu>
         </Flex>
         <Row mb="4px">

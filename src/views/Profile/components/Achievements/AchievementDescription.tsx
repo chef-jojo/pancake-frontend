@@ -1,7 +1,7 @@
 import { Text, TextProps } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import { TranslatableText as AchievementDescriptionType } from 'config/constants/types'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 
 interface AchievementDescriptionProps extends TextProps {
   description?: AchievementDescriptionType

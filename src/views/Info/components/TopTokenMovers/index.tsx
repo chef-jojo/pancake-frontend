@@ -1,5 +1,5 @@
 import { useMemo, useRef, useEffect } from 'react'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { Text, Flex, Box, Card } from '@pancakeswap/uikit'
 import { NextLinkFromReactRouter } from 'components/NextLink'
 import { useAllTokenData } from 'state/info/hooks'

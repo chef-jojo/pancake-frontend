@@ -1,5 +1,5 @@
 import { Box, Flex, FlexProps } from '@pancakeswap/uikit'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { useTranslation } from '@pancakeswap/localization'
 import { CopyButton } from '../../CopyButton'
 

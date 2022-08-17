@@ -1,4 +1,4 @@
-import styled from "@pancakeswap/styled";
+import styled from "@emotion/styled";
 import { lightColors } from "../../theme";
 
 export const TimelineContainer = styled.ul`

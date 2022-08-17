@@ -1,5 +1,5 @@
 import { Flex } from '@pancakeswap/uikit'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 
 export const StyledBunnySectionContainer = styled(Flex)`
   position: relative;

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import BigNumber from 'bignumber.js'
 import {
   Text,
@@ -37,6 +37,8 @@ const GridCell = styled(Flex)<{ isTopPosition: boolean }>`
 
   ${({ theme, isTopPosition }) => isTopPosition && `background-color: ${theme.colors.warning}2D;`}
 `
+
+const ExternalSubMenuItem = SubMenuItem.withComponent(LinkExternal)
 
 interface LeaderboardRowProps {
   bidder: Bidder
@@ -93,19 +95,24 @@ const LeaderboardRow: React.FC<React.PropsWithChildren<LeaderboardRowProps>> = (
       <GridCell isTopPosition={isTopPosition}>
         <SubMenu component={<EllipsisIcon height="16px" width="16px" />}>
           {projectSite && (
-            <SubMenuItem as={LinkExternal} href={projectSite} bold={false} color="text">
+            <ExternalSubMenuItem as={LinkExternal} href={projectSite} bold={false} color="text">
               {t('Project Site')}
-            </SubMenuItem>
+            </ExternalSubMenuItem>
           )}
           {lpAddress && (
-            <SubMenuItem as={LinkExternal} href={`/info/pool/${lpAddress}`} bold={false} color="text">
+            <ExternalSubMenuItem as={LinkExternal} href={`/info/pool/${lpAddress}`} bold={false} color="text">
               {t('LP Info')}
-            </SubMenuItem>
+            </ExternalSubMenuItem>
           )}
           {account && (
-            <SubMenuItem as={LinkExternal} href={getBlockExploreLink(account, 'address')} bold={false} color="text">
+            <ExternalSubMenuItem
+              as={LinkExternal}
+              href={getBlockExploreLink(account, 'address')}
+              bold={false}
+              color="text"
+            >
               {t('Bidder Address')}
-            </SubMenuItem>
+            </ExternalSubMenuItem>
           )}
         </SubMenu>
       </GridCell>

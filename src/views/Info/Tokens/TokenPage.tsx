@@ -2,7 +2,7 @@
 import { useMemo } from 'react'
 import { NextLinkFromReactRouter } from 'components/NextLink'
 import { Duration } from 'date-fns'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import {
   Text,
   Box,

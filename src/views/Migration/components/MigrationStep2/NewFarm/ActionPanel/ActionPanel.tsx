@@ -1,5 +1,6 @@
 import React from 'react'
-import styled, { keyframes, css } from '@pancakeswap/styled'
+import { keyframes, css } from '@emotion/react'
+import styled from '@emotion/styled'
 import Multiplier from 'views/Migration/components/MigrationStep1/OldFarm/ActionPanel/Multiplier'
 import Liquidity from 'views/Migration/components/MigrationStep1/OldFarm/ActionPanel/Liquidity'
 import { EarnedProps } from 'views/Migration/components/MigrationStep1/OldFarm/Cells/Earned'

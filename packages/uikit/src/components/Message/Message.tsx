@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import styled from "@pancakeswap/styled";
+import styled from "@emotion/styled";
 import { variant as systemVariant, space } from "styled-system";
 import { WarningIcon, ErrorIcon, CheckmarkCircleFillIcon } from "../Svg";
 import { Text, TextProps } from "../Text";

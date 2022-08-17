@@ -1,5 +1,5 @@
 import React, { cloneElement } from "react";
-import styled from "@pancakeswap/styled";
+import styled from "@emotion/styled";
 import Box from "../Box/Box";
 import Input from "./Input";
 import { InputGroupProps, scales, Scales } from "./types";

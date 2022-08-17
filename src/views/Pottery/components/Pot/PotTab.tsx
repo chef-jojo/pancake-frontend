@@ -1,5 +1,5 @@
 import { ButtonMenu, ButtonMenuItem } from '@pancakeswap/uikit'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import useTheme from 'hooks/useTheme'
 import { useTranslation } from '@pancakeswap/localization'
 import { POT_CATEGORY } from '../../types'

@@ -1,6 +1,6 @@
 import { Flex, Skeleton, Text } from '@pancakeswap/uikit'
 import { FC } from 'react'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { formatAmount, formatAmountNotation } from 'utils/formatInfoNumbers'
 import { FlexGap, FlexGapProps } from './Layout/Flex'
 

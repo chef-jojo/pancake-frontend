@@ -1,4 +1,4 @@
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { Flex } from '@pancakeswap/uikit'
 import EasterPrizesCard from './EasterPrizesCard'
 import EasterPrizesText from './EasterPrizesText'

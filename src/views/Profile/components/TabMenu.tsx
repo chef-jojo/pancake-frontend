@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useTranslation } from '@pancakeswap/localization'
 import { NextLinkFromReactRouter } from 'components/NextLink'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { Flex } from '@pancakeswap/uikit'
 import { useRouter } from 'next/router'
 
@@ -23,6 +23,8 @@ const Tab = styled.button<{ $active: boolean }>`
   transition: background-color 0.3s ease-out;
 `
 
+const LinkTab = Tab.withComponent(NextLinkFromReactRouter)
+
 const TabMenu = () => {
   const { t } = useTranslation()
   const { pathname, query } = useRouter()
@@ -35,22 +37,22 @@ const TabMenu = () => {
 
   return (
     <Flex>
-      <Tab
+      <LinkTab
         onClick={() => setIsAchievementsActive(false)}
         $active={!achievementsActive}
         as={NextLinkFromReactRouter}
         to={`/profile/${accountAddress}`}
       >
         NFTs
-      </Tab>
-      <Tab
+      </LinkTab>
+      <LinkTab
         onClick={() => setIsAchievementsActive(true)}
         $active={achievementsActive}
         as={NextLinkFromReactRouter}
         to={`/profile/${accountAddress}/achievements`}
       >
         {t('Achievements')}
-      </Tab>
+      </LinkTab>
     </Flex>
   )
 }

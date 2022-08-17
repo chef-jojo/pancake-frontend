@@ -1,6 +1,6 @@
 import { useRef, useMemo, useCallback } from 'react'
 import { latinise } from 'utils/latinise'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { Button, ChevronUpIcon, RowType } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import BigNumber from 'bignumber.js'

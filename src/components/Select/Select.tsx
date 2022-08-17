@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
-import styled, { css } from '@pancakeswap/styled'
+import { css } from '@emotion/react'
+import styled from '@emotion/styled'
 import { ArrowDropDownIcon, Box, BoxProps, Text } from '@pancakeswap/uikit'
 
 const DropDownHeader = styled.div`
@@ -53,8 +54,8 @@ const DropDownContainer = styled(Box)<{ isOpen: boolean }>`
     props.isOpen &&
     css`
       ${DropDownHeader} {
-        border-bottom: 1px solid ${({ theme }) => theme.colors.inputSecondary};
-        box-shadow: ${({ theme }) => theme.tooltip.boxShadow};
+        border-bottom: 1px solid ${props.theme.colors.inputSecondary};
+        box-shadow: ${props.theme.tooltip.boxShadow};
         border-radius: 16px 16px 0 0;
       }
 
@@ -62,10 +63,10 @@ const DropDownContainer = styled(Box)<{ isOpen: boolean }>`
         height: auto;
         transform: scaleY(1);
         opacity: 1;
-        border: 1px solid ${({ theme }) => theme.colors.inputSecondary};
+        border: 1px solid ${props.theme.colors.inputSecondary};
         border-top-width: 0;
         border-radius: 0 0 16px 16px;
-        box-shadow: ${({ theme }) => theme.tooltip.boxShadow};
+        box-shadow: ${props.theme.tooltip.boxShadow};
       }
     `}
 

@@ -1,6 +1,6 @@
 import BigNumber from 'bignumber.js'
 import { useCallback, useMemo, useState } from 'react'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import {
   Flex,
   Text,

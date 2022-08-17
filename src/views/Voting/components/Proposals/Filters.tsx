@@ -1,6 +1,6 @@
 import { ChangeEvent } from 'react'
 import { Flex, Radio, Text } from '@pancakeswap/uikit'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { useTranslation } from '@pancakeswap/localization'
 import { ProposalState } from 'state/types'
 

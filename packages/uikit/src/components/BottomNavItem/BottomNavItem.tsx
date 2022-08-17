@@ -44,7 +44,13 @@ const BottomNavItem: React.FC<React.PropsWithChildren<BottomNavItemProps>> = ({
       {bottomNavItemContent}
     </StyledBottomNavItem>
   ) : (
-    <StyledBottomNavItem style={{ opacity: disabled ? 0.5 : 1 }} as={linkComponent} href={href} {...props}>
+    <StyledBottomNavItem
+      style={{ opacity: disabled ? 0.5 : 1 }}
+      as={linkComponent}
+      // @ts-ignore
+      href={href}
+      {...props}
+    >
       {bottomNavItemContent}
     </StyledBottomNavItem>
   );

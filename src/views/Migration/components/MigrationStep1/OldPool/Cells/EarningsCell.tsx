@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { Text, Flex, useMatchBreakpointsContext } from '@pancakeswap/uikit'
 import { DeserializedPool } from 'state/types'
 import BigNumber from 'bignumber.js'

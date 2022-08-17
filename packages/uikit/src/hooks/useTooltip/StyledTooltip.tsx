@@ -1,4 +1,4 @@
-import styled from "@pancakeswap/styled";
+import styled from "@emotion/styled";
 import { m as Motion } from "framer-motion";
 
 export const Arrow = styled.div`

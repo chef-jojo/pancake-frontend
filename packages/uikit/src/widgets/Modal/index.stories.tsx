@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useTheme } from "@pancakeswap/styled";
+import { useTheme } from "@emotion/react";
 import { Modal, useModal } from ".";
 import { ModalProps } from "./types";
 import Button from "../../components/Button/Button";

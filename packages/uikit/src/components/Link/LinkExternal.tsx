@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "./Link";
-import { LinkProps } from "./types";
+import type { LinkProps } from "./Link";
 import OpenNewIcon from "../Svg/Icons/OpenNew";
 
 const LinkExternal: React.FC<React.PropsWithChildren<LinkProps>> = ({ children, ...props }) => {

@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { useTheme } from "@pancakeswap/styled";
+import { useTheme } from "@emotion/react";
 import Heading from "../../components/Heading/Heading";
 import getThemeValue from "../../util/getThemeValue";
 import { ModalBody, ModalHeader, ModalTitle, ModalContainer, ModalCloseButton, ModalBackButton } from "./styles";
@@ -29,9 +29,11 @@ const Modal: React.FC<React.PropsWithChildren<ModalProps>> = ({
       dragConstraints={{ top: 0, bottom: 600 }}
       dragElastic={{ top: 0 }}
       dragSnapToOrigin
+      // @ts-ignore
       onDragStart={() => {
         if (wrapperRef.current) wrapperRef.current.style.animation = "none";
       }}
+      // @ts-ignore
       onDragEnd={(e, info) => {
         if (info.velocity.y > MODAL_SWIPE_TO_CLOSE_VELOCITY && onDismiss) onDismiss();
       }}

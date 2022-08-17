@@ -1,4 +1,5 @@
-import styled, { Theme, keyframes, css } from "@pancakeswap/styled";
+import { Theme, keyframes, css } from "@emotion/react";
+import styled from "@emotion/styled";
 import { space } from "styled-system";
 import { Box } from "../Box";
 import { CardProps } from "./types";
@@ -41,7 +42,7 @@ const getBorderColor = ({ isActive, isSuccess, isWarning, borderBackground, them
   return theme.colors.cardBorder;
 };
 
-export const StyledCard = styled.div<StyledCardProps>`
+export const StyledCard = styled.div<CardProps>`
   background: ${getBorderColor};
   border-radius: ${({ theme }) => theme.radii.card};
   color: ${({ theme, isDisabled }) => theme.colors[isDisabled ? "textDisabled" : "text"]};

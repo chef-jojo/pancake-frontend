@@ -1,5 +1,5 @@
 import { Box } from '@pancakeswap/uikit'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 
 export const StyledPriceChart = styled(Box)<{
   $isDark: boolean

@@ -1,5 +1,5 @@
 import { memo } from 'react'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { Box, Flex } from '@pancakeswap/uikit'
 import { useGetPredictionsStatus, useIsChartPaneOpen, useIsHistoryPaneOpen } from 'state/predictions/hooks'
 import { PredictionStatus } from 'state/types'

@@ -1,4 +1,4 @@
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import useHttpLocations from '../../hooks/useHttpLocations'
 import Logo from './Logo'
 

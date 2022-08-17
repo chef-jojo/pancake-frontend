@@ -1,5 +1,5 @@
 import React from "react";
-import { useTheme } from "@pancakeswap/styled";
+import { useTheme } from "@emotion/react";
 import Svg from "../Svg";
 import { SvgProps } from "../types";
 

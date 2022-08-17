@@ -1,4 +1,4 @@
-import { Theme } from "@pancakeswap/styled";
+import { Theme } from "@emotion/react";
 
 export interface ThemedProps {
   theme: Theme;
@@ -6,8 +6,7 @@ export interface ThemedProps {
 
 export type Status = "past" | "current" | "future";
 
-export interface StatusProps extends ThemedProps {
-  theme: Theme;
+export interface StatusProps {
   status?: Status;
   $isFirstStep?: boolean;
   $isLastStep?: boolean;

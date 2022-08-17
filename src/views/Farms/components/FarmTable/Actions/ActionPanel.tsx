@@ -1,4 +1,5 @@
-import styled, { keyframes, css } from '@pancakeswap/styled'
+import { keyframes, css } from '@emotion/react'
+import styled from '@emotion/styled'
 import { useTranslation } from '@pancakeswap/localization'
 import { LinkExternal, Text, useMatchBreakpointsContext } from '@pancakeswap/uikit'
 import getLiquidityUrlPathParts from 'utils/getLiquidityUrlPathParts'

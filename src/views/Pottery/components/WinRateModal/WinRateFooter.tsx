@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { Flex, Box, Text, ExpandableLabel, Grid } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 

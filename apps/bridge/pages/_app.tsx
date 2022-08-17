@@ -2,12 +2,12 @@ import { PancakeTheme, ResetCSS, dark, light, ModalProvider } from '@pancakeswap
 import { useEffect, useState } from 'react'
 import { AppProps } from 'next/app'
 import Script from 'next/script'
-import { Global, ThemeProvider, css } from '@pancakeswap/styled'
+import { Global, ThemeProvider, css } from '@emotion/react'
 import { ThemeProvider as NextThemeProvider, useTheme as useNextTheme } from 'next-themes'
 import Head from 'next/head'
 import { Menu } from '../components/Menu'
 
-declare module '@pancakeswap/styled' {
+declare module '@emotion/react' {
   /* eslint-disable @typescript-eslint/no-empty-interface */
   export interface Theme extends PancakeTheme {}
 }

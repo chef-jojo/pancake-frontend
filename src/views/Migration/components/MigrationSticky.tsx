@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { useWeb3React } from '@pancakeswap/wagmi'
 import { useTranslation } from '@pancakeswap/localization'
 import { Text, Button, useMatchBreakpointsContext } from '@pancakeswap/uikit'

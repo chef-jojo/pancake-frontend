@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "@pancakeswap/styled";
+import styled from "@emotion/styled";
 import { BaseLayout, CardsLayout } from ".";
 
 export default {

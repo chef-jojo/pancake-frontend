@@ -7,4 +7,5 @@ module.exports = {
     "^.+\\.svg$": "<rootDir>/svgTransform.js",
   },
   testEnvironment: "jsdom",
+  snapshotSerializers: ["@emotion/jest/serializer"],
 };

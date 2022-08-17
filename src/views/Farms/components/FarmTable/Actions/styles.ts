@@ -1,4 +1,4 @@
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 
 export const ActionContainer = styled.div`
   padding: 16px;

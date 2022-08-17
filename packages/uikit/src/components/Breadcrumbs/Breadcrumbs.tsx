@@ -1,6 +1,6 @@
 /* eslint-disable react/no-array-index-key */
 import React, { Children, isValidElement, ReactNode } from "react";
-import styled from "@pancakeswap/styled";
+import styled from "@emotion/styled";
 import { space } from "styled-system";
 import ChevronRightIcon from "../Svg/Icons/ChevronRight";
 import { BreadcrumbsProps } from "./types";

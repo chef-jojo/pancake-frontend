@@ -1,5 +1,5 @@
 import { m as motion } from "framer-motion";
-import styled from "@pancakeswap/styled";
+import styled from "@emotion/styled";
 import { background, border, layout, position, space, color } from "styled-system";
 import { BoxProps } from "./types";
 

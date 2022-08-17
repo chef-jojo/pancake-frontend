@@ -1,4 +1,5 @@
-import styled, { css } from "@pancakeswap/styled";
+import { css } from "@emotion/react";
+import styled from "@emotion/styled";
 import { Flex, Box } from "../Box";
 
 export const SubMenuItemWrapper = styled(Flex)<{ $isMobileOnly: boolean }>`

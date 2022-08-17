@@ -8,17 +8,16 @@ Pancake UIkit is a set of React components and hooks used to build pages on Panc
 
 `yarn add @pancakeswap/uikit`
 
-***Note**: In case you want to use the older version of the Pancake UIkit, you should install @pancakeswap-libs/uikit, instead, but we recommend using the latest version of the UIkit.*
-
+**\*Note**: In case you want to use the older version of the Pancake UIkit, you should install @pancakeswap-libs/uikit, instead, but we recommend using the latest version of the UIkit.\*
 
 ## Setup
 
 ### Theme
 
-Before using Pancake UIkit, you need to provide the theme file to styled-component.
+Before using Pancake UIkit, you need to provide the theme file to emotion.
 
 ```
-import { ThemeProvider } from '@pancakeswap/styled'
+import { ThemeProvider } from '@emotion/react'
 import { light, dark } from '@pancakeswap/uikit'
 ...
 <ThemeProvider theme={isDark}>...</ThemeProvider>

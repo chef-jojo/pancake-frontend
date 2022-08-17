@@ -1,4 +1,4 @@
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { Flex, Skeleton, Td, useMatchBreakpointsContext } from '@pancakeswap/uikit'
 
 const GridItem = styled(Flex)`

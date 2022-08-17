@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styled from "@pancakeswap/styled";
+import styled from "@emotion/styled";
 import Text from "../../components/Text/Text";
 import { CopyIcon } from "../../components/Svg";
 

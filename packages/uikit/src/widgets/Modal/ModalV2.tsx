@@ -1,7 +1,7 @@
 import { m } from "framer-motion";
 import React from "react";
 import { createPortal } from "react-dom";
-import styled from "@pancakeswap/styled";
+import styled from "@emotion/styled";
 import { Overlay } from "../../components/Overlay";
 import getPortalRoot from "../../util/getPortalRoot";
 

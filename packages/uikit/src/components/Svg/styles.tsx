@@ -1,4 +1,4 @@
-import styled from "@pancakeswap/styled";
+import styled from "@emotion/styled";
 import { Colors } from "../../theme";
 
 export const StyledIconContainer = styled.div<{ activeBackgroundColor?: keyof Colors }>`

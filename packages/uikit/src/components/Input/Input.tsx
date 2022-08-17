@@ -1,4 +1,5 @@
-import styled, { Theme } from "@pancakeswap/styled";
+import { Theme } from "@emotion/react";
+import styled from "@emotion/styled";
 import { InputProps, scales } from "./types";
 
 interface StyledInputProps extends InputProps {

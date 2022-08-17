@@ -1,6 +1,6 @@
 import { Flex, Text, Heading } from '@pancakeswap/uikit'
 import Image from 'next/image'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { useTranslation } from '@pancakeswap/localization'
 import useTheme from 'hooks/useTheme'
 import FanTokenAllBunniesImage from '../../../pngs/fan-token-all-bunnies.png'

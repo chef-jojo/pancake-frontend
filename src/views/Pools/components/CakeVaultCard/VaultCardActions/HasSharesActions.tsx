@@ -15,6 +15,8 @@ interface HasStakeActionProps {
   performanceFee: number
 }
 
+const TextFlex = Text.withComponent(Flex)
+
 const HasSharesActions: React.FC<React.PropsWithChildren<HasStakeActionProps>> = ({
   pool,
   stakingTokenBalance,
@@ -49,7 +51,7 @@ const HasSharesActions: React.FC<React.PropsWithChildren<HasStakeActionProps>> =
       <Flex mb="16px" justifyContent="space-between" alignItems="center">
         <Flex flexDirection="column">
           <Balance fontSize="20px" bold value={cakeAsNumberBalance} decimals={5} />
-          <Text as={Flex} fontSize="12px" color="textSubtle" flexWrap="wrap">
+          <TextFlex as={Flex} fontSize="12px" color="textSubtle" flexWrap="wrap">
             {cakePriceBusd.gt(0) ? (
               <Balance
                 value={stakedDollarValue}
@@ -62,7 +64,7 @@ const HasSharesActions: React.FC<React.PropsWithChildren<HasStakeActionProps>> =
             ) : (
               <Skeleton mt="1px" height={16} width={64} />
             )}
-          </Text>
+          </TextFlex>
         </Flex>
         <Flex>
           <IconButton variant="secondary" onClick={onPresentUnstake} mr="6px">

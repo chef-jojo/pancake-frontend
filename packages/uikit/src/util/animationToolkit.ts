@@ -1,5 +1,5 @@
 import { Variants } from "framer-motion";
-import { keyframes } from "@pancakeswap/styled";
+import { keyframes } from "@emotion/react";
 
 export const appearAnimation = keyframes`
   from { opacity:0 }

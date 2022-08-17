@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
-import styled, { keyframes } from "@pancakeswap/styled";
+import { keyframes } from "@emotion/react";
+import styled from "@emotion/styled";
 import Flex from "../../../components/Box/Flex";
 import { LogoIcon, LogoWithTextIcon } from "../../../components/Svg";
 import { MenuContext } from "../context";

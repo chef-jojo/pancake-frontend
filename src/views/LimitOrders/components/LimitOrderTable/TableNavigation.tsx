@@ -1,6 +1,6 @@
 import { useState, useMemo, useCallback, ReactElement, memo, useEffect } from 'react'
 import { Text, Flex, Box, Grid, ArrowBackIcon, ArrowForwardIcon } from '@pancakeswap/uikit'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { useTranslation } from '@pancakeswap/localization'
 import SubgraphHealthIndicator from 'components/SubgraphHealthIndicator'
 import NoOrdersMessage from './NoOrdersMessage'

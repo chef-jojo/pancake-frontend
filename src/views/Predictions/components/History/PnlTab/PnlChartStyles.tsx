@@ -10,7 +10,8 @@
  * I'll leave TODO: comment here to check back later if there is update to types
  *
  */
-import styled, { keyframes } from '@pancakeswap/styled'
+import { keyframes } from '@emotion/react'
+import styled from '@emotion/styled'
 
 interface SliceProps {
   length: number

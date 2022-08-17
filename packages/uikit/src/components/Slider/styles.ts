@@ -1,5 +1,5 @@
 import { InputHTMLAttributes } from "react";
-import styled from "@pancakeswap/styled";
+import styled from "@emotion/styled";
 import Text from "../Text/Text";
 
 interface SliderLabelProps {

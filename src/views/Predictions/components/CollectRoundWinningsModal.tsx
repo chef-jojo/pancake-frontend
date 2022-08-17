@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import {
   ModalContainer,
   ModalBody,

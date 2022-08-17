@@ -1,4 +1,4 @@
-import styled from "@pancakeswap/styled";
+import styled from "@emotion/styled";
 import BaseLayout from "./BaseLayout";
 
 const GridLayout = styled(BaseLayout)`

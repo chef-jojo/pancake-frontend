@@ -5,7 +5,7 @@ import { useTranslation } from '@pancakeswap/localization'
 
 import { useVaultPoolByKey } from 'state/pools/hooks'
 import { DeserializedPool, VaultKey, DeserializedPoolLockedVault } from 'state/types'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { BIG_ZERO } from 'utils/bigNumber'
 import { getBalanceNumber } from 'utils/formatBalance'
 import BaseCell, { CellContent } from './BaseCell'

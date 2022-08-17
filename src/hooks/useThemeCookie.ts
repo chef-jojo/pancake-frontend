@@ -1,10 +1,10 @@
 import { useContext, useEffect } from 'react'
-import { ThemeContext as StyledThemeContext } from '@pancakeswap/styled'
+import { Theme, ThemeContext as StyledThemeContext } from '@emotion/react'
 import Cookie from 'js-cookie'
 import { COOKIE_THEME_KEY, THEME_DOMAIN } from 'hooks/useTheme'
 
 const useThemeCookie = () => {
-  const theme = useContext(StyledThemeContext)
+  const theme = useContext(StyledThemeContext) as Theme
   const themeValue = theme.isDark ? 'dark' : 'light'
 
   useEffect(() => {

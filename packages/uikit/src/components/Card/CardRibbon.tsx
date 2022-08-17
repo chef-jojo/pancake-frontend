@@ -1,5 +1,6 @@
 import React from "react";
-import styled, { Theme } from "@pancakeswap/styled";
+import { Theme } from "@emotion/react";
+import styled from "@emotion/styled";
 import { CardRibbonProps } from "./types";
 
 interface StyledCardRibbonProps extends CardRibbonProps {

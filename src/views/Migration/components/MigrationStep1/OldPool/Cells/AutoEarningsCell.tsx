@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { Text, Flex, Box, useMatchBreakpointsContext } from '@pancakeswap/uikit'
 import Balance from 'components/Balance'
 import { useTranslation } from '@pancakeswap/localization'

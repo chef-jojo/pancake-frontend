@@ -1,4 +1,5 @@
-import styled, { Theme } from "@pancakeswap/styled";
+import { Theme } from "@emotion/react";
+import styled from "@emotion/styled";
 import { space, typography, layout } from "styled-system";
 import getThemeValue from "../../util/getThemeValue";
 import { TextProps } from "./types";

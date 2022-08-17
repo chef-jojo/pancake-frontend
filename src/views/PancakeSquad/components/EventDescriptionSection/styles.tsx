@@ -1,5 +1,6 @@
 import { Flex, lightColors } from '@pancakeswap/uikit'
-import styled, { keyframes } from '@pancakeswap/styled'
+import { keyframes } from '@emotion/react'
+import styled from '@emotion/styled'
 
 const flyingAnim = () => keyframes`
   from {

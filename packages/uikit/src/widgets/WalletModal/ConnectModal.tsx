@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import styled, { useTheme } from "@pancakeswap/styled";
+import { useTheme } from "@emotion/react";
+import styled from "@emotion/styled";
 import EXTERNAL_LINK_PROPS from "../../util/externalLinkProps";
 import Grid from "../../components/Box/Grid";
 import Box from "../../components/Box/Box";

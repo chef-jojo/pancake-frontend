@@ -1,4 +1,4 @@
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 
 export const Td = styled.td`
   padding: 4px 0;

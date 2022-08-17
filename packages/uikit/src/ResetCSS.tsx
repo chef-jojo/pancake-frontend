@@ -1,4 +1,4 @@
-import { css, Global } from "@pancakeswap/styled";
+import { css, Global } from "@emotion/react";
 
 const ResetCSS = () => (
   <Global

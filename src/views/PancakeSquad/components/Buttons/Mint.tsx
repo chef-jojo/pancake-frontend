@@ -7,7 +7,7 @@ import { useCallWithGasPrice } from 'hooks/useCallWithGasPrice'
 import { useNftSaleContract } from 'hooks/useContract'
 import useToast from 'hooks/useToast'
 import useCatchTxError from 'hooks/useCatchTxError'
-import { Theme } from '@pancakeswap/styled'
+import { Theme } from '@emotion/react'
 import { SaleStatusEnum } from '../../types'
 import ConfirmModal from '../Modals/Confirm'
 

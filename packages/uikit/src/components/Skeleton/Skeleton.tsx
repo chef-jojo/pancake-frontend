@@ -1,6 +1,7 @@
 import { AnimatePresence, domAnimation, LazyMotion, m as Motion } from "framer-motion";
 import React, { useRef } from "react";
-import styled, { keyframes } from "@pancakeswap/styled";
+import { keyframes } from "@emotion/react";
+import styled from "@emotion/styled";
 import { layout, space, borderRadius } from "styled-system";
 import { animation as ANIMATION, SkeletonProps, SkeletonV2Props, variant as VARIANT } from "./types";
 import {

@@ -1,5 +1,5 @@
 import { ReactElement } from 'react'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { Flex, Text, FlexProps, ArrowForwardIcon } from '@pancakeswap/uikit'
 
 interface NextRankProps extends FlexProps {

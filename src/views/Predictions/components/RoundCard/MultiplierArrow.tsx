@@ -1,5 +1,6 @@
 import { BigNumber } from '@ethersproject/bignumber'
-import styled, { CSSProperties } from '@pancakeswap/styled'
+import styled from '@emotion/styled'
+import { CSSProperties } from 'react'
 import { Box, Flex, Text } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import { BetPosition } from 'state/types'

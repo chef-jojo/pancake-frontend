@@ -1,5 +1,5 @@
 import { Card, Link } from '@pancakeswap/uikit'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 
 export const StyledCard = styled(Card)`
   background: none;

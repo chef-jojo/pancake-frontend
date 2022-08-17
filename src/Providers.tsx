@@ -2,7 +2,7 @@ import { ModalProvider, light, dark, MatchBreakpointsProvider } from '@pancakesw
 import { Provider } from 'react-redux'
 import { SWRConfig } from 'swr'
 import createCache from '@emotion/cache'
-import { CacheProvider, ThemeProvider } from '@pancakeswap/styled'
+import { CacheProvider, ThemeProvider } from '@emotion/react'
 import { LanguageProvider } from '@pancakeswap/localization'
 import { ToastsProvider } from 'contexts/ToastsContext'
 import { fetchStatusMiddleware } from 'hooks/useSWRContract'

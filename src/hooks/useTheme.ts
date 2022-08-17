@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import Cookie from 'js-cookie'
-import { ThemeContext as StyledThemeContext } from '@pancakeswap/styled'
+import { Theme, ThemeContext as StyledThemeContext } from '@emotion/react'
 import { useTheme as useNextTheme } from 'next-themes'
 
 export const COOKIE_THEME_KEY = 'theme'
@@ -8,7 +8,7 @@ export const THEME_DOMAIN = '.pancakeswap.finance'
 
 const useTheme = () => {
   const { resolvedTheme, setTheme } = useNextTheme()
-  const theme = useContext(StyledThemeContext)
+  const theme = useContext(StyledThemeContext) as Theme
 
   const handleSwitchTheme = (themeValue: 'light' | 'dark') => {
     try {

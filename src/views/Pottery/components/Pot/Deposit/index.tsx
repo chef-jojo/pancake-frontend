@@ -1,4 +1,4 @@
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { useMemo } from 'react'
 import BigNumber from 'bignumber.js'
 import { Flex, Box, Text, TooltipText, useTooltip } from '@pancakeswap/uikit'

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styled from "@pancakeswap/styled";
+import styled from "@emotion/styled";
 /* eslint-disable import/no-unresolved */
 import { Meta } from "@storybook/react/types-6-0";
 import Box from "../Box/Box";

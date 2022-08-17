@@ -1,4 +1,4 @@
-import styled from "@pancakeswap/styled";
+import styled from "@emotion/styled";
 import { space, SpaceProps } from "styled-system";
 
 export type CardFooterProps = SpaceProps;

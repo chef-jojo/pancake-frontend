@@ -1,5 +1,5 @@
 import React, { cloneElement, Children, ReactElement } from "react";
-import styled from "@pancakeswap/styled";
+import styled from "@emotion/styled";
 import { NotificationDotProps, DotProps } from "./types";
 
 const NotificationDotRoot = styled.span`

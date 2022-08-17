@@ -1,4 +1,4 @@
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { Button } from '@pancakeswap/uikit'
 
 interface NumTicketsToBuyButtonProps {

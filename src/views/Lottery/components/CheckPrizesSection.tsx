@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { Button, Heading, Flex, useModal, AutoRenewIcon } from '@pancakeswap/uikit'
 import { useWeb3React } from '@pancakeswap/wagmi'
 import { FetchStatus, LotteryStatus } from 'config/constants/types'

@@ -15,7 +15,7 @@ import { HistoryFilter } from 'state/types'
 import { setHistoryFilter, setHistoryPaneState } from 'state/predictions'
 import { useGetHistoryFilter, useGetIsFetchingHistory } from 'state/predictions/hooks'
 import { useTranslation } from '@pancakeswap/localization'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 
 const Filter = styled.label`
   align-items: center;

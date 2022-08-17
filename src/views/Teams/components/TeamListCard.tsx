@@ -1,4 +1,5 @@
-import styled, { Theme } from '@pancakeswap/styled'
+import { Theme } from '@emotion/react'
+import styled from '@emotion/styled'
 import Link from 'next/link'
 import { Button, Card, CommunityIcon, Flex, Heading, PrizeIcon, Text } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'

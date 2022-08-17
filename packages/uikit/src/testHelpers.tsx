@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 import { render, RenderResult } from "@testing-library/react";
-import { ThemeProvider } from "@pancakeswap/styled";
+import { ThemeProvider } from "@emotion/react";
 import { light } from "./theme";
 
 /* eslint-disable import/prefer-default-export */

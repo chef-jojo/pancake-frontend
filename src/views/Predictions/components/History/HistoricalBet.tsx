@@ -12,7 +12,7 @@ import {
   WaitIcon,
 } from '@pancakeswap/uikit'
 import { useWeb3React } from '@pancakeswap/wagmi'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import useLocalDispatch from 'contexts/LocalRedux/useLocalDispatch'
 import { Bet, PredictionStatus } from 'state/types'
 import { REWARD_RATE } from 'state/predictions/config'

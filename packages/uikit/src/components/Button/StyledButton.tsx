@@ -1,4 +1,5 @@
-import styled, { Theme, css } from "@pancakeswap/styled";
+import styled from "@emotion/styled";
+import { Theme, css } from "@emotion/react";
 import { space, layout, variant } from "styled-system";
 import { scaleVariants, styleVariants } from "./theme";
 import { BaseButtonProps } from "./types";

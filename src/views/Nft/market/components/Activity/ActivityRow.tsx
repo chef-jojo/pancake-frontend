@@ -30,6 +30,8 @@ interface ActivityRowProps {
   isNftActivity?: boolean
 }
 
+const TextLink = Text.withComponent(NextLinkFromReactRouter)
+
 const ActivityRow: React.FC<React.PropsWithChildren<ActivityRowProps>> = ({
   activity,
   bnbBusdPrice,
@@ -92,7 +94,7 @@ const ActivityRow: React.FC<React.PropsWithChildren<ActivityRowProps>> = ({
                   </NextLinkFromReactRouter>
                 </Box>
                 <Flex flexDirection="column">
-                  <Text
+                  <TextLink
                     as={NextLinkFromReactRouter}
                     to={`${nftsBaseUrl}/collections/${nft.collectionAddress}`}
                     textAlign={['center', null, 'left']}
@@ -100,15 +102,15 @@ const ActivityRow: React.FC<React.PropsWithChildren<ActivityRowProps>> = ({
                     fontSize="14px"
                   >
                     {nft.collectionName}
-                  </Text>
-                  <Text
+                  </TextLink>
+                  <TextLink
                     as={NextLinkFromReactRouter}
                     to={`${nftsBaseUrl}/collections/${nft.collectionAddress}/${tokenId}`}
                     textAlign={['center', null, 'left']}
                     bold
                   >
                     {nft.name}
-                  </Text>
+                  </TextLink>
                 </Flex>
               </>
             )}

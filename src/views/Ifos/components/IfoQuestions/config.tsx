@@ -1,5 +1,5 @@
 import Trans from 'components/Trans'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { Link } from '@pancakeswap/uikit'
 
 const InlineLink = styled(Link)`

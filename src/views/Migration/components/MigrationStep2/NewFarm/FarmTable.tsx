@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { useTranslation } from '@pancakeswap/localization'
 import { useTable, ColumnType, Flex, Spinner } from '@pancakeswap/uikit'
 import TableHeader from '../../MigrationTable/TableHeader'

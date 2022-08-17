@@ -122,6 +122,7 @@ const DropdownMenu: React.FC<React.PropsWithChildren<DropdownMenuProps>> = ({
                         $isActive={isActive}
                         disabled={disabled || isDisabled}
                         as={linkComponent}
+                        // @ts-ignore
                         href={href}
                         onClick={() => {
                           setIsOpen(false);
@@ -136,6 +137,7 @@ const DropdownMenu: React.FC<React.PropsWithChildren<DropdownMenuProps>> = ({
                         $isActive={isActive}
                         disabled={disabled || isDisabled}
                         as="a"
+                        // @ts-ignore
                         href={href}
                         target="_blank"
                         onClick={() => {

@@ -1,5 +1,5 @@
 import { ReactElement } from 'react'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { useTranslation } from '@pancakeswap/localization'
 import { Box, LinkExternal } from '@pancakeswap/uikit'
 import Container from 'components/Layout/Container'

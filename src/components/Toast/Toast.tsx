@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef } from 'react'
 import { CSSTransition } from 'react-transition-group'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { Alert, alertVariants } from '@pancakeswap/uikit'
 import { ToastProps, types } from './types'
 

@@ -1,5 +1,6 @@
 import React from 'react'
-import styled, { keyframes, css } from '@pancakeswap/styled'
+import { keyframes, css } from '@emotion/react'
+import styled from '@emotion/styled'
 import Staked from './Staked'
 import Earned from './Earned'
 import Multiplier from './Multiplier'

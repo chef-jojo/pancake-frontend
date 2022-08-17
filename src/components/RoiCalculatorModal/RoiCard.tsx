@@ -1,5 +1,5 @@
 import { useRef, useEffect, useState } from 'react'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { Box, Flex, Text, Input, CheckmarkIcon, PencilIcon, IconButton } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import { CalculatorMode, RoiCalculatorReducerState } from './useRoiCalculatorReducer'

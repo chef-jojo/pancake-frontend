@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "@pancakeswap/styled";
+import styled from "@emotion/styled";
 import Flex from "../../components/Box/Flex";
 import { MotionBox } from "../../components/Box";
 import { ArrowBackIcon, CloseIcon } from "../../components/Svg";

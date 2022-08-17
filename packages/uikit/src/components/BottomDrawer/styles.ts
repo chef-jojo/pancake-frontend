@@ -1,5 +1,6 @@
 /* eslint-disable import/prefer-default-export */
-import styled, { keyframes, css } from "@pancakeswap/styled";
+import styled from "@emotion/styled";
+import { keyframes, css } from "@emotion/react";
 
 export const mountAnimation = keyframes`
     0% {

@@ -1,6 +1,6 @@
 import { useState, useMemo, useEffect } from 'react'
 import { Input } from '@pancakeswap/uikit'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import debounce from 'lodash/debounce'
 import { useTranslation } from '@pancakeswap/localization'
 

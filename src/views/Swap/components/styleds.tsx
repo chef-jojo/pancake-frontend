@@ -1,6 +1,7 @@
 import { ErrorIcon, Flex, Text } from '@pancakeswap/uikit'
 import { AutoColumn } from 'components/Layout/Column'
-import styled, { css } from '@pancakeswap/styled'
+import { css } from '@emotion/react'
+import styled from '@emotion/styled'
 
 export const Wrapper = styled(Flex)`
   position: relative;

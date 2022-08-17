@@ -1,5 +1,5 @@
 import { Children } from 'react'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import Spacer from './Spacer'
 
 const ModalActions: React.FC<React.PropsWithChildren> = ({ children }) => {

@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react'
 import { Flex, Text } from '@pancakeswap/uikit'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { useTranslation } from '@pancakeswap/localization'
 import BigNumber from 'bignumber.js'
 import Balance from 'components/Balance'

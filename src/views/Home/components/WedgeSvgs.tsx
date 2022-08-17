@@ -1,4 +1,4 @@
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { Svg, SvgProps } from '@pancakeswap/uikit'
 
 export const OuterWedgeWrapper = styled.div`

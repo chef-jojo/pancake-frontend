@@ -1,5 +1,5 @@
 import { Image } from '@pancakeswap/uikit'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 
 const DesktopImage = styled(Image)`
   display: none;

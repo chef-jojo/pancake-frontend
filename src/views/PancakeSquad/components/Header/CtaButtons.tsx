@@ -3,7 +3,7 @@
 import { BigNumber } from '@ethersproject/bignumber'
 import { Flex } from '@pancakeswap/uikit'
 import { ContextApi } from '@pancakeswap/localization'
-import { Theme } from '@pancakeswap/styled'
+import { Theme } from '@emotion/react'
 import { SaleStatusEnum, UserStatusEnum } from '../../types'
 import BuyTicketsButtons from '../Buttons/BuyTickets'
 import MintButton from '../Buttons/Mint'

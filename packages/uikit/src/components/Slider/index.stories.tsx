@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styled from "@pancakeswap/styled";
+import styled from "@emotion/styled";
 import Flex from "../Box/Flex";
 import Box from "../Box/Box";
 import Text from "../Text/Text";

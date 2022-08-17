@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import styled from "@pancakeswap/styled";
+import styled from "@emotion/styled";
 import observerOptions from "./options";
 import Wrapper from "./Wrapper";
 import { BackgroundImageProps } from "./types";

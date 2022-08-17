@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react'
 import { useWeb3React } from '@pancakeswap/wagmi'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { useTranslation } from '@pancakeswap/localization'
 import { Box, Flex, Text, ChevronRightIcon, useModal } from '@pancakeswap/uikit'
 import Loading from 'components/Loading'

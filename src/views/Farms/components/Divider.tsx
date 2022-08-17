@@ -1,4 +1,4 @@
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 
 export default styled.div`
   background-color: ${({ theme }) => theme.colors.textSubtle};

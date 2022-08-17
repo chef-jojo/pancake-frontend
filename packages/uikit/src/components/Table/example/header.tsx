@@ -1,4 +1,4 @@
-import styled from "@pancakeswap/styled";
+import styled from "@emotion/styled";
 
 const StyledTh = styled.th`
   background: #eff4f5;

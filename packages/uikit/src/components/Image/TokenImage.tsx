@@ -1,4 +1,4 @@
-import styled from "@pancakeswap/styled";
+import styled from "@emotion/styled";
 import Image from "./Image";
 
 const TokenImage = styled(Image)`

@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "@pancakeswap/styled";
+import styled from "@emotion/styled";
 import Stepper from "./Stepper";
 import { Step, StepNumber } from "./Step";
 import { Status } from "./types";

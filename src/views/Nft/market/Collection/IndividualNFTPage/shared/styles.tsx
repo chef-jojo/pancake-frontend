@@ -1,4 +1,4 @@
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { NextLinkFromReactRouter } from 'components/NextLink'
 import { Box, Flex, Grid, Image } from '@pancakeswap/uikit'
 

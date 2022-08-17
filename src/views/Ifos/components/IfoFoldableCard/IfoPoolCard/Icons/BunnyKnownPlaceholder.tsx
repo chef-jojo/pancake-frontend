@@ -1,5 +1,5 @@
 import { Svg, SvgProps } from '@pancakeswap/uikit'
-import { useTheme } from '@pancakeswap/styled'
+import { useTheme } from '@emotion/react'
 
 const BunnyKnownPlaceholder: React.FC<React.PropsWithChildren<SvgProps>> = (props) => {
   const theme = useTheme()

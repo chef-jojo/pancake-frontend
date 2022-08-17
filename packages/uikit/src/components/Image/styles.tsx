@@ -1,4 +1,4 @@
-import styled from "@pancakeswap/styled";
+import styled from "@emotion/styled";
 import { variant as StyledSystemVariant } from "styled-system";
 import { ImageProps, Variant, variants } from "./types";
 import TokenImage from "./TokenImage";

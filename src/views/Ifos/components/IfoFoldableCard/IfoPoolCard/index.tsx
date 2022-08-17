@@ -1,5 +1,5 @@
 import { useMemo } from 'react'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import { useTranslation, ContextApi } from '@pancakeswap/localization'
 import { Box, Card, CardBody, CardHeader, Flex, HelpIcon, Text, useTooltip } from '@pancakeswap/uikit'

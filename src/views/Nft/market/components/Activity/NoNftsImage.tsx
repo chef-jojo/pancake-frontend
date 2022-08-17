@@ -1,4 +1,4 @@
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 
 const NoNftsImage = styled.div`
   background: url('/images/nfts/no-profile-md.png');

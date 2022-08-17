@@ -1,5 +1,5 @@
 import { useTranslation } from '@pancakeswap/localization'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { Flex, Heading, Text } from '@pancakeswap/uikit'
 import getTimePeriods from 'utils/getTimePeriods'
 import { remainTimeToNextFriday } from '../helpers'

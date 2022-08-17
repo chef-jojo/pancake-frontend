@@ -1,4 +1,4 @@
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { Box, Flex, Text, ProfileAvatar, Skeleton } from '@pancakeswap/uikit'
 import { useProfileForAddress } from 'state/profile/hooks'
 import truncateHash from 'utils/truncateHash'

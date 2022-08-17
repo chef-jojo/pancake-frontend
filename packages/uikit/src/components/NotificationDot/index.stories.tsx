@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styled from "@pancakeswap/styled";
+import styled from "@emotion/styled";
 import NotificationDot from "./NotificationDot";
 import Button from "../Button/Button";
 import ButtonMenu from "../ButtonMenu/ButtonMenu";

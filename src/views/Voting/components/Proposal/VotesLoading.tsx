@@ -1,6 +1,6 @@
 import { Box, Flex, Skeleton } from '@pancakeswap/uikit'
 import times from 'lodash/times'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 
 const Row = styled(Flex)`
   border-bottom: 1px solid ${({ theme }) => theme.colors.cardBorder};

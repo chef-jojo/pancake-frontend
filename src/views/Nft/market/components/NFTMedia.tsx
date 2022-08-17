@@ -2,7 +2,7 @@ import { Box, BoxProps } from '@pancakeswap/uikit'
 import { FC, useEffect, useRef } from 'react'
 import useIntersectionObserver from 'hooks/useIntersectionObserver'
 import { NftToken } from 'state/nftMarket/types'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { useTryVideoNftMedia } from 'state/nftMarket/hooks'
 import { useAppDispatch } from 'state'
 import { setTryVideoNftMedia } from 'state/nftMarket/reducer'
@@ -18,6 +18,8 @@ export const AspectRatio = ({ ratio, children, ...props }) => (
     <StyledAspectRatio>{children}</StyledAspectRatio>
   </Box>
 )
+
+const Video = Box.withComponent('video')
 
 const NFTMedia: FC<
   React.PropsWithChildren<
@@ -52,10 +54,10 @@ const NFTMedia: FC<
     return (
       <AspectRatio ratio={width / height} {...props}>
         <div ref={observerRef} />
-        <Box ref={vidRef} borderRadius={borderRadius} as="video" width="100%" height="100%" muted loop playsInline>
+        <Video ref={vidRef} borderRadius={borderRadius} as="video" width="100%" height="100%" muted loop playsInline>
           <source src={nft.image.webm} type="video/webm" />
           <source src={nft.image.mp4} type="video/mp4" />
-        </Box>
+        </Video>
       </AspectRatio>
     )
   }
@@ -66,6 +68,7 @@ const NFTMedia: FC<
       height={height}
       src={nft?.image.gif || nft?.image.thumbnail}
       alt={nft?.name}
+      // @ts-ignore
       as={as}
       {...props}
     />

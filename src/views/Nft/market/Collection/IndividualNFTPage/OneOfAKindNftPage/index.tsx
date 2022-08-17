@@ -1,5 +1,5 @@
 import { useMemo } from 'react'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { Flex } from '@pancakeswap/uikit'
 import sum from 'lodash/sum'
 import noop from 'lodash/noop'

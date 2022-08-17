@@ -1,5 +1,5 @@
 import { Checkbox } from '@pancakeswap/uikit'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 
 const ZapCheckBoxWrapper = styled.label`
   display: grid;

@@ -1,10 +1,12 @@
 import React, { cloneElement, Children, ReactElement } from "react";
-import styled, { Theme } from "@pancakeswap/styled";
+import { Theme } from "@emotion/react";
+import styled from "@emotion/styled";
 import { space } from "styled-system";
 import { scales, variants } from "../Button/types";
 import { ButtonMenuProps } from "./types";
 
 interface StyledButtonMenuProps extends ButtonMenuProps {
+  //
   theme: Theme;
 }
 
@@ -16,7 +18,7 @@ const getBorderColor = ({ theme, variant }: StyledButtonMenuProps) => {
   return theme.colors[variant === variants.SUBTLE ? "inputSecondary" : "disabled"];
 };
 
-const StyledButtonMenu = styled.div<StyledButtonMenuProps>`
+const StyledButtonMenu = styled.div<ButtonMenuProps>`
   background-color: ${getBackgroundColor};
   border-radius: 16px;
   display: ${({ fullWidth }) => (fullWidth ? "flex" : "inline-flex")};

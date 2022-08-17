@@ -1,5 +1,5 @@
 import { memo } from 'react'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { Flex, Image, Skeleton } from '@pancakeswap/uikit'
 import Sticker from '../../Sticker'
 

@@ -1,7 +1,7 @@
 import { NextLinkFromReactRouter } from 'components/NextLink'
 import ToggleView from 'components/ToggleView/ToggleView'
 import { useRouter } from 'next/router'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { ButtonMenu, ButtonMenuItem, Toggle, Text, NotificationDot } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 

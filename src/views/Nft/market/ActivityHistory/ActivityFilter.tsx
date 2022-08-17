@@ -1,4 +1,4 @@
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { Box, Button, Flex, IconButton, CloseIcon } from '@pancakeswap/uikit'
 import { useAppDispatch } from 'state'
 import { addActivityTypeFilters, removeActivityTypeFilters } from 'state/nftMarket/reducer'

@@ -1,5 +1,5 @@
 import { HTMLAttributes } from 'react'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { StarFillIcon, StarLineIcon } from '@pancakeswap/uikit'
 import useTheme from 'hooks/useTheme'
 

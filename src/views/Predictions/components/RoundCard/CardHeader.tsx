@@ -1,6 +1,7 @@
 import { ReactElement } from 'react'
 import { Flex, Text } from '@pancakeswap/uikit'
-import styled, { Theme } from '@pancakeswap/styled'
+import { Theme } from '@emotion/react'
+import styled from '@emotion/styled'
 
 type Status = 'expired' | 'live' | 'next' | 'soon' | 'canceled' | 'calculating'
 

@@ -1,4 +1,4 @@
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { Text } from '@pancakeswap/uikit'
 
 export const OutlineText = styled(Text)<{ defaultType?: boolean }>`

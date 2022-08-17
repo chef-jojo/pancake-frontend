@@ -1,4 +1,4 @@
-import styled from "@pancakeswap/styled";
+import styled from "@emotion/styled";
 import Box from "../Box/Box";
 import Input from "../Input/Input";
 import Text from "../Text/Text";

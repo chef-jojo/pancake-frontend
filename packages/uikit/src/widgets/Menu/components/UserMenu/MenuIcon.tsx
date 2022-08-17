@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "@pancakeswap/styled";
+import styled from "@emotion/styled";
 import { Variant, variants } from "./types";
 import { Image } from "../../../../components/Image";
 import { RefreshIcon, WalletFilledIcon, WarningIcon } from "../../../../components/Svg";

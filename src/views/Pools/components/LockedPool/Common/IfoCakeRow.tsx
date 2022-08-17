@@ -1,4 +1,4 @@
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { Flex, Text, TooltipText, useTooltip, Box, Link } from '@pancakeswap/uikit'
 
 import { BalanceWithLoading } from 'components/Balance'

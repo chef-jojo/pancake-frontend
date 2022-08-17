@@ -1,5 +1,5 @@
 import { useCallback } from 'react'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { ListViewIcon, CardViewIcon, IconButton } from '@pancakeswap/uikit'
 import { ViewMode } from 'state/user/actions'
 

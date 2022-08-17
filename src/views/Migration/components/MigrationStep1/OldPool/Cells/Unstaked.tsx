@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { DeserializedPool } from 'state/types'
 import UnstakeButton from '../UnstakeButton'
 

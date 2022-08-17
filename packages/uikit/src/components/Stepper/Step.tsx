@@ -1,10 +1,10 @@
 import React from "react";
-import styled from "@pancakeswap/styled";
+import styled from "@emotion/styled";
 import Flex from "../Box/Flex";
 import Box from "../Box/Box";
-import { StatusProps, StepProps } from "./types";
+import { StatusProps, StepProps, ThemedProps } from "./types";
 
-const getStepNumberFontColor = ({ theme, status }: StatusProps) => {
+const getStepNumberFontColor = ({ theme, status }: StatusProps & ThemedProps) => {
   if (status === "past") {
     return theme.colors.success;
   }

@@ -1,4 +1,4 @@
-import styled from "@pancakeswap/styled";
+import styled from "@emotion/styled";
 import { color } from "styled-system";
 import { TabProps } from "./types";
 

@@ -1,8 +1,7 @@
+import styled from "@emotion/styled";
 import React from "react";
-import styled from "@pancakeswap/styled";
-import { ThemedProps } from "./types";
 
-const StepperWrapper = styled.div<ThemedProps>`
+const StepperWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: fit-content;

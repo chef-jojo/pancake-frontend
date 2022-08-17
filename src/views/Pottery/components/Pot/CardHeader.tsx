@@ -1,4 +1,4 @@
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { Flex, TokenPairImage } from '@pancakeswap/uikit'
 import { PoolCardHeaderTitle } from 'views/Pools/components/PoolCard/PoolCardHeader'
 

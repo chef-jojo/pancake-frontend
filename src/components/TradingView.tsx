@@ -2,7 +2,7 @@ import { Box, FlexProps, useMatchBreakpointsContext } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import Script from 'next/script'
 import { useEffect } from 'react'
-import { Theme, useTheme } from '@pancakeswap/styled'
+import { Theme, useTheme } from '@emotion/react'
 import { ChartByLabel } from './Chart/ChartbyLabel'
 
 /**

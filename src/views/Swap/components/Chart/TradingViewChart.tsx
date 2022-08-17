@@ -3,7 +3,7 @@ import TradingView, { useTradingViewEvent } from 'components/TradingView'
 import { useTranslation } from '@pancakeswap/localization'
 import useDebounce from 'hooks/useDebounce'
 import { useCallback, useEffect, useMemo, useState, memo } from 'react'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { BarChartLoader } from 'views/Info/components/ChartLoaders'
 
 interface TradingViewChartProps {

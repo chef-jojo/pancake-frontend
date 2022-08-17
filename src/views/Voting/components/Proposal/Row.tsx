@@ -1,7 +1,7 @@
-import styled from '@pancakeswap/styled'
-import { Grid, Box } from '@pancakeswap/uikit'
+import styled from '@emotion/styled'
+import { Grid, Box, Flex } from '@pancakeswap/uikit'
 
-export const AddressColumn = styled(Box)`
+export const AddressColumn = styled(Flex)`
   grid-area: address;
 `
 

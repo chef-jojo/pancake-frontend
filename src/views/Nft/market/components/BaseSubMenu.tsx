@@ -1,5 +1,5 @@
 import { SubMenuItems } from '@pancakeswap/uikit'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 
 const BaseSubMenu = styled(SubMenuItems)`
   background-color: transparent;

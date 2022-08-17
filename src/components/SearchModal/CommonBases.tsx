@@ -1,6 +1,6 @@
 import { ChainId, Currency, Token } from '@pancakeswap/sdk'
 import { Text } from '@pancakeswap/uikit'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import useNativeCurrency from 'hooks/useNativeCurrency'
 import { useTranslation } from '@pancakeswap/localization'
 

@@ -1,5 +1,6 @@
 import { Heading } from '@pancakeswap/uikit'
-import styled, { Theme } from '@pancakeswap/styled'
+import { Theme } from '@emotion/react'
+import styled from '@emotion/styled'
 
 const H1SizeStyles = (theme: Theme) => `
   font-size: 48px;

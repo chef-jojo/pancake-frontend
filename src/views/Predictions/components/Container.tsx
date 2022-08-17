@@ -1,5 +1,5 @@
 import { memo } from 'react'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 
 const Container = styled.div`
   background: ${({ theme }) => theme.colors.gradients.violetAlt};

@@ -1,4 +1,4 @@
-import { Theme } from "@pancakeswap/styled";
+import { Theme } from "@emotion/react";
 import { light as lightAlert } from "../components/Alert/theme";
 import { light as lightCard } from "../components/Card/theme";
 import { light as lightPancakeToggle } from "../components/PancakeToggle/theme";

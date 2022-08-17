@@ -1,4 +1,4 @@
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { Flex, Box } from '@pancakeswap/uikit'
 
 export const CompetitionPage = styled.div`

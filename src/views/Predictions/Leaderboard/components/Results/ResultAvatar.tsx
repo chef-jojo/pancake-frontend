@@ -1,5 +1,5 @@
 import { Box, Flex, FlexProps, Link, ProfileAvatar, SubMenu, SubMenuItem, useModal, Text } from '@pancakeswap/uikit'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { getBlockExploreLink } from 'utils'
 import { PredictionUser } from 'state/types'
 import { useProfileForAddress } from 'state/profile/hooks'
@@ -31,6 +31,8 @@ const UsernameWrapper = styled(Box)`
     order: 2;
   }
 `
+
+const SubMenuItemLink = SubMenuItem.withComponent(Link)
 
 const ResultAvatar: React.FC<React.PropsWithChildren<ResultAvatarProps>> = ({ user, ...props }) => {
   const { t } = useTranslation()
@@ -71,9 +73,9 @@ const ResultAvatar: React.FC<React.PropsWithChildren<ResultAvatarProps>> = ({ us
       options={{ placement: 'bottom-start' }}
     >
       <SubMenuItem onClick={onPresentWalletStatsModal}>{t('View Stats')}</SubMenuItem>
-      <SubMenuItem as={Link} href={getBlockExploreLink(user.id, 'address')} bold={false} color="text" external>
+      <SubMenuItemLink as={Link} href={getBlockExploreLink(user.id, 'address')} bold={false} color="text" external>
         {t('View on BscScan')}
-      </SubMenuItem>
+      </SubMenuItemLink>
     </SubMenu>
   )
 }

@@ -1,4 +1,4 @@
-import styled from "@pancakeswap/styled";
+import styled from "@emotion/styled";
 import { UserMenuItemProps } from "./types";
 
 export const UserMenuDivider = styled.hr`

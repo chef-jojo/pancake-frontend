@@ -1,6 +1,6 @@
 import { NoProfileAvatarIcon, Flex, Heading, Skeleton, Text, Box, useMatchBreakpointsContext } from '@pancakeswap/uikit'
 import { useWeb3React } from '@pancakeswap/wagmi'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { useProfile } from 'state/profile/hooks'
 import ProfileAvatarWithTeam from 'components/ProfileAvatarWithTeam'
 import { useTranslation } from '@pancakeswap/localization'

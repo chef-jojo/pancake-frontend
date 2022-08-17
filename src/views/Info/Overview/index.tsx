@@ -1,5 +1,5 @@
 import { useMemo } from 'react'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import { Flex, Heading, Card } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
 import Page from 'components/Layout/Page'

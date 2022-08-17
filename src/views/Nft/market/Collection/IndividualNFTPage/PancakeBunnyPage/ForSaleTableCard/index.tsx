@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState, useMemo } from 'react'
-import styled from '@pancakeswap/styled'
+import styled from '@emotion/styled'
 import chunk from 'lodash/chunk'
 import BigNumber from 'bignumber.js'
 import {

@@ -1,5 +1,5 @@
 import { Box, Text, UserMenu, UserMenuDivider, UserMenuItem } from '@pancakeswap/uikit'
-import { ChainId, NATIVE } from '@pancakeswap/sdk'
+import { NATIVE } from '@pancakeswap/sdk'
 import useActiveWeb3React, { useNetworkConnectorUpdater } from 'hooks/useActiveWeb3React'
 import { useTranslation } from '@pancakeswap/localization'
 import { useSwitchNetwork } from 'hooks/useSwitchNetwork'
@@ -16,17 +16,19 @@ export const NetworkSelect = ({ switchNetwork, chainId }) => {
         <Text>{t('Select a Network')}</Text>
       </Box>
       <UserMenuDivider />
-      {chains.map((chain) => (
-        <UserMenuItem
-          disabled={chain.id === chainId}
-          key={chain.id}
-          style={{ justifyContent: 'flex-start' }}
-          onClick={() => switchNetwork(chain.id)}
-        >
-          <ChainLogo chainId={chain.id} />
-          <Text pl="12px">{chain.name}</Text>
-        </UserMenuItem>
-      ))}
+      {chains
+        .filter((chain) => !chain.testnet || chain.id === chainId)
+        .map((chain) => (
+          <UserMenuItem
+            disabled={chain.id === chainId}
+            key={chain.id}
+            style={{ justifyContent: 'flex-start' }}
+            onClick={() => switchNetwork(chain.id)}
+          >
+            <ChainLogo chainId={chain.id} />
+            <Text pl="12px">{chain.name}</Text>
+          </UserMenuItem>
+        ))}
     </>
   )
 }

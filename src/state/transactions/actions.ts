@@ -1,6 +1,6 @@
 import { createAction } from '@reduxjs/toolkit'
 import { ChainId } from '@pancakeswap/sdk'
-import { Order } from '@gelatonetwork/limit-orders-lib'
+import type { Order } from '@gelatonetwork/limit-orders-lib'
 
 export type TransactionType =
   | 'approve'

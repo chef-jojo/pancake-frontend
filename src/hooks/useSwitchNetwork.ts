@@ -1,4 +1,4 @@
-import { useCallback } from 'react'
+import { useCallback, useMemo } from 'react'
 import { useAccount, useSwitchNetwork as useSwitchNetworkWallet } from 'wagmi'
 import { useSessionChainId } from './useSessionChainId'
 import { useSwitchNetworkLoading } from './useSwitchNetworkLoading'
@@ -16,12 +16,9 @@ export function useSwitchNetwork() {
 
   const switchNetworkAsync = useCallback(
     async (chainId: number) => {
-      if (isConnected) {
-        if (typeof _switchNetworkAsync === 'function') {
-          setLoading(true)
-          return _switchNetworkAsync(chainId).finally(() => setLoading(false))
-        }
-        return undefined
+      if (isConnected && typeof _switchNetworkAsync === 'function') {
+        setLoading(true)
+        return _switchNetworkAsync(chainId).finally(() => setLoading(false))
       }
       return new Promise(() => {
         setSessionChainId(chainId)
@@ -32,11 +29,8 @@ export function useSwitchNetwork() {
 
   const switchNetwork = useCallback(
     (chainId: number) => {
-      if (isConnected) {
-        if (typeof _switchNetwork === 'function') {
-          return _switchNetwork(chainId)
-        }
-        return undefined
+      if (isConnected && typeof _switchNetwork === 'function') {
+        return _switchNetwork(chainId)
       }
       return () => {
         setSessionChainId(chainId)
@@ -46,14 +40,18 @@ export function useSwitchNetwork() {
   )
 
   const isLoading = _isLoading || loading
-  const canSwitch = isConnected
-    ? !!_switchNetworkAsync &&
-      !(
-        typeof window !== 'undefined' &&
-        // @ts-ignore // TODO: add type later
-        window.ethereum?.isSafePal
-      )
-    : true
+  const canSwitch = useMemo(
+    () =>
+      isConnected
+        ? !!_switchNetworkAsync &&
+          !(
+            typeof window !== 'undefined' &&
+            // @ts-ignore // TODO: add type later
+            window.ethereum?.isSafePal
+          )
+        : true,
+    [_switchNetworkAsync, isConnected],
+  )
 
   return {
     ...switchNetworkArgs,

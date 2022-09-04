@@ -15,7 +15,7 @@ import type { AppProps } from 'next/app'
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import Script from 'next/script'
-import { Fragment } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import { PersistGate } from 'redux-persist/integration/react'
 import { persistor, useStore } from 'state'
 import { usePollBlockNumber } from 'state/block/hooks'
@@ -25,6 +25,8 @@ import { SentryErrorBoundary } from '../components/ErrorBoundary'
 import Menu from '../components/Menu'
 import Providers from '../Providers'
 import GlobalStyle from '../style/Global'
+
+import '@pancakeswap/ui/css/global.css'
 
 const EasterEgg = dynamic(() => import('components/EasterEgg'), { ssr: false })
 
@@ -59,6 +61,11 @@ function MyApp(props: AppProps) {
   const { pageProps, Component } = props
   const store = useStore(pageProps.initialReduxState)
 
+  const [isMounted, setIsMounted] = useState(false)
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
+
   return (
     <>
       <Head>
@@ -90,10 +97,10 @@ function MyApp(props: AppProps) {
           <ResetCSS />
           <GlobalStyle />
           <GlobalCheckClaimStatus excludeLocations={[]} />
-          <PersistGate loading={null} persistor={persistor}>
-            <Updaters />
-            <App {...props} />
-          </PersistGate>
+          {/* <PersistGate loading={null} persistor={persistor}> */}
+          <Updaters />
+          {isMounted && <App {...props} />}
+          {/* </PersistGate> */}
         </Blocklist>
       </Providers>
       <Script

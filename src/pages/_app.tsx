@@ -26,8 +26,6 @@ import Menu from '../components/Menu'
 import Providers from '../Providers'
 import GlobalStyle from '../style/Global'
 
-import '@pancakeswap/ui/css/global.css'
-
 const EasterEgg = dynamic(() => import('components/EasterEgg'), { ssr: false })
 
 // This config is required for number formatting

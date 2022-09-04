@@ -61,10 +61,10 @@ function MyApp(props: AppProps) {
   const { pageProps, Component } = props
   const store = useStore(pageProps.initialReduxState)
 
-  const [isMounted, setIsMounted] = useState(false)
-  useEffect(() => {
-    setIsMounted(true)
-  }, [])
+  // const [isMounted, setIsMounted] = useState(false)
+  // useEffect(() => {
+  //   setIsMounted(true)
+  // }, [])
 
   return (
     <>
@@ -99,7 +99,7 @@ function MyApp(props: AppProps) {
           <GlobalCheckClaimStatus excludeLocations={[]} />
           {/* <PersistGate loading={null} persistor={persistor}> */}
           <Updaters />
-          {isMounted && <App {...props} />}
+          <App {...props} />
           {/* </PersistGate> */}
         </Blocklist>
       </Providers>

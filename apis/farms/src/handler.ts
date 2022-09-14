@@ -132,8 +132,8 @@ export async function saveFarms(chainId: number, event: ScheduledEvent | FetchEv
 }
 
 export async function handleLpAprs(chainId: number, farmsConfig?: SerializedFarmConfig[]) {
-  let lpAprs = await FarmKV.getApr(chainId)
-  if (lpAprs) {
+  let lpAprs = KV_CACHE && (await FarmKV.getApr(chainId))
+  if (!lpAprs) {
     lpAprs = await saveLPsAPR(chainId, farmsConfig)
   }
   return lpAprs || {}
@@ -141,7 +141,7 @@ export async function handleLpAprs(chainId: number, farmsConfig?: SerializedFarm
 
 export async function saveLPsAPR(chainId: number, farmsConfig?: SerializedFarmConfig[]) {
   // TODO: add other chains
-  if (chainId === 56) {
+  if (chainId === 56 || chainId === 97) {
     let data = farmsConfig
     if (!data) {
       const value = await FarmKV.getFarms(chainId)

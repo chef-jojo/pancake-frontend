@@ -84,7 +84,7 @@ interface FarmsResponse {
 const getAprsForStableFarm = async (stableFarm: any, chainId: number): Promise<BigNumber> => {
   const provider = getProvider({ chainId })
   if (!provider) throw new Error(`Provider missing chainId ${chainId}`)
-  const swapContract = new Contract(stableFarm?.stableSwapAddress, stableSwapABI)
+  const swapContract = new Contract(stableFarm?.stableSwapAddress, stableSwapABI, provider)
 
   const dayAgoTimestamp = getDayAgoTimestamp()
 
@@ -106,8 +106,8 @@ const getAprsForStableFarm = async (stableFarm: any, chainId: number): Promise<B
     preVirtualPrice = 1 * 10 ** 18
   }
 
-  const current = new BigNumber(virtualPrice)
-  const prev = new BigNumber(preVirtualPrice)
+  const current = new BigNumber(virtualPrice?.toString())
+  const prev = new BigNumber(preVirtualPrice?.toString())
 
   return current.minus(prev).div(prev)
 }

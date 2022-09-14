@@ -1,12 +1,23 @@
 import { FixedNumber } from '@ethersproject/bignumber'
 import { Contract } from '@ethersproject/contracts'
 import { getFarmCakeRewardApr, SerializedFarmConfig } from '@pancakeswap/farms'
+import localFarmConfig56 from '@pancakeswap/farms/constants/56'
+import localFarmConfig97 from '@pancakeswap/farms/constants/97'
+import localFarmConfig1 from '@pancakeswap/farms/constants/1'
+import localFarmConfig5 from '@pancakeswap/farms/constants/5'
 import { ChainId, CurrencyAmount, Pair } from '@pancakeswap/sdk'
 import { BUSD, CAKE } from '@pancakeswap/tokens'
 import { farmFetcher } from './helper'
 import { FarmKV, FarmResult } from './kv'
 import { updateLPsAPR } from './lpApr'
 import { bscProvider, bscTestnetProvider } from './provider'
+
+const localFarmConfig: Record<number, SerializedFarmConfig[]> = {
+  56: localFarmConfig56,
+  97: localFarmConfig97,
+  1: localFarmConfig1,
+  5: localFarmConfig5,
+}
 
 const pairAbi = [
   {
@@ -69,7 +80,12 @@ const farmConfigApi = 'https://farms-config.pages.dev'
 export async function saveFarms(chainId: number, event: ScheduledEvent | FetchEvent) {
   try {
     const isTestnet = farmFetcher.isTestnet(chainId)
-    const farmsConfig = await (await fetch(`${farmConfigApi}/${chainId}.json`)).json<SerializedFarmConfig[]>()
+    let farmsConfig
+    if (KV_CACHE) {
+      farmsConfig = await (await fetch(`${farmConfigApi}/${chainId}.json`)).json<SerializedFarmConfig[]>()
+    } else {
+      farmsConfig = localFarmConfig[chainId]
+    }
     let lpPriceHelpers: SerializedFarmConfig[] = []
     try {
       lpPriceHelpers = await (

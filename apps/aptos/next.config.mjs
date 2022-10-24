@@ -15,6 +15,7 @@ const withTH = transpileModules([
   '@pancakeswap/localization',
   '@pancakeswap/hooks',
   '@pancakeswap/awgmi',
+  '@pancakeswap/awgmi/connectors/blocto',
   '@pancakeswap/utils',
   '@pancakeswap/token-lists',
   '@pancakeswap/tokens',

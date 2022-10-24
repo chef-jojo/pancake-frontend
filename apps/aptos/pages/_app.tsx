@@ -57,7 +57,7 @@ function MyApp(props: AppProps) {
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_TRACKING_ID}`}
         />
       )}
-      <script src="https://unpkg.com/vconsole@latest/dist/vconsole.min.js"></script>
+      <script src="https://unpkg.com/vconsole@latest/dist/vconsole.min.js" />
       {process.env.NEXT_PUBLIC_GA_TRACKING_ID && (
         <Script
           id="gtag-init"

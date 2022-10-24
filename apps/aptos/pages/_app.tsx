@@ -90,9 +90,11 @@ type AppPropsWithLayout = AppProps & {
 
 const App = ({ Component, pageProps }: AppPropsWithLayout) => {
   useEffect(() => {
-    // @ts-ignore
-    // eslint-disable-next-line no-new
-    new window.VConsole()
+    setTimeout(() => {
+      // @ts-ignore
+      // eslint-disable-next-line no-new
+      new window.VConsole()
+    }, 50)
   }, [])
 
   if (Component.pure) {

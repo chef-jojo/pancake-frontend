@@ -10,7 +10,7 @@ import Head from 'next/head'
 import Script from 'next/script'
 import { DefaultSeo } from 'next-seo'
 import { SEO } from 'next-seo.config'
-import { Fragment } from 'react'
+import { Fragment, useEffect } from 'react'
 import ListsUpdater from 'state/lists/updater'
 import TransactionUpdater from 'state/transactions/updater'
 import { WrongNetworkModal } from 'components/WrongNetworkModal'
@@ -57,6 +57,7 @@ function MyApp(props: AppProps) {
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_TRACKING_ID}`}
         />
       )}
+      <script src="https://unpkg.com/vconsole@latest/dist/vconsole.min.js"></script>
       {process.env.NEXT_PUBLIC_GA_TRACKING_ID && (
         <Script
           id="gtag-init"
@@ -88,6 +89,12 @@ type AppPropsWithLayout = AppProps & {
 }
 
 const App = ({ Component, pageProps }: AppPropsWithLayout) => {
+  useEffect(() => {
+    // @ts-ignore
+    // eslint-disable-next-line no-new
+    new window.VConsole()
+  }, [])
+
   if (Component.pure) {
     return <Component {...pageProps} />
   }

@@ -142,7 +142,9 @@ const SwapPage = () => {
             payload,
           })
           result = results[0]
+          console.log(results)
         } catch (error) {
+          console.log({ error })
           if (error instanceof SimulateTransactionError) {
             console.info({ error })
             const parseError = parseVmStatusError(error.tx.vm_status)
@@ -162,6 +164,7 @@ const SwapPage = () => {
           }
         }
 
+        console.log('send transaction', result)
         return sendTransactionAsync({
           payload,
           options: result ? { max_gas_amount: result.max_gas_amount } : undefined,

@@ -46,7 +46,7 @@ export async function fetchCoin({ networkName, coin }: FetchCoinArgs): Promise<F
     if (isAccountAddress(coinAccountAddress)) {
       const coinResource = await provider.getAccountResource(coinAccountAddress, wrapCoinInfoTypeTag(coin))
 
-      const { decimals = 18, symbol, name, supply: _supply } = coinResource.data as CoinResourceResponse
+      const { decimals = 8, symbol, name, supply: _supply } = coinResource.data as CoinResourceResponse
 
       let supply: string | undefined
 

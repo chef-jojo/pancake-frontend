@@ -1,5 +1,12 @@
 {
   "name": "@pancakeswap/multicall",
   "version": "0.0.1",
-  "private": true
+  "private": true,
+  "sideEffects": false,
+  "dependencies": {
+    "@ethersproject/providers": "^5.0.0",
+    "@ethersproject/contracts": "^5.0.0",
+    "@ethersproject/abi": "^5.0.0",
+    "@pancakeswap/sdk": "*"
+  }
 }
